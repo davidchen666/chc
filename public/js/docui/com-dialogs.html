@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+	<title>模态窗口 Dialog</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<meta content="" name="description"/>
+	<meta content="" name="author"/>
+	<meta name="MobileOptimized" content="320">
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link href="../resources/css/public.css" rel="stylesheet" type="text/css"/>
+	<link id="style_themes" href="../resources/css/themes-default.css" rel="stylesheet" type="text/css"/>
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+	
+	<!--[if !IE]><!-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<!--<![endif]-->
+	
+	
+</head>
+<body>
+
+<div class="header navbar navbar-inverse navbar-fixed-top">
+
+    <div class="header-inner">
+    
+        <!-- BEGIN LOGO -->
+        <a class="navbar-brand logo" href="index.html">
+            <i class="icon icon-logo-analytics"></i>
+        </a>
+        <!-- END LOGO -->
+        <ul class="nav navbar-nav">
+        
+            <li class="active">
+                <a href="javascript:;">实例</a>
+            </li>
+            <li>
+                <a href="https://github.com/hypers/pagurian" target="_blank">源码下载</a>
+            </li>
+        </ul>
+
+        <div class="nav_right">
+            
+            <ul class="nav userbar pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        系统管理员
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-user"></i>  基本信息</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i>  我的消息</a></li>
+                        <li><a href="#"><i class="fa fa-power-off"></i>  退出系统</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </div>
+
+    </div>
+ 
+</div>
+<div class="clearfix"></div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	
+	<div class="page-sidebar-wrapper">
+	    <div class="page-sidebar navbar-collapse collapse">
+	        <!-- BEGIN SIDEBAR MENU -->
+	        <ul class="page-sidebar-menu">
+	                <li  class="open">
+	                    <a href="javascript:;">
+	                        <i class="fa fa-picture-o"></i>
+	                        <span class="title">主题</span>
+	                        <span class="arrow open"></span>
+	                    </a>
+	                     <ul class="sub-menu">
+	                        <li>
+	                            <a href="theme-color.html">配色 Color</a>
+	                        </li>
+	                        <li>
+	                            <a href="theme-buttons.html">按钮 Button</a>
+	                        </li>
+	                    </ul>
+	                </li>
+	                <li  class="open">
+	                    <a href="javascript:;">
+	                        <i class="fa fa-briefcase"></i>
+	                        <span class="title">组件</span>
+	                        <span class="arrow open"></span>
+	                    </a>
+	                     <ul class="sub-menu">
+	                        <li>
+	                            <a href="com-form.html">表单 Form</a>
+	                        </li>
+	                        <li>
+	                            <a href="com-dialogs.html">模态窗口 Dialog</a>
+	                        </li>
+	                        <li>
+	                            <a href="com-alert.html">警告框 Alert</a>
+	                        </li>
+	                        <li>
+	                            <a href="com-tooltip.html">提示框 Tooltip</a>
+	                        </li>
+	                        <li>
+	                            <a href="com-popover.html">弹出框 Popover</a>
+	                        </li>
+	                    </ul>
+	                </li>
+	                <li  class="open">
+	                    <a href="javascript:;">
+	                        <i class="fa fa-puzzle-piece"></i>
+	                        <span class="title">插件</span>
+	                        <span class="arrow open"></span>
+	                    </a>
+	                     <ul class="sub-menu">
+	                        <li>
+	                            <a href="datatable.html">DataTables</a>
+	                        </li>
+	                        <li>
+	                            <a href="irsdatatable.html">艾瑞图表</a>
+	                        </li>
+	                        <li>
+	                            <a href="echarts-line.html">Echarts</a>
+	                        </li>
+	                        <li>
+	                            <a href="datepicker.html">Date Pickers</a>
+	                        </li>
+	                    </ul>
+	                </li>
+	                <li  class="open">
+	                    <a href="javascript:;">
+	                        <i class="fa fa-pagelines"></i>
+	                        <span class="title">单页</span>
+	                        <span class="arrow open"></span>
+	                    </a>
+	                     <ul class="sub-menu">
+	                        <li>
+	                            <a href="page-login.html">登录</a>
+	                        </li>
+	                    </ul>
+	                </li>
+	                <li  class="open">
+	                    <a href="javascript:;">
+	                        <i class="fa fa-bookmark"></i>
+	                        <span class="title">前端规范</span>
+	                        <span class="arrow open"></span>
+	                    </a>
+	                     <ul class="sub-menu">
+	                        <li>
+	                            <a href="styleguide-catalogue.html">目录设计</a>
+	                        </li>
+	                        <li>
+	                            <a href="styleguide-js.html">Javascript规范</a>
+	                        </li>
+	                        <li>
+	                            <a href="styleguide-css.html">CSS规范</a>
+	                        </li>
+	                    </ul>
+	                </li>
+	
+	        </ul>
+	        <!-- END SIDEBAR MENU -->
+	    </div>
+	</div>
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		
+		<div class="page-content">
+			
+			<div class="theme-panel hidden-xs hidden-sm">
+			    <div class="toggler" style="display: block;">
+			    </div>
+			    <div class="toggler-close" style="display: none;">
+			    </div>
+			    <div class="theme-options" style="display: none;">
+			        <div class="theme-option theme-colors clearfix">
+			            <span>
+			                模版颜色
+			            </span>
+			            <ul>
+			                <li data-style="green" class="color-green current color-default"></li>
+			                <li data-style="blue" class="color-blue"></li>
+			                <li data-style="purple" class="color-purple "></li>
+			                <li data-style="orange" class="color-orange"></li>
+			                <li data-style="red" class="color-red"></li>
+			            </ul>
+			        </div>
+			    </div>
+			</div>		
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="page-title">
+					模态窗口 Dialog
+					</h3>
+				</div>
+			</div>
+
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+				<div class="col-md-6">
+					
+					
+
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet box default">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                默认
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <a class="btn default" id="btn_remove"><i class="fa fa-minus"></i> 删除</a>
+                            
+                            <div class="markdown inner">
+                                <pre><code class="javascript">
+$p.com.dialog("#btn_remove", {
+    title: "提示",
+    body: "你确定要删除吗？",
+    submit: function(modal, data, params, callback) {
+        $p.com.alert("你点击了确定");
+        modal.hide();
+    }
+});
+                                </code></pre>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- END PORTLET-->
+
+
+
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet box default">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                表单
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <a class="btn default" id="btn_add"><i class="fa fa-plus"></i> 添加</a>
+                            <div class="markdown inner">
+                                <pre><code class="javascript">
+$p.com.dialog("#btn_add", {
+    title: "添加用户",
+    body: $("#tpl_user").html(),
+    validate: function(modal, data, params) {
+        return true;
+    },
+    submit: function(modal, data, params, callback) {
+        $p.com.alert("你点击了确定");
+        modal.hide();
+    }
+}); 
+                                </code></pre>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- END PORTLET-->
+
+
+                    
+
+				</div>
+                <div class="col-md-6">
+                    
+                     
+
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet box default">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                表单填充
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <a class="btn default" id="btn_update" data-params="{id:1}" ><i class="fa fa-edit"></i> 编辑</a>
+                            
+                            <div class="markdown inner">
+                                <pre><code class="javascript">
+$p.com.dialog("#btn_update", {
+    title: "编辑用户",
+    body: $("#tpl_user").html(),
+    initForm: function(modal, form, params) {
+
+        //获取用户信息
+        model.getUser(params.id, params, function(data) {
+            $p.com.form(form).val(data);
+        });
+
+    },
+    validate: function(modal, data, params) {
+        return true;
+    },
+    submit: function(modal, data, params, callback) {
+        //更新用户信息
+        model.update(params.id, data, function(resp) {
+            $p.com.alert(resp.message);
+            modal.hide();
+        });
+    }
+});
+                                </code></pre>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- END PORTLET-->
+
+                </div>
+
+			</div>
+            
+			
+        
+
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+
+<div class="footer fixed">
+    <span class="copyright">COPYRIGHT HYPERS 2014</span>
+
+    
+    <div class="link">
+        <a href="https://github.com/hypers/pagurian/issues" target="_blank">问题反馈</a>
+    </div>
+</div>
+<script src="../../pagurian.js" ></script>
+
+<!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254744731'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1254744731' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+<script type="text/tpl" id="tpl_user" >
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="portlet-body">
+                <form action="">
+                    <div class="form-group">
+                        <label class="control-label">用户名</label>
+                        <input type="text" class="form-control" maxlength="50" name="name" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">年龄</label>
+                        <input type="text" class="form-control" maxlength="3" name="age" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript">
+	pagurian.call("modules/com/app", function(app) {
+		app.page.dialogs();
+	});
+</script>
+
+</body>
+</html>
