@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="../resources/css/public.css" rel="stylesheet" type="text/css"/>
+    <link id="style_themes" href="../resources/css/themes-default.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        .fakeContainer
+        {
+            /* The parent container */
+            margin: 0px 0px 10px 0px;
+            padding: 0px;
+            border: none;
+            width: 100%; /* Required to set */
+            height: 431px; /* Required to set */
+            overflow: hidden; /* Required to set */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="table-data fakeContainer" id="datainfo"></div>
+ </div>
+</body>
+<script src="../../pagurian.js" ></script>
+<script type="text/javascript">
+
+    pagurian.call("modules/irs_table/app", function(app) {
+        app.page.index();
+    });
+
+</script>
+</html>
