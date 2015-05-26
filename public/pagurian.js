@@ -20,7 +20,7 @@
 		plugin: {},
 		path: {
 			api: schema + domain + "/",
-			app: schema + domain + "/" + (this.debug ? "uiframe/src" : "uiframe/src") + "/"
+			app: schema + domain + "/" + (this.debug ? "iresearch_ui/public/js" : "iresearch_ui/public/js") + "/"
 		},
 		call: function() {
 			return (this.queue = this.queue || []).push(arguments);
