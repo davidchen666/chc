@@ -98,12 +98,12 @@ define(function(require, exports, module) {
 
             this.init(type, params);
             var data = this.options.data;
-
             var options = {
                 //url: pagurian.path.api + url + ".json",
                 url: pagurian.path.api + url ,
                 type: type || "get",
                 dataType: "json",
+                
                 data: data,
                 timeout: 20000,
                 success: function(data, textStatus, jqXHR) {
