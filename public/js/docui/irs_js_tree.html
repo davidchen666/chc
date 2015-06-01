@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+    <title> 树形数据</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <meta name="MobileOptimized" content="320">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="../resources/css/public.css" rel="stylesheet" type="text/css"/>
+    <link id="style_themes" href="../resources/css/themes-default.css" rel="stylesheet" type="text/css"/>
+    
+    <link rel="stylesheet" href="./default.min.css">
+    
+    <!--[if !IE]><!-->
+    <script src="./highlight.min.js"></script>
+    <!--<![endif]-->
+    
+    
+    <style type="text/css">
+        .jsTreeDemo { overflow:auto; border:1px solid silver; min-height:100px;width: 200px }
+    </style>
+</head>
+<body>
+
+<div class="header navbar navbar-inverse navbar-fixed-top">
+
+    <div class="header-inner">
+    
+        <!-- BEGIN LOGO -->
+        <a class="navbar-brand logo" href="index.html">
+            <i class="icon icon-logo-analytics"></i>
+        </a>
+        <!-- END LOGO -->
+        <ul class="nav navbar-nav">
+        
+            <li class="active">
+                <a href="javascript:;">实例</a>
+            </li>
+            <li>
+                <a href="//www.iresearch.com.cn" target="_blank">iResearch</a>
+            </li>
+        </ul>
+
+        <div class="nav_right">
+            
+            <ul class="nav userbar pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        系统管理员
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-user"></i>  基本信息</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i>  我的消息</a></li>
+                        <li><a href="#"><i class="fa fa-power-off"></i>  退出系统</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </div>
+
+    </div>
+ 
+</div>
+<div class="clearfix"></div>
+
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+   
+
+   <div class="page-sidebar-wrapper">
+       <div class="page-sidebar navbar-collapse collapse">
+           <!-- BEGIN SIDEBAR MENU -->
+           <ul class="page-sidebar-menu">
+                   <li  class="open">
+                       <a href="javascript:;">
+                           <i class="fa fa-picture-o"></i>
+                           <span class="title">主题</span>
+                           <span class="arrow open"></span>
+                       </a>
+                        <ul class="sub-menu">
+                           <li>
+                               <a href="theme-color.html">配色 Color</a>
+                           </li>
+                           <li>
+                               <a href="theme-buttons.html">按钮 Button</a>
+                           </li>
+                       </ul>
+                   </li>
+                   <li  class="open">
+                       <a href="javascript:;">
+                           <i class="fa fa-briefcase"></i>
+                           <span class="title">组件</span>
+                           <span class="arrow open"></span>
+                       </a>
+                        <ul class="sub-menu">
+                           <li>
+                               <a href="com-form.html">表单 Form</a>
+                           </li>
+                           <li>
+                               <a href="com-dialogs.html">模态窗口 Dialog</a>
+                           </li>
+                           <li>
+                               <a href="com-alert.html">警告框 Alert</a>
+                           </li>
+                           <li>
+                               <a href="com-tooltip.html">提示框 Tooltip</a>
+                           </li>
+                           <li>
+                               <a href="com-popover.html">弹出框 Popover</a>
+                           </li>
+                       </ul>
+                   </li>
+                   <li  class="open">
+                       <a href="javascript:;">
+                           <i class="fa fa-puzzle-piece"></i>
+                           <span class="title">插件</span>
+                           <span class="arrow open"></span>
+                       </a>
+                        <ul class="sub-menu">
+                           <li>
+                               <a href="datatable.html">DataTables</a>
+                           </li>
+                           <li>
+                               <a href="irsdatatable.html">艾瑞图表</a>
+                           </li>
+                           <li>
+                               <a href="irs_js_tree.html">树型数据</a>
+                           </li>
+                           <li>
+                               <a href="weekselect.html">周日期选择</a>
+                           </li>
+                           <li>
+                               <a href="echarts-line.html">Echarts</a>
+                           </li>
+                           <li>
+                               <a href="datepicker.html">Date Pickers</a>
+                           </li>
+                       </ul>
+                   </li>
+                   <li  class="open">
+                       <a href="javascript:;">
+                           <i class="fa fa-pagelines"></i>
+                           <span class="title">单页</span>
+                           <span class="arrow open"></span>
+                       </a>
+                        <ul class="sub-menu">
+                           <li>
+                               <a href="page-login.html">登录</a>
+                           </li>
+                       </ul>
+                   </li>
+                   <li  class="open">
+                       <a href="javascript:;">
+                           <i class="fa fa-bookmark"></i>
+                           <span class="title">前端规范</span>
+                           <span class="arrow open"></span>
+                       </a>
+                        <ul class="sub-menu">
+                           <li>
+                               <a href="styleguide-catalogue.html">目录设计</a>
+                           </li>
+                           <li>
+                               <a href="styleguide-js.html">Javascript规范</a>
+                           </li>
+                           <li>
+                               <a href="styleguide-css.html">CSS规范</a>
+                           </li>
+                       </ul>
+                   </li>
+   
+           </ul>
+           <!-- END SIDEBAR MENU -->
+       </div>
+   </div>
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        
+        <div class="page-content">
+            
+            <div class="theme-panel hidden-xs hidden-sm">
+                <div class="toggler" style="display: block;">
+                </div>
+                <div class="toggler-close" style="display: none;">
+                </div>
+                <div class="theme-options" style="display: none;">
+                    <div class="theme-option theme-colors clearfix">
+                        <span>
+                            模版颜色
+                        </span>
+                        <ul>
+                            <li data-style="green" class="color-green current color-default"></li>
+                            <li data-style="blue" class="color-blue"></li>
+                            <li data-style="purple" class="color-purple "></li>
+                            <li data-style="orange" class="color-orange"></li>
+                            <li data-style="red" class="color-red"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="page-title">
+                    树形数据
+                    </h3>
+                </div>
+            </div>
+
+            <div class="tabs-wrap">
+               <ul  class="nav nav-tabs">
+                    <li class="active">
+                        <a href="irs_js_tree.html" >基础 </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jsTreeDemo" id="jsTree"></div>
+                </div>
+            </div>
+        
+            
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    
+                    <div class="markdown">
+
+
+                    
+    
+                    <h3>HTML代码</h3>
+                        <pre><code class="html">
+                        &lt;div class=&quot;jsTreeDemo&quot; id=&quot;jsTree&quot;>&lt;/div&gt;
+                        </code></pre>
+                        <h3>Javascript代码</h3>
+                        <pre>
+                        <code class="javascript">
+app.page.index = function() {
+        var params="";
+        var treeData = model.getDataList;
+        $p.plugin.irsTree($("#jsTree"),params);
+    };
+                        </code></pre>
+
+                        <h3>JSON 数据</h3>
+                        <a href="/test/api/jsTree.json" target="_blank">jsTree.json</a>
+                            
+                        <h3>基于版本</h3>
+                        <p>[v1.9.4]</p>
+
+                        <h3>更多实例</h3>
+                        
+
+                        
+                    </div>
+
+                    
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+
+<div class="footer fixed">
+    <span class="copyright">COPYRIGHT iReSearch.com.cn 2015</span>
+
+    
+    <div class="link">
+
+    </div>
+</div>
+<script src="../../pagurian.js" ></script>
+
+<!--[if lt IE 9]>
+    <script src="../../respond.min.js"></script>
+<![endif]-->
+<div style="display:none">
+
+</div><script type="text/javascript">
+    pagurian.call("modules/irs_tree/app", function(app) {
+        app.page.index();
+    });
+</script>
+</body>
+</html>
