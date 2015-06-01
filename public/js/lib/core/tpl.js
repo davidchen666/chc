@@ -29,7 +29,7 @@ define(function(require, exports, module) {
 
     g[PagurianAlias].tpl = function(template, data) {
         var tpl = new Tpl();
-        //return tpl.render(template, data);//报错暂时去掉
+        return tpl.render(template, data);//报错暂时去掉
     }
 
 });
