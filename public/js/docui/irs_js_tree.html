@@ -231,10 +231,6 @@
                     
                     
                     <div class="markdown">
-
-
-                    
-    
                     <h3>HTML代码</h3>
                         <pre><code class="html">
                         &lt;div class=&quot;jsTreeDemo&quot; id=&quot;jsTree&quot;>&lt;/div&gt;
@@ -242,11 +238,12 @@
                         <h3>Javascript代码</h3>
                         <pre>
                         <code class="javascript">
-app.page.index = function() {
-        var params="";
-        var treeData = model.getDataList;
-        $p.plugin.irsTree($("#jsTree"),params);
-    };
+                            var treeData = model.getDataList;//定义数据源
+                            var params = {
+                                dataSource: treeData,
+                                plugins : [ "checkbox"]
+                            };
+                            $p.plugin.irsTree($("#jsTree"),params);
                         </code></pre>
 
                         <h3>JSON 数据</h3>
