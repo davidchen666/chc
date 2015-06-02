@@ -11,8 +11,11 @@ define(function(require, exports, module) {
     var model = require('./model');
     require('../../plugins/jstree/module');
     app.page.index = function() {
-        var params="";
         var treeData = model.getDataList;
+        var params = {
+            dataSource: treeData,
+            plugins : [ "checkbox"]
+        };
         $p.plugin.irsTree($("#jsTree"),params);
     };
     module.exports = app;
