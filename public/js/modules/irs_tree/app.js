@@ -15,7 +15,7 @@ define(function(require, exports, module) {
         var params = {
             dataSource: treeData,
             plugins : ["checkbox"],
-            themes: "default-dark"
+            themes: "proton"
         };
         $p.plugin.irsTree($("#jsTree"),params);
     };
