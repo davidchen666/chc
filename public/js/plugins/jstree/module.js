@@ -11,7 +11,7 @@ define(function(require, exports, module) {
     var g = window;
     function irsJsTree(seletor, options){
 
-        var themeCss = './dist/themes/'+options.themes+'/style.min.css';
+        var themeCss = './dist/themes/'+options.themes+'/style.css';
 
         require.async(themeCss);
         getDataList(seletor, options);
