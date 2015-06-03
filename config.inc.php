@@ -2,7 +2,7 @@
     date_default_timezone_set("PRC");
     session_set_cookie_params(0);
 //    set_time_limit(0);
-    //基础路径配置
+    //基础路径配置123
     define('DS', DIRECTORY_SEPARATOR);
     define('ROOT_PATH', dirname(__FILE__) . DS);
     define('MODEL', 'model');
