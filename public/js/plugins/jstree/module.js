@@ -7,9 +7,13 @@
  */
 define(function(require, exports, module) {
     require('./dist/jstree.min');
-    require('./dist/themes/default/style.min.css');
+
     var g = window;
     function irsJsTree(seletor, options){
+
+        var themeCss = './dist/themes/'+options.themes+'/style.min.css';
+
+        require.async(themeCss);
         getDataList(seletor, options);
 //        seletor.on("changed.jstree", function (e, data) {
 //            if(data.selected.length) {
@@ -45,6 +49,7 @@ define(function(require, exports, module) {
                     },
                     "plugins" : options.plugins
                 });
+            seletor.jstree("set_theme",options.themes);
         });
     }
     g[PagurianAlias].plugin.irsTree = function(seletor, options) {
