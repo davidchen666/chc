@@ -241,7 +241,8 @@
                             var treeData = model.getDataList;//定义数据源
                             var params = {
                                 dataSource: treeData,
-                                plugins : [ "checkbox"]
+                                plugins : [ "checkbox"],
+                                themes: "proton"//default,defult-dark 三种样式选择
                             };
                             $p.plugin.irsTree($("#jsTree"),params);
                         </code></pre>
