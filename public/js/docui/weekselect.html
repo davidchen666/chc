@@ -77,26 +77,14 @@
             <ul class="page-sidebar-menu">
                     <li  class="open">
                         <a href="javascript:;">
-                            <i class="fa fa-picture-o"></i>
-                            <span class="title">主题</span>
-                            <span class="arrow open"></span>
-                        </a>
-                         <ul class="sub-menu">
-                            <li>
-                                <a href="theme-color.html">配色 Color</a>
-                            </li>
-                            <li>
-                                <a href="theme-buttons.html">按钮 Button</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li  class="open">
-                        <a href="javascript:;">
                             <i class="fa fa-briefcase"></i>
                             <span class="title">组件</span>
                             <span class="arrow open"></span>
                         </a>
                          <ul class="sub-menu">
+                            <li>
+                                <a href="theme-buttons.html">按钮 Button</a>
+                            </li>
                             <li>
                                 <a href="com-form.html">表单 Form</a>
                             </li>
@@ -182,7 +170,13 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    周选择:<input type="text" class="form-control" id="select_week" readonly="true"/>
+                    周选择:
+                    <label>select week</label>
+                    <div class="input-icon">
+
+                        <input type="text" class="form-control" id="select_week" readonly="true"
+                               placeholder="选择你的周"/>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -211,7 +205,7 @@
                 </div>
             </div>
         </div>
-
+</div>
     </div>
     <div class="footer fixed">
         <span class="copyright">COPYRIGHT iReSearch.com.cn 2015</span>
