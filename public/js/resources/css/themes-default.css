@@ -1019,7 +1019,7 @@ a {
 	margin-right:5px
 }
 .page-container {
-	min-width:1300px;
+	min-width:1200px;
 	overflow:hidden;
 	zoom:1
 }
@@ -1126,7 +1126,7 @@ a {
 	line-height:40px;
 	background-color:#6eaa35!important;
 	position:relative;
-	min-width:1300px
+	min-width:1200px
 }
 .header ._bar {
 	display:inline-block;
@@ -1302,7 +1302,7 @@ a {
 	color:#9f9f9f;
 	font-size:14px;
 	width:100%;
-	min-width:1300px
+	min-width:1200px
 }
 .footer .copyright {
 	display:inline-block;
