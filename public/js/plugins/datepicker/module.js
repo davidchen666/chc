@@ -24,10 +24,12 @@ define(function(require, exports, module) {
         }
 
         this.options = {
-            format: 'yyyy-mm-dd',
+            format: "YYYY-MM-DD",
             textFormat: "YYYY-MM-DD",
             language: 'zh-CN',
-            autoclose: true
+            autoclose: true,
+            startView:0,
+            minViewMode:'days'
         };
         this.init = function() {
 
@@ -48,7 +50,12 @@ define(function(require, exports, module) {
 
             picker.on("changeDate", function(e) {
                 if (typeof callback === "function") {
-                    callback(moment(e.date).format(o.options.textFormat));
+                    callback({
+                        //显示层的DATE
+                        format_date: moment(e.date).format(o.options.textFormat),
+                        //post的date格式
+                        date_source: moment(e.date).format("YYYY-MM-DD")
+                    });
                 }
             });
 
