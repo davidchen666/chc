@@ -664,7 +664,7 @@ a {
 }
 .form-control.form-control-lg {
 	height:40px;
-	font-size:16px
+	font-size:12px
 }
 .form-control:hover {
 	border-color:#b5b5b5
@@ -933,7 +933,7 @@ a {
 }
 .modal .modal-dialog {
 	width:500px;
-	margin:30px auto
+	margin:100px auto
 }
 .modal .modal-dialog.modal-sm {
 	width:400px
@@ -1164,7 +1164,7 @@ a {
 .header .logo {
 	width:180px!important;
 	height:60px;
-	margin-left:18px;
+	margin-left:20px;
 	color:#fff;
 	font-size:30px;
 	padding:0;
@@ -1408,8 +1408,8 @@ a {
 	padding-right:18px
 }
 .form-actions .btn {
-	padding:9px 18px;
-	min-width:100px
+	padding:5px 10px;
+	min-width:90px
 }
 .portlet {
 	clear:none;

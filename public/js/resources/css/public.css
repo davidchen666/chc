@@ -4397,7 +4397,7 @@ td.visible-print,th.visible-print {
 	margin:4px
 }
 .daterangepicker .ranges {
-	width:160px;
+	width:220px;
 	text-align:left
 }
 .daterangepicker .ranges .range_inputs>div {
@@ -4455,7 +4455,7 @@ td.visible-print,th.visible-print {
 	background:#f5f5f5;
 	border:1px solid #f5f5f5;
 	color:#08c;
-	padding:3px 12px;
+	padding:5px 12px;
 	margin-bottom:8px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
@@ -4757,7 +4757,7 @@ td.visible-print,th.visible-print {
 	background-color:gray
 }
 .datepicker table tr td.active,.datepicker table tr td.active.disabled,.datepicker table tr td.active.disabled:hover,.datepicker table tr td.active:hover {
-	background-color:#006dcc;
+	background-color:#6eaa35;
 	background-image:-moz-linear-gradient(top,#08c,#04c);
 	background-image:-ms-linear-gradient(top,#08c,#04c);
 	background-image:-webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
@@ -4772,7 +4772,7 @@ td.visible-print,th.visible-print {
 	text-shadow:0 -1px 0 rgba(0,0,0,.25)
 }
 .datepicker table tr td.active.active,.datepicker table tr td.active.disabled,.datepicker table tr td.active.disabled.active,.datepicker table tr td.active.disabled.disabled,.datepicker table tr td.active.disabled:active,.datepicker table tr td.active.disabled:hover,.datepicker table tr td.active.disabled:hover.active,.datepicker table tr td.active.disabled:hover.disabled,.datepicker table tr td.active.disabled:hover:active,.datepicker table tr td.active.disabled:hover:hover,.datepicker table tr td.active.disabled:hover[disabled],.datepicker table tr td.active.disabled[disabled],.datepicker table tr td.active:active,.datepicker table tr td.active:hover,.datepicker table tr td.active:hover.active,.datepicker table tr td.active:hover.disabled,.datepicker table tr td.active:hover:active,.datepicker table tr td.active:hover:hover,.datepicker table tr td.active:hover[disabled],.datepicker table tr td.active[disabled] {
-	background-color:#04c
+	background-color:#6eaa35
 }
 .datepicker table tr td span {
 	display:block;
@@ -6669,7 +6669,7 @@ a,button,code,div,img,input,li,p,pre,select,span,table,td,textarea,th,ul {
 }
 .btn {
 	border-width:0;
-	padding:7px 14px;
+	padding:4px 14px;
 	font-size:14px;
 	outline:0!important;
 	-webkit-box-shadow:none!important;
@@ -7711,7 +7711,7 @@ a,a:active,a:focus,a:hover {
 [class*=" fa-"],[class^=fa-] {
 	display:inline-block;
 	margin-top:1px;
-	font-size:14px;
+	font-size:18px;
 	line-height:14px
 }
 li [class*=" fa-"],li [class^=fa-] {
@@ -8599,19 +8599,19 @@ i.normal {
 	margin-top:3px
 }
 .portlet.box>.portlet-title>.tools>a.remove,.portlet.solid>.portlet-title>.tools>a.remove {
-	background-image:url(img/portlet-remove-icon-white.png)
+	background-image:url(img/portlet-remove-icon.png)
 }
 .portlet.box>.portlet-title>.tools>a.config,.portlet.solid>.portlet-title>.tools>a.config {
-	background-image:url(img/portlet-config-icon-white.png)
+	background-image:url(img/portlet-config-icon.png)
 }
 .portlet.box>.portlet-title>.tools>a.reload,.portlet.solid>.portlet-title>.tools>a.reload {
-	background-image:url(img/portlet-reload-icon-white.png)
+	background-image:url(img/portlet-reload-icon.png)
 }
 .portlet.box>.portlet-title>.tools>a.expand,.portlet.solid>.portlet-title>.tools>a.expand {
-	background-image:url(img/portlet-expand-icon-white.png)
+	background-image:url(img/portlet-expand-icon.png)
 }
 .portlet.box>.portlet-title>.tools>a.collapse,.portlet.solid>.portlet-title>.tools>a.collapse {
-	background-image:url(img/portlet-collapse-icon-white.png)
+	background-image:url(img/portlet-collapse-icon.png)
 }
 .portlet.box>.portlet-body {
 	background-color:#fff;
@@ -11348,12 +11348,12 @@ div.checker.disabled:hover,div.radio.disabled:hover {
 	filter:none!important
 }
 .datepicker .active {
-	background-color:#4b8df8!important;
+	background-color:#6eaa35!important;
 	background-image:none!important;
 	filter:none!important
 }
 .datepicker .active:hover {
-	background-color:#2678FC!important;
+	background-color:#57981a!important;
 	background-image:none!important;
 	filter:none!important
 }
@@ -11395,7 +11395,7 @@ div.checker.disabled:hover,div.radio.disabled:hover {
 	font-size:14px
 }
 .daterangepicker .ranges input[type=text] {
-	width:70px!important;
+	width:100px!important;
 	font-size:11px;
 	vertical-align:middle
 }
@@ -11413,8 +11413,8 @@ div.checker.disabled:hover,div.radio.disabled:hover {
 	color:#333
 }
 .daterangepicker .ranges li.active,.daterangepicker .ranges li:hover {
-	background:#1b9451!important;
-	border:1px solid #1b9451!important;
+	background:#6eaa35!important;
+	border:1px solid #6eaa35!important;
 	color:#fff
 }
 .daterangepicker .range_inputs input {
