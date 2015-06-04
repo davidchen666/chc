@@ -1346,7 +1346,8 @@ a:hover{
 	color:#9f9f9f;
 	font-size:14px;
 	width:100%;
-	min-width:1200px
+	min-width:1200px;
+	text-align:center;
 }
 .footer .copyright {
 	display:inline-block;

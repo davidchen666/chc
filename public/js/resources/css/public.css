@@ -4558,8 +4558,8 @@ td.visible-print,th.visible-print {
 	border-radius:0
 }
 .daterangepicker td.active,.daterangepicker td.active:hover {
-	background-color:#357ebd;
-	border-color:#3071a9;
+	background-color:#57981a;
+	border-color:#57981a;
 	color:#fff
 }
 .daterangepicker td.week,.daterangepicker th.week {
@@ -11386,7 +11386,7 @@ div.checker.disabled:hover,div.radio.disabled:hover {
 	text-shadow:none
 }
 .daterangepicker td.active {
-	background-color:#1b9451;
+	background-color:#6eaa35;
 	background-image:none;
 	filter:none
 }
