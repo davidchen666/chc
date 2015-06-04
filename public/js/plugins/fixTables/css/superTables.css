@@ -77,12 +77,13 @@
 }
 .sDefault th, .sDefault td {
 	border: 1px solid #cccccc;
-	padding: 3px 6px 3px 4px;
+	padding:8px 10px;
 	white-space: nowrap;
 }
 .sDefault th {
 	background-color: #e5e5e5;
 	border-color: #c5c5c5;
+	padding:8px 10px;
 }
 .sDefault-Fixed {
 	background-color: #eeeeee;
