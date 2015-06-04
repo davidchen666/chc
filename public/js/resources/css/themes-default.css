@@ -701,7 +701,7 @@ a {
 	color:#6eaa35
 }
 .btn-link:hover {
-	color:#a6de71
+	color:#669900;
 }
 .btn-ok,.btn-primary {
 	background:#6eaa35;
@@ -719,9 +719,10 @@ a {
 	color:#fff
 }
 .btn-ok.disabled,.btn-ok[disabled],.btn-primary.disabled,.btn-primary[disabled] {
-	border-color:#c6f797!important;
-	background:#c6f797!important;
-	color:#fff
+	border-color:#ccc!important;
+	background:#eee!important;
+	color:#999;
+	cursor:not-allowed;
 }
 .btn-radio .btn-active {
 	border-color:#ddd;
