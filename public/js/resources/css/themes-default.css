@@ -683,7 +683,12 @@ a {
 }
 .btn-default {
 	border-color:#ddd;
-	color:inherit
+	color:inherit;
+	transition:all ease .4s;
+	-moz-transition:all ease .4s;
+	-ms-transition:all ease .4s;
+	-o-transition:all ease .4s;
+	-webkit-transition:all ease .4s;
 }
 .btn-default:hover {
 	border-color:#b5b5b5;
@@ -706,11 +711,16 @@ a {
 .btn-ok,.btn-primary {
 	background:#6eaa35;
 	border-color:#6eaa35;
-	color:#fff
+	color:#fff;
+	transition:all ease .2s;
+	-moz-transition:all ease .2s;
+	-ms-transition:all ease .2s;
+	-o-transition:all ease .2s;
+	-webkit-transition:all ease .2s;
 }
 .btn-ok:hover,.btn-primary:hover {
-	border-color:#a6de71;
-	background:#a6de71;
+	border-color:#5e9b24;
+	background:#5e9b24;
 	color:#fff
 }
 .btn-ok:active,.btn-ok:focus,.btn-primary:active,.btn-primary:focus {
@@ -736,11 +746,21 @@ a {
 }
 .btn-lg {
 	font-size:15px;
-	padding:9px 16px
+	padding:9px 16px;
+	transition:all ease .4s;
+	-moz-transition:all ease .4s;
+	-ms-transition:all ease .4s;
+	-o-transition:all ease .4s;
+	-webkit-transition:all ease .4s;
 }
 .btn-sm {
 	font-size:14px;
-	padding:4px 10px
+	padding:4px 10px;
+	transition:all ease .4s;
+	-moz-transition:all ease .4s;
+	-ms-transition:all ease .4s;
+	-o-transition:all ease .4s;
+	-webkit-transition:all ease .4s;
 }
 .input-group-btn .btn {
 	border:none
@@ -1088,7 +1108,12 @@ a {
 	padding:7px 0;
 	padding-left:53px!important;
 	color:#6eaa35!important;
-	background:#f5f5f5!important
+	background:#f5f5f5!important;
+	transition:all ease .4s;
+	-moz-transition:all ease .4s;
+	-ms-transition:all ease .4s;
+	-o-transition:all ease .4s;
+	-webkit-transition:all ease .4s;
 }
 .page-sidebar-menu li .sub-menu .active a,.page-sidebar-menu li .sub-menu li a:hover {
 	background:#fff!important
@@ -1134,7 +1159,7 @@ a {
 	line-height:60px
 }
 .header .header-inner .nav>li>a:focus,.header .header-inner .nav>li>a:hover {
-	background-color:#41780d
+	background-color:#548f1b
 }
 .header .logo {
 	width:180px!important;
@@ -1158,7 +1183,12 @@ a {
 	padding:18px 30px;
 	line-height:1;
 	color:#fff;
-	float:left
+	float:left;
+	transition:all ease .5s;
+	-webkit-transition:all ease .5s;
+	-moz-transition:all ease .5s;
+	-ms-transition:all ease .5s;
+	-o-transition:all ease .5s;
 }
 .header .navbar-nav li.active a {
 	background-color:#57981a
@@ -1177,7 +1207,7 @@ a {
 }
 .header .nav_right {
 	position:absolute;
-	right:20px;
+	right:0px;
 	top:0;
 	height:40px
 }
@@ -1186,7 +1216,13 @@ a {
 	float:left
 }
 .header .nav_right .nav>li a {
-	color:#666
+	color:#666;
+	transition:all ease .5s;
+	-webkit-transition:all ease .5s;
+	-moz-transition:all ease .5s;
+	-ms-transition:all ease .5s;
+	-o-transition:all ease .5s;
+	
 }
 .header .nav_right .nav>li i {
 	font-size:16px
@@ -1278,10 +1314,15 @@ a {
 	width:100%;
 	text-align:left;
 	line-height:40px;
-	padding:0 18px
+	padding:0 18px;
+	transition:all ease .3s;
+	-moz-transition:all ease .3s;
+	-ms-transition:all ease .3s;
+	-o-transition:all ease .3s;
+	-webkit-transition:all ease .3s;
 }
 .header .userbar .dropdown-menu li a:hover {
-	background:#e6ffcf
+	background:#f1f1f1;
 }
 .header .userbar .dropdown-menu li a i {
 	color:#6eaa35
