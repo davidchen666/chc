@@ -154,6 +154,9 @@ body {
 a {
 	color:#6eaa35
 }
+a:hover{
+	color:#57981a
+}
 .fa.active {
 	color:#6eaa35!important
 }
