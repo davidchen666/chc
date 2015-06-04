@@ -1436,12 +1436,15 @@ a {
 	word-wrap:break-word
 }
 .portlet.default .portlet-title {
-	background:#ddd;
+	background:#eee;
 	color:#575757;
-	border-bottom:none
+	border-bottom:none;
+	border:1px solid #e1e1e1;
 }
 .portlet.default .portlet-body {
-	background:#f5f5f5
+	background:#f9f9f9;
+	border:1px solid #e5e5e5;
+	border-top:none;
 }
 .tools-expand {
 	position:relative;
