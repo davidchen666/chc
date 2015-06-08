@@ -79,6 +79,7 @@ define(function (require, exports, module) {
                         //@todo:对于sub_data数组进行赛选
                         //console.log(sub_data);
                         sub_data.merge_data();
+                        $p.com.alert("开始日期（周一): "+sub_data.start_day + "</br>结束日期(周日): "+sub_data.end_day);
                     }
                     if (typeof callback === "function") {
                         callback(sub_data);
