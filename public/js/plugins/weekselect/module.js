@@ -15,6 +15,8 @@ define(function (require, exports, module) {
             var maxdate, mindate, maxFullYear, minFullYear, selecthtml, year_list, select_month, month_list, select_week, clickweek, select_year;
             if (options.multichoice) {
                 sub_data = [];
+            }else{
+                sub_data = {};
             }
             select_year = function () {
                 maxdate = moment(data.maxdate);
