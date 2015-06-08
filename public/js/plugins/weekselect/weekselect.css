@@ -27,7 +27,11 @@
     color: #FFFFFF;
     cursor: pointer;
 }
+.delete:hover{
+    cursor: pointer;
+    color:#ed0000;
+}
 select.inline {
     margin: 10px;
-    display: inline;
+    /*display: inline;*/
 }

@@ -10,9 +10,12 @@ define(function (require, exports, module) {
     var g = window;
 
     function WeekSelect(selector, options, callback) {
+        var sub_data;
         options.yearlist("", function (data) {
-            var maxdate, mindate, maxFullYear, minFullYear, selecthtml, year_list, select_month, month_list, select_week, sub_data, clickweek, select_year;
-            if(options.multichoice){sub_data = [];}
+            var maxdate, mindate, maxFullYear, minFullYear, selecthtml, year_list, select_month, month_list, select_week, clickweek, select_year;
+            if (options.multichoice) {
+                sub_data = [];
+            }
             select_year = function () {
                 maxdate = moment(data.maxdate);
                 mindate = moment(data.mindate);
@@ -26,7 +29,7 @@ define(function (require, exports, module) {
                 }
                 year_list += "</select>";
                 select_month = "<span id='select_month'></span>";
-                select_month += "<div id='output'></div>";
+                select_month += "<div id='output'></div><div id='choice'></div>";
                 selecthtml = year_list + select_month;
                 return selecthtml;
             };
@@ -56,18 +59,26 @@ define(function (require, exports, module) {
             $p.com.dialog(selector, {
                 title: "选择周",
                 body: select_year(),
-                validate: function () {
-                    //@todo:验证提交的数据是否合法
+                initForm: function () {
+                    //关闭确认按钮
+                    $(".btn-primary").addClass("disabled");
                 },
                 submit: function (modal, data, params, cb) {
 
                     if (!Array.isArray(sub_data)) {
-                        $p.com.alert($("#select_year").find("option:selected").val() +
-                            "年的第" + sub_data.weeknum +
-                            "周</br>开始日期(周一):" + sub_data.start_day +
-                            "</br>结束日期(周日)：" + sub_data.end_day);
-                    }else{
-                        console.log(sub_data);
+                        //console.log(typeof sub_data);
+                        if (typeof sub_data === "undefined") {
+                            $p.com.alert("没有选择日期范围", "error");
+                        } else {
+                            $p.com.alert($("#select_year").find("option:selected").val() +
+                                "年的第" + sub_data.weeknum +
+                                "周</br>开始日期(周一):" + sub_data.start_day +
+                                "</br>结束日期(周日)：" + sub_data.end_day);
+                        }
+                    } else {
+                        //@todo:对于sub_data数组进行赛选
+                        //console.log(sub_data);
+                        sub_data.merge_data();
                     }
                     if (typeof callback === "function") {
                         callback(sub_data);
@@ -75,20 +86,77 @@ define(function (require, exports, module) {
                     modal.hide();
                 }
             });
+            //对于sub_data进行数组整合
+            sub_data.merge_data = function () {
+                var start_arr = [], end_arr = [], start_day, end_day;
+                if (Array.isArray(sub_data)) {
+                    if (options.merge_data) {
+                        sub_data.forEach(function (ele) {
+                            start_arr.push(new Date(ele.start_day).getTime());
+                            end_arr.push(new Date(ele.end_day).getTime());
+                        });
+                        //console.log(sub_data.sort());
+                        start_day = moment(new Date(Math.min.apply(null, start_arr))).format("YYYY-MM-DD");
+                        end_day = moment(new Date(Math.max.apply(null, end_arr))).format("YYYY-MM-DD");
+                        sub_data.start_day = start_day;
+                        sub_data.end_day = end_day;
+                        console.log($("#choice").find(".delete").html());
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    //console.log(sub_data);
+                }
+            };
             clickweek = function (selector) {
+                var count_push;
+
                 $(selector).on("click", function () {
-                    if(!options.multichoice){
+                    if (!options.multichoice) {
+                        //单选
+                        $(".btn-primary").removeClass("disabled");
                         $("tr").removeClass("active_on");
                         $(this).addClass("active_on");
                         sub_data = JSON.parse($(this).attr('value'));
-                    }else{
-                        sub_data.push(JSON.parse($(this).attr('value')));
-                        $("#output").after("sub_data");
-                        console.log(sub_data);
-                    }
+                    } else {
+                        //复选
+                        $(".btn-primary").removeClass("disabled");
 
+                        if (parseInt(sub_data.length) < parseInt(options.limit_mulitichoice)) {
+                            sub_data.push(JSON.parse($(this).attr('value')));
+                            count_push = sub_data.length - 1;
+                            //console.log(sub_data);
+                            var last_ele;
+                            last_ele = '';
+                            var render_subdata = function () {
+                                sub_data.forEach(function (ele, index) {
+
+                                    last_ele += "<div class='delete' value='" +
+                                        "{\"weeknum\":\"" + ele.week_num + "\",\"start_day\":\"" + ele.start_day + "\",\"end_day\":\"" + ele.end_day + "\"}" + "'>" +
+                                        "第" + ele.weeknum + "周 " +
+                                        " 开始日期：" + ele.start_day +
+                                        " 结束日期：" + ele.end_day +
+                                        " <span class='icon icon-close-circle'></span></div>";
+                                });
+                            }
+                            render_subdata();
+                            $("#choice").html(last_ele);
+                            //console.log(last_ele);
+                            $(".delete").click(function () {
+                                //console.log(parseInt($(this).attr('value')));
+                                sub_data.splice($(this).attr('value'), 1);
+                                //console.log("删掉后的结果");
+                                //console.log(sub_data);
+                                //render_subdata();
+                                $(this).hide();
+                                $(this).remove();
+                                //$("#choice").html(last_ele);
+                            });
+                        }
+                    }
                 });
-            }
+            };
+
             $("#select_year").change(
                 function () {
                     var split_count;
@@ -140,7 +208,6 @@ define(function (require, exports, module) {
                             }
                         );
                         clickweek(".week");
-
                     });
                 }
             );

@@ -21,7 +21,7 @@ define(function (require, exports, module) {
                 count_week = start_day.weeks() - 1;
             } else if (parseInt(day_01) === 0) {
                 start_day = moment(moment(src_day).add('days', 1).format("YYYY-MM-DD"));
-                count_week = 0;
+                count_week = 1;
             } else if (parseInt(day_01 === 1)) {
                 console.log("monday is 1");
                 start_day = moment(src_day.format("YYYY-MM-DD"));
