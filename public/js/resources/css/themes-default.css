@@ -668,6 +668,9 @@ a:hover{
 .form-control.form-control-lg {
 	height:40px;
 	font-size:12px
+}.form-control.form-control-md {
+	height:34px;
+	font-size:12px
 }
 .form-control:hover {
 	border-color:#b5b5b5
@@ -840,7 +843,7 @@ a:hover{
 .date-range-toggle {
 	border-left:none!important;
 	background:#fff!important;
-	height:40px;
+	height:30px;
 	padding-left:0
 }
 .date-range-toggle:hover {
@@ -937,6 +940,11 @@ a:hover{
 .modal .modal-dialog {
 	width:500px;
 	margin:100px auto
+}
+.modal .modal-dialog-lg {
+    width:900px!important;
+    padding-bottom: 20px!important;
+    margin:100px auto
 }
 .modal .modal-dialog.modal-sm {
 	width:400px
@@ -1361,7 +1369,7 @@ a:hover{
 .footer .link a {
 	color:#6eaa35
 }
-.footer.fixed {
+.footer.cpfixed {
 	position:fixed;
 	bottom:0
 }
@@ -1800,4 +1808,8 @@ a:hover{
 #panel_color_wrap .panel_color li {
 	padding:10px;
 	font-family:'DejaVu Sans Mono'
+}
+
+.show-grid{
+    margin-bottom: 15px;
 }

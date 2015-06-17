@@ -4038,7 +4038,7 @@ button.close {
 	visibility:hidden!important
 }
 .affix {
-	position:fixed
+	position:fixed!important;
 }
 @-ms-viewport {
 	width:device-width
@@ -7812,7 +7812,9 @@ li [class*=" fa-"].icon-large,li [class^=fa-].icon-large {
 	min-height:60px
 }
 .header.navbar-fixed-top {
-	z-index:9995!important
+	position: fixed;
+	z-index:9995!important;
+	margin-bottom:120px;
 }
 .header .navbar-brand {
 	display:inline-block;
@@ -7948,7 +7950,7 @@ li [class*=" fa-"].icon-large,li [class^=fa-].icon-large {
 	margin-top:3px
 }
 .page-container {
-	margin:0;
+	margin-top:60px;
 	padding:0;
 	position:relative
 }
@@ -11598,4 +11600,19 @@ div.checker.disabled:hover,div.radio.disabled:hover {
 }
 .table-bordered,.table-bordered>tbody>tr>td,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>td,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>thead>tr>th {
 	border:1px solid #eee
+}
+
+.success{
+	color:green;
+	font-size:20px;
+}
+
+.stop, .error{
+	color:red;
+	font-size:20px;
+}
+
+.warrning {
+	color:yellow;
+	font-size:20px;
 }
