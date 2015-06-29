@@ -6,9 +6,12 @@ define(function(require, exports, module) {
     require('../../plugins/datepicker/module');
 
     app.page.daterange = function() {
+        var module = require('./model');
         $p.plugin.dateRangePicker("#my_picker", {
             textForamt: "YYYY年MM月DD日",
             defaultDate: [moment().subtract('days', 6), moment()], //默认最近一周
+            yearlist:module.getYearList, //获取时间区间
+            multichoice: false
         }, function(start, end) {
             $p.com.alert("开始时间：" + start + " , 结束时间：" + end);
         });

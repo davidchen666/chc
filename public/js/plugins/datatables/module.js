@@ -558,7 +558,6 @@
 
  			$(seletor).addClass("table-custom table  table-hover  " + options.sClass);
  			this.table = oTable = $(seletor).dataTable(this.options);
-
  			$(seletor + '_wrapper .dataTables_filter input').addClass("form-control input-small");
  			$(seletor + '_wrapper .dataTables_length select').addClass("form-control input-small");
 
@@ -581,14 +580,13 @@
  				k++;
  			});
  		}
+
  	}
 
 
  	g[PagurianAlias].plugin.dataTable = function(seletor, options) {
  		var table = new DataTables(seletor, options);
-
  		table.init();
-
  		return table;
  	}
 

@@ -38,17 +38,17 @@ define(function (require, exports, module) {
 
             select_week = function (selector, month_option, month) {
                 var week_info;
-                week_info = "<table>";
+                week_info = "<table id='week_table'>";
                 $(selector).html(month_option);
                 month.forEach(function (ele) {
                     week_info += "<tr class='week' value='" +
                         "{\"weeknum\":\"" + ele.week_num + "\",\"start_day\":\"" + ele.start_day + "\",\"end_day\":\"" + ele.end_day + "\"}" +
-                        "'><td>第" +
+                        "'><td class='week_td'>第" +
                         ele.week_num +
-                        "周</td><td>开始日期:" +
+                        "周</td><td class='week_td'>开始日期:" +
                         ele.start_day +
                         "(周一)</td>" +
-                        "<td>结束日期:" +
+                        "<td class='week_td'>结束日期:" +
                         ele.end_day +
                         "(周日)</td></tr>";
                 });
@@ -168,14 +168,14 @@ define(function (require, exports, module) {
                         $("#select_month").html("选择月份");
                         var date_data = $(document).WeekSelect.ShowWeeks(v1);
                     }
-                    month_list = "<table><tbody><tr>";
+                    month_list = "<table id='month_table'><tbody><tr>";
                     split_count = 1;
                     for (var month_val in date_data[v1]) {
                         if (split_count < 4) {
                             if (month_val / 4 != split_count) {
-                                month_list += "<td class='month'>" + month_val + "月</td>";
+                                month_list += "<td class='month_td'>" + month_val + "月</td>";
                             } else {
-                                month_list += "<td class='month'>" + month_val + "月</td>";
+                                month_list += "<td class='month_td'>" + month_val + "月</td>";
                                 if (month_list == 12) {
                                     month_list += "</tr>";
                                 } else {
@@ -187,7 +187,7 @@ define(function (require, exports, module) {
                     }
                     month_list += "</tbody></table>";
                     $("#output").html(month_list);
-                    $(".month").on("click", function () {
+                    $(".month_td").on("click", function () {
                         var select_month = parseInt($(this).html());
                         var month_option = "<select class='form-control input-small inline' name='reqMon' id='select_mon'>";
                         for (month_val in date_data[v1]) {

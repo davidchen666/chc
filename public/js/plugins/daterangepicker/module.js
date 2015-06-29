@@ -29,7 +29,10 @@ define(function(require, exports, module) {
                 '最近一周': [moment().subtract('days', 6), moment()],
                 '最近一个月': [moment().subtract('month', 1), moment()],
                 '最近三个月': [moment().subtract('month', 3), moment()],
-                '最近半年': [moment().subtract('month', 6), moment()]
+                '最近半年': [moment().subtract('month', 6), moment()],
+            },
+            selectweek:{
+                title:'周选择'
             },
             locale: {
                 applyLabel: '确定',

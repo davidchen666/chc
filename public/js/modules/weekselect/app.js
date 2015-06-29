@@ -9,9 +9,9 @@ define(function (require, exports, module) {
     app.page.weekselect = function () {
         $p.plugin.weekselect("#select_week", {
             yearlist: model.getYearList, //年份限制
-            multichoice: true, //是否多选
-            limit_mulitichoice: 2, //多选限制
-            merge_data: true //是否日期对象数组，编程为
+            multichoice: false, //是否多选
+            //limit_mulitichoice: 2, //多选限制
+            //merge_data: true //是否日期对象数组，编程为
         }, function (data) {
 
             if (Array.isArray(data)) {

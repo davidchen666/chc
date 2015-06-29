@@ -1,18 +1,18 @@
 #output{
 }
-#output table {
+#week_table, #month_table{
     margin:10px;
 }
-.month{
+.month_td{
     width:200px;
     padding: 10px;
     border: solid #000000 1px;
 }
-.month:hover {
+.month_td:hover {
     background-color: #6eaa35;
     cursor: pointer;
 }
-.week td {
+.week_td {
     min-width:80px;
     padding: 3px;
     border: solid #000000 1px;
