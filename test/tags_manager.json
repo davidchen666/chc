@@ -1,0 +1,590 @@
+{
+  "code": "20000",
+  "result": [{
+    "key": 1,
+    "value": {
+      "tag_group": {
+        "key": "16",
+        "value": "探索发现"
+      },
+      "tag_name": {
+        "key": "12",
+        "value": "历史"
+      },
+      "taggroup_udatetime": "2015-05-01 11:11:11",
+      "rule_status": 200,
+      "action_type": "or",
+      "user_attr": [{
+        "key": "111",
+        "value": {
+          "attr_name": {
+            "key": "10",
+            "value": {
+              "e_name": "age",
+              "c_name": "年龄"
+            }
+          },
+          "attr_where": {
+            "key": "11",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "12",
+            "value": {
+              "e_name": "15-25",
+              "c_name": "15-20岁",
+              "value": [15, 20]
+            }
+          }
+        }
+      }, {
+        "key": "112",
+        "value": {
+          "attr_name": {
+            "key": "20",
+            "value": {
+              "e_name": "gender",
+              "c_name": "性别"
+            }
+          },
+          "attr_where": {
+            "key": "21",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "23",
+            "value": {
+              "e_name": "male",
+              "c_name": "男性",
+              "value": "m"
+            }
+          }
+        }
+      }, {
+        "key": "113",
+        "value": {
+          "attr_name": {
+            "key": "30",
+            "value": {
+              "e_name": "location",
+              "c_name": "地区"
+            }
+          },
+          "attr_where": {
+            "key": "31",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "32",
+            "value": {
+              "e_name": "Shanghai",
+              "c_name": "上海",
+              "value": "021"
+            }
+          }
+        }
+      }],
+      "user_action": [{
+        "key": "121",
+        "value": {
+          "action_name": {
+            "key": "1",
+            "value": "播放"
+          },
+          "action_attr": {
+            "key": "14",
+            "value": {
+              "e_name": "super_star",
+              "c_name": "明星"
+            }
+          },
+          "action_where": {
+            "key": "23",
+            "value": {
+              "e_name": "like",
+              "c_name": "包含"
+            }
+          },
+          "action_value": [{
+            "key": "14",
+            "value": {
+              "e_name": "jackychan",
+              "c_name": "成龙",
+              "id": "14",
+              "type_name": "super_star",
+              "type_id": "4"
+            }
+          }, {
+            "key": "16",
+            "value": {
+              "e_name": "brucelee",
+              "c_name": "李小龙",
+              "id": "16",
+              "type_name": "super_star",
+              "type_id": "4"
+            }
+          }],
+          "action_cycle": {
+            "key": "25",
+            "value": {
+              "e_name": "equal",
+              "c_name": "等于"
+            }
+          },
+          "action_cycle_value": [1],
+          "action_status": 0
+        }
+      }, {
+        "key": "122",
+        "value": {
+          "action_name": {
+            "key": "1",
+            "value": "播放"
+          },
+          "action_attr": {
+            "key": "13",
+            "value": {
+              "e_name": "video",
+              "c_name": "视频"
+            }
+          },
+          "action_where": {
+            "key": "23",
+            "value": {
+              "e_name": "equal",
+              "c_name": "等于"
+            }
+          },
+          "action_value": [{
+            "key": "3164",
+            "value": {
+              "e_name": "a_plan",
+              "c_name": "A计划",
+              "id": "1478",
+              "type_name": "video",
+              "type_id": "3"
+            }
+          }, {
+            "key": "1476",
+            "value": {
+              "e_name": "b_plan",
+              "c_name": "B计划",
+              "id": "1796",
+              "type_name": "video",
+              "type_id": "3"
+            }
+          }],
+          "action_cycle": {
+            "key": "25",
+            "value": {
+              "e_name": "between",
+              "c_name": "介于"
+            }
+          },
+          "action_cycle_value": [3, 5],
+          "action_status": 0
+        }
+      }]
+    }
+  }, {
+    "key": 2,
+    "value": {
+      "tag_group": {
+        "key": "16",
+        "value": "电影"
+      },
+      "tag_name": {
+        "key": "12",
+        "value": "动作"
+      },
+      "taggroup_udatetime": "2015-05-02 11:11:11",
+      "rule_status": 404,
+      "action_type": "or",
+      "user_attr": [{
+        "key": "211",
+        "value": {
+          "attr_name": {
+            "key": "10",
+            "value": {
+              "e_name": "age",
+              "c_name": "年龄"
+            }
+          },
+          "attr_where": {
+            "key": "11",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "12",
+            "value": {
+              "e_name": "15-25",
+              "c_name": "15-20岁",
+              "value": [15, 20]
+            }
+          }
+        }
+      }, {
+        "key": "212",
+        "value": {
+          "attr_name": {
+            "key": "20",
+            "value": {
+              "e_name": "gender",
+              "c_name": "性别"
+            }
+          },
+          "attr_where": {
+            "key": "21",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "23",
+            "value": {
+              "e_name": "male",
+              "c_name": "男性",
+              "value": "m"
+            }
+          }
+        }
+      }, {
+        "key": "213",
+        "value": {
+          "attr_name": {
+            "key": "30",
+            "value": {
+              "e_name": "location",
+              "c_name": "地区"
+            }
+          },
+          "attr_where": {
+            "key": "31",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "32",
+            "value": {
+              "e_name": "Shanghai",
+              "c_name": "上海",
+              "value": "021"
+            }
+          }
+        }
+      }],
+      "user_action": [{
+        "key": "221",
+        "value": {
+          "action_name": {
+            "key": "1",
+            "value": "播放"
+          },
+          "action_attr": {
+            "key": "14",
+            "value": {
+              "e_name": "super_star",
+              "c_name": "明星"
+            }
+          },
+          "action_where": {
+            "key": "23",
+            "value": {
+              "e_name": "like",
+              "c_name": "包含"
+            }
+          },
+          "action_value": [{
+            "key": "14",
+            "value": {
+              "e_name": "jackychan",
+              "c_name": "成龙",
+              "id": "14",
+              "type_name": "super_star",
+              "type_id": "4"
+            }
+          }, {
+            "key": "16",
+            "value": {
+              "e_name": "brucelee",
+              "c_name": "李小龙",
+              "id": "16",
+              "type_name": "super_star",
+              "type_id": "4"
+            }
+          }],
+          "action_cycle": {
+            "key": "25",
+            "value": {
+              "e_name": "between",
+              "c_name": "介于"
+            }
+          },
+          "action_cycle_value": [1, 5],
+          "action_status": 0
+        }
+      }, {
+        "key": "122",
+        "value": {
+          "action_name": {
+            "key": "1",
+            "value": "播放"
+          },
+          "action_attr": {
+            "key": "13",
+            "value": {
+              "e_name": "video",
+              "c_name": "视频"
+            }
+          },
+          "action_where": {
+            "key": "23",
+            "value": {
+              "e_name": "equal",
+              "c_name": "等于"
+            }
+          },
+          "action_value": [{
+            "key": "3164",
+            "value": {
+              "e_name": "a_plan",
+              "c_name": "A计划",
+              "id": "1478",
+              "type_name": "video",
+              "type_id": "3"
+            }
+          }, {
+            "key": "1476",
+            "value": {
+              "e_name": "b_plan",
+              "c_name": "B计划",
+              "id": "1796",
+              "type_name": "video",
+              "type_id": "3"
+            }
+          }],
+          "action_cycle": {
+            "key": "25",
+            "value": {
+              "e_name": "between",
+              "c_name": "介于"
+            }
+          },
+          "action_cycle_value": [3, 5],
+          "action_status": 0
+        }
+      }]
+    }
+  }, {
+    "key": 3,
+    "value": {
+      "tag_group": {
+        "key": "16",
+        "value": "电影"
+      },
+      "tag_name": {
+        "key": "12",
+        "value": "科幻"
+      },
+      "taggroup_udatetime": "2015-05-02 11:11:11",
+      "rule_status": 500,
+      "action_type": "or",
+      "user_attr": [{
+        "key": "311",
+        "value": {
+          "attr_name": {
+            "key": "10",
+            "value": {
+              "e_name": "age",
+              "c_name": "年龄"
+            }
+          },
+          "attr_where": {
+            "key": "11",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "12",
+            "value": {
+              "e_name": "15-25",
+              "c_name": "15-20岁",
+              "value": [15, 20]
+            }
+          }
+        }
+      }, {
+        "key": "312",
+        "value": {
+          "attr_name": {
+            "key": "20",
+            "value": {
+              "e_name": "gender",
+              "c_name": "性别"
+            }
+          },
+          "attr_where": {
+            "key": "21",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "23",
+            "value": {
+              "e_name": "male",
+              "c_name": "男性",
+              "value": "m"
+            }
+          }
+        }
+      }, {
+        "key": "313",
+        "value": {
+          "attr_name": {
+            "key": "30",
+            "value": {
+              "e_name": "location",
+              "c_name": "地区"
+            }
+          },
+          "attr_where": {
+            "key": "31",
+            "value": {
+              "e_name": "==",
+              "c_name": "等于"
+            }
+          },
+          "attr_info": {
+            "key": "32",
+            "value": {
+              "e_name": "Shanghai",
+              "c_name": "上海",
+              "value": "021"
+            }
+          }
+        }
+      }],
+      "user_action": [{
+        "key": "321",
+        "value": {
+          "action_name": {
+            "key": "2",
+            "value": "完全播放"
+          },
+          "action_attr": {
+            "key": "14",
+            "value": {
+              "e_name": "super_star",
+              "c_name": "明星"
+            }
+          },
+          "action_where": {
+            "key": "23",
+            "value": {
+              "e_name": "like",
+              "c_name": "包含"
+            }
+          },
+          "action_value": [{
+            "key": "14",
+            "value": {
+              "e_name": "jackychan",
+              "c_name": "成龙",
+              "id": "14",
+              "type_name": "super_star",
+              "type_id": "4"
+            }
+          }, {
+            "key": "16",
+            "value": {
+              "e_name": "brucelee",
+              "c_name": "李小龙",
+              "id": "16",
+              "type_name": "super_star",
+              "type_id": "4"
+            }
+          }],
+          "action_cycle": {
+            "key": "25",
+            "value": {
+              "e_name": "between",
+              "c_name": "介于"
+            }
+          },
+          "action_cycle_value": [1, 5],
+          "action_status": 0
+        }
+      }, {
+        "key": "322",
+        "value": {
+          "action_name": {
+            "key": "1",
+            "value": "播放"
+          },
+          "action_attr": {
+            "key": "13",
+            "value": {
+              "e_name": "video",
+              "c_name": "视频"
+            }
+          },
+          "action_where": {
+            "key": "23",
+            "value": {
+              "e_name": "equal",
+              "c_name": "等于"
+            }
+          },
+          "action_value": [{
+            "key": "3164",
+            "value": {
+              "e_name": "a_plan",
+              "c_name": "A计划",
+              "id": "1478",
+              "type_name": "video",
+              "type_id": "3"
+            }
+          }, {
+            "key": "1476",
+            "value": {
+              "e_name": "b_plan",
+              "c_name": "B计划",
+              "id": "1796",
+              "type_name": "video",
+              "type_id": "3"
+            }
+          }],
+          "action_cycle": {
+            "key": "25",
+            "value": {
+              "e_name": "between",
+              "c_name": "介于"
+            }
+          },
+          "action_cycle_value": [3, 5],
+          "action_status": 0
+        }
+      }]
+    }
+  }]
+
+}
