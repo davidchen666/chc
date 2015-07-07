@@ -20,21 +20,19 @@
             View::instance('index/index.tpl')->show($data);
         }
         function uploadFile(){
-
             $targetFolder = 'iresearch_ui/public/uploads';
-            //$verifyToken = md5('unique_salt' . $_POST['timestamp']);
             if (!empty($_FILES)) {
                 $tempFile = $_FILES['Filedata']['tmp_name'];
                 $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
                 $targetFile = rtrim($targetPath,'/') . '/' . $_FILES['Filedata']['name'];
                 echo $targetFile;
-                $fileTypes = array('jpg','jpeg','gif','png','xls','xlsx');
+                $fileTypes = array('xls','xlsx');
                 $fileParts = pathinfo($_FILES['Filedata']['name']);
                 if (in_array($fileParts['extension'],$fileTypes)) {
                     move_uploaded_file($tempFile,$targetFile);
-                    echo 'ok';
+                    echo '上传成功';
                 } else {
-                    echo 'error';
+                    echo '文件类型错误';
                 }
             }
         }
