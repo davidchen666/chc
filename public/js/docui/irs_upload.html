@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="../resources/css/public.css" rel="stylesheet" type="text/css"/>
+    <link id="style_themes" href="../resources/css/themes-default.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="container">
+        <input id="file_upload" name="file_upload" type="file" multiple="true">
+</div>
+</body>
+<script src="../../pagurian.js" ></script>
+<script type="text/javascript">
+
+    pagurian.call("modules/irs_upload/app", function(app) {
+        app.page.index();
+    });
+
+</script>
+</html>
