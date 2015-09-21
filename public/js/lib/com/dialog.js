@@ -17,6 +17,8 @@ define(function(require, exports, module) {
 
         var _id = '_' + (Math.random() * 1E18).toString(36).slice(0, 5).toUpperCase();
 
+        var this_selector;
+
         var template = "";
 
         template += '<div class="modal fade" id="modal' + _id + '" >';
@@ -31,7 +33,7 @@ define(function(require, exports, module) {
         template += '            <div class="modal-footer">';
         template += '                <span class="submit-waiting"></span>';
         template += '                <button id="btn_submit' + _id + '" class="btn btn-primary" type="button">{btn_submit}</button>';
-        template += '                <button data-dismiss="modal" class="btn btn-default" type="button">{btn_cancel}</button>';
+        template += '                <button id="btn_cancel'+_id + '"data-dismiss="modal" class="btn btn-default" type="button">{btn_cancel}</button>';
         template += '            </div>';
         template += '        </div>';
         template += '    </div>';
@@ -81,24 +83,30 @@ define(function(require, exports, module) {
             if (seletor) {
                 //给按钮绑定事件
                 $(document).delegate(seletor, 'click', function() {
-
                     var params = $(this).data("params");
+                    this_selector = $(this); //选择器本身
                     modal.params = eval("(" + params + ")") || {};
                     modal.show();
                     if (typeof options.initForm === "function") {
-                        options.initForm(modal, form, modal.params);
+                        options.initForm(modal, form, modal.params,this_selector); //回调中增加选择器本身
+                    }
+                    //按钮是否显示
+                    if (!options.display_btn) {
+                        $("#btn_submit"+_id).remove();
+                        $("#btn_cancel"+_id).remove();
+                    }
+                    //大窗口
+                    if (options.big_dialog) {
+                        $("#modal" + _id + "> .modal-dialog").attr('class', "modal-dialog-lg ");
+                        $("#DataTables_Table_0_wrapper").find(".bottom").attr("style", "display:block");
                     }
                 });
             }
 
             this.element = $("#modal" + _id);
 
-            //提交按钮绑定事件
-            $("#btn_submit" + _id).click(function() {
-
-
+            var submit_form = function (){
                 var data = form.serializeArray() || [];
-
                 //jquery.validate 验证表单
                 if (form.length && typeof form.valid === "function" && !form.valid()) {
                     return false;
@@ -113,9 +121,19 @@ define(function(require, exports, module) {
                 if (typeof options.submit === "function") {
                     $(this).addClass("disabled").prop("disabled", true);
                     $("#modal" + _id + " .submit-waiting").html('<i class="fa fa-spinner fa-spin"></i>');
-                    options.submit(modal, data, modal.params);
+                    options.submit(modal, data, modal.params, this_selector);
                 }
+            };
 
+            //提交按钮绑定事件
+            $("#btn_submit" + _id).click(function() {submit_form();});
+
+            //绑定回车提交提交
+            $("#btn_submit" +_id).bind('keydown',function(e){
+                var k = e.which;
+                if (k === 13){
+                    submit_form();
+                }
             });
 
             return this;
@@ -125,8 +143,9 @@ define(function(require, exports, module) {
 
             $("#modal" + _id + " .submit-waiting").html('');
             $('#modal' + _id + " .btn").removeClass("disabled").removeAttr("disabled");
+
         };
-        
+
         this.show = function() {
 
             resetForm($("#modal" + _id + " form"));
