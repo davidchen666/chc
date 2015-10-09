@@ -7,10 +7,9 @@
  *     }
  * });
  */
-define(function(require, exports, module) {
+define(function (require, exports, module) {
 
     var g = window;
-
 
 
     function Dialog() {
@@ -33,7 +32,7 @@ define(function(require, exports, module) {
         template += '            <div class="modal-footer">';
         template += '                <span class="submit-waiting"></span>';
         template += '                <button id="btn_submit' + _id + '" class="btn btn-primary" type="button">{btn_submit}</button>';
-        template += '                <button id="btn_cancel'+_id + '"data-dismiss="modal" class="btn btn-default" type="button">{btn_cancel}</button>';
+        template += '                <button id="btn_cancel' + _id + '"data-dismiss="modal" class="btn btn-default" type="button">{btn_cancel}</button>';
         template += '            </div>';
         template += '        </div>';
         template += '    </div>';
@@ -43,13 +42,13 @@ define(function(require, exports, module) {
         function resetForm(form) {
 
             var form_element_list = form.find("input,textarea");
-            form_element_list.each(function() {
+            form_element_list.each(function () {
                 if ($(this).attr('type') === "text" || $(this).attr('type') === "hidden" || $(this).get(0).tagName === "TEXTAREA") {
                     $(this).val("");
                 }
             });
 
-            form.find(".help-block").each(function() {
+            form.find(".help-block").each(function () {
                 var tip = $(this).data("tip");
                 if (tip) {
                     $(this).text(tip).addClass("tip");
@@ -60,12 +59,10 @@ define(function(require, exports, module) {
         }
 
 
-        this.init = function(seletor, options) {
-
+        this.init = function (seletor, options) {
 
 
             var modal = this;
-
 
 
             //初始化模版
@@ -82,18 +79,18 @@ define(function(require, exports, module) {
 
             if (seletor) {
                 //给按钮绑定事件
-                $(document).delegate(seletor, 'click', function() {
+                $(document).delegate(seletor, 'click', function () {
                     var params = $(this).data("params");
                     this_selector = $(this); //选择器本身
                     modal.params = eval("(" + params + ")") || {};
                     modal.show();
                     if (typeof options.initForm === "function") {
-                        options.initForm(modal, form, modal.params,this_selector); //回调中增加选择器本身
+                        options.initForm(modal, form, modal.params, this_selector); //回调中增加选择器本身
                     }
                     //按钮是否显示
                     if (!options.display_btn) {
-                        $("#btn_submit"+_id).remove();
-                        $("#btn_cancel"+_id).remove();
+                        $("#btn_submit" + _id).remove();
+                        $("#btn_cancel" + _id).remove();
                     }
                     //大窗口
                     if (options.big_dialog) {
@@ -105,7 +102,7 @@ define(function(require, exports, module) {
 
             this.element = $("#modal" + _id);
 
-            var submit_form = function (){
+            var submit_form = function () {
                 var data = form.serializeArray() || [];
                 //jquery.validate 验证表单
                 if (form.length && typeof form.valid === "function" && !form.valid()) {
@@ -126,12 +123,14 @@ define(function(require, exports, module) {
             };
 
             //提交按钮绑定事件
-            $("#btn_submit" + _id).click(function() {submit_form();});
+            $("#btn_submit" + _id).click(function () {
+                submit_form();
+            });
 
             //绑定回车提交提交
-            $("#btn_submit" +_id).bind('keydown',function(e){
+            $("#btn_submit" + _id).bind('keydown', function (e) {
                 var k = e.which;
-                if (k === 13){
+                if (k === 13) {
                     submit_form();
                 }
             });
@@ -139,14 +138,14 @@ define(function(require, exports, module) {
             return this;
         };
 
-        this.complete = function(data, valid) {
+        this.complete = function (data, valid) {
 
             $("#modal" + _id + " .submit-waiting").html('');
             $('#modal' + _id + " .btn").removeClass("disabled").removeAttr("disabled");
 
         };
 
-        this.show = function() {
+        this.show = function () {
 
             resetForm($("#modal" + _id + " form"));
             $('#modal' + _id + " .submit-waiting").html("");
@@ -156,13 +155,13 @@ define(function(require, exports, module) {
             return this;
         };
 
-        this.hide = function() {
+        this.hide = function () {
             $('#modal' + _id).modal('hide');
             return this;
         };
     }
 
-    g[PagurianAlias].com.dialog = function(seletor, options) {
+    g[PagurianAlias].com.dialog = function (seletor, options) {
         var dialog = new Dialog();
         dialog.init(seletor, options);
         return dialog;
