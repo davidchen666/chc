@@ -6,5 +6,6 @@ define({
     getExcelData:"http://10.10.21.163/iadm_web/?m=Excel&a=exportPR",
     treeList:"iresearch_ui/test/jsTree.json",
     datelist: "iresearch_ui/test/datelist.json",
-    importExcel:"iresearch_ui/?m=demo&a=ImportExcel"
+    importExcel:"iresearch_ui/?m=demo&a=ImportExcel",
+    jsonEditorTemplate:"iresearch_ui/test/jsonEditorTemplate.json"
 });
