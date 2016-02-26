@@ -6,7 +6,6 @@
  * Create 15-03-12 14:34
  */
 	class IndexController extends Controller{
-
 		private $model;
         private $_api;
         function __construct(){
