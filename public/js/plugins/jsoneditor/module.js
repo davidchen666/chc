@@ -35,6 +35,8 @@ define(function (require, exports, module) {
 //                    console.log(jsonData);
                 };
                 console.log(rsData);
+                options.rsTemplateJson = rsData.rsTemplateJson;
+                options.seletorID = seletor;
                 var container = document.getElementById(seletor);
                 var editor = new JSONEditor(container, options, rsData.rsTextShowJson);
                 //显示默认的模板
@@ -131,8 +133,8 @@ define(function (require, exports, module) {
         var nodeParent = node.parent;
         var nodeType = 'Default';
         console.log(nodeLev);
-        if (nodeLev === '0') {
-            noteType = 'TopOne';
+        if (nodeLev === 0) {
+            nodeType = 'TopOne';
         }
         else {
             $(nodeParent.childs).each(function () {
@@ -151,7 +153,8 @@ define(function (require, exports, module) {
         var rs = {};
         switch (type) {
             case 'TopOne':
-
+                console.log(node);
+                setDefaultTemplate(node.editor.options.seletorID, node.editor.options.rsTemplateJson, node.editor);
                 break;
             case 'Default':
                 var nodeLev = node.getLevel();

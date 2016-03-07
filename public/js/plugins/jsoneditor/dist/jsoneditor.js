@@ -163,7 +163,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'ajv', 'schema',
 	        'onChange', 'onEditable', 'onError', 'onModeChange',
 	        'escapeUnicode', 'history', 'search', 'mode', 'modes', 'name', 'indentation',
-            'dataSource','showTab'
+            'dataSource','showTab','rsTemplateJson','seletorID'
 	      ];
 
 	      Object.keys(options).forEach(function (option) {
