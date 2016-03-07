@@ -16,29 +16,49 @@ class ServiceController extends Controller
 
     function __construct()
     {
-
+        $this->model = Model::instance("service");
     }
 
     /**
      * 获得省市
      */
+    public function listProCity(){
+        $rs = $this->model->listProCity();
+        if (count($rs) != 0) {
+            echo $this->success($rs);
+        } else {
+            echo $this->error('提交错误', $rs);
+        }
+    }
+    public function listProCityIndex(){
+        $rs = $this->model->listProCityIndex();
+        if (count($rs) != 0) {
+            echo $this->success($rs);
+        } else {
+            echo $this->error('提交错误', $rs);
+        }
+    }
+     /**
+     * 增加文件
+     */
+    public function addMedia(){
+        $rs = $this->model->addMedia();
+        echo $rs;
+    }
+   /**
+     * 增加文章
+     */
+    public function addArticle(){
+        $rs = $this->model->addArticle();
+        echo $rs;
+    }
 
+    /**
+     * 文章上传
+     */
     function uploadFile()
     {
-        $targetFolder = 'iresearch_ui/public/uploads';
-        if (!empty($_FILES)) {
-            $tempFile = $_FILES['Filedata']['tmp_name'];
-            $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
-            $targetFile = rtrim($targetPath, '/') . '/' . $_FILES['Filedata']['name'];
-            echo $targetFile;
-            $fileTypes = array('xls', 'xlsx', 'jpg', 'jpeg', 'avi', 'mp4', 'rar', 'doc', 'docx', 'png');
-            $fileParts = pathinfo($_FILES['Filedata']['name']);
-            if (in_array($fileParts['extension'], $fileTypes)) {
-                move_uploaded_file($tempFile, $targetFile);
-                echo '上传成功';
-            } else {
-                echo '文件类型错误';
-            }
-        }
+        $rs = $this->model->uploadUserFile();
+        echo $rs;
     }
 }

@@ -6,8 +6,12 @@
             {"fieldsName":"姓名","type":"String","default":""},
             {"fieldsName":"电话","type":"String","default":""}
         ]},
+        {"fieldsName":"公司地址","type":"Object","default":[
+            {"fieldsName":"区域","type":"City","default":""},
+            {"fieldsName":"地址","type":"String","default":""},
+            {"fieldsName":"邮编","type":"String","default":""}
+        ]},
         {"fieldsName":"公司简介","type":"Article","default":""},
-        {"fieldsName":"所在地","type":"City","default":""},
         {"fieldsName":"行业","type":"Industry","default":""},
         {"fieldsName":"公司视频","type":"File","default":""}
     ],

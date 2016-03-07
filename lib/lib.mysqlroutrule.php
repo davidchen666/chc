@@ -52,7 +52,7 @@ class MysqlRoutRule implements IMysqlRoutRule{
                     'host'=>'10.10.21.163',
                     'user'=>'root',
                     'pass'=>'weiwei',
-                    'db'=>'ivtadmin'
+                    'db'=>'iaggregator'
 
                 )
             ),
@@ -60,7 +60,8 @@ class MysqlRoutRule implements IMysqlRoutRule{
                 '0'=>array(
                     'host'=>'127.0.0.1',
                     'user'=>'root',
-                    'pass'=>'',
+                    'pass'=>'weiwei',
+                    'db'=>'iaggregator'
                 )
             )
         );

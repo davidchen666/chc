@@ -17,11 +17,15 @@ define(function(require, exports, module) {
             dataSource: templateData,
             mode: 'tree',
             modes: ['code', 'form', 'text', 'tree', 'view'], // allowed modes
-            error: function (err) {
+            onError: function (err) {
                 alert(err.toString());
+            },
+            onChange: function () {
             }
+
         };
-        $p.plugin.jsonEditor("jsonEditorID",params);
+        var jsonEditor = $p.plugin.jsonEditor("jsonEditorID",params);
+
     };
     module.exports = app;
 

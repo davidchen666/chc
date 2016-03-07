@@ -176,7 +176,6 @@ class MyDb{
 			$sql='insert into '.$tab.'('.$ret['feild'].') values ('.$ret['values'].')';
 		}
 
-		
 		if($showsql){
 			echo $sql;
 		}else{
