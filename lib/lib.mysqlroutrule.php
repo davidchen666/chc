@@ -53,6 +53,10 @@ class MysqlRoutRule implements IMysqlRoutRule{
                     'user'=>'root',
                     'pass'=>'weiwei',
                     'db'=>'iaggregator'
+//                    'host'=>'127.0.0.1',
+//                    'user'=>'root',
+//                    'pass'=>'123456',
+//                    'db'=>'huawei'
 
                 )
             ),

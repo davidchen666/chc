@@ -1,4 +1,5 @@
 define({
+    getRoleUser:"iresearch_ui/?m=tuser&a=getRoleUser",
     keywords: "iresearch_ui/test/keywords.json",
     user: "iresearch_ui/test/user.json",
     succeed: "iresearch_ui/test/succeed.json",
