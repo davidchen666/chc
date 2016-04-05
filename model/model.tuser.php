@@ -3,7 +3,7 @@
 class TuserModel extends AgentModel
 {
 
-    public function getRoleUser($where, $curpage = 1, $perpage = __PAGENUM__)
+    public function getRole($where, $curpage = 1, $perpage = __PAGENUM__)
     {
 //        pr($where);
         $subsql = '';
@@ -19,6 +19,7 @@ class TuserModel extends AgentModel
         $subsql .= " order by {$where['orderColumn']} {$where['orderType']}";
         $subsqll .= " limit $start_limit, $perpage";
         $sql = "select * FROM tuser INNER JOIN tuserrolerelation ON tuser.tu_id = tuserrolerelation.tu_id WHERE 1=1 " . $subsql . $subsqll;
+
 
         $ret = $this->mysqlQuery($sql, "all");
         $sqltotal = "select * FROM tuser INNER JOIN tuserrolerelation ON tuser.tu_id = tuserrolerelation.tu_id WHERE 1=1 " . $subsql;
@@ -39,19 +40,19 @@ class TuserModel extends AgentModel
         return $this->mysqlQuery($sql, "all");
     }
 
-    public function getRole($where)
-    {
-//        pr($where['parent_tr_id']);
-        $subsql = "";
-        if (!empty($where['tu_id'])) {
-            $subsql .= " AND tuserrolerelation.tu_id = {$where['tu_id']}";
-
-        };
-        $sql = "SELECT trole.tr_id,trole.parent_tr_id,trole.role_name,trole.gen_time,trole.description FROM tuserrolerelation INNER JOIN trole ON tuserrolerelation.tr_id = trole.tr_id WHERE 1 = 1 " . $subsql;
-//        echo $sql;
-        return $this->mysqlQuery($sql, "all");
-
-    }
+//    public function getRole($where)
+//    {
+////        pr($where['parent_tr_id']);
+//        $subsql = "";
+//        if (!empty($where['tu_id'])) {
+//            $subsql .= " AND tuserrolerelation.tu_id = {$where['tu_id']}";
+//
+//        };
+//        $sql = "SELECT trole.tr_id,trole.parent_tr_id,trole.role_name,trole.gen_time,trole.description FROM tuserrolerelation INNER JOIN trole ON tuserrolerelation.tr_id = trole.tr_id WHERE 1 = 1 " . $subsql;
+////        echo $sql;
+//        return $this->mysqlQuery($sql, "all");
+//
+//    }
 
     public function getRoleData($where)
     {

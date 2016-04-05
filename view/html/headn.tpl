@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/v3js/bootstrap.min.css">
     <link id="bs-theme-stylesheet" rel="stylesheet" data-href="{WEBSITE_SOURCE_URL}/v3js/bootstrap-theme.min.css" href="data:text/css;charset=utf-8,">
     <link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/v3js/docs.min.css">
+    <link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/js/resources/css/public.css">
 
 </head>
 <body>

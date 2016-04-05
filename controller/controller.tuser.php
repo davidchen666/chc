@@ -73,7 +73,7 @@ class TuserController extends Controller
     /**
      * 获取角色下所包含用户
      */
-    function getRoleUser()
+    function getRole()
     {
         $where['tr_id'] = $this->request()->get('tr_id');
         $where['search'] = $this->request()->get('search');
@@ -82,7 +82,7 @@ class TuserController extends Controller
         $where['pagesize'] = $this->request()->get('pagesize', __PAGENUM__);
         $where['orderType'] = $this->request()->get('orderType', 'desc');
 
-        $ret = $this->model->getRoleUser($where, $where['curpage'], $where['pagesize']);
+        $ret = $this->model->getRole($where, $where['curpage'], $where['pagesize']);
         $page = array(
             'current' => $where['curpage'],
             'pagesize' => $where['pagesize'],

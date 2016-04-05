@@ -9,16 +9,16 @@
                 <div class="form-inline">
                     <div class="form-group">
                         <label>所选父角色</label>
-                        <select class="form-control">
+                        <select class="form-control _roleid">
                             <!-- BEGIN list -->
-                            <option value="">{role_name}</option>
+                            <option value="{tr_id}">{role_name}</option>
                             <!-- END list -->
                         </select>
 
                     </div>
                     <div class="form-group">
 
-                        <input type="search" class="form-control _searchRoleUser"  placeholder="Search"  >
+                        <input type="search" class="form-control _search"  placeholder="Search"  >
                     </div>
 
                 </div>
@@ -27,9 +27,9 @@
             <div class="col-md-4 col-md-offset-2">
                 <div class="form-inline text-right">
 
-                        <button type="button" class="btn btn-default">父角色管理</button>
+                        <button type="button" class="btn btn-default" onclick=" ">角色管理</button>
 
-                        <button type="button" class="btn btn-success">新增角色</button>
+                        <button type="button" class="btn btn-success" id="_ceshi">新增角色</button>
 
                 </div>
 
@@ -47,30 +47,12 @@
 
 
 </div>
-<script id="user_selest" type="text/tpl">
-    <div class="row">
-    <div class="col-md-12 col-sm-12">
-        <div class="portlet-body">
-            <form action="">
-                <div class="form-group">
-                    <table id="select_user"></table>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
-
-</script>
 
 <script src="{WEBSITE_SOURCE_URL}/pagurian.js"></script>
 <script type="text/javascript">
     pagurian.call("modules/role/app", function (app) {
         app.page.dataTable();
-        app.page.selectuser();
-        app.page.dataGroup();
-        app.page.dataRight();
-        app.page.dialogs();
     });
 </script>
 <!-- INCLUDE ../footern.tpl -->

@@ -10,7 +10,7 @@ define(function(require, exports, module) {
 
         //获取数据列表
         this.getDataList = function(params, callback) {
-            service.get(api.getRoleUser, params, callback);
+            service.get(api.getRoleList, params, callback);
         };
     }
     module.exports = new Model();

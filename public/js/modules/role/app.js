@@ -1,3 +1,4 @@
+
 define(function(require, exports, module) {
 
     var app = require('../../lib/app');
@@ -17,140 +18,51 @@ define(function(require, exports, module) {
                 //获取角色ID，返回角色ID
                 var tr_id = '';
                 tr_id = $('._roleid').val();
-                var search = $('._searchRoleUser').val();
+                var search = $('._search').val();
                 return {
                     'tr_id': tr_id,
                     'search': search
                 };
             },
-            "aoColumns": [{
+            "aoColumns": [
+                {
+                    "bSortable":true,
+                    "mData": "tr_id",
+                    "sTitle": "角色ID"
+                },
+                {
                 "bSortable":true,
-                "mData": "login_name",
-                "sTitle": "用户名"
+                "mData": "role_name",
+                "sTitle": "角色名称"
+            },{
+                "bSortable": true,
+                "sTitle": "更新时间",
+                "mData": "gen_time",
+                mRender: function (data, type, full) {
+                    //console.log(data);
+                    var date = jQuery.parseJSON(data);
+                    return new Date(date*1000).toLocaleDateString();   //http://zhidao.baidu.com/link?url=lkgB1FmHAK9UQRlS-tDl4IsGTu0MTEa132Pb-wbttl4-nhAQcnDD2i3fZaSk_PMUAsWTLZ7AG6SxqSs3vDbIeq
+                }
+
             }, {
                 "bSortable": false,
-                "sTitle": "姓名",
-                "mData": "vsername"
-            }, {
-                "bSortable": false,
-                "sTitle": "手机号",
-                "mData": "mobile"
-            }, {
-                "bSortable": false,
-                "sTitle": "最近登录时间",
-                "mData": "login_time"
-            }, {
-                "bSortable": false,
-                "sTitle": "登录次数",
-                "mData": "count"
+                "sTitle": "角色描述",
+                "mData": "description"
             }]
         });
     };
 
     //用户搜索
-    $("._searchRoleUser").on('keyup', function (e) {
+    $("._search").on('keyup', function (e) {
         $('#my_table_wrapper').parent().html('<table id="my_table"></table>');
         pagurian.call("modules/role/app", function (app) {
             app.page.dataTable();
         });
     })
-    app.page.dataGroup = function() {
-        $p.plugin.dataTable("#my_group", {
-            "dataSource": model.getDataList,
-            "sClass": "table-fixed",
-            "aaSorting": [
-                [2, "desc"]
-            ],
-            "fnParams": function() {
-                return {};
-            },
-            "aoColumns": [{
-                "bSortable":true,
-                "mData": "keywords",
-                "sTitle": "组ID"
-            }, {
-                "bSortable": false,
-                "sTitle": "组名称",
-                "mData": "searchEngine"
-            }, {
-                "bSortable": false,
-                "sTitle": "组描述",
-                "mData": "searchEngine"
-            }]
-        });
-    };
-    app.page.dataRight = function() {
-        $p.plugin.dataTable("#my_right", {
-            "dataSource": model.getDataList,
-            "sClass": "table-fixed",
-            "aaSorting": [
-                [2, "desc"]
-            ],
-            "fnParams": function() {
-                return {};
-            },
-            "aoColumns": [{
-                "bSortable":true,
-                "mData": "keywords",
-                "sTitle": "权限ID"
-            }, {
-                "bSortable": false,
-                "sTitle": "权限名称",
-                "mData": "searchEngine"
-            }, {
-                "bSortable": false,
-                "sTitle": "权限描述",
-                "mData": "searchEngine"
-            }]
-        });
-    };
-    app.page.selectuser = function() {
-        $p.plugin.dataTable("#select_user", {
-            "dataSource": model.getDataList,
-            "sClass": "table-fixed",
-            "aaSorting": [
-                [2, "desc"]
-            ],
-            "fnParams": function() {
-                return {};
-            },
-            "aoColumns": [{
-                "bSortable":true,
-                "mData": "keywords",
-                "sTitle": "用户名称"
-            }, {
-                "bSortable": false,
-                "sTitle": "操作",
-                "mData": "searchEngine",
-                mRender: function(data, type, full) {
-                    return '<input type="checkbox">'
-                }
-            }]
-        });
-    };
 
-    $p.com.dialog("#edit_btn", {
-        title: "用户选择",
-        body: $("#user_selest").html(),
-        initForm: function(modal, form, params) {
 
-            //获取用户信息
-            //model.getUser(params.id, params, function(data) {
-            //    $p.com.form(form).val(data);
-            //});
 
-        },
-        validate: function(modal, data, params) {
-            return true;
-        },
-        submit: function(modal, data, params, callback) {
-            //更新用户信息
-            model.update(params.id, data, function(resp) {
-                $p.com.alert(resp.message);
-                modal.hide();
-            });
-        }
-    });
+
 
     module.exports = app;
 
