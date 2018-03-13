@@ -5,6 +5,7 @@ define(function(require, exports, module) {
     var model = require('./model');
 
 
+
     require('../../plugins/datatables/module');
 
     app.page.dataTable = function() {
@@ -53,17 +54,13 @@ define(function(require, exports, module) {
     };
 
     //用户搜索
+
     $("._search").on('keyup', function (e) {
         $('#my_table_wrapper').parent().html('<table id="my_table"></table>');
         pagurian.call("modules/role/app", function (app) {
             app.page.dataTable();
         });
     })
-
-
-
-
-
     module.exports = app;
 
 });

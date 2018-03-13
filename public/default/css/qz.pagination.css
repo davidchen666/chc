@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.qzPagination {
+	text-align: center;
+	font-size: 14px;
+    padding:20px 0;
+}
+
+div.qzPagination .total {
+	padding-right:8px;
+    border:none;
+    float:right;
+}
+
+div.qzPagination span {
+	line-height:30px;
+	*line-height:31px;	/* ie6 ie7 */
+	color: #7E7E7E;
+	padding: 5px 10px;
+}
+
+div.qzPagination a {
+	padding: 5px 10px;
+	margin-right: 5px;
+	color: #7E7E7E;
+	text-decoration: none;
+	line-height:30px;
+	*line-height:31px;	/* ie6 ie7 */
+}
+
+div.qzPagination a:hover {
+    border:1px solid #7E7E7E;
+}
+
+div.qzPagination a:active {
+	color: #fff;
+    border:1px solid #7E7E7E;
+}
+
+div.qzPagination span.current {
+	margin-right: 5px;
+	font-weight: bold;
+    border:1px solid #7E7E7E;
+}
+div.qzPagination a.current {
+	margin-right: 5px;
+	font-weight: bold;
+    border:1px solid #7E7E7E;
+}
+div.qzPagination span.disabled {
+ 	margin-right:10px;
+	margin-right: 5px;
+	color: #CECECE;
+}
+div.qzPagination span.prePage
+ {
+ 	margin-right:10px;
+	/*padding: 5px 10px;
+     height:33px;
+     width:33px;*/
+}
+div.qzPagination a.prePage
+ {
+ 	margin-right:10px;
+	/*padding: 5px 10px;
+     height:33px;
+     width:33px;*/
+}
+div.qzPagination a.nextPage  {
+	margin-left:5px;
+	/*padding: 5px 10px;
+     height:33px;
+     width:33px;*/
+}
+div.qzPagination span.nextPage  
+{
+	margin-left:5px;
+	/*padding: 5px 10px;
+     height:33px;
+     width:33px;*/
+}

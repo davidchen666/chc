@@ -1,27 +1,44 @@
 <?php
 /**
- * Copyright © 艾瑞咨询集团(http://www.iresearch.com.cn/)
+ * Copyright © 大猩猩
  * SDK中间api类
- * Author DavidWei <davidwei@iresearch.com.cn>
- * Create 15-03-12 14:34
+ * Author 大猩猩
+ * Create 18-02-22 14:34
  */
 class IndexController extends Controller
 {
     private $model;
     private $_api;
+    private $title;
+    const M = "Index";
 
     function __construct()
     {
-
+        $this->model = Model::instance(self::M);
+        $this->title='首页';
     }
 
     /**
-     * 前端框架demo
+     * 首页
      */
     function index()
     {
-        $data = array();
+        // $name = "张三";
+        // $data = array(
+        //     'name'=>$name,
+        //     'age'=>22,
+        //     'addr'=>"上海"
+        //     );
+        $data['title'] = $this->title;
+        // $getData = $this->model->index(5);
+        // var_dump($getData);
         View::instance('index/index.tpl')->show($data);
+        // echo to_success($getData);
+    }
+
+    function test2()
+    {
+        View::instance('index/test2.tpl')->show(array());
     }
 
     function uploadFile()

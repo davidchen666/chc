@@ -639,6 +639,22 @@ function upload_files($file,$editor=0){
         $upload = array('size' => $size, 'url' => $tmp_url, 'name' => $name, 'type' => $tpname);
         return $upload;
     }
+}
 
+//接口成功返回
+function to_success($data){
+    return json_encode(array(
+            resCode => 200,
+            resMsg =>'ok',
+            resData => $data
+        ));
+}
+//接口失败返回
+function to_error($data){
+    return json_encode(array(
+            resCode => 400,
+            resMsg =>'error',
+            resData => $data
+        ));
 }
 ?>

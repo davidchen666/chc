@@ -5,6 +5,7 @@ session_set_cookie_params(0);
 //基础路径配置1234555
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT_PATH', dirname(__FILE__) . DS);
+// define('ROOT_PATH', 'localhost\chc-api' . DS);
 define('MODEL', 'model');
 define('CONTROLLER', 'controller');
 define('VIEW', 'view');
