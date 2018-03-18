@@ -35,9 +35,25 @@
 </div>
 
 <script>
-	// $('#menu-show li .box1CenCon').click(function(event) {
-	// 	$('#menu-show li .box1CenCon').attr('class', 'box1CenCon');
-	// 	$('#menu-show .bigger-menu-bg .box1CenCon').attr('class', 'box1CenCon');
-	// 	$(this).attr('class', 'box1CenCon activemenu');
-	// });
+	$(window).scroll(function(){//开始监听滚动条
+        //获取当前滚动条高度
+		var topp = $(document).scrollTop();
+        //用于调试 弹出当前滚动条高度
+        if(topp > 0){
+        	$('header').hide();
+        }else{
+        	$('header').show();
+        }
+		// console.log($('header'));
+		console.log(topp);
+		if(topp > 374){
+			$('.detail-menu').css('position','fixed');
+			$('.detail-menu').css('top','0px');
+		}else{
+			$('.detail-menu').css('position', 'relative');
+			$('.detail-menu').css('top','93%');
+		}
+		// var sMenu = $('.detail-menu').scrollTop();
+		// console.log(sMenu)
+	})
 </script>

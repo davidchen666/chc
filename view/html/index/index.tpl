@@ -217,8 +217,6 @@
 
 <script>
     //hover效果
-    
-
     $('#high-people .single-show').hover(function(){
         var objNew = $('.single-show .img-responsive');
         $.each(objNew, function(index, val) {

@@ -106,7 +106,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<p>
-							<b>上传商业计划书（支持PPT、PDF、word文档）</b>
+							<b>上传商业计划书（仅支持PPT、PDF）</b>
 							<a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/upload-project.png" alt=""></a>
 						</p>
 					</div>

@@ -46,7 +46,7 @@
                 <div class="single" class="text-left">
                     <div><img src="{WEBSITE_SOURCE_URL}/img/events/pic2.png" class="img-responsive"></div>
                     <div class="two-show left-show" class="text-left">
-                        <p class="text-left">第七届中国医疗健康产业投资与并购CEO论坛</p>
+                        <p class="text-left"><small>第七届中国医疗健康产业投资与并购CEO论坛</small></p>
                         <p class="text-left">时间：2018年3月18-20日 &nbsp;&nbsp;  地点：上海东郊宾馆</p>
                     </div>
                     <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ceo2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-1.png" alt=""></a></div>
@@ -95,6 +95,24 @@
                 </a>
             </li>
         </ul>
+
+<script>
+    $('.box1Bg .box1Cen .img-responsive').hover(function(){
+        var obj = $('.box1Bg .box1Cen .img-responsive');
+        $.each(obj, function(index, val) {
+            var defaultStr = $(this).attr('src').replace('b.png','a.png');
+            val.src = defaultStr;
+            var cObj = $(this).parent().next();
+            cObj.attr('style', 'color:#ffffff');
+        });
+        var hoverStr = $(this).attr('src').replace('a.png','b.png');
+        $(this).attr('src',hoverStr);
+        var cObj_new = $(this).parent().next();
+        cObj_new.attr('style', 'color:#9DC040');
+    }, function() {
+    })
+</script>
+
         <!--战略伙伴-->
         <div class="box1Top wow" data-wow-delay="0.5s">
             <img src="{WEBSITE_SOURCE_URL}/img/events/friends-title.png" class="img-responsive">
@@ -162,8 +180,6 @@
             </li>
             <li class="wow">
                 <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-14.png" class="img-responsive"></div>
-            </li>
-            <li class="wow">
             </li>
         </ul>
 

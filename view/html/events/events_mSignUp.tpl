@@ -4,6 +4,67 @@
 <!-- 内容 -->
 <div class="total">
 
+	<!--关于参会-->
+	<div id="m-sign-up-about">
+		<div class="container">
+			<div class="box1Top wow h-title" data-wow-delay="0.5s">
+	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/m-about.png" class="img-responsive">
+	    	</div>
+	    	<ul class="box1Cen list-unstyled list-inline text-center">
+	        	<li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	            <li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	            <li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	            <li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费3月1日</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	        </ul>
+	        <div class="box1Cen warn-list">
+	        	<p class="blue"><b>注意事项</b></p>
+				<p>1、快进看就看见了看借口借口尽快尽快将</p>
+				<p>2、快进看就看见了看借口借口尽快尽快将</p>
+				<p>3、快进看就看见了看借口借口尽快尽快将</p>
+				<p>4、快进看就看见了看借口借口尽快尽快将</p>
+				<p>5、快进看就看见了看借口借口尽快尽快将</p>
+				<p>6、快进看就看见了看借口借口尽快尽快将</p>
+				<p class="blue"><b>付费及开票</b></p>
+				<p>1、快进看就看见了看借口借口尽快尽快将</p>
+				<p>2、快进看就看见了看借口借口尽快尽快将</p>
+				<p>3、快进看就看见了看借口借口尽快尽快将</p>
+	        </div>
+		        
+	    </div>
+	</div>
+	
 	<!--参会报名-->
 	<div id="m-sign-up">
 		<div class="container">
@@ -19,11 +80,23 @@
 					<div class="col-md-3">
 						<div class="form-group">
 						    <label for="name"><p>参加人数*</p></label>
-						    <input type="text" class="form-control">
+						    <!-- <input type="text" class="form-control"> -->
+						    <select class="form-control countNum" >
+						      <option value='0' selected>请选择</option>
+						      <option value='1'>1</option>
+						      <option value='2'>2</option>
+						      <option value='3'>3</option>
+						      <option value='4'>4</option>
+						      <option value='5'>5</option>
+						      <option value='6'>6</option>
+						      <option value='7'>7</option>
+						      <option value='8'>8</option>
+						      <option value='9'>9</option>
+						    </select>
 					  	</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" id="userList-single" style="display:none;">
 					<div class="col-md-3">
 						<div class="form-group">
 						    <label for="name"><p>姓名*</p></label>
@@ -48,6 +121,9 @@
 						    <input type="text" class="form-control">
 					  	</div>
 					</div>
+				</div>
+				<div class="row" id="userList">
+					
 				</div>
 				<div class="row">
 					<div class="col-md-6">
@@ -134,65 +210,18 @@
 
 		</div>
 	</div>
-	<!--关于参会-->
-	<div id="m-sign-up-about">
-		<div class="container">
-			<div class="box1Top wow h-title" data-wow-delay="0.5s">
-	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/m-about.png" class="img-responsive">
-	    	</div>
-	    	<ul class="box1Cen list-unstyled list-inline text-center">
-	        	<li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费3月1日</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	        </ul>
-	        <div class="box1Cen warn-list">
-	        	<p class="blue"><b>注意事项</b></p>
-				<p>1、快进看就看见了看借口借口尽快尽快将</p>
-				<p>2、快进看就看见了看借口借口尽快尽快将</p>
-				<p>3、快进看就看见了看借口借口尽快尽快将</p>
-				<p>4、快进看就看见了看借口借口尽快尽快将</p>
-				<p>5、快进看就看见了看借口借口尽快尽快将</p>
-				<p>6、快进看就看见了看借口借口尽快尽快将</p>
-				<p class="blue"><b>付费及开票</b></p>
-				<p>1、快进看就看见了看借口借口尽快尽快将</p>
-				<p>2、快进看就看见了看借口借口尽快尽快将</p>
-				<p>3、快进看就看见了看借口借口尽快尽快将</p>
-	        </div>
-		        
-	    </div>
-	</div>
 
+<script type="text/javascript">
+	$('.countNum').change(function(event) {
+		console.log($('.countNum').val());
+		var num = parseInt($('.countNum').val());
+		var allStr = '';
+		var str = $('#userList-single').html();
+		$('#userList').html('');
+		for (var i = num; i > 0; i--) {
+			allStr += str;
+		};
+		$('#userList').html(allStr);
+	});
+</script>
 <!-- INCLUDE ../footer.tpl -->

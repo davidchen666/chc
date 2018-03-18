@@ -150,11 +150,13 @@
 	width:100%;
 	/*height:100px;*/
 	/*margin-top: 60%;*/
+	/*position: fixed;*/
 	position: relative;
 	/*border:1px solid red;*/
 	/*top:367px;*/
 	bottom:10%;
 	top:365px;
+	z-index: 100;
 	/*background-color: green;*/
 }
 #menu-show{
@@ -366,17 +368,19 @@
 	/*border:1px solid black;*/
 	padding:5px;
 	padding-top:15px;
+	margin-bottom:15px;
 }
 .full-line p,.full-line h4,.full-line span{
 	color:#545454;
 }
 .full-line p{
 	line-height: 24px;
+	margin-top: 5px;
 	/*text-indent: 2em;*/
 }
 .full-line .full-left-show{
 	width:20%;
-	padding:5px;
+	padding:15px;
 	/*border:1px solid red;*/
 	float:left;
 }
