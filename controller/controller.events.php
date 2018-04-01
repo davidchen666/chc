@@ -14,10 +14,10 @@ class EventsController extends Controller
             'title'=>'品牌会议',
             'events'=>'active'
         );
-    // const M = "Event
+    const M = "Events";
     function __construct()
     {
-        // $this->model = Model::instance(self::M);
+        $this->model = Model::instance(self::M);
     }
 
     /**
@@ -107,6 +107,24 @@ class EventsController extends Controller
         $data = $this->data;
         $data['rSignUp'] = 'activemenu';
         View::instance('events/events_rSignUp.tpl')->show($data);
+    }
+
+    /*
+        api 相关
+    */
+    function addMSignUp(){
+        //获取post值
+        $pData = json_decode(file_get_contents("php://input"),true);
+        // var_dump($this->request()->get('countNum'));
+        // var_dump($_REQUEST);
+        if(!$pData){
+            $pData = $_REQUEST;
+        }
+
+        echo $this->model->addMSignUp($pData);
+        // echo $pData;
+        // var_dump(112);
+
     }
 }
 

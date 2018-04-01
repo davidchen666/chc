@@ -15,6 +15,7 @@ define('PUBLIC', 'public');
 define('WIDGET', 'widget');
 define('API', 'api');
 define('LIB_PATH', ROOT_PATH . LIB . DS);
+define('API_PATH', 'localhost/chc-api/index.php?');
 define('MODEL_PATH', ROOT_PATH . MODEL . DS);
 define('CONTROLLER_PATH', ROOT_PATH . CONTROLLER . DS);
 define('VIEW_PATH', ROOT_PATH . VIEW . DS);
@@ -24,7 +25,7 @@ define('UPLOAD_PATH', ROOT_PATH . '/public/uploads'); //接受上传目录    //
 define('WEBSITE', $_SERVER['SERVER_ADDR']);
 define('WEBSITE_URL', '');
 define('WEBSITE_SOURCE_URL', WEBSITE_URL . 'public');
-define('WEBSITE_TITLE', '艾瑞MVC');
+define('WEBSITE_TITLE', 'MVC');
 //导出报表配置
 //define('EXPORT_PIC','http://203.156.255.148:81/chart.php');
 define('EXPORT_PIC', 'http://180.169.19.166/graph_api/chart.php');

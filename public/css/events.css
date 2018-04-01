@@ -140,7 +140,7 @@
 	height:400px;
 	background: url('../img/events/detail/banner-00.png') center center no-repeat;
 	background-size: 100% 100%;
-	border-bottom: 5px solid #A6CB42;
+	/*border-bottom: 5px solid #A6CB42;*/
 	/*padding-top: 30%;*/
 }
 .null{
@@ -148,7 +148,7 @@
 }
 .detail-menu{
 	width:100%;
-	/*height:100px;*/
+	height:30px;
 	/*margin-top: 60%;*/
 	/*position: fixed;*/
 	position: relative;
@@ -156,8 +156,12 @@
 	/*top:367px;*/
 	bottom:10%;
 	top:365px;
-	z-index: 100;
+	z-index: 1;
 	/*background-color: green;*/
+}
+.line-yellow{
+	margin-top: 28px;
+	border-bottom: 5px solid #A6CB42;
 }
 #menu-show{
 	padding: 0px 7%;

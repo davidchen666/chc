@@ -109,6 +109,12 @@
 //         modal.hide();
 //     }
 // });
+    
+    $(document).on("click",".dropdown-toggle",function(){
+        alert(111);
+        if( $(window).width() > 767 )
+        if($(this).attr('href')) window.location = $(this).attr('href');
+    });
 </script>
 </body>
 </html>

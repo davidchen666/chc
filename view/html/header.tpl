@@ -7,13 +7,15 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
 	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
 	<meta name="author" content="lichen,1000zhu.com" />
+    
 	<link href="{WEBSITE_SOURCE_URL}/default/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="{WEBSITE_SOURCE_URL}/default/fonts/FontAwesome/font-awesome.css" rel="stylesheet" />
 	<link href="{WEBSITE_SOURCE_URL}/default/css/animate.css" rel="stylesheet" />
 	<link href="{WEBSITE_SOURCE_URL}/default/css/bootsnav.css" rel="stylesheet" />
 	<link href="{WEBSITE_SOURCE_URL}/default/plugin/swiper3/css/swiper.min.css" rel="stylesheet" />
-	<link href="{WEBSITE_SOURCE_URL}/default/css/style.css" rel="stylesheet" />
-    <script src="{WEBSITE_SOURCE_URL}/default/js/jquery-1.10.1.js"></script>
+	<link href="{WEBSITE_SOURCE_URL}/default/css/style.css" rel="stylesheet" />  
+    
+    <script src="{WEBSITE_SOURCE_URL}/js/lib/vendor/jquery.1.9.1.min.js"></script>
     <script src="{WEBSITE_SOURCE_URL}/default/js/prefixfree.min.js"></script>
 	<script src="{WEBSITE_SOURCE_URL}/default/js/bootstrap.min.js"></script>
 	<script src="{WEBSITE_SOURCE_URL}/default/js/bootsnav.js"></script>

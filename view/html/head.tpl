@@ -70,5 +70,6 @@
             $(".header").css("opacity","0.5"); 
         }
         // console.log(top);   
-  });
+    });
+    
 </script>
