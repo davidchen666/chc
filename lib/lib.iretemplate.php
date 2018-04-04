@@ -96,7 +96,8 @@
 		* @access public
 		* @param string $template_filename Template Filename
 		*/
-		function IreTemplate ( $template_filename = '' )
+		// function IreTemplate ( $template_filename = '' )
+		function __construct ( $template_filename = '' )
 		{
 			global $_CONFIG;
 

@@ -1,9 +1,9 @@
 <?php 
 /**
- * Copyright © 艾瑞咨询集团(http://www.iresearch.com.cn/)
+ * Copyright © 
  * 处理请求参数
  * request 类
- * Author Zhangwenjun <zhangwenjun@iresearch.com.cn>
+ * Author 
  * Create 13-11-15 09:45
  */
 class Request {
@@ -80,7 +80,8 @@ class Request {
 	}
 
 
-	public function request($index = '', $default = null)
+    // public function request($index = '', $default = null)
+	public function __construct($index = '', $default = null)
 	{
         $this->_filter($_GET);
         $this->_filter($_POST);

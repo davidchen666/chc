@@ -117,10 +117,12 @@ class EventsController extends Controller
         $pData = json_decode(file_get_contents("php://input"),true);
         // var_dump($this->request()->get('countNum'));
         // var_dump($_REQUEST);
-        if(!$pData){
-            $pData = $_REQUEST;
-        }
-
+        // var_dump($pData);
+        // if(!$pData){
+        //     $pData = $_REQUEST;
+        // }
+// var_dump($pData);
+// die();
         echo $this->model->addMSignUp($pData);
         // echo $pData;
         // var_dump(112);

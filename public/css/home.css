@@ -7,6 +7,7 @@ body,div,span,p{
     /*color:#9DC040;*/
     font-family: "Microsoft YaHei","微软雅黑","Hiragino Sans GB","苹果丽黑",STXihei,"华文细黑","Open Sans",sans-serif!important;
 }
+
 nav.navbar.bootsnav ul.nav > li > a:hover, nav.navbar.bootsnav ul.nav > li.on > a, nav.navbar.bootsnav ul.nav > li.active > a {
     color: #ffffff;
 }
@@ -78,7 +79,7 @@ footer,.footTop{
     /*border: 0px solid transparent; */
 }
 .footTop .left-border a:visited,a:active,a:visited{
-    background-color: #0C1D39;
+    /*background-color: #0C1D39;*/
     border:0px;
 }
 .left-border li a:hover{

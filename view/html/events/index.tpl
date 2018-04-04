@@ -33,7 +33,7 @@
         <ul class="box1Cen list-unstyled list-inline text-center" id="big-show">
             <li class="wow fadeInUp">
                 <div class="single" class="text-left">
-                    <div><img src="{WEBSITE_SOURCE_URL}/img/events/pic1.png" class="img-responsive"></div>
+                    <div class="add-shadow"><img src="{WEBSITE_SOURCE_URL}/img/events/pic1.png" class="img-responsive"></div>
                     <div class="two-show left-show" class="text-left">
                         <p class="text-left"><small>第三届中国微创外科及手术机器人产业投资与并购CEO论坛</small></p>
                         <p class="text-left">时间：2018年3月21日 &nbsp;&nbsp;  地点：<small>杭州和达希尔顿逸林酒店</small></p>
@@ -44,7 +44,7 @@
             </li>
             <li class="wow fadeInUp">
                 <div class="single" class="text-left">
-                    <div><img src="{WEBSITE_SOURCE_URL}/img/events/pic2.png" class="img-responsive"></div>
+                    <div class="add-shadow"><img src="{WEBSITE_SOURCE_URL}/img/events/pic2.png" class="img-responsive"></div>
                     <div class="two-show left-show" class="text-left">
                         <p class="text-left"><small>第七届中国医疗健康产业投资与并购CEO论坛</small></p>
                         <p class="text-left">时间：2018年3月18-20日 &nbsp;&nbsp;  地点：上海东郊宾馆</p>
@@ -119,19 +119,19 @@
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-1.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-1.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-2.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-2.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-3.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-3.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-6.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-6.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-7.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/partner-7.png" class="img-responsive img-rounded"></div>
             </li>
         </ul>
         <!--媒体-->
@@ -140,46 +140,46 @@
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-1.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-1.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-2.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-2.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-3.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-3.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-4.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-4.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-5.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-5.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-6.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-6.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-7.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-7.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-8.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-8.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-9.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-9.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-10.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-10.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-11.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-11.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-12.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-12.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-13.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-13.jpg" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-14.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-14.png" class="img-responsive img-rounded"></div>
             </li>
         </ul>
 

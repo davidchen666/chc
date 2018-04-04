@@ -40,7 +40,8 @@
 		*
 		* @param string $template_filename HTML Template Filename
 		*/
-		function IreTemplateParser ( $template_filename )
+		// function IreTemplateParser ( $template_filename )
+		function __construct ( $template_filename )
 		{
 			// Load Template
 			if ($hd = @fopen($template_filename, "r"))

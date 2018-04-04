@@ -70,10 +70,11 @@
                 <ul id="ctl00_MainMenu" class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <!-- <li id="nav1" class="active"> -->
                     <li id="nav1" class="{events}">
+                        <!-- <a href="javascript:;" target="_self"> -->
                         <!-- <a href="?m=events&a=index" target="_self"> -->
                     	<a href="http://www.chconsultant.com/zh/events" target="_blank">
                     		<h3>品牌会议</h3><i></i><!-- <span>HOME</span> -->
-                    	</a>
+                    	<!-- </a> -->
                     </li>
                     <li id="nav2" data-toggle="modal" data-target="#myModal">
                     	<a href="javascript:;" target="_self">

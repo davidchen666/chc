@@ -60,34 +60,34 @@
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive img-rounded"></div>
             </li>
         </ul>
         <div class="btn-img text-center">
