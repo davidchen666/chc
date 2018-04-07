@@ -23,6 +23,9 @@
     <script src="{WEBSITE_SOURCE_URL}/default/plugin/swiper3/js/swiper.animate1.0.2.min.js"></script>
     <script src="{WEBSITE_SOURCE_URL}/default/js/public.js"></script>
     <script src="{WEBSITE_SOURCE_URL}/default/js/wow.min.js"></script>
+
+    <script src="{WEBSITE_SOURCE_URL}/js/lib/vendor/jquery.uploadify.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{WEBSITE_SOURCE_URL}/css/uploadify.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',

@@ -659,10 +659,12 @@ function to_error($data){
 }
 
 //参数1：访问的URL，参数2：post数据(不填则为GET)，参数3：提交的$cookies,参数4：是否返回$cookies
- function curl_request($url,$post='',$cookie='', $returnCookie=0){
+function curl_request($url,$post='',$cookie='', $returnCookie=0){
     // echo iconv("GB2312","UTF-8",'中文');
     // echo '红啊';
     // var_dump($post);
+    $str = $post ? '参数：'.json_encode($post):'';
+    l('--->url:'.$url.'---'.json_encode($post));
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)');
@@ -702,5 +704,11 @@ function to_error($data){
             }
             return $data;
         }
+}
+//获取get或者post传过来的参数 转换成数组
+function getData(){
+    $pData = json_decode(file_get_contents("php://input"),true);
+    // $pData = $_REQUEST;
+    return $pData? $pData : $_REQUEST;
 }
 ?>

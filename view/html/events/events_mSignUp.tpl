@@ -39,25 +39,25 @@
 					<div class="col-md-3">
 						<div class="form-group">
 						    <label for="name"><p>姓名*</p></label>
-						    <input type="text" class="form-control">
+						    <input type="text" class="form-control uname">
 					  	</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
 						    <label for="name"><p>职务*</p></label>
-						    <input type="text" class="form-control">
+						    <input type="text" class="form-control ujob">
 					  	</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
 						    <label for="name"><p>电话*</p></label>
-						    <input type="text" class="form-control">
+						    <input type="text" class="form-control umobile">
 					  	</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
 						    <label for="name"><p>邮箱*</p></label>
-						    <input type="text" class="form-control">
+						    <input type="text" class="form-control uemail">
 					  	</div>
 					</div>
 				</div>
@@ -116,17 +116,20 @@
 					<div class="col-md-6">
 						<div class="form-group com_field">
 						    <label for="name"><p>所属领域*</p></label>
-						    <p class="higher"><input type="radio" name="field" value="1"> 选项1</p>
-						    <p class="higher"><input type="radio" name="field" value="2"> 选项2</p>
-						    <p class="higher"><input type="radio" name="field" value="3"> 选项3</p>
+						    <p class="higher"><input type="radio" name="field" value="1"> 医疗企业——产品领域</p>
+						    <p class="higher"><input type="radio" name="field" value="2"> 投资企业</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 产品上游</p>
 					  	</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group from_data">
 						    <label for="name"><p>您是通过什么平台获知本次会议的</p></label>
-						   	<p class="higher"><input type="radio" name="from_data" value="1"> 选项1</p>
-						    <p class="higher"><input type="radio" name="from_data" value="2"> 选项2</p>
-						    <p class="higher"><input type="radio" name="from_data" value="3"> 选项3</p>
+						   	<p class="higher"><input type="radio" name="from_data" value="1"> EDM</p>
+						    <p class="higher"><input type="radio" name="from_data" value="2"> 微信</p>
+						    <p class="higher"><input type="radio" name="from_data" value="3"> 媒体网站</p>
+						    <p class="higher"><input type="radio" name="from_data" value="4"> 网上搜索</p>
+						    <p class="higher"><input type="radio" name="from_data" value="5"> 他人推荐</p>
+						    <p class="higher"><input type="radio" name="from_data" value="6"> 其他</p>
 					  	</div>
 					</div>
 				</div>
@@ -211,84 +214,129 @@
 	</div>
 
 <script type="text/javascript">
-	$('.countNum').change(function(event) {
-		console.log($('.countNum').val());
-		var num = parseInt($('.countNum').val());
-		var allStr = '';
-		var str = $('#userList-single').html();
-		$('#userList').html('');
-		for (var i = num; i > 0; i--) {
-			allStr += str;
-		};
-		$('#userList').html(allStr);
-	});
-	//提交参加报名
-	$('.btn-img').click(function(event) {
-		// alert()
-		var _cData = {};
-		//获取公司相关数据
-		_cData.countNum = $('.countNum').val();
-		_cData.com_name = $('.com_name').val();
-		_cData.com_Invoices_title = $('.com_Invoices_title').val();
-		_cData.com_duty_num = $('.com_duty_num').val();
-		_cData.com_phone = $('.com_phone').val();
-		_cData.com_fax = $('.com_fax').val();
-		_cData.com_postal_addr = $('.com_postal_addr').val();
-		_cData.com_postal_code = $('.com_postal_code').val();
-		_cData.com_field = $('.com_field input:radio:checked').val();
-		_cData.from = $('.from_data input:radio:checked').val();
-		_cData.verify_code = $('.verify_code').val();
-		console.log(_cData)
-		console.log(JSON.stringify(_cData));
-		//判断必填项是否填写
-		if(!_cData.countNum || _cData.countNum === '0'){
-			alert('参加人数不能为空。');
-			return;
-		}
-		if(!_cData.com_name){
-			alert('公司名称不能为空。');
-			return;
-		}
-		if(!_cData.com_Invoices_title){
-			alert('公司发票抬头不能为空。');
-			return;
-		}
-		if(!_cData.com_duty_num){
-			alert('公司税号不能为空。');
-			return;
-		}
-		if(!_cData.com_phone){
-			alert('电话不能为空。');
-			return;
-		}
-		if(!_cData.com_postal_addr){
-			alert('邮政地址不能为空。');
-			return;
-		}
-		if(!_cData.com_field){
-			alert('所属领域不能为空。');
-			return;
-		}
-		if(!_cData.from){
-			alert('您是通过什么平台获知本次会议的不能为空。');
-			return;
-		}
-		if(!_cData.verify_code){
-			alert('验证码不能为空。');
-			return;
-		}
-		if(!confirm('确认提交以上信息吗？')){
-			return;
-		}
-		$.ajax({
-			url: '?m=events&a=addMSignUp',
-			type: 'POST',
-			data: _cData,
-			success: function(res){
-				console.log(res);
+	$(function(){
+		//获取页面相关信息
+
+		$('.countNum').change(function(event) {
+			// console.log($('.countNum').val());
+			var num = parseInt($('.countNum').val());
+			var allStr = '';
+			var str = $('#userList-single').html();
+			$('#userList').html('');
+			for (var i = num; i > 0; i--) {
+				allStr += str;
+			};
+			$('#userList').html(allStr);
+		});
+		//提交参加报名
+		$('.btn-img img').click(function(event) {
+			var _cData = {};
+			_cData.uData = [];
+			// var uData = $('#userList .uname');
+			// console.log(uData);
+			//获取公司相关数据
+			// uData = $('#userList');
+			var uNameData = $('#userList .uname');
+			var uJobData = $('#userList .ujob');
+			var uMobileData = $('#userList .umobile');
+			var uEmailData = $('#userList .uemail');
+			_cData.countNum = $('.countNum').val();
+			_cData.com_name = $('.com_name').val();
+			_cData.com_Invoices_title = $('.com_Invoices_title').val();
+			_cData.com_duty_num = $('.com_duty_num').val();
+			_cData.com_phone = $('.com_phone').val();
+			_cData.com_fax = $('.com_fax').val();
+			_cData.com_postal_addr = $('.com_postal_addr').val();
+			_cData.com_postal_code = $('.com_postal_code').val();
+			_cData.com_field = $('.com_field input:radio:checked').val();
+			_cData.from = $('.from_data input:radio:checked').val();
+			_cData.verify_code = $('.verify_code').val();
+			//判断必填项是否填写
+			if(!_cData.countNum || _cData.countNum === '0'){
+				alert('参加人数不能为空。');
+				return;
+			}else{
+				//判断用户名，职务，电话，邮箱是否匹配
+				for (var i = 0; i < uNameData.length; i++) {
+					// console.log(uNameData[i].value , uMobileData[i].value , uEmailData[i].value)
+					if(uNameData[i] && uNameData[i].value && uJobData[i].value && uMobileData[i].value && uEmailData[i].value){
+						_cData.uData.push(
+							{
+								uname: uNameData[i].value,
+								ujob: uJobData[i].value,
+								umobile: uMobileData[i].value,
+								uemail: uEmailData[i].value
+							}
+							);
+					}else{
+						alert('用户名，职务，电话不能为空。');
+						return;
+					}
+				};
+				if(_cData.uData.length !== parseInt($('.countNum').val())){
+					alert('用户名，职务，电话不能为空');
+					return;
+				}
+				// _cData.uData = JSON.stringify(_cData.uData);
 			}
-		})
+			// console.log(_cData)
+			if(!_cData.com_name){
+				alert('公司名称不能为空。');
+				return;
+			}
+			if(!_cData.com_Invoices_title){
+				alert('公司发票抬头不能为空。');
+				return;
+			}
+			if(!_cData.com_duty_num){
+				alert('公司税号不能为空。');
+				return;
+			}
+			if(!_cData.com_phone){
+				alert('电话不能为空。');
+				return;
+			}
+			if(!_cData.com_postal_addr){
+				alert('邮政地址不能为空。');
+				return;
+			}
+			if(!_cData.com_field){
+				alert('所属领域不能为空。');
+				return;
+			}
+			if(!_cData.from){
+				alert('您是通过什么平台获知本次会议的不能为空。');
+				return;
+			}
+			if(!_cData.verify_code){
+				alert('验证码不能为空。');
+				return;
+			}
+			if(!confirm('确认提交以上信息吗？')){
+				return;
+			}
+			console.log('all',_cData,JSON.stringify(_cData));
+
+			$.ajax({
+				url: '?m=events&a=addMSignUp',
+				type: 'POST',
+				data: _cData,
+				dataType: 'json',
+				success: function(res){
+					console.log(res);
+					if(res.resCode === 200){
+						alert('恭喜你！报名成功！');
+						// $("#success").alert();
+					}else{
+						alert('信息提交失败');
+						// alert();
+						// $("#error").alert();
+					}
+				}
+			})
+			
+		});
+	})
 		
-	});
 </script>
 <!-- INCLUDE ../footer.tpl -->

@@ -512,8 +512,21 @@
 .top-null{
 	padding-top: 15px;
 }
-
-.logo-show img{
-	height:65px; 
-	width:100%;
+.logo-show{
+	padding-top: 10px;
+	height:65px;
+	background: #ffffff;
+	border-radius: 6px;
 }
+.logo-show img{
+	height:45px; 
+	/*width:100%;*/
+}
+
+.mybtn,#file_upload-button,.uploadify-button {
+	background-color:yellow;
+/*background:url('../img/events/detail/children/upload-project.png' ) no-repeat 100% 100%;*/
+}
+/*.uploadify:hover .uploadify-button {
+background:url(BG_buttonOver.PNG );
+}*/

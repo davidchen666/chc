@@ -113,20 +113,47 @@ class EventsController extends Controller
         api 相关
     */
     function addMSignUp(){
-        //获取post值
-        $pData = json_decode(file_get_contents("php://input"),true);
-        // var_dump($this->request()->get('countNum'));
-        // var_dump($_REQUEST);
-        // var_dump($pData);
-        // if(!$pData){
-        //     $pData = $_REQUEST;
-        // }
-// var_dump($pData);
-// die();
+        $pData = getData();
         echo $this->model->addMSignUp($pData);
-        // echo $pData;
-        // var_dump(112);
-
+    }
+    function addRSignUp(){
+        $pData = getData();
+        echo $this->model->addRSignUp($pData);
+    }
+    function uploadFile(){
+        $file = $_FILES['Filedata'];
+        $name = $file['name'];
+        $type = $file['type'];
+        $size = $file['size'];
+        $tmp_name = $file['tmp_name'];
+        $url = dirname(dirname(__FILE__))."/uploads/docFile/";//文件路径
+        $pre_str = date("YmdHis",time()).'-'.rand(1,99999);
+        $tmp_url = $url.$pre_str.$name;
+        // date("YmdHis",time())+rand(1,99999);
+        $tpname = substr(strrchr($name,'.'),1);//获取文件后缀
+        // $types = array('jpg','png','jpeg','bmp','gif');
+        $types = array('ppt','pptx','pdf');
+        $filesize = 1024 * 1024 * 100;
+        if($size > $filesize){
+            //              echo "<script>alert('退出成功!');location.href='".$_SERVER["HTTP_REFERER"]."';</script>";
+            // echo "'文件过大!";
+            echo to_error("文件过大!");
+            exit;
+        }else if(!in_array($tpname,$types)){
+            // echo "文件类型不符合!";
+            echo to_error("文件类型不符合!");
+            exit;
+        }else if(!move_uploaded_file($tmp_name,$tmp_url)){
+            // echo "移动文件失败!";
+            echo to_error("移动文件失败!(请检查文件名是否合法)");
+            exit;
+        }else{
+            move_uploaded_file($tmp_name,$tmp_url);
+            $size = round($size/1024/1024,2); //转换成Mb
+            $upload = array('size' => $size, 'url' => $tmp_url, 'name' => $name,'newname'=>$pre_str.$name, 'type' => $tpname);
+            // return $upload;
+            echo to_success($upload);
+        }
     }
 }
 
