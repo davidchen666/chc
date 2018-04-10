@@ -10,7 +10,44 @@
 			<div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/m-title.png" class="img-responsive">
 	    	</div>
-			
+			<ul class="box1Cen list-unstyled list-inline text-center">
+	        	<li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	            <li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	            <li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	            <li class="wow">
+	            	<div class="box1CenCon">
+	            		<div class="img-img img-one">
+	            			<h4 class="white top"><b>1800元/人</b></h4>
+	            			<h4 class="footer">早鸟价</h4>
+	            			<p><small>3月1日前报名并付费3月1日</small></p>
+	            		</div>
+	            	</div>
+	            </li>
+	        </ul>
 			<div class="box1Cen list-unstyled list-inline text-left table-list">
 				<ul class="list-group">
 				    <li class="list-group-item text-center top-bg"><h4>会议时间：2018/03/21 ~ 2018/03/21</h4></li>
@@ -156,44 +193,6 @@
 	<!--关于参会-->
 	<div id="m-sign-up-about">
 		<div class="container">
-	    	<ul class="box1Cen list-unstyled list-inline text-center">
-	        	<li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费3月1日</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	        </ul>
 	        <div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/m-about.png" class="img-responsive">
 	    	</div>

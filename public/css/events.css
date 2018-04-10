@@ -441,8 +441,8 @@
 	font-weight: 100;
 }
 #m-sign-up ul{
-	background-color: #fff;
-	padding-bottom:20px;
+	/*background-color: #fff;*/
+	/*padding-bottom:20px;*/
 }
 #m-sign-up .row,#r-sign-up .row{
 	background-color: #fff;
@@ -458,9 +458,9 @@
 	/*height: 17px;
     width: 16px;*/
 }
-#m-sign-up-about ul li{
+#m-sign-up ul li{
 	width:25%;
-	padding:0px 20px;
+	/*padding:0px 20px;*/
 }
 .img-img{
 	/*position:absolute;  
