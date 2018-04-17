@@ -23,39 +23,22 @@ class IndexController extends Controller
      */
     function index()
     {
-        $data = array();
-        if(Session::instance()->get('username') && Session::instance()->get('userid')){
-            View::instance('index/index.tpl')->show($data);
-        } else{
-            header("location: ?m=index&a=login");
-        }
+        // $name = "张三";
+        // $data = array(
+        //     'name'=>$name,
+        //     'age'=>22,
+        //     'addr'=>"上海"
+        //     );
+        $data['title'] = $this->title;
+        // $getData = $this->model->index(5);
+        // var_dump($getData);
+        View::instance('index/index.tpl')->show($data);
+        // echo to_success($getData);
     }
 
-    /**
-     * login
-     */
-    function login()
+    function test2()
     {
-        $data = array();
-        Session::instance()->set('username', '');
-        Session::instance()->set('userid', '');
-        View::instance('index/login.tpl')->show($data);
-    }
-
-    /*
-        ######################## API ##########################
-    */
-
-    function verifyLogin(){
-        $pData = getData();
-        $res = $this->model->verifyLogin($pData);
-        $resArr = json_decode($res,true);
-        if($resArr['resCode'] === 200){
-            Session::instance()->set('username', $resArr['resData']['username']);
-            Session::instance()->set('userid', $resArr['resData']['userid']);
-        }
-        echo $res;
-        
+        View::instance('index/test2.tpl')->show(array());
     }
 
     function uploadFile()
