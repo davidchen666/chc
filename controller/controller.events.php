@@ -12,7 +12,8 @@ class EventsController extends Controller
     private $title;
     private $data=array(
             'title'=>'品牌会议',
-            'events'=>'active'
+            'events'=>'active',
+            'imgPath'=>IMG_PATH
         );
     const M = "Events";
     function __construct()
@@ -109,17 +110,23 @@ class EventsController extends Controller
         View::instance('events/events_rSignUp.tpl')->show($data);
     }
 
-    /*
-        api 相关
-    */
+    /*#######################################################
+      ######################  api 接口 ######################
+    */#######################################################
+
+    //会议报名
     function addMSignUp(){
         $pData = getData();
         echo $this->model->addMSignUp($pData);
     }
+
+    //路演报名
     function addRSignUp(){
         $pData = getData();
         echo $this->model->addRSignUp($pData);
     }
+
+    //上传计划书
     function uploadFile(){
         $file = $_FILES['Filedata'];
         $name = $file['name'];
@@ -154,6 +161,17 @@ class EventsController extends Controller
             // return $upload;
             echo to_success($upload);
         }
+    }
+
+    //获取首页信息
+    function getEventsInfo(){
+        $pData = getData();
+        if(!$pData['events_id']){
+            echo to_error('加载失败，不能获取到id');
+        }else{
+            echo $this->model->getEventsInfoById($pData);
+        }
+        
     }
 }
 

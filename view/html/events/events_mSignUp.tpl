@@ -10,8 +10,8 @@
 			<div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/m-title.png" class="img-responsive">
 	    	</div>
-			<ul class="box1Cen list-unstyled list-inline text-center">
-	        	<li class="wow">
+			<ul class="box1Cen list-unstyled list-inline text-center price-list">
+	        	<!-- <li class="wow">
 	            	<div class="box1CenCon">
 	            		<div class="img-img img-one">
 	            			<h4 class="white top"><b>1800元/人</b></h4>
@@ -46,11 +46,11 @@
 	            			<p><small>3月1日前报名并付费3月1日</small></p>
 	            		</div>
 	            	</div>
-	            </li>
+	            </li> -->
 	        </ul>
 			<div class="box1Cen list-unstyled list-inline text-left table-list">
 				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>会议时间：2018/03/21 ~ 2018/03/21</h4></li>
+				    <li class="list-group-item text-center top-bg"><h4>会议时间：<span class="events-date">2018/03/21 ~ 2018/03/21</span></h4></li>
 				</ul>
 				<div class="row">
 					<div class="col-md-3">
@@ -198,24 +198,50 @@
 	    	</div>
 	        <div class="box1Cen warn-list">
 	        	<p class="blue"><b>注意事项</b></p>
-				<p>1、快进看就看见了看借口借口尽快尽快将</p>
+	        	<div class="attention">
+	        		
+	        	</div>
+				<!-- <p>1、快进看就看见了看借口借口尽快尽快将</p>
 				<p>2、快进看就看见了看借口借口尽快尽快将</p>
 				<p>3、快进看就看见了看借口借口尽快尽快将</p>
 				<p>4、快进看就看见了看借口借口尽快尽快将</p>
 				<p>5、快进看就看见了看借口借口尽快尽快将</p>
-				<p>6、快进看就看见了看借口借口尽快尽快将</p>
+				<p>6、快进看就看见了看借口借口尽快尽快将</p> -->
 				<p class="blue"><b>付费及开票</b></p>
-				<p>1、快进看就看见了看借口借口尽快尽快将</p>
+				<div class="cost-intro">
+					
+				</div>
+				<!-- <p>1、快进看就看见了看借口借口尽快尽快将</p>
 				<p>2、快进看就看见了看借口借口尽快尽快将</p>
-				<p>3、快进看就看见了看借口借口尽快尽快将</p>
+				<p>3、快进看就看见了看借口借口尽快尽快将</p> -->
 	        </div>
 	    </div>
 	</div>
 
 <script type="text/javascript">
+	//加载ing
+	loadingArr = ['.price-list','.attention','.cost-intro'];
+	showLoading();
+	var showData = function(res){
+		if(res.infoData){
+			$('.attention').html(getNewStr(res.infoData.events_register_attention));
+			$('.cost-intro').html(getNewStr(res.infoData.events_register_cost_intro));
+			$('.events-date').html(res.baseData.events_begin_date + ' ~ '+ res.baseData.events_begin_date);
+			if(res.infoData.events_register_cost){
+				var priceArr = res.infoData.events_register_cost.split("\n");
+				var priceStr= '';
+				$.each(priceArr, function(index, val) {
+					var littleArr = val.split("->");
+					priceStr += '<li class="wow"><div class="box1CenCon"><div class="img-img img-one"><h4 class="white top"><b>' + littleArr[1] + '</b></h4><h4 class="footer">' + littleArr[0] + '</h4><p><small>' + littleArr[2] + '</small></p></div></div></li>';
+				});
+				$('.price-list').html(priceStr);
+			}
+		}
+	}
+
+	//报名相关操作
 	$(function(){
 		//获取页面相关信息
-
 		$('.countNum').change(function(event) {
 			// console.log($('.countNum').val());
 			var num = parseInt($('.countNum').val());
@@ -338,4 +364,4 @@
 	})
 		
 </script>
-<!-- INCLUDE ../footer.tpl -->
+<!-- INCLUDE ../footer.tpl

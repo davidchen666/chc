@@ -57,4 +57,91 @@
 		// var sMenu = $('.detail-menu').scrollTop();
 		// console.log(sMenu)
 	})
+
+	//检查路由参数是否合法
+	var getQueryString = function(name){
+	     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	     var r = window.location.search.substr(1).match(reg);
+	     if(r!=null){
+	     	return  unescape(r[2]);
+	     }else{
+	     	return null;
+	     }
+	}
+
+	//将换行变成p标签
+	var getNewStr = function(str){
+		var arrData = str.split("\n");
+		if(arrData.length > 0){
+			$.each(arrData, function(index, val) {
+				 arrData[index] = '<p>' + val + '</p>';
+			});
+			return arrData.join(" ");
+		}else{
+			return '';
+		}
+	}
+
+	//展示loading
+	var showLoading = function(){
+		$.each(loadingArr, function(index, val) {
+			 $(val).html('<img class="img-responsive center-block" src="{WEBSITE_SOURCE_URL}/img/events/detail/loading.gif" alt="">');
+		});
+	}
+
+	//请求数据并渲染页面
+	var getData = function(params){
+		$.ajax({
+			url: '?m=events&a=getEventsInfo',
+			type: 'POST',
+			data: params,
+			success: function(res){
+				res = $.parseJSON(res);
+				console.log(res);
+				if(res.resCode !== 200){
+					alert(res.resData);
+					return false;
+				}else{
+					showData(res.resData)
+					// return res.resData;
+				}
+			}
+		})
+	}
+	var loadingArr = [];
+	var allowAction = ['detail','about','hotel','review','speaker','schedule','mSignUp','rSignUp'];
+	var currentAction = getQueryString('a');
+	var events_id = getQueryString('events_id');
+	var params = {};
+	var resData = null;
+	if( !events_id || getQueryString('m') !== 'events' || allowAction.indexOf(currentAction) < 0 ){
+		alert('访问地址不正确！');
+		// return;
+	}else{
+		params = {"events_id":events_id};
+		switch (currentAction){
+			case 'detail':
+				params = {"events_id":events_id,"speaker":true,"organizer":true};
+				break;
+			case 'hotel':
+				params = {"events_id":events_id,"hotel":true};
+				break;
+			case 'speaker':
+				params = {"events_id":events_id,"speaker":true};
+				break;
+			case 'rSignUp':
+				params = {"events_id":events_id,"roadShow":true};
+				break;
+			case 'review':
+				params = {"events_id":events_id,"review":true};
+				break;
+		}
+	}
+	// console.log(events_id);
+	//获取动态数据
+	$(function(){
+		getData(params)
+		// resData = getData(params);
+		// console.log(resData);
+	})
 </script>

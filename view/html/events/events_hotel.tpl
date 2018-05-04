@@ -10,8 +10,8 @@
 			<div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel-title.png" class="img-responsive">
 	    	</div>
-			<div class="box1Cen list-unstyled list-inline text-left hotel-intro">
-				<strong><h4><b>杭州和达希尔顿逸林酒店</b></h4></strong>
+			<div class="box1Cen list-unstyled list-inline text-left hotel-intro hotel-info">
+				<!-- <strong><h4><b>杭州和达希尔顿逸林酒店</b></h4></strong>
 				<p>杭州和达希尔顿逸林酒店坐落在杭州经济技术开发区（下沙）CBD区块，是杭州首家希尔顿逸林品牌酒店，同时也是该区首家国际品牌全方位服务酒店。直接接驳杭州地铁1号线，可轻松抵达众多大型跨国企业、下沙大学城、购物中心、西湖景区及市中心。步行3分钟便可到金沙湖地铁站，距离杭州萧山机场仅20分钟车程；距离杭州市中心武林广场和西湖景区也仅45分钟车程。便捷的交通，核心区块的地理位置，使其成为下沙的新地标。</p>
 				<p>地址：杭州经济技术开发区金沙大道600号</p>
 				<p>网址：wwwkjlj</p>
@@ -20,17 +20,17 @@
 				<p>网址：www.doubletree.com.cn/hangzhou</p>
 				<small><h4><b>晚房价格：</b></h4></small>
 				<p>大床/双房 ：700元/晚含一份/两份早餐</p>
-				<p>房晚团队价格仅适用于会议期间参会嘉宾入住。</p>
+				<p>房晚团队价格仅适用于会议期间参会嘉宾入住。</p> -->
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left room-show">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;客房、会议室</h4></li>
 				</ul>
-				<div class="row">
-					<div class="col-md-3"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel1.png" class="img-responsive"></div>
+				<div class="row hotel-pic">
+					<!-- <div class="col-md-3"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel1.png" class="img-responsive"></div>
 					<div class="col-md-3"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel2.png" class="img-responsive"></div>
 					<div class="col-md-3"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel3.png" class="img-responsive"></div>
-					<div class="col-md-3"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel4.png" class="img-responsive"></div>
+					<div class="col-md-3"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel4.png" class="img-responsive"></div> -->
 				</div>
 			</div>
 			
@@ -39,7 +39,10 @@
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;到达指引</h4></li>
 				</ul>
 				<p><br></p>
-				<p><strong>从上海：</strong>沿G60至G92向杭州行进，然后转至G60上G2501，从下沙出口下高速，右转至德胜东路，然后转至海达南路，继续前进至杭州和达希尔顿逸林酒店。</p>
+				<div class="arrive-info">
+					
+				</div>
+				<!-- <p><strong>从上海：</strong>沿G60至G92向杭州行进，然后转至G60上G2501，从下沙出口下高速，右转至德胜东路，然后转至海达南路，继续前进至杭州和达希尔顿逸林酒店。</p>
 				<p><strong>从苏州：</strong>沿G15向右并入G60，然后上G92往杭州方向，然后沿G60上G2501从下沙出口下高速，右转至德胜东路，然后左转至海达南路，继续前进至杭州和达希尔顿逸林酒店。</p>
 				<p><strong>从杭州市中心：</strong>沿环城北路上艮山西路，行至艮山东路，然后行至下沙路。再左转至海达南路，继续前进至杭州和达希尔顿逸林酒店。</p>
 				<div class="row">
@@ -56,7 +59,7 @@
 					<div class="col-md-6">
 						<div class="pic-show"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/map.png" class="img-responsive"></div>
 					</div>
-				</div>
+				</div> -->
 				
 			</div>
 
@@ -65,3 +68,22 @@
 
 
 <!-- INCLUDE ../footer.tpl -->
+<script>
+	//加载ing
+	loadingArr = ['.hotel-info','.arrive-info','.hotel-pic'];
+	showLoading();
+	var showData = function(res){
+		if(res.hotelData){
+			$('.hotel-info').html(res.hotelData.hotel_info);
+			$('.arrive-info').html(res.hotelData.arrive_info);
+			if(res.hotelData.hotel_pic){
+				var picArr = $.parseJSON(res.hotelData.hotel_pic);
+				var picStr= '';
+				$.each(picArr, function(index, val) {
+					 picStr += '<div class="col-md-3"><img src="{imgPath}/hotel/' + val + '" class="img-responsive"></div>';
+				});
+				$('.hotel-pic').html(picStr);
+			}
+		}
+	}
+</script>
