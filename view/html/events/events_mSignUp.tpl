@@ -19,34 +19,7 @@
 	            			<p><small>3月1日前报名并付费</small></p>
 	            		</div>
 	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费</small></p>
-	            		</div>
-	            	</div>
-	            </li>
-	            <li class="wow">
-	            	<div class="box1CenCon">
-	            		<div class="img-img img-one">
-	            			<h4 class="white top"><b>1800元/人</b></h4>
-	            			<h4 class="footer">早鸟价</h4>
-	            			<p><small>3月1日前报名并付费3月1日</small></p>
-	            		</div>
-	            	</div>
-	            </li> -->
+	            </li>-->
 	        </ul>
 			<div class="box1Cen list-unstyled list-inline text-left table-list">
 				<ul class="list-group">
@@ -221,8 +194,10 @@
 <script type="text/javascript">
 	//加载ing
 	loadingArr = ['.price-list','.attention','.cost-intro'];
+	// var rStr = $('.table-list').html();
 	showLoading();
 	var showData = function(res){
+		// $('.table-list').html(rStr);
 		if(res.infoData){
 			$('.attention').html(getNewStr(res.infoData.events_register_attention));
 			$('.cost-intro').html(getNewStr(res.infoData.events_register_cost_intro));
@@ -276,7 +251,12 @@
 			_cData.com_field = $('.com_field input:radio:checked').val();
 			_cData.from = $('.from_data input:radio:checked').val();
 			_cData.verify_code = $('.verify_code').val();
+			_cData.events_id = events_id;
 			//判断必填项是否填写
+			if(!_cData.events_id){
+				alert('不能获取到会议id');
+				return;
+			}
 			if(!_cData.countNum || _cData.countNum === '0'){
 				alert('参加人数不能为空。');
 				return;
@@ -340,7 +320,7 @@
 			if(!confirm('确认提交以上信息吗？')){
 				return;
 			}
-			console.log('all',_cData,JSON.stringify(_cData));
+			// console.log('all',_cData,JSON.stringify(_cData));
 
 			$.ajax({
 				url: '?m=events&a=addMSignUp',
@@ -348,14 +328,22 @@
 				data: _cData,
 				dataType: 'json',
 				success: function(res){
-					console.log(res);
-					if(res.resCode === 200){
+					// console.log(res);
+					if(res.resData.cid){
 						alert('恭喜你！报名成功！');
-						// $("#success").alert();
+						$('.countNum').val();
+						$('.com_name').val();
+						$('.com_Invoices_title').val();
+						$('.com_duty_num').val();
+						$('.com_phone').val();
+						$('.com_fax').val();
+						$('.com_postal_addr').val();
+						$('.com_postal_code').val();
+						$('.com_field input:radio:checked').val();
+						$('.from_data input:radio:checked').val();
+						$('.verify_code').val();
 					}else{
-						alert('信息提交失败');
-						// alert();
-						// $("#error").alert();
+						alert('信息提交失败,' + res.resData);
 					}
 				}
 			})

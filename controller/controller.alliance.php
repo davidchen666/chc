@@ -12,7 +12,7 @@ class AllianceController extends Controller
     private $title;
     private $data=array(
             'title'=>'产品联盟',
-            'alliance'=>'selected'
+            'alliance'=>'active'
         );
     // const M = "Event
     function __construct()

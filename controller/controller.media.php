@@ -11,8 +11,8 @@ class MediaController extends Controller
     private $_api;
     private $title;
     private $data=array(
-            'title'=>'医疗媒体',
-            'media'=>'selected'
+            'title'=>'医疗传媒',
+            'media'=>'active'
         );
     // const M = "Event
     function __construct()

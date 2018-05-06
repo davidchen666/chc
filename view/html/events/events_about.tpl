@@ -58,19 +58,25 @@
 		//关于会议
 		$('#intro-list .about-content').html(getNewStr(res.infoData.events_about));
 		//拟邀企业
-		//events_about_invite_company  events_about_invite_disarmament
-		var invite_company_arr = res.infoData.events_about_invite_company.split("\n");
 		var company_str = '';
-		$.each(invite_company_arr, function(index, val) {
-			company_str += '<div class="col-md-3"><p>'+ val +'</p></div>';
-		});
+		//events_about_invite_company  events_about_invite_disarmament
+		if(res.infoData.events_about_invite_company){
+			var invite_company_arr = res.infoData.events_about_invite_company.split("\n");
+			$.each(invite_company_arr, function(index, val) {
+				company_str += '<div class="col-md-3"><p>'+ val +'</p></div>';
+			});
+		}
 		$('.invite-company').html(company_str);
+		
 		//拟邀机构
-		var invite_disarmament_arr = res.infoData.events_about_invite_disarmament.split("\n");
 		var disarmament_str = '';
-		$.each(invite_disarmament_arr, function(index, val) {
-			disarmament_str += '<div class="col-md-3"><p>'+ val +'</p></div>';
-		});
+		if(res.infoData.events_about_invite_disarmament){
+			var invite_disarmament_arr = res.infoData.events_about_invite_disarmament.split("\n");
+			$.each(invite_disarmament_arr, function(index, val) {
+				disarmament_str += '<div class="col-md-3"><p>'+ val +'</p></div>';
+			});
+		}
 		$('.invite-disarmament').html(disarmament_str);
+			
 	}
 </script>

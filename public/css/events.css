@@ -150,8 +150,8 @@
 }
 .top-img{
 	height:400px;
-	background: url('../img/events/detail/banner-00.png') center center no-repeat;
-	background-size: 100% 100%;
+	/*background: url('../img/events/detail/banner-00.png') center center no-repeat;
+	background-size: 100% 100%;*/
 	/*border-bottom: 5px solid #A6CB42;*/
 	/*padding-top: 30%;*/
 }

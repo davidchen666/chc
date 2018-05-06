@@ -1,32 +1,32 @@
 <!-- 菜单 -->
 <div class="detail-top">
-	<div class="top-img">
+	<div class="top-img" id="topimg">
 		<div class="detail-menu">
 			<div class="container">
 				<ul class="box1Cen list-unstyled list-inline text-center" id="menu-show">
 		            <li class="wow">
-		            	<a href="?m=events&a=detail"><div class="box1CenCon {detail}"><p>首页</p></div></a>
+		            	<a class="child-menu" href="#" link="?m=events&a=detail"><div class="box1CenCon {detail}"><p>首页</p></div></a>
 		            </li>
 		            <li class="wow">
-		                <a href="?m=events&a=about"><div class="box1CenCon {about}"><p>关于会议</p></div></a>
+		                <a class="child-menu" href="#" link="?m=events&a=about"><div class="box1CenCon {about}"><p>关于会议</p></div></a>
 		            </li>
 		            <li class="wow">
-		                <a href="?m=events&a=schedule"><div class="box1CenCon {schedule}"><p>会议日程</p></div></a>
+		                <a class="child-menu" href="#" link="?m=events&a=schedule"><div class="box1CenCon {schedule}"><p>会议日程</p></div></a>
 		            </li>
 		            <li class="wow">
-		                <a href="?m=events&a=speaker"><div class="box1CenCon {speaker}"><p>演讲嘉宾</p></div></a>
+		                <a class="child-menu" href="#" link="?m=events&a=speaker"><div class="box1CenCon {speaker}"><p>演讲嘉宾</p></div></a>
 		            </li>
 		            <li class="wow">
-		                <a href="?m=events&a=hotel"><div class="box1CenCon {hotel}"><p>会议酒店</p></div></a>
+		                <a class="child-menu" href="#" link="?m=events&a=hotel"><div class="box1CenCon {hotel}"><p>会议酒店</p></div></a>
 		            </li>
 		            <li class="wow">
-		                <a href="?m=events&a=review"><div class="box1CenCon {review}"><p>历届回顾</p></div></a>
+		                <a class="child-menu" href="#" link="?m=events&a=review"><div class="box1CenCon {review}"><p>历届回顾</p></div></a>
 		            </li>
 		            <li class="wow bigger-menu-bg">
-		                <a href="?m=events&a=mSignUp"><div class="box1CenCon {mSignUp}"><p><img src="{WEBSITE_SOURCE_URL}/img/events/detail/events-record-icon.png"> 参会报名</p></div></a>
+		                <a class="child-menu" href="#" link="?m=events&a=mSignUp"><div class="box1CenCon {mSignUp}"><p><img src="{WEBSITE_SOURCE_URL}/img/events/detail/events-record-icon.png"> 参会报名</p></div></a>
 		            </li>
 		            <li class="wow bigger-menu-bg">
-		                <a href="?m=events&a=rSignUp"><div class="box1CenCon {rSignUp}"><p><img src="{WEBSITE_SOURCE_URL}/img/events/detail/road-record-icon.png"> 路演报名</p></div></a>
+		                <a class="child-menu" href="#" link="?m=events&a=rSignUp"><div class="box1CenCon {rSignUp}"><p><img src="{WEBSITE_SOURCE_URL}/img/events/detail/road-record-icon.png"> 路演报名</p></div></a>
 		            </li>
 		        </ul>
 	        </div>
@@ -58,37 +58,6 @@
 		// console.log(sMenu)
 	})
 
-	//检查路由参数是否合法
-	var getQueryString = function(name){
-	     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-	     var r = window.location.search.substr(1).match(reg);
-	     if(r!=null){
-	     	return  unescape(r[2]);
-	     }else{
-	     	return null;
-	     }
-	}
-
-	//将换行变成p标签
-	var getNewStr = function(str){
-		var arrData = str.split("\n");
-		if(arrData.length > 0){
-			$.each(arrData, function(index, val) {
-				 arrData[index] = '<p>' + val + '</p>';
-			});
-			return arrData.join(" ");
-		}else{
-			return '';
-		}
-	}
-
-	//展示loading
-	var showLoading = function(){
-		$.each(loadingArr, function(index, val) {
-			 $(val).html('<img class="img-responsive center-block" src="{WEBSITE_SOURCE_URL}/img/events/detail/loading.gif" alt="">');
-		});
-	}
-
 	//请求数据并渲染页面
 	var getData = function(params){
 		$.ajax({
@@ -98,24 +67,30 @@
 			success: function(res){
 				res = $.parseJSON(res);
 				console.log(res);
+				closeLoading();
 				if(res.resCode !== 200){
-					alert(res.resData);
+					// alert(res.resData);
+					$('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
 					return false;
 				}else{
-					showData(res.resData)
-					// return res.resData;
+					showData(res.resData);
+					$('#topimg').attr('style', 'background:url({imgPath}/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: 100% 100%;height: 400px;');
+					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
+						//存储图片
+						localStorage.setItem(events_id,$('#topimg').attr('style'));
+					}
 				}
 			}
 		})
 	}
-	var loadingArr = [];
+	
 	var allowAction = ['detail','about','hotel','review','speaker','schedule','mSignUp','rSignUp'];
 	var currentAction = getQueryString('a');
 	var events_id = getQueryString('events_id');
 	var params = {};
-	var resData = null;
 	if( !events_id || getQueryString('m') !== 'events' || allowAction.indexOf(currentAction) < 0 ){
-		alert('访问地址不正确！');
+		$('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: 您访问的地址不正确。请检查链接参数。</h1>');
+		// alert('访问地址不正确！');
 		// return;
 	}else{
 		params = {"events_id":events_id};
@@ -140,8 +115,12 @@
 	// console.log(events_id);
 	//获取动态数据
 	$(function(){
+		//渲染缓存图片
+		$('#topimg').attr('style',localStorage.getItem(events_id));
 		getData(params)
-		// resData = getData(params);
-		// console.log(resData);
 	})
+	//menu change
+	$('.child-menu').click(function(event) {
+		window.location.href = $(this).attr('link') + '&events_id=' + events_id;
+	});
 </script>

@@ -29,69 +29,6 @@
 	                	<h4>郑民华</h4>
 	                	<p><small>山蓝资本创始及执行合伙人</small></p>
 	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-2.jpg" class="img-responsive img-circle">
-	                	<h4>刘道志</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-3.jpg" class="img-responsive img-circle">
-	                	<h4>孙立宁</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-4.jpg" class="img-responsive img-circle">
-	                	<h4>方云才</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-5.png" class="img-responsive img-circle">
-	                	<h4>麻生</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-6.jpg" class="img-responsive img-circle">
-	                	<h4>余征坤</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-7.jpg" class="img-responsive img-circle">
-	                	<h4>陆勤超</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-8.jpg" class="img-responsive img-circle">
-	                	<h4>周昭华</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-9.png" class="img-responsive img-circle">
-	                	<h4>刘岩</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon">
-	                	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker-10.jpg" class="img-responsive img-circle">
-	                	<h4>Larry</h4>
-	                	<p><small>山蓝资本创始及执行合伙人</small></p>
-	                </div>
 	            </li>-->
 	        </ul>
 	        <div class="btn-img text-center">
@@ -194,34 +131,7 @@
 			<ul class="box1Cen list-unstyled list-inline text-center organize-show starategic-partner">
 	            <!-- <li class="wow">
 	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li> -->
+	            </li>-->
 	        </ul>
 
 	        <!--媒体支持-->
@@ -233,34 +143,7 @@
 			<ul class="box1Cen list-unstyled list-inline text-center organize-show media-support">
 	            <!-- <li class="wow">
 	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li> -->
+	            </li>-->
 	        </ul>
 			<!--底部-->
 			<div class="box1Cen list-unstyled list-inline text-left">
@@ -353,29 +236,28 @@
 			if(res.organizerData.events_organizer_organizer){
 				var organizerStr = '';
 				$.each(res.organizerData.events_organizer_organizer, function(index, val) {
-					 organizerStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					 organizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
 				});
 				$('.organizer').html(organizerStr);
 			}
 			if(res.organizerData.events_organizer_co_organizer){
 				var coOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_co_organizer, function(index, val) {
-					 coOrganizerStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					 coOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
 				});
 				$('.co-organizer').html(coOrganizerStr);
 			}
 			if(res.organizerData.events_organizer_starategic_partner){
 				var starategicOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_starategic_partner, function(index, val) {
-					 starategicOrganizerStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					 starategicOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
 				});
-				console.log(starategicOrganizerStr);
 				$('.starategic-partner').html(starategicOrganizerStr);
 			}
 			if(res.organizerData.events_organizer_media_support){
 				var mediaOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_media_support, function(index, val) {
-					 mediaOrganizerStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					 mediaOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
 				});
 				$('.media-support').html(mediaOrganizerStr);
 			}

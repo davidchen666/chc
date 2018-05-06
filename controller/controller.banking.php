@@ -12,7 +12,7 @@ class BankingController extends Controller
     private $title;
     private $data=array(
             'title'=>'品牌会议',
-            'banking'=>'selected'
+            'banking'=>'active'
         );
     // const M = "Event
     function __construct()

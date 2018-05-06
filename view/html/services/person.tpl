@@ -54,7 +54,7 @@ $(function(){
     showLoading();
     //加载数据
     //请求数据并渲染页面
-    var params = {id: 3};
+    var params = {id: 2};
     $.ajax({
         url: '?m=about&a=getPage',
         type: 'POST',

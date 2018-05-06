@@ -11,63 +11,63 @@
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/r-title.png" class="img-responsive">
 	    	</div>
 			<div class="box1Cen text-center words">
-				<h4 class="blue"><b>标题11111——<small>小标题</small></b></h4>
-				<p class="blue"><b>2018年3月22日，杭州</b></p>
-				<p class="text-left">内容内容123，内容内容内容内容内容内容内容内容内容内容内容内容，内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。容内容内容内容内容内容内容内容。</p>
+				<h4 class="blue"><b class="road-title"><span ></span><small> </small></b></h4>
+				<p class="blue"><b class="road-second-title"></b></p>
+				<p class="text-left road-content"></p>
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;活动宗旨</h4></li>
 				</ul>
 				<div class="words top-null">
-					<p>内容就快进借口借口借口借口</p>
+					<p class="road-target"></p>
 				</div>
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;专业指导</h4></li>
 				</ul>
-				<div class="words top-null">
+				<div class="words top-null road-guide">
+					<!-- <p>内容就快进借口借口借口借口</p>
 					<p>内容就快进借口借口借口借口</p>
 					<p>内容就快进借口借口借口借口</p>
 					<p>内容就快进借口借口借口借口</p>
-					<p>内容就快进借口借口借口借口</p>
-					<p>内容就快进借口借口借口借口</p>
+					<p>内容就快进借口借口借口借口</p> -->
 				</div>
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;课程安排</h4></li>
 				</ul>
-				<div class="words top-null">
+				<div class="words top-null road-course">
+					<!-- <p>内容就快进借口借口借口借口</p>
 					<p>内容就快进借口借口借口借口</p>
 					<p>内容就快进借口借口借口借口</p>
 					<p>内容就快进借口借口借口借口</p>
-					<p>内容就快进借口借口借口借口</p>
-					<p>内容就快进借口借口借口借口</p>
+					<p>内容就快进借口借口借口借口</p> -->
 				</div>
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;路演项目报名</h4></li>
 				</ul>
-				<div class="words top-null">
+				<div class="words top-null road-signup-intro">
+					<!-- <p>内容就快进借口借口借口借口</p>
 					<p>内容就快进借口借口借口借口</p>
-					<p>内容就快进借口借口借口借口</p>
-					<p>内容就快进借口借口借口借口</p>
+					<p>内容就快进借口借口借口借口</p> -->
 				</div>
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;您将获得</h4></li>
 				</ul>
-				<div class="words top-null">
-					<p>内容就快进借口借口借内容就快进借口借口借口借口内容就快进借口借口借口借口内容就快进借口借口借口借口口借口</p>
+				<div class="words top-null road-achieve">
+					<!-- <p>内容就快进借口借口借内容就快进借口借口借口借口内容就快进借口借口借口借口内容就快进借口借口借口借口口借口</p> -->
 				</div>
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list">
+			<div class="box1Cen list-unstyled list-inline text-left table-list road-register">
 				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>会议时间：2018/03/21 ~ 2018/03/21</h4></li>
+				    <li class="list-group-item text-center top-bg"><h4>会议时间：<span class="events-date"></span>	</h4></li>
 				</ul>
 				<div class="row top-null">
 					<div class="col-md-3">
@@ -128,7 +128,7 @@
 					</div>
 				</div>
 				<div class="btn-img text-center">
-		            <a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/sign-btn.png" alt=""></a>
+		            <a href="###" "email me"><img id="addData" src="{WEBSITE_SOURCE_URL}/img/events/detail/children/sign-btn.png" alt=""></a>
 		        </div>
 			</div>
 
@@ -136,7 +136,41 @@
 	</div>
 <!-- INCLUDE ../footer.tpl -->
 <script type="text/javascript">
+	//加载flash
+	if (window.ActiveXObject) {
+        var s = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+        if(!s){
+            alert('请将您的浏览器设置falsh插件在此网站上始终允许！');
+        }
+    } else {
+        var s = navigator.plugins['Shockwave Flash'];
+        if(!s){
+            alert('请将您的浏览器设置falsh插件在此网站上始终允许！');
+        }
+    }
+	//渲染数据
+	loadingArr = ['.road-content','.road-target','.road-guide','.road-achieve','.road-course','.road-signup-intro'];
+	// var rStr = $('.road-register').html();
+	showLoading();
+	var showData = function(res){
+		// $('.road-register').html(rStr);
+		if(res.roadShowData){
+			var roadObj = res.roadShowData;
+			$('.road-title').html(roadObj.road_title);
+			$('.road-second-title').html(roadObj.road_second_title);
+			$('.road-content').html(getNewStr(roadObj.road_intro));
+			$('.road-target').html(getNewStr(roadObj.road_target));
+			$('.road-guide').html(getNewStr(roadObj.road_guide));
+			$('.road-achieve').html(getNewStr(roadObj.road_achieve));
+			$('.road-course').html(getNewStr(roadObj.road_course));
+			$('.road-signup-intro').html(getNewStr(roadObj.road_signup_intro));
+		}
+		$('.events-date').html(res.baseData.events_begin_date + ' ~ '+ res.baseData.events_begin_date);
+	}
+
+	//报名
 $(function(){
+	console.log(111222);
 	var fileName = '';
 	//upload
 	$('#file_upload').uploadify({
@@ -207,35 +241,8 @@ $(function(){
 	$('#file_upload-button').css("background","#A6CB42");
 	$('#file_upload-button').css("line-height","30px");
 
-	// $('#uploadImage').hide();
-	// $(".uploadFile img").click(function(){
-	// 	$("#uploadImage").click();
-	// });
-
-
-	// $('#uploadImage').change(function(event) {
-	// 	var file = this.files[0] ? this.files[0] : null;
-	// 	console.log(file);
-	// 	if (!file) { 
-	// 		return false; 
-	// 	}
-	// 	var formData = new FormData();
-	// 	console.log(formData);
- //        formData.append('file',file);
-	// 	$.ajax({
-	// 		url: '?m=events&a=uploadFile',
-	// 		type: 'post',
-	// 		dataType: 'json',
-	// 		processData:false,
-	// 		mimeType:"multipart/form-data",
-	// 		data: {fileData: file},
-	// 		success: function(rs){
-	// 			console.log(rs);
-	// 		}
-	// 	})
-	// });
 	//提交参加报名
-	$('.btn-img img').click(function(event) {
+	$('#addData').click(function(event) {
 		var _cData = {};
 		//获取公司相关数据
 		_cData.cname = $('.cname').val();
@@ -244,9 +251,13 @@ $(function(){
 		_cData.umobile = $('.umobile').val();
 		_cData.uemail = $('.uemail').val();
 		_cData.fname = fileName;
+		_cData.events_id = events_id;
 		
 		//判断必填项是否填写
-		// console.log(_cData)
+		if(!_cData.events_id){
+			alert('不能获取到会议id');
+			return;
+		}
 		if(!_cData.cname){
 			alert('公司名称不能为空。');
 			return;
@@ -274,7 +285,7 @@ $(function(){
 		if(!confirm('确认提交以上信息吗？')){
 			return;
 		}
-		console.log('all',_cData,JSON.stringify(_cData));
+		// console.log('all',_cData,JSON.stringify(_cData));
 
 		$.ajax({
 			url: '?m=events&a=addRSignUp',
@@ -284,10 +295,20 @@ $(function(){
 			success: function(res){
 				console.log(res);
 				if(res.resCode === 200){
-					alert('恭喜你！报名成功！');
+					if(res.resData.cid){
+						alert('恭喜你！报名成功！');
+						$('.cname').val('');
+						$('.uname').val('');
+						$('.ujob').val('');
+						$('.umobile').val('');
+						$('.uemail').val('');
+					}else{
+						alert('信息提交失败');
+					}
+					
 					// $("#success").alert();
 				}else{
-					alert('信息提交失败');
+					alert('信息提交失败,' + res.resData);
 					// alert();
 					// $("#error").alert();
 				}
