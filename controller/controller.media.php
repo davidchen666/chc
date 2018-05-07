@@ -12,12 +12,13 @@ class MediaController extends Controller
     private $title;
     private $data=array(
             'title'=>'医疗传媒',
-            'media'=>'active'
+            'media'=>'active',
+            'imgPath'=>IMG_PATH
         );
-    // const M = "Event
+    const M = "News";
     function __construct()
     {
-        // $this->model = Model::instance(self::M);
+        $this->model = Model::instance(self::M);
     }
 
     /**
@@ -27,6 +28,12 @@ class MediaController extends Controller
     {
         $data = $this->data;
         View::instance('media/index.tpl')->show($data);
+    }
+
+    //新闻详情
+    function newsDetail(){
+        $data = $this->data;
+        View::instance('alliance/news_detail.tpl')->show($data);
     }
     
 }

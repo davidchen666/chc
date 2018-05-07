@@ -12,21 +12,34 @@ class AllianceController extends Controller
     private $title;
     private $data=array(
             'title'=>'产品联盟',
-            'alliance'=>'active'
+            'alliance'=>'active',
+            'imgPath'=>IMG_PATH
         );
-    // const M = "Event
+    const M = "News";
     function __construct()
     {
-        // $this->model = Model::instance(self::M);
+        $this->model = Model::instance(self::M);
     }
 
     /**
-     * 会议
+     * 产品联盟
      */
     function index()
     {
         $data = $this->data;
         View::instance('alliance/index.tpl')->show($data);
+    }
+
+    //新闻详情
+    function newsDetail(){
+        $data = $this->data;
+        View::instance('alliance/news_detail.tpl')->show($data);
+    }
+
+    //获取新闻
+    function getNewsData(){
+        $pData = getData();
+        echo $this->model->getNewsData($pData);
     }
     
 }
