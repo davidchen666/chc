@@ -1,0 +1,120 @@
+.my-content{
+	width: 100%;
+	height: 350px;
+	/*border: 1px solid red;*/
+	position：relative；
+}
+.my-content .my-left,.my-content .my-right{
+	float: left;
+	height: 100%;
+}
+.my-content .my-left{
+	width: 40%;
+	/*height: 100%;*/
+}
+@media (max-width: 992px){
+	.my-content .my-left {
+    	width: 36%;
+	}
+	/*.box1Cen {
+	    margin: 0;
+	    font-size: 0;
+	    padding: 30px 5%;
+	}*/
+}
+
+.my-left .word-title-show{
+	z-index: 9999;
+	/*color: #ffffff;*/
+	position: absolute;
+	left: 30%;
+	top: 22%;
+	line-height: 40px;
+}
+.black ,.black span{
+	color:black;
+}
+.my-left .word-title-show span{
+	/*display: inline;*/
+	font-size: 28px;
+	line-height: 40px;
+}
+.my-left .one img{
+	height: 117%;
+	width: 100%;
+	/*left: -50;*/
+	margin-left: 0px;
+	margin-right: -10px;
+	position: absolute;
+}
+.my-left .one,.my-left .two,.my-left .three,.my-left .four,.my-left .five{
+	/*position: absolute;*/
+	height: 70px;
+	position: absolute;
+	/*width: 36%;*/
+	width: 36.1%;
+	padding: 0px;
+	/*width: 37.28%;*/
+	border:1px solid black;
+}
+.my-left .one{
+	top: 178;
+	width: 37.28%;
+	/*overflow:hidden;*/
+	/*height: 20%;*/
+	/*height: 70px;
+	position: absolute;*/
+	/*width: 40%;*/
+	/*padding-right: -20px;*/
+	/*position：absolute;*/
+	/*left:;*/
+	/*background: url('../img/banking/left-1.png');*/
+	z-index: 100;
+	/*background-position: 1000%;*/
+	/*background-size: cover;*/
+	/*background-size: cover;*/
+	/*background-repeat: no-repeat;*/
+}
+.my-left .two{
+	top: 248px;
+	/*width: 37.28%;*/
+	z-index: 99;
+	/*top: 43%;*/
+	/*height: 20%;*/
+	/*position: absolute;*/
+	/*background: url('../img/banking/left-0.png') no-repeat 40% 100%;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;*/
+}
+.my-left .three{
+	top: 318px;
+	/*position: absolute;*/
+	/*background: yellow;*/
+	z-index: 98;
+	/*height: 20%;*/
+	/*background: url('../img/banking/left-2.png') 100% 100%;*/
+}
+.my-left .four{
+	top: 388px;
+	/*position: absolute;*/
+	/*background: red;*/
+	z-index: 97;
+	/*height: 20%;*/
+	/*background: url('../img/banking/left-0.png') 100% 100%;*/
+}
+.my-left .five{
+	/*height: 20%;*/
+	top: 458px;
+	/*position: absolute;*/
+	/*background: blue;*/
+	z-index: 96;
+	/*background: url('../img/banking/left-5.png') 100% 100%;*/
+}
+.my-content .my-right{
+	width: 60%;
+	/*border: 1px solid black;*/
+	background: url('../img/banking/right-1.png') 100% 100%;
+	/*position: absolute;*/
+	/*z-index: 200;*/
+}

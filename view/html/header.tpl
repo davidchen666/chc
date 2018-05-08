@@ -50,7 +50,8 @@
     <!-- <link href="{WEBSITE_SOURCE_URL}/img/home/logo.png" rel="shortcut icon" /> -->
     <link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/css/home.css">
     <link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/css/events.css">
-	<link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/css/alliance.css">
+    <link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/css/alliance.css">
+	<link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/css/banking.css">
     <script>
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];

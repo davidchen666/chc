@@ -5,7 +5,7 @@
         <div class="swiper-wrapper">
                 <div class="swiper-slide">
                 <div class="banBg imgFull">
-                    <img src="{WEBSITE_SOURCE_URL}/img/about/banner-00.png" class="img-responsive">
+                    <img src="{WEBSITE_SOURCE_URL}/img/banking/banner-00.png" class="img-responsive">
                     <!-- <img src="{img_url}" class="img-responsive"> -->
                 </div>
                 <div class="slide-caption ">
@@ -30,13 +30,97 @@
 
 <div class="box1Bg box1Cen" id="alliance-bg">
     <div class="container ">
+        <!--begin 业务介绍 -->
         <div class="box1Top wow fadeInUp" data-wow-delay="0.5s">
-            <!-- <img src="{WEBSITE_SOURCE_URL}/img/about/about-title.png" class="img-responsive"> -->
+            <img src="{WEBSITE_SOURCE_URL}/img/about/about-title.png" class="img-responsive">
         </div>
-        
-        <div class="showContent">
-            
+        <!--end 业务介绍 -->
+
+        <!--begin 服务流程 -->
+        <div class="box1Top wow fadeInUp banking-service" data-wow-delay="0.5s">
+            <img src="{WEBSITE_SOURCE_URL}/img/banking/service-title.png" class="img-responsive">
+            <div class="box1Cen">
+                <div class="my-content">
+                    <div class="my-left">
+                        <a href="javascript:;" class="changeStep">
+                            <div class="one">
+                                <img src="{WEBSITE_SOURCE_URL}/img/banking/selected-1.png" alt="" class="img-responsive">
+                                <span class="word-title-show text-center"> <span>01 </span> 初步接触</span>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="changeStep">
+                            <div class="two">
+                                <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-2.png" alt="" class="img-responsive">
+                                <span class="word-title-show text-center black"> <span>02 </span> 初步接触</span>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="changeStep">
+                            <div class="three">
+                                <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-3.png" alt="" class="img-responsive">
+                                <span class="word-title-show text-center"> <span>03 </span> 初步接触</span>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="changeStep">
+                            <div class="four">
+                                <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-4.png" alt="" class="img-responsive">
+                                <span class="word-title-show text-center black"> <span>04 </span> 初步接触</span>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="changeStep">
+                            <div class="five">
+                                <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-5.png" alt="" class="img-responsive">
+                                <span class="word-title-show text-center"> <span>05 </span> 初步接触</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-right"></div>
+                </div>
+                
+            </div>
+            <div class="clearfix"></div>
         </div>
+        <!--end 服务流程 -->
+
+        <!--begin 合作机构-->
+        <div class="box1Top wow" data-wow-delay="0.5s">
+            <img src="{WEBSITE_SOURCE_URL}/img/banking/partner-title.png" class="img-responsive">
+        </div>
+        <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
+            <li class="wow">
+                <div class="box1CenCon logo-show "><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+            </li>
+        </ul>
+        <div class="btn-img text-center">
+            <a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/learn-more.png" alt=""></a>
+        </div>
+        <!--end 合作机构-->
     </div>
 </div>
 
@@ -80,6 +164,6 @@ $(function(){
 //         }
 //     })
 
-// })
+})
 </script>
 <!-- INCLUDE ../footer.tpl -->
