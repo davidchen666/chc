@@ -37,7 +37,7 @@
 .my-left .word-title-show span{
 	/*display: inline;*/
 	font-size: 28px;
-	line-height: 40px;
+	/*line-height: 40px;*/
 }
 .my-left .one img{
 	height: 117%;
@@ -55,7 +55,7 @@
 	width: 36.1%;
 	padding: 0px;
 	/*width: 37.28%;*/
-	border:1px solid black;
+	/*border:1px solid black;*/
 }
 .my-left .one{
 	top: 178;
@@ -76,7 +76,7 @@
 	/*background-repeat: no-repeat;*/
 }
 .my-left .two{
-	top: 248px;
+	top: 247px;
 	/*width: 37.28%;*/
 	z-index: 99;
 	/*top: 43%;*/
@@ -88,7 +88,7 @@
 	background-repeat: no-repeat;*/
 }
 .my-left .three{
-	top: 318px;
+	top: 316px;
 	/*position: absolute;*/
 	/*background: yellow;*/
 	z-index: 98;
@@ -96,7 +96,7 @@
 	/*background: url('../img/banking/left-2.png') 100% 100%;*/
 }
 .my-left .four{
-	top: 388px;
+	top: 385px;
 	/*position: absolute;*/
 	/*background: red;*/
 	z-index: 97;
@@ -105,7 +105,7 @@
 }
 .my-left .five{
 	/*height: 20%;*/
-	top: 458px;
+	top: 453px;
 	/*position: absolute;*/
 	/*background: blue;*/
 	z-index: 96;
@@ -114,7 +114,10 @@
 .my-content .my-right{
 	width: 60%;
 	/*border: 1px solid black;*/
-	background: url('../img/banking/right-1.png') 100% 100%;
-	/*position: absolute;*/
-	/*z-index: 200;*/
+	background-image: url('../img/banking/bg-one.png');
+	background-size: 100% 100%;
+	padding: 100px 100px 30px 100px;
+}
+.my-content .my-right p{
+	padding-top: 10px;
 }

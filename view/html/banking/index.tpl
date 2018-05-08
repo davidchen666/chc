@@ -51,29 +51,32 @@
                         <a href="javascript:;" class="changeStep">
                             <div class="two">
                                 <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-2.png" alt="" class="img-responsive">
-                                <span class="word-title-show text-center black"> <span>02 </span> 初步接触</span>
+                                <span class="word-title-show text-center black"> <span>02 </span> 合同签订</span>
                             </div>
                         </a>
                         <a href="javascript:;" class="changeStep">
                             <div class="three">
                                 <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-3.png" alt="" class="img-responsive">
-                                <span class="word-title-show text-center"> <span>03 </span> 初步接触</span>
+                                <span class="word-title-show text-center"> <span>03 </span> 企业诊断</span>
                             </div>
                         </a>
                         <a href="javascript:;" class="changeStep">
                             <div class="four">
                                 <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-4.png" alt="" class="img-responsive">
-                                <span class="word-title-show text-center black"> <span>04 </span> 初步接触</span>
+                                <span class="word-title-show text-center black"> <span>04 </span> 投资人见面会与投资深入对接</span>
                             </div>
                         </a>
                         <a href="javascript:;" class="changeStep">
                             <div class="five">
                                 <img src="{WEBSITE_SOURCE_URL}/img/banking/origintal-5.png" alt="" class="img-responsive">
-                                <span class="word-title-show text-center"> <span>05 </span> 初步接触</span>
+                                <span class="word-title-show text-center"> <span>05 </span> 落实投资</span>
                             </div>
                         </a>
                     </div>
-                    <div class="my-right"></div>
+                    <div class="my-right text-center">
+                    	<img src="{WEBSITE_SOURCE_URL}/img/banking/icon-one.png" alt="" class="img-responsive icon-show">
+                    	<p>介绍介绍介绍。。。。。。。介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
+                    </div>
                 </div>
                 
             </div>
@@ -132,37 +135,36 @@ $(function(){
 //         // console.log($('header').attr('class'));
 //         $('header').attr('class','headerBg navbar-fixed-top active');
 //     });
+	
+	var showJson = {
+		one: "11111111111111111111\n11.11111...",
+		two: "2222222222222222222222\n2.11111...",
+		three: "haoahoahohaohfodhoahofhao\nfhoaofhoahfoahofhaohfo.11111",
+		four: "4444444444444444444444444.11111...",
+		five: "55555555555555555555555555\n555555555555555555555555.11111"
+	};
+	$('.my-right p').html(showJson.one);
+   //change效果
+   $('.changeStep').hover(function() {
+   		$('.changeStep').children('div').css('width', '36.1%');
+   		$('.one img').attr('src',"{WEBSITE_SOURCE_URL}/img/banking/origintal-1.png");
+   		$('.two img').attr('src',"{WEBSITE_SOURCE_URL}/img/banking/origintal-2.png");
+   		$('.three img').attr('src',"{WEBSITE_SOURCE_URL}/img/banking/origintal-3.png");
+   		$('.four img').attr('src',"{WEBSITE_SOURCE_URL}/img/banking/origintal-4.png");
+   		$('.five img').attr('src',"{WEBSITE_SOURCE_URL}/img/banking/origintal-5.png");
 
-    
-//     loadingArr = ['.showContent'];
-//     showLoading();
-//     //加载数据
-//     //请求数据并渲染页面
-//     var params = {id: 3};
-//     $.ajax({
-//         url: '?m=about&a=getPage',
-//         type: 'POST',
-//         data: params,
-//         success: function(res){
-//             res = $.parseJSON(res);
-//             closeLoading();
-//             if(res.resCode !== 200){
-//                 // alert(res.resData);
-//                 $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
-//                 return false;
-//             }else{
-//                 // showData(res.resData);
-//                 $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
-//                 // $('.imgFull img').attr('src', '{imgPath}/about/' + res.resData[0].pic);
-//                 // console.log($('.imgFull img').attr('src'));
-//                 $('.showContent').html(res.resData[0].content);
-//                 // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
-//                 //     //存储图片
-//                 //     localStorage.setItem(events_id,$('#topimg').attr('style'));
-//                 // }
-//             }
-//         }
-//     })
+   		var currentStr = $(this).children('div').children('img').attr('src');
+   		var currentClass = $(this).children('div').attr('class');
+   	    $(this).children('div').children('img').attr('src', currentStr.replace('origintal', 'selected'));
+   	    $(this).children('div').css('width', '37.28%');
+   	    $('.icon-show').attr('src', "{WEBSITE_SOURCE_URL}/img/banking/icon-" + currentClass + ".png");
+   	    console.log(showJson[currentClass]);
+   	    $('.my-content .my-right').attr('style',"background-image: url({WEBSITE_SOURCE_URL}/img/banking/bg-" + currentClass + ".png); ");
+   	    $('.my-right p').html(showJson[currentClass]);
+   	    
+   }, function() {
+   	/* Stuff to do when the mouse leaves the element */
+   });
 
 })
 </script>
