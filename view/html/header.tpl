@@ -26,6 +26,9 @@
 
     <script src="{WEBSITE_SOURCE_URL}/js/lib/vendor/jquery.uploadify.min.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="{WEBSITE_SOURCE_URL}/css/uploadify.css">
+
+    <script src="{WEBSITE_SOURCE_URL}/js/lib/vendor/jquery.uploadfile.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{WEBSITE_SOURCE_URL}/css/uploadfile.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',

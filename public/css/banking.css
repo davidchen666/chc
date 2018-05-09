@@ -121,3 +121,101 @@
 .my-content .my-right p{
 	padding-top: 10px;
 }
+.sales {
+	height: 300px;
+	/*position: relative;*/
+	padding: 10px;
+
+}
+.sales .my-pic{
+	/*top: 200px;*/
+	width: 60%;
+	/*border: 1px solid red;*/
+	float: left;
+	padding-right: 10px;
+	height: 300px;
+	/*position: absolute;*/
+}
+.sales .my-intro{
+	width: 40%;
+	height: 100px;
+	/*border: 1px solid black;*/
+	float: left;
+	padding-left: 10px;
+	/*position: absolute;*/
+}
+
+.my-intro .intro-top{
+	height: 100px;
+	/*border: 1px solid blue;*/
+}
+
+.my-intro .intro-bottom{
+	height: 200px;
+	padding: 20px;
+	border: 1.5px solid #6689BC;
+}
+.my-intro .intro-bottom p{
+	padding-top: 0px;
+}
+#showRegister h4, #showRegister p, #showRegister div{
+	color: black;
+}
+#showRegister .modal-content{
+	padding: 10px 20px 30px 20px;
+}
+
+#showRegister .ajax-upload-dragdrop{
+    border: none; 
+    width: 100px;
+    color: #9DC040;
+    text-align: left;
+    vertical-align: middle;
+    padding: 10px 10px 0px 10px;
+/*    element.style {
+    vertical-align: top;
+    width: 400px;
+}*/
+}
+
+  /*a  upload */
+.a-upload {
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #ffffff;
+    /*background: #fafafa;*/
+    background: green;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 20px;
+    width: 100px;
+    text-decoration: none;
+    padding-top: 5px;
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+a-upload a{
+  text-decoration: none;
+}
+.a-upload:hover {
+    color: #ffffff;
+    background: yellow;
+    border-color: #ccc;
+    text-decoration: none
+}
