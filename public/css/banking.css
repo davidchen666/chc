@@ -194,10 +194,10 @@
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    height: 20px;
-    width: 100px;
+    height: 28px;
+    width: 120px;
     text-decoration: none;
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 .a-upload  input {

@@ -187,26 +187,28 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-5">
-                <p>
+            <div class="col-md-6 text-left">
+                <!-- <p> -->
                     <b><small>上传商业计划书（仅支持PPT、PDF）</small></b>
                     <!-- <input id="uploadImage" type="file" name="photoimage" class="fimg1"/> -->
                     <!-- <a href="javascript:;" class="uploadFile"><input id="file_upload" name="file_upload" type="file" multiple="false">
                     </a> -->
-                </p>
+                <!-- </p> -->
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2 text-left">
                 <!-- <div id="fileuploader"> -->
                     <!-- <img src="{WEBSITE_SOURCE_URL}/img/banking/enter.png" class="img-responsive" alt=""> -->
                     <a href="javascript:;" class="a-upload">
-                        <input type="file" name="file1" id="file1"  />上传商业计划书 
+                        <input type="file" name="file1" id="file1" class="form-control doUpload" />
+                        <!-- <img src="{WEBSITE_SOURCE_URL}/img/banking/enter.png" class="img-responsive" alt=""> -->
+                        递交商业计划书 
                     </a>
                     <!-- <input type="button" value="上传" onclick="doUpload()" />   -->
-                    <input type="button" value="上传" class="doUpload"/>  
                 <!-- </div> -->
             </div>
-            <div class="col-md-4">
-                <span class="msg" style="color:red;">上传成功</span>
+            <div class="col-md-4 text-center">
+            	<!-- <input type="button" value="上传" class=" doUpload"/> -->
+                <span class="msg" style="color:red;font-size:12px;"></span>
             </div>
         </div>
         <div class="row words">
@@ -261,7 +263,7 @@ $(function(){
    	    $(this).children('div').children('img').attr('src', currentStr.replace('origintal', 'selected'));
    	    $(this).children('div').css('width', '37.28%');
    	    $('.icon-show').attr('src', "{WEBSITE_SOURCE_URL}/img/banking/icon-" + currentClass + ".png");
-   	    console.log(showJson[currentClass]);
+   	    // console.log(showJson[currentClass]);
    	    $('.my-content .my-right').attr('style',"background-image: url({WEBSITE_SOURCE_URL}/img/banking/bg-" + currentClass + ".png); ");
    	    $('.my-right p').html(showJson[currentClass]);
    	    
@@ -306,7 +308,9 @@ $(function(){
    //  $('#showRegister .ajax-file-upload').bind('change',function(){ 
    //      console.log(111);
    //  })
+   // var sstr = $('.a-upload').html();
     function doUpload() {  
+    	$('.msg').html('正在上传...');
         var formData = new FormData();
         // formData.append("token", token);
         formData.append("file1", $('#file1')[0].files[0]);
@@ -321,12 +325,20 @@ $(function(){
              contentType: false,
              async: false
         }).done(function(res) {
+        	res = $.parseJSON(res);
             console.log(res);
+            if(res.resCode === 200){
+            	$('.msg').html('上传成功。');
+            }else{
+            	$('.msg').html('上传失败,<br>'+res.resData);
+            	// $('.a-upload').html(sstr);
+            }
+            
         }).fail(function(res) {
             
         });
     }
-    $('.doUpload').click(function(event) {
+    $('.doUpload').change(function(event) {
         doUpload();
     });
    //报名
