@@ -14,19 +14,29 @@ class BankingController extends Controller
             'title'=>'品牌会议',
             'banking'=>'active'
         );
-    // const M = "Event
+    const M = "Banking";
     function __construct()
     {
-        // $this->model = Model::instance(self::M);
+        $this->model = Model::instance(self::M);
     }
 
     /**
-     * 会议
+     * banking
      */
     function index()
     {
         $data = $this->data;
         View::instance('banking/index.tpl')->show($data);
+    }
+
+    /*#######################################################
+      ######################  api 接口 ######################
+    */#######################################################
+
+    //提交计划书 addBankingSignUp
+    function addBankingSignUp(){
+        $pData = getData();
+        echo $this->model->addBankingSignUp($pData);
     }
     
 }

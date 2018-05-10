@@ -60,34 +60,49 @@
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/1.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/2.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/3.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/4.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/5.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/6.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/7.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/8.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/9.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/10.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/11.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/12.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/13.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/14.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo/15.jpg" class="img-responsive"></div>
             </li>
         </ul>
         <div class="btn-img text-center">

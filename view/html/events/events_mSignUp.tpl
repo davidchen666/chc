@@ -126,15 +126,19 @@
 					<div class="col-md-6">
 						<div class="form-group com_field">
 						    <label for="name"><p>所属领域*</p></label>
-						    <p class="higher"><input type="radio" name="field" value="1"> 医疗企业——产品领域</p>
-						    <p class="higher"><input type="radio" name="field" value="2"> 投资企业</p>
-						    <p class="higher"><input type="radio" name="field" value="3"> 产品上游</p>
+						    <p class="higher"><input type="radio" name="field" value="1"> 医疗企业/产品领域</p>
+						    <p class="higher"><input type="radio" name="field" value="2"> 产业上游/中间服务供应商</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 投资银行/咨询机构/律师事务所/会计事务所</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 医学专家和科研机构</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 医学园区</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 媒体记者</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 其他</p>
 					  	</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group from_data">
 						    <label for="name"><p>您是通过什么平台获知本次会议的</p></label>
-						   	<p class="higher"><input type="radio" name="from_data" value="1"> EDM</p>
+						   	<p class="higher"><input type="radio" name="from_data" value="1"> EDM（电子邮件）</p>
 						    <p class="higher"><input type="radio" name="from_data" value="2"> 微信</p>
 						    <p class="higher"><input type="radio" name="from_data" value="3"> 媒体网站</p>
 						    <p class="higher"><input type="radio" name="from_data" value="4"> 网上搜索</p>
@@ -146,8 +150,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<p><small>注意：</small></p>
-						<p><small>1、“*” 为必填项，谢谢配合；</small></p>
-						<p><small>2、请正确填写个人基本信息，我们将以您提交的参会者姓名为准，制作参会确认函和胸牌；</small></p>
+						<p><small>1.“*” 为必填项，谢谢配合；</small></p>
+						<p><small>2.请正确填写个人基本信息，我们将以您提交的参会者姓名为准，制作参会确认函与胸牌；</small></p>
 					</div>
 				</div>
 				<div class="row">

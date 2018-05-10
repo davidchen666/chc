@@ -196,7 +196,11 @@
 	// 渲染动态数据
 	var showData = function(res){
 		//关于会议
-		$('#intro-list .about-content').html(getNewStr(res.infoData.events_about));
+		if(res.infoData.events_about_simple){
+			$('#intro-list .about-content').html(getNewStr(res.infoData.events_about_simple));
+		}else{
+			$('#intro-list .about-content').html(getNewStr(res.infoData.events_about));
+		}
 
 		//演讲嘉宾
 		if(res.speakerData){
@@ -218,8 +222,9 @@
 
 		//会议日程
 		$('#events-daily .title').html(res.infoData.events_schedule_title);
-		if(res.infoData.events_schedule_content){
-			var scheduleArr = res.infoData.events_schedule_content.split("\n");
+		if(res.infoData){
+			var sContent = res.infoData.events_schedule_content_simple ? res.infoData.events_schedule_content_simple : res.infoData.events_schedule_content;
+			var scheduleArr = sContent.split("\n");
 			var scheduleStr = '';
 			$.each(scheduleArr, function(index, val) {
 				var littleArr = [];

@@ -106,14 +106,18 @@
 				<div class="row">
 					<div class="col-md-4">
 						<p>
-							<b>上传商业计划书（仅支持PPT、PDF）</b>
+							<b>上传商业计划书（仅支持PPT、PDF格式）</b>
 							<!-- <input id="uploadImage" type="file" name="photoimage" class="fimg1"/> -->
 							<!-- <a href="javascript:;" class="uploadFile"><input id="file_upload" name="file_upload" type="file" multiple="false">
 							</a> -->
 						</p>
 					</div>
 					<div class="col-md-2">
-						<input id="file_upload" name="file_upload" type="file" multiple="false">
+						<a href="javascript:;" class="a-upload">
+	                        <input type="file" name="file1" id="file1" class="form-control doUpload" />
+	                        递交商业计划书 
+	                    </a>
+						<!-- <input id="file_upload" name="file_upload" type="file" multiple="false"> -->
 					</div>
 					<div class="col-md-4">
 						<span class="msg" style="color:red;"></span>
@@ -121,10 +125,9 @@
 				</div>
 				<div class="row words">
 					<div class="col-md-12">
-						<p><small>1、UIUI欧呼唤呼唤好久好久；</small></p>
-						<p><small>2、UIUI欧呼唤呼唤好久好久；</small></p>
-						<p><small>3、UIUI欧呼唤呼唤好久好久；</small></p>
-						<p><small>4、UIUI欧呼唤呼唤好久好久；</small></p>
+						<p><small>1.请真实填写以上信息，我们会对该信息保密，不会泄露给第三方或用于其他商业目的；</small></p>
+						<p><small>2.提交申请后，我们将在1-3个工作日内与您联系，请耐心等待；</small></p>
+						<p><small>3.相关问题请咨询：021-50726900，project@chconsultant.com。</small></p>
 					</div>
 				</div>
 				<div class="btn-img text-center">
@@ -137,17 +140,17 @@
 <!-- INCLUDE ../footer.tpl -->
 <script type="text/javascript">
 	//加载flash
-	if (window.ActiveXObject) {
-        var s = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-        if(!s){
-            alert('请将您的浏览器设置falsh插件在此网站上始终允许！');
-        }
-    } else {
-        var s = navigator.plugins['Shockwave Flash'];
-        if(!s){
-            alert('请将您的浏览器设置falsh插件在此网站上始终允许！');
-        }
-    }
+	// if (window.ActiveXObject) {
+ //        var s = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+ //        if(!s){
+ //            alert('请将您的浏览器设置falsh插件在此网站上始终允许！');
+ //        }
+ //    } else {
+ //        var s = navigator.plugins['Shockwave Flash'];
+ //        if(!s){
+ //            alert('请将您的浏览器设置falsh插件在此网站上始终允许！');
+ //        }
+ //    }
 	//渲染数据
 	loadingArr = ['.road-content','.road-target','.road-guide','.road-achieve','.road-course','.road-signup-intro'];
 	// var rStr = $('.road-register').html();
@@ -170,76 +173,110 @@
 
 	//报名
 $(function(){
-	console.log(111222);
 	var fileName = '';
+	function doUpload() {
+        $('.msg').html('');
+    	$('.msg').html('正在上传...');
+        var formData = new FormData();
+        // formData.append("token", token);
+        formData.append("file", $('#file1')[0].files[0]);
+        // formData.append("file2", $('#file2')[0].files[0]);
+        // formData.append("file3", $('#file3')[0].files[0]);
+        $.ajax({  
+             url: '?m=events&a=uploadFile' ,  
+             type: 'post',  
+             data: formData,
+             cache: false,
+             processData: false,
+             contentType: false,
+             async: false
+        }).done(function(res) {
+        	res = $.parseJSON(res);
+            console.log(res);
+            if(res.resCode === 200){
+            	$('.msg').html('上传成功。');
+                fileName = res.resData.newname;
+            }else{
+            	$('.msg').html('上传失败,<br>'+res.resData);
+                fileName = '';
+            }
+            
+        }).fail(function(res) {
+            fileName = '';
+        });
+    }
+    
+    $('.doUpload').change(function(event) {
+        doUpload();
+    });
 	//upload
-	$('#file_upload').uploadify({
-		'swf'      : 'public/img/uploadify.swf',
-		'uploader' : '?m=events&a=uploadFile',
-		'auto'    : true, //是否自动上传 false关闭自动上传 true 选中文件后自动上传
-		'buttonClass' : 'mybtn', //自定义按钮的样式
-	    // 'buttonImage' : 'public/img/events/detail/children/upload-project.png',
-	    'buttonText'  : '选择文件', //按钮显示的字迹
-	    //'fileObjName' : 'mytest'  //后台接收的时候就是$_FILES['mytest'] 
-	    // 'checkExisting' : '/uploadify/check-exists.php', //检查文件是否已经存在 返回0或者1
-	    // 'fileSizeLimit' : '100KB', //上传文件大小的限制
-	    // 'fileTypeDesc'  : '你需要一些文件',//可选择的文件的描述
-	    // 'fileTypeExts'  : '*.gif; *.jpg; *.png', //文件的允许上传的类型
+	// $('#file_upload').uploadify({
+	// 	'swf'      : 'public/img/uploadify.swf',
+	// 	'uploader' : '?m=events&a=uploadFile',
+	// 	'auto'    : true, //是否自动上传 false关闭自动上传 true 选中文件后自动上传
+	// 	'buttonClass' : 'mybtn', //自定义按钮的样式
+	//     // 'buttonImage' : 'public/img/events/detail/children/upload-project.png',
+	//     'buttonText'  : '选择文件', //按钮显示的字迹
+	//     //'fileObjName' : 'mytest'  //后台接收的时候就是$_FILES['mytest'] 
+	//     // 'checkExisting' : '/uploadify/check-exists.php', //检查文件是否已经存在 返回0或者1
+	//     // 'fileSizeLimit' : '100KB', //上传文件大小的限制
+	//     // 'fileTypeDesc'  : '你需要一些文件',//可选择的文件的描述
+	//     // 'fileTypeExts'  : '*.gif; *.jpg; *.png', //文件的允许上传的类型
 
-	     //上传的时候发生的事件
-	    'onUploadStart' : function(file){
-	      		// console.log('开始上传了');
-	      		$('.msg').html(file.name+"开始上传了");
-	  	},
-	  	 'uploadLimit'   : 10, //设置最大上传文件的数量
-	    /*
-	    'onUploadComplete' : function(result){
-	        for (var i in result.post){
-	         alert(i+':::'+result[i]);
-	        }
-	       },
-	    */
-	    //文件上传成功的时候
-	    'onUploadSuccess' : function(file, data, response) {
-	  		fileName = '';
-	     	if(data){
-	     		 data = $.parseJSON(data)
-	     		// console.log('11--',file, '22--',data, '33--',response);
-	     		if(data.resCode === 400){
-	     			// alert('上传失败！' + data.resData);
-	     			$('.msg').html('上传失败！' + data.resData);
-	     			return;
-	     		}else{
-	     			console.log(data.resData);
-	     			$('.msg').html(data.resData.name+' 上传成功！');
-	     			fileName = data.resData.newname;
-	     		}
-	     	}
+	//      //上传的时候发生的事件
+	//     'onUploadStart' : function(file){
+	//       		// console.log('开始上传了');
+	//       		$('.msg').html(file.name+"开始上传了");
+	//   	},
+	//   	 'uploadLimit'   : 10, //设置最大上传文件的数量
+	//     /*
+	//     'onUploadComplete' : function(result){
+	//         for (var i in result.post){
+	//          alert(i+':::'+result[i]);
+	//         }
+	//        },
+	//     */
+	//     //文件上传成功的时候
+	//     'onUploadSuccess' : function(file, data, response) {
+	//   		fileName = '';
+	//      	if(data){
+	//      		 data = $.parseJSON(data)
+	//      		// console.log('11--',file, '22--',data, '33--',response);
+	//      		if(data.resCode === 400){
+	//      			// alert('上传失败！' + data.resData);
+	//      			$('.msg').html('上传失败！' + data.resData);
+	//      			return;
+	//      		}else{
+	//      			console.log(data.resData);
+	//      			$('.msg').html(data.resData.name+' 上传成功！');
+	//      			fileName = data.resData.newname;
+	//      		}
+	//      	}
 	     	
-	    },
-	    //
-	    'onUploadError' : function(file, errorCode, errorMsg, errorString) {
-	    	console.log('1--'+file, '2--'+errorCode, '3--'+errorMsg, '4--'+errorString);
-	    	// alert(file.name + '上传失败原因:' + errorString); 
-	    },
-	    'itemTemplate' : '追加到每个上传节点的html',
-	    'height'  : 33, //设置高度 button
-	    'width'  : 131, //设置宽度
-	    'onDisable' : function(){
-	      	alert('您禁止上传');
-	    },
-	    'onEnable'  : function(){
-	      	// alert('您可以继续上传了');
-	    },
-	    //当文件选中的时候
-	    'onSelect'  : function(file){
-	      	// alert(file.name+"已经添加到队列");
-	      	$('.msg').html(file.name+"已经添加到队列");
-	    }
+	//     },
+	//     //
+	//     'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+	//     	console.log('1--'+file, '2--'+errorCode, '3--'+errorMsg, '4--'+errorString);
+	//     	// alert(file.name + '上传失败原因:' + errorString); 
+	//     },
+	//     'itemTemplate' : '追加到每个上传节点的html',
+	//     'height'  : 33, //设置高度 button
+	//     'width'  : 131, //设置宽度
+	//     'onDisable' : function(){
+	//       	alert('您禁止上传');
+	//     },
+	//     'onEnable'  : function(){
+	//       	// alert('您可以继续上传了');
+	//     },
+	//     //当文件选中的时候
+	//     'onSelect'  : function(file){
+	//       	// alert(file.name+"已经添加到队列");
+	//       	$('.msg').html(file.name+"已经添加到队列");
+	//     }
 
-	});
-	$('#file_upload-button').css("background","#A6CB42");
-	$('#file_upload-button').css("line-height","30px");
+	// });
+	// $('#file_upload-button').css("background","#A6CB42");
+	// $('#file_upload-button').css("line-height","30px");
 
 	//提交参加报名
 	$('#addData').click(function(event) {

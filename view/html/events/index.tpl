@@ -33,10 +33,10 @@
         <ul class="box1Cen list-unstyled list-inline text-center" id="big-show">
             <li class="wow fadeInUp">
                 <div class="single" class="text-left">
-                    <div class="add-shadow"><img src="{WEBSITE_SOURCE_URL}/img/events/pic1.png" class="img-responsive"></div>
+                    <div class="add-shadow"><img src="{WEBSITE_SOURCE_URL}/img/events/pic_0510.png" class="img-responsive"></div>
                     <div class="two-show left-show" class="text-left">
                         <p class="text-left"><small>第三届中国微创外科及手术机器人产业投资与并购CEO论坛</small></p>
-                        <p class="text-left">时间：2018年3月21日 &nbsp;&nbsp;  地点：<small>杭州和达希尔顿逸林酒店</small></p>
+                        <p class="text-left">时间：2018年6月28-29日 &nbsp;&nbsp;  地点：<small>上海</small></p>
                     </div>
                     <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/MIS2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-1.png" alt=""></a></div>
                     <div class="clearfix"></div>
