@@ -205,7 +205,7 @@
 		if(res.infoData){
 			$('.attention').html(getNewStr(res.infoData.events_register_attention));
 			$('.cost-intro').html(getNewStr(res.infoData.events_register_cost_intro));
-			$('.events-date').html(res.baseData.events_begin_date + ' ~ '+ res.baseData.events_begin_date);
+			$('.events-date').html(res.baseData.events_begin_date + ' ~ '+ res.baseData.events_end_date);
 			if(res.infoData.events_register_cost){
 				var priceArr = res.infoData.events_register_cost.split("\n");
 				var priceStr= '';
