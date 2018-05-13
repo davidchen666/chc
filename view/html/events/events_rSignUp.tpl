@@ -3,19 +3,20 @@
 
 <!-- 内容 -->
 <div class="total">
-
+	<div class="my-msg"></div>
+	<div class="my-loading"></div>
 	<!--参会报名-->
-	<div id="r-sign-up">
+	<div id="r-sign-up" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/r-title.png" class="img-responsive">
 	    	</div>
-			<div class="box1Cen text-center words">
+			<div class="box1Cen text-center words road-content-total" style="display: none;"> 
 				<h4 class="blue"><b class="road-title"><span ></span><small> </small></b></h4>
 				<p class="blue"><b class="road-second-title"></b></p>
 				<p class="text-left road-content"></p>
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-target-total" style="display: none;">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;活动宗旨</h4></li>
 				</ul>
@@ -23,7 +24,7 @@
 					<p class="road-target"></p>
 				</div>
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-guide-total" style="display: none;">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;专业指导</h4></li>
 				</ul>
@@ -35,7 +36,7 @@
 					<p>内容就快进借口借口借口借口</p> -->
 				</div>
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-course-total" style="display: none;">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;课程安排</h4></li>
 				</ul>
@@ -47,7 +48,7 @@
 					<p>内容就快进借口借口借口借口</p> -->
 				</div>
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-signup-intro-total" style="display: none;">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;路演项目报名</h4></li>
 				</ul>
@@ -57,7 +58,7 @@
 					<p>内容就快进借口借口借口借口</p> -->
 				</div>
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-achieve-total" style="display: none;">
 				<ul class="list-group">
 				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;您将获得</h4></li>
 				</ul>
@@ -65,7 +66,7 @@
 					<!-- <p>内容就快进借口借口借内容就快进借口借口借口借口内容就快进借口借口借口借口内容就快进借口借口借口借口口借口</p> -->
 				</div>
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list road-register">
+			<div class="box1Cen list-unstyled list-inline text-left table-list road-register" style="display: none;">
 				<ul class="list-group">
 				    <li class="list-group-item text-center top-bg"><h4>会议时间：<span class="events-date"></span>	</h4></li>
 				</ul>
@@ -80,31 +81,31 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="form-group">
-						    <label for="name"><p>联系人姓名</p></label>
+						    <label for="name"><p>联系人姓名*</p></label>
 						    <input type="text" class="form-control uname">
 					  	</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
-						    <label for="name"><p>职务</p></label>
+						    <label for="name"><p>职务*</p></label>
 						    <input type="text" class="form-control ujob">
 					  	</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
-						    <label for="name"><p>电话/手机</p></label>
+						    <label for="name"><p>电话/手机*</p></label>
 						    <input type="text" class="form-control umobile">
 					  	</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
-						    <label for="name"><p>邮箱</p></label>
+						    <label for="name"><p>邮箱*</p></label>
 						    <input type="text" class="form-control uemail">
 					  	</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<p>
 							<b>上传商业计划书（仅支持PPT、PDF格式）</b>
 							<!-- <input id="uploadImage" type="file" name="photoimage" class="fimg1"/> -->
@@ -124,10 +125,10 @@
 					</div>
 				</div>
 				<div class="row words">
-					<div class="col-md-12">
-						<p><small>1.请真实填写以上信息，我们会对该信息保密，不会泄露给第三方或用于其他商业目的；</small></p>
+					<div class="col-md-12 road-warn">
+						<!-- <p><small>1.请真实填写以上信息，我们会对该信息保密，不会泄露给第三方或用于其他商业目的；</small></p>
 						<p><small>2.提交申请后，我们将在1-3个工作日内与您联系，请耐心等待；</small></p>
-						<p><small>3.相关问题请咨询：021-50726900，project@chconsultant.com。</small></p>
+						<p><small>3.相关问题请咨询：021-50726900，project@chconsultant.com。</small></p> -->
 					</div>
 				</div>
 				<div class="btn-img text-center">
@@ -152,23 +153,47 @@
  //        }
  //    }
 	//渲染数据
-	loadingArr = ['.road-content','.road-target','.road-guide','.road-achieve','.road-course','.road-signup-intro'];
+	loadingArr = ['.my-loading'];
 	// var rStr = $('.road-register').html();
 	showLoading();
 	var showData = function(res){
 		// $('.road-register').html(rStr);
 		if(res.roadShowData){
 			var roadObj = res.roadShowData;
-			$('.road-title').html(roadObj.road_title);
-			$('.road-second-title').html(roadObj.road_second_title);
-			$('.road-content').html(getNewStr(roadObj.road_intro));
-			$('.road-target').html(getNewStr(roadObj.road_target));
-			$('.road-guide').html(getNewStr(roadObj.road_guide));
-			$('.road-achieve').html(getNewStr(roadObj.road_achieve));
-			$('.road-course').html(getNewStr(roadObj.road_course));
-			$('.road-signup-intro').html(getNewStr(roadObj.road_signup_intro));
+			if(roadObj.road_title || roadObj.road_second_title || roadObj.road_intro){
+				$('.road-title').html(roadObj.road_title);
+				$('.road-second-title').html(roadObj.road_second_title);
+				$('.road-content').html(getNewStr(roadObj.road_intro));
+				$('.road-content-total').show();
+			}
+			if(roadObj.road_target){
+				$('.road-target').html(getNewStr(roadObj.road_target));
+				$('.road-target-total').show();
+			}	
+			if(roadObj.road_guide){
+				$('.road-guide').html(getNewStr(roadObj.road_guide));
+				$('.road-guide-total').show();
+			}
+			if(roadObj.road_achieve){
+				$('.road-achieve').html(getNewStr(roadObj.road_achieve));
+				$('.road-achieve-total').show();
+			}
+			if(roadObj.road_course){
+				$('.road-course').html(getNewStr(roadObj.road_course));
+				$('.road-course-total').show();
+			}
+			if(roadObj.road_signup_intro){
+				$('.road-signup-intro').html(getNewStr(roadObj.road_signup_intro));
+				$('.road-signup-intro-total').show();
+			}
+			$('.road-register').show();
+			$('#r-sign-up').show();
+			$('.road-warn').html(getNewStr(roadObj.road_warn));
+			$('.events-date').html(roadObj.road_begin_date + ' ~ '+ roadObj.road_end_date);
+		}else{
+			$('.my-msg').html('<h3 class="text-center black" style="padding-top:80px;padding-bottom:100px;">暂无该活动。</h3>');
 		}
-		$('.events-date').html(res.baseData.events_begin_date + ' ~ '+ res.baseData.events_begin_date);
+		
 	}
 
 	//报名

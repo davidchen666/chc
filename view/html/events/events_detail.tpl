@@ -3,8 +3,9 @@
 
 <!-- 内容 -->
 <div class="total">
+	<div class="my-loading"></div>
 	<!--关于会议-->
-	<div id="intro-list">
+	<div id="intro-list" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/about-title.png" class="img-responsive">
@@ -17,7 +18,7 @@
 	</div>
 
 	<!--演讲嘉宾-->
-	<div id="speaker-list">
+	<div id="speaker-list" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/speaker.png" class="img-responsive">
@@ -32,26 +33,26 @@
 	            </li>-->
 	        </ul>
 	        <div class="btn-img text-center">
-	            <a href="http://www.chconsultant.com/zh/summit/MIS2018/guest" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/more-speaker.png" alt=""></a>
+	            <a href="javascript:;" target="_blank" class="getMoreSpeaker"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/more-speaker.png" alt=""></a>
 	        </div> 
 		</div>
 	</div>
 
 	<!--会议日程-->
-	<div id="events-daily">
+	<div id="events-daily" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/events-title.png" class="img-responsive">
 	    	</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list">
 				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4 class="title">3月21日 &nbsp;杭州和达希尔顿逸林酒店</h4></li>
+				    <li class="list-group-item text-center top-bg"><h4 class="title"></h4></li>
 				    <span class="list">
 				    <!-- <li class="list-group-item"><p>9:00-9:10 <img src="{WEBSITE_SOURCE_URL}/img/events/detail/green-spot.png" alt="">开幕致辞</p></li>-->
 				    </span>
 				</ul>
 				<div class="btn-img text-center">
-		            <a href="http://www.chconsultant.com/zh/summit/MIS2018/agenda" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/more-speaker.png" alt=""></a>
+		            <a href="javascript:;" target="_blank" class="getMoreSchedule"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/more-shedule.png" alt=""></a>
 		        </div>
 			</div>
 		</div>
@@ -86,65 +87,74 @@
 	</div>
 
 	<!--组织架构-->
-	<div id="organize">
+	<div id="organize" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/organize-title.png" class="img-responsive">
 	    	</div>
 			
 			<!--主办方-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>主办方/organizer</h4></li>
-				</ul>
+			<div class="organizer-total" style="display: none;">
+				<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>主办方/organizer</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show organizer">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+		            </li>
+		            <li class="wow">
+		                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+		            </li> -->
+		        </ul>
 			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show organizer">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li> -->
-	        </ul>
 			
 			<!--协办方-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>协办方/co-organizer</h4></li>
-				</ul>
+			<div class="co-organizer-total" style="display: none;">
+				<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>协办方/co-organizer</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show co-organizer">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+		            </li>
+		            <li class="wow">
+		                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+		            </li> -->
+		        </ul>
 			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show co-organizer">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li> -->
-	        </ul>
-
+				
 	        <!--战略合作伙伴-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>战略合作伙伴/starategic partner</h4></li>
-				</ul>
-			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show starategic-partner">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>-->
-	        </ul>
-
+	        <div class="starategic-partner-total" style="display: none;">
+	        	<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>战略合作伙伴/starategic partner</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show starategic-partner">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+		            </li>-->
+		        </ul>
+	        </div>
+				
 	        <!--媒体支持-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>媒体支持/media support</h4></li>
-				</ul>
-			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show media-support">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
-	            </li>-->
-	        </ul>
+	        <div class="media-support-total" style="display: none;">
+	        	<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>媒体支持/media support</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show media-support">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/events/ali.png" class="img-responsive"></div>
+		            </li>-->
+		        </ul>
+	        </div>
+				
 			<!--底部-->
 			<div class="box1Cen list-unstyled list-inline text-left">
 				<div class="row">
@@ -191,39 +201,54 @@
 
 <!-- INCLUDE ../footer.tpl -->
 <script type="text/javascript">
-	loadingArr = ['#intro-list .about-content','#speaker-list ul','#events-daily .list','#events-daily .list','.organizer','.co-organizer','.starategic-partner','.media-support']
+	loadingArr = ['#intro-list .about-content','#speaker-list ul','#events-daily .list','#events-daily .list','.organizer','.co-organizer','.starategic-partner','.media-support','.my-loading']
 	showLoading();
 	// 渲染动态数据
 	var showData = function(res){
 		//关于会议
 		if(res.infoData.events_about_simple){
+			$('#intro-list').show();
 			$('#intro-list .about-content').html(getNewStr(res.infoData.events_about_simple));
 		}else{
-			$('#intro-list .about-content').html(getNewStr(res.infoData.events_about));
+			// $('#intro-list .about-content').html(getNewStr(res.infoData.events_about));
+			// $()
 		}
 
 		//演讲嘉宾
-		if(res.speakerData){
+		if(res.speakerData.events_speaker_simple && JSON.stringify(res.speakerData.events_speaker_simple) !== '[]'){
 			var totalStr = '';
+			$.each(res.speakerData.events_speaker_simple, function(index, val) {
+				totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
+			});
+			
 			//主讲嘉宾
-			if(res.speakerData.events_speaker_main){
-				$.each(res.speakerData.events_speaker_main, function(index, val) {
-					totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
-				});
+			// if(res.speakerData.events_speaker_main){
+			// 	$.each(res.speakerData.events_speaker_main, function(index, val) {
+			// 		totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
+			// 	});
+			// }
+			// //邀请嘉宾
+			// if(res.speakerData.events_speaker_invite){
+			// 	$.each(res.speakerData.events_speaker_invite, function(index, val) {
+			// 		totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
+			// 	});
+			// }
+			//补充
+			if(res.speakerData.events_speaker_simple.length % 5 != 0){
+				var num = 5 - (res.speakerData.events_speaker_simple.length % 5);
+				for (var i = 1; i <= num; i++) {
+					totalStr += '<li></li>';
+				}
 			}
-			//邀请嘉宾
-			if(res.speakerData.events_speaker_invite){
-				$.each(res.speakerData.events_speaker_invite, function(index, val) {
-					totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
-				});
-			}
+			$('#speaker-list').show();
 			$('#speaker-list ul').html(totalStr);
 		}
 
 		//会议日程
 		$('#events-daily .title').html(res.infoData.events_schedule_title);
-		if(res.infoData){
-			var sContent = res.infoData.events_schedule_content_simple ? res.infoData.events_schedule_content_simple : res.infoData.events_schedule_content;
+		if(res.infoData.events_schedule_content_simple){
+			$('#events-daily').show();
+			var sContent = res.infoData.events_schedule_content_simple ;
 			var scheduleArr = sContent.split("\n");
 			var scheduleStr = '';
 			$.each(scheduleArr, function(index, val) {
@@ -238,37 +263,68 @@
 
 		//组织架构
 		if(res.organizerData){
-			if(res.organizerData.events_organizer_organizer){
+			if(res.organizerData.events_organizer_organizer && JSON.stringify(res.organizerData.events_organizer_organizer) !== '[]'){
 				var organizerStr = '';
 				$.each(res.organizerData.events_organizer_organizer, function(index, val) {
-					 organizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					 organizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.organizer').html(organizerStr);
+				
+				$('#organize').show();
+				$('.organizer-total').show();
 			}
-			if(res.organizerData.events_organizer_co_organizer){
+			if(res.organizerData.events_organizer_co_organizer && JSON.stringify(res.organizerData.events_organizer_co_organizer) !== '[]'){
 				var coOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_co_organizer, function(index, val) {
-					 coOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					 coOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.co-organizer').html(coOrganizerStr);
+				$('#organize').show();
+				$('.co-organizer-total').show();
 			}
-			if(res.organizerData.events_organizer_starategic_partner){
+			if(res.organizerData.events_organizer_starategic_partner && JSON.stringify(res.organizerData.events_organizer_starategic_partner) !== '[]'){
 				var starategicOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_starategic_partner, function(index, val) {
-					 starategicOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					 starategicOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.starategic-partner').html(starategicOrganizerStr);
+				$('#organize').show();
+				$('.starategic-partner-total').show();
 			}
-			if(res.organizerData.events_organizer_media_support){
+			if(res.organizerData.events_organizer_media_support && JSON.stringify(res.organizerData.events_organizer_media_support) !== '[]'){
 				var mediaOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_media_support, function(index, val) {
-					 mediaOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					mediaOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.media-support').html(mediaOrganizerStr);
+				$('#organize').show();
+				$('.media-support-total').show();
 			}
 
 		}
-		
-
 	}
+
+	$('.getMoreSpeaker').click(function(event) {
+		window.location.href = '?m=events&a=speaker&events_id='+events_id;
+	});
+	
+	$('.getMoreSchedule').click(function(event) {
+		window.location.href = '?m=events&a=schedule&events_id='+events_id;
+	});
 </script>

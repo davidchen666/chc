@@ -117,6 +117,10 @@ class EventsController extends Controller
     //会议报名
     function addMSignUp(){
         $pData = getData();
+        if(Session::instance()->get('code') != $pData['verify_code']){
+            echo to_error('验证码不正确');
+            exit();
+        }
         echo $this->model->addMSignUp($pData);
     }
 
@@ -124,6 +128,15 @@ class EventsController extends Controller
     function addRSignUp(){
         $pData = getData();
         echo $this->model->addRSignUp($pData);
+    }
+
+    //生成验证码
+    function getVerifyCode(){
+        $val = rand(1000,9999);
+        Session::instance()->set('code',$val);
+        echo to_success(array(
+            'code' => $val
+        ));
     }
 
     // //上传计划书

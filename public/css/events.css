@@ -167,7 +167,8 @@
 	/*border:1px solid red;*/
 	/*top:367px;*/
 	bottom:10%;
-	top:365px;
+	/*top:367px;*/
+	top:467px;
 	z-index: 1;
 	/*background-color: green;*/
 }
@@ -245,13 +246,13 @@
 }
 #intro-list .word-long p{
 	text-indent:2em;
-	line-height: 24px;
+	line-height: 36px;
 }
 #speaker-list ul li{
 	width:20%;
 }
 #speaker-list ul li img{
-	max-width: 87%;
+	max-width: 70%;
 	padding-bottom: 20px;
 	padding-top: 20px;
 }
@@ -430,10 +431,10 @@
 	/* padding-bottom:20px; */
 }
 #review-list ul li{
-	width:33.33333332%;
+	width:25%;
 }
 #review-list ul li p{
-	padding:20px 5px;
+	padding:10px 5px;
 	background-color: #fff;
 }
 

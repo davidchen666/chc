@@ -36,6 +36,8 @@
 </div>
 
 <script>
+	$(window).scrollTop(0);
+
 	$(window).scroll(function(){//开始监听滚动条
         //获取当前滚动条高度
 		var topp = $(document).scrollTop();
@@ -47,12 +49,13 @@
         }
 		// console.log($('header'));
 		// console.log(topp);
-		if(topp > 374){
+		// if(topp > 374){
+		if(topp > 467){
 			$('.detail-menu').css('position','fixed');
 			$('.detail-menu').css('top','0px');
 		}else{
 			$('.detail-menu').css('position', 'relative');
-			$('.detail-menu').css('top','93%');
+			$('.detail-menu').css('top','94%');
 		}
 		// var sMenu = $('.detail-menu').scrollTop();
 		// console.log(sMenu)
@@ -74,7 +77,7 @@
 					return false;
 				}else{
 					showData(res.resData);
-					$('#topimg').attr('style', 'background:url({imgPath}/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: 100% 100%;height: 400px;');
+					$('#topimg').attr('style', 'background:url({imgPath}/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: cover;height: 500px;');
 					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
 						//存储图片
 						localStorage.setItem(events_id,$('#topimg').attr('style'));

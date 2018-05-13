@@ -91,7 +91,7 @@
         //展示loading
         var showLoading = function(){
             $.each(loadingArr, function(index, val) {
-                 $(val).html('<img class="img-responsive center-block" src="{WEBSITE_SOURCE_URL}/img/events/detail/loading.gif" alt="">');
+                 $(val).html('<img class="img-responsive center-block" style="padding-top:80px;padding-bottom:350px;" src="{WEBSITE_SOURCE_URL}/img/events/detail/loading.gif" alt="">');
             });
         }
 

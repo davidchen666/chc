@@ -3,8 +3,9 @@
 
 <!-- 内容 -->
 <div class="total">
+	<div class="my-loading"></div>
 	<!--会议日程-->
-	<div id="events-daily">
+	<div id="events-daily" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow h-title">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/schedule-title.png" class="img-responsive">
@@ -33,13 +34,14 @@
 		$(this).attr('class', 'box1CenCon activemenu');
 	});
 
-	loadingArr = ['#events-daily .list'];
+	loadingArr = ['.my-loading'];
 	showLoading();
 
 	var showData = function(res){
 		//会议日程
-		$('#events-daily .title').html(res.infoData.events_schedule_title);
-		if(res.infoData.events_schedule_content){
+		
+		if(res.infoData.events_schedule_content && res.infoData.events_schedule_title){
+			$('#events-daily .title').html(res.infoData.events_schedule_title);
 			var scheduleArr = res.infoData.events_schedule_content.split("\n");
 			var scheduleStr = '';
 			$.each(scheduleArr, function(index, val) {
@@ -50,6 +52,7 @@
 				 }
 			});
 			$('#events-daily .list').html(scheduleStr);
+			$('#events-daily').show();
 		}
 	}
 		

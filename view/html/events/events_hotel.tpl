@@ -3,14 +3,14 @@
 
 <!-- 内容 -->
 <div class="total">
-
+	<div class="my-loading"></div>
 	<!--演讲-->
-	<div id="hotel-list">
+	<div id="hotel-list" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel-title.png" class="img-responsive">
 	    	</div>
-			<div class="box1Cen list-unstyled list-inline text-left hotel-intro hotel-info">
+			<div class="box1Cen list-unstyled list-inline text-left hotel-intro hotel-info" style="display: none;">
 				<!-- <strong><h4><b>杭州和达希尔顿逸林酒店</b></h4></strong>
 				<p>杭州和达希尔顿逸林酒店坐落在杭州经济技术开发区（下沙）CBD区块，是杭州首家希尔顿逸林品牌酒店，同时也是该区首家国际品牌全方位服务酒店。直接接驳杭州地铁1号线，可轻松抵达众多大型跨国企业、下沙大学城、购物中心、西湖景区及市中心。步行3分钟便可到金沙湖地铁站，距离杭州萧山机场仅20分钟车程；距离杭州市中心武林广场和西湖景区也仅45分钟车程。便捷的交通，核心区块的地理位置，使其成为下沙的新地标。</p>
 				<p>地址：杭州经济技术开发区金沙大道600号</p>
@@ -22,9 +22,9 @@
 				<p>大床/双房 ：700元/晚含一份/两份早餐</p>
 				<p>房晚团队价格仅适用于会议期间参会嘉宾入住。</p> -->
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left room-show">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left room-show" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;客房、会议室</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4 style="display: inline;"> | &nbsp;&nbsp;</h4><h4 class="rename1" style="display: inline;"></h4></li>
 				</ul>
 				<div class="row hotel-pic">
 					<!-- <div class="col-md-3"><img src="{WEBSITE_SOURCE_URL}/img/events/detail/children/hotel1.png" class="img-responsive"></div>
@@ -34,9 +34,9 @@
 				</div>
 			</div>
 			
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left arrive-intro">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left arrive-intro" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;到达指引</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4 style="display: inline;"> | &nbsp;&nbsp;</h4><h4 class="rename2" style="display: inline;"></h4></li>
 				</ul>
 				<p><br></p>
 				<div class="arrive-info">
@@ -70,19 +70,32 @@
 <!-- INCLUDE ../footer.tpl -->
 <script>
 	//加载ing
-	loadingArr = ['.hotel-info','.arrive-info','.hotel-pic'];
+	loadingArr = ['.my-loading'];
 	showLoading();
 	var showData = function(res){
 		if(res.hotelData){
-			$('.hotel-info').html(res.hotelData.hotel_info);
-			$('.arrive-info').html(res.hotelData.arrive_info);
-			if(res.hotelData.hotel_pic){
+			if(res.hotelData.hotel_info){
+				$('.hotel-info').html(res.hotelData.hotel_info);
+				$('#hotel-list').show();
+				$('.hotel-info').show();
+			}
+			if(res.hotelData.arrive_info){
+				$('.arrive-info').html(res.hotelData.arrive_info);
+				$('.rename2').html(res.hotelData.hotel_arrive_rename ? res.hotelData.hotel_arrive_rename : '到达指引');
+				$('#hotel-list').show();
+				$('.arrive-intro').show();
+			}
+			
+			if(res.hotelData.hotel_pic && res.hotelData.hotel_pic != '[]'){
 				var picArr = $.parseJSON(res.hotelData.hotel_pic);
 				var picStr= '';
 				$.each(picArr, function(index, val) {
-					 picStr += '<div class="col-md-3"><img src="{imgPath}/hotel/' + val + '" class="img-responsive"></div>';
+					 picStr += '<div class="col-md-3" style="height:120px;margin:10px 0px;padding-left:0px;padding-right:0px;"><img src="{imgPath}/hotel/' + val + '" height="100%" width="100%"></div>';
 				});
 				$('.hotel-pic').html(picStr);
+				$('.rename1').html(res.hotelData.hotel_pic_rename ? res.hotelData.hotel_pic_rename : '客房、会议室');
+				$('#hotel-list').show();
+				$('.room-show').show();
 			}
 		}
 	}

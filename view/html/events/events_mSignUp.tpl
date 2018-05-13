@@ -156,7 +156,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<p class="text-center">请输入验证码：<input type="text" style="width:15%;" class="verify_code"> 8901 为了防止恶意添加资料，请输入验证码</p>
+						<p class="text-center">请输入验证码：<input type="text" style="width:15%;" class="verify_code"> <span class="codeVal black" style="background: pink;">8901</span> 为了防止恶意添加资料，请输入验证码</p>
 					</div>
 				</div>
 				<div class="btn-img text-center">
@@ -218,8 +218,26 @@
 		}
 	}
 
+	var getVerifyCode = function(){
+		$.ajax({
+			url: '?m=events&a=getVerifyCode',
+			type: 'GET',
+			success: function(res){
+				
+				res = $.parseJSON(res);
+				console.log(res);
+            	if(res.resCode === 200){
+					$('.codeVal').html(res.resData.code);
+				}else{
+					alert('出现异常');
+				}
+			}
+		})
+	}
+
 	//报名相关操作
 	$(function(){
+		getVerifyCode();
 		//获取页面相关信息
 		$('.countNum').change(function(event) {
 			// console.log($('.countNum').val());
@@ -349,6 +367,7 @@
 					}else{
 						alert('信息提交失败,' + res.resData);
 					}
+					getVerifyCode();
 				}
 			})
 			
