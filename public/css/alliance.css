@@ -149,7 +149,9 @@
 	text-overflow:ellipsis;
 	white-space: nowrap;
 }
-
+.show-detail small{
+	 font-size: 13px;
+}
 .enter-alliance{
 	color:black;
 	/*padding-bottom: 100px;*/

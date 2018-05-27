@@ -271,7 +271,8 @@
             </div>
             <div class="col-md-4 text-center">
             	<!-- <input type="button" value="上传" class=" doUpload"/> -->
-                <span class="msg" style="color:red;font-size:12px;"></span>
+                <span class="upload-msg" style="color:red;display: none;">上传中...</span>
+                <span class="msg" style="color:red;display: none;"></span>
             </div>
         </div>
         <div class="row words">
@@ -304,11 +305,11 @@ $(function(){
 //     });
 	
 	var showJson = {
-		one: "了解客户的业务，行业背景，融资需求和其他各项要求；了解客户基本情况，企业发展，股权结构，财务状况，了解项目和熟悉业务。",
-		two: "签署保密协议/排他协议/财务顾问协议；成立项目工作组，确认项目负责人。",
-		three: "深入了解项目的行业背景，市场规模，分析对标企业；根据业务特点，建立指标体系，帮助企业整理和制定中、长期财务战略规划；讨论及拟定具体服务方案、制定工作计划、时间表；帮助创业团队提升经营管理战略思路和决断能力；完善和提升项目计划书。",
-		four: "根据投资人行业喜好、投资阶段，针对性推荐，安排投资人见面会；及时沟通，让投融双方在深入接触中，走近彼此，增进了解；助力创业项目取得投资意向书；帮助项目方在与投资人接触中，加深了解资本市场。",
-		five: "协助投资人进行业务、法律、财务等尽职调查；帮助创业企业发现、确定最契合发展愿景的投资人；与投资人沟通，帮助项目方取得最合适企业长远发展的投资方案；协助第三方专业机构完成投资工作流程：签署投资合同，敦促投资款到位。"
+		one: "了解客户的业务，行业背景，融资需求和其他各项要求；<br>了解客户基本情况，企业发展，股权结构，财务状况，了解项目和熟悉业务。",
+		two: "签署保密协议/排他协议/财务顾问协议；<br>成立项目工作组，确认项目负责人。",
+		three: "深入了解项目的行业背景，市场规模，分析对标企业；<br>根据业务特点，建立指标体系，帮助企业整理和制定中、长期财务战略规划；<br>讨论及拟定具体服务方案、制定工作计划、时间表；<br>帮助创业团队提升经营管理战略思路和决断能力；<br>完善和提升项目计划书。",
+		four: "根据投资人行业喜好、投资阶段，针对性推荐，安排投资人见面会；<br>及时沟通，让投融双方在深入接触中，走近彼此，增进了解；<br>助力创业项目取得投资意向书；<br>帮助项目方在与投资人接触中，加深了解资本市场。",
+		five: "协助投资人进行业务、法律、财务等尽职调查；<br>帮助创业企业发现、确定最契合发展愿景的投资人；<br>与投资人沟通，帮助项目方取得最合适企业长远发展的投资方案；<br>协助第三方专业机构完成投资工作流程：签署投资合同，敦促投资款到位。"
 	};
 	$('.my-right p').html(showJson.one);
    //change效果
@@ -337,8 +338,6 @@ $(function(){
         file_name: '',
     }
     function doUpload() {
-        $('.msg').html('');
-    	$('.msg').html('正在上传...');
         var formData = new FormData();
         // formData.append("token", token);
         formData.append("file", $('#file1')[0].files[0]);
@@ -351,8 +350,11 @@ $(function(){
              cache: false,
              processData: false,
              contentType: false,
-             async: false
+             // async: false
         }).done(function(res) {
+            sleep(1000);
+            $('.upload-msg').hide();
+            $('.msg').show();
         	res = $.parseJSON(res);
             console.log(res);
             if(res.resCode === 200){
@@ -369,6 +371,8 @@ $(function(){
     }
     
     $('.doUpload').change(function(event) {
+        $('.msg').hide();
+        $('.upload-msg').show();
         doUpload();
     });
 

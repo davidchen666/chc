@@ -8,6 +8,9 @@
 	float: left;
 	height: 100%;
 }
+.my-content .my-right p{
+	line-height: 26px;
+}
 .my-content .my-left{
 	width: 40%;
 	/*height: 100%;*/
@@ -116,7 +119,7 @@
 	/*border: 1px solid black;*/
 	background-image: url('../img/banking/bg-one.png');
 	background-size: 100% 100%;
-	padding: 100px 100px 30px 100px;
+	padding: 100px 90px 30px 90px;
 }
 .my-content .my-right p{
 	padding-top: 10px;
@@ -157,6 +160,7 @@
 }
 .my-intro .intro-bottom p{
 	padding-top: 0px;
+	line-height: 27px;
 }
 #showRegister h4, #showRegister p, #showRegister div{
 	color: black;

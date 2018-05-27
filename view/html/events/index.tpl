@@ -35,10 +35,10 @@
                 <div class="single" class="text-left">
                     <div class="add-shadow"><a href="http://www.chconsultant.com/zh/summit/ivd2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/pic_0510.png" class="img-responsive"></a></div>
                     <div class="two-show left-show" class="text-left">
-                        <p class="text-left"><small>第五届中国IVD产业投资与并购CEO论坛</small></p>
-                        <p class="text-left">时间：2018年6月28-29日 &nbsp;&nbsp;  地点：<small>上海</small></p>
+                        <p class="text-left">第五届中国IVD产业投资与并购CEO论坛</p>
+                        <p class="text-left">时间：2018年6月28-29日 &nbsp;&nbsp;  地点：上海</p>
                     </div>
-                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ivd2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-1.png" alt=""></a></div>
+                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ivd2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div>
                     <div class="clearfix"></div>
                 </div>
             </li>
@@ -46,10 +46,10 @@
                 <div class="single" class="text-left">
                     <div class="add-shadow"><img src="{WEBSITE_SOURCE_URL}/img/events/pic2.png" class="img-responsive"></div>
                     <div class="two-show left-show" class="text-left">
-                        <p class="text-left"><small>第七届中国医疗健康产业投资与并购CEO论坛</small></p>
+                        <p class="text-left">第七届中国医疗健康产业投资与并购CEO论坛</p>
                         <p class="text-left">时间：2018年4月18-20日 &nbsp;&nbsp;  地点：上海东郊宾馆</p>
                     </div>
-                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ceo2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-1.png" alt=""></a></div>
+                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ceo2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div>
                     <div class="clearfix"></div>
                 </div>
             </li>
@@ -275,10 +275,10 @@
 
 <script>
     //立刻报名hover事件
-    $('.right-show').hover(function() {
-        $(this).children('a').children('img').attr('src', '{WEBSITE_SOURCE_URL}/img/events/record-2.png');
-    }, function() {
-        $(this).children('a').children('img').attr('src', '{WEBSITE_SOURCE_URL}/img/events/record-1.png');
-    });
+    // $('.right-show').hover(function() {
+    //     $(this).children('a').children('img').attr('src', '{WEBSITE_SOURCE_URL}/img/events/record-2.png');
+    // }, function() {
+    //     $(this).children('a').children('img').attr('src', '{WEBSITE_SOURCE_URL}/img/events/record-1.png');
+    // });
 </script>
 <!-- INCLUDE ../footer.tpl -->

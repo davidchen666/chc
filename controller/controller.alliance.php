@@ -15,10 +15,12 @@ class AllianceController extends Controller
             'alliance'=>'active',
             'imgPath'=>IMG_PATH
         );
-    const M = "News";
+    const M = "Alliance";
+    const N = "News";
     function __construct()
     {
         $this->model = Model::instance(self::M);
+        $this->news = Model::instance(self::N);
     }
 
     /**
@@ -36,10 +38,20 @@ class AllianceController extends Controller
         View::instance('alliance/news_detail.tpl')->show($data);
     }
 
+    /*#######################################################
+      ######################  api 接口 ######################
+    */#######################################################
+
+    //提交申请书 addAllianceSignUp
+    function addAllianceSignUp(){
+        $pData = getData();
+        echo $this->model->addAllianceSignUp($pData);
+    }
+
     //获取新闻
     function getNewsData(){
         $pData = getData();
-        echo $this->model->getNewsData($pData);
+        echo $this->news->getNewsData($pData);
     }
     
 }

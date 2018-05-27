@@ -69,7 +69,7 @@
              }
         }
 
-        //将换行变成p标签
+        //将 \n换行 替换成 p标签
         var getNewStr = function(str){
             if(!str){
                 return '<p></p>';
@@ -104,9 +104,19 @@
 
         //过滤html标签
         function delHtmlTag(str){
-        return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+            return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
         }
 
+        //sleep
+        var sleep = function (numberMillis) {    
+            var now = new Date();    
+            var exitTime = now.getTime() + numberMillis;   
+            while (true) { 
+            now = new Date();       
+            if (now.getTime() > exitTime) 
+                return;    
+            } 
+        }
     </script>
 </head>
 <body style="">

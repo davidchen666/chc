@@ -14,6 +14,22 @@ nav.navbar.bootsnav ul.nav > li > a:hover, nav.navbar.bootsnav ul.nav > li.on > 
 #navbar-menu a:hover h3{
     color:#9DC040;
 }
+/*
+    特殊颜色的控制
+*/
+.news-content p,.news-content div,.news-content span{
+    color: black;
+}
+.hotel-info p,.hotel-info div,.hotel-info span{
+    color: black;
+}
+.arrive-info p,.arrive-info div,.arrive-info span{
+    color: black;
+}
+.road-content p,.road-content div,.road-content span{
+    color: black;
+} 
+
 /*.selected{
     color:#9DC040;
 }*/

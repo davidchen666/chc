@@ -36,6 +36,7 @@
 </div>
 
 <script>
+	$('.logo').hide();
 	$(window).scrollTop(0);
 
 	$(window).scroll(function(){//开始监听滚动条

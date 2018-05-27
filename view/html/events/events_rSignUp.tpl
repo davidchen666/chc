@@ -18,7 +18,7 @@
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-target-total" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;活动宗旨</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;<room>活动宗旨</room></h4></li>
 				</ul>
 				<div class="words top-null">
 					<p class="road-target"></p>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-guide-total" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;专业指导</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;<room>专业指导</room></h4></li>
 				</ul>
 				<div class="words top-null road-guide">
 					<!-- <p>内容就快进借口借口借口借口</p>
@@ -38,7 +38,7 @@
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-course-total" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;课程安排</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;<room>课程安排</room></h4></li>
 				</ul>
 				<div class="words top-null road-course">
 					<!-- <p>内容就快进借口借口借口借口</p>
@@ -50,7 +50,7 @@
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-signup-intro-total" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;路演项目报名</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;<room>路演项目报名</room></h4></li>
 				</ul>
 				<div class="words top-null road-signup-intro">
 					<!-- <p>内容就快进借口借口借口借口</p>
@@ -60,7 +60,7 @@
 			</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list table-left road-achieve-total" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;您将获得</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;<room>您将获得</room></h4></li>
 				</ul>
 				<div class="words top-null road-achieve">
 					<!-- <p>内容就快进借口借口借内容就快进借口借口借口借口内容就快进借口借口借口借口内容就快进借口借口借口借口口借口</p> -->
@@ -121,7 +121,8 @@
 						<!-- <input id="file_upload" name="file_upload" type="file" multiple="false"> -->
 					</div>
 					<div class="col-md-4">
-						<span class="msg" style="color:red;"></span>
+						<span class="upload-msg" style="color:red;display: none;">请等待,正在上传...</span>
+						<span class="msg" style="color:red;display: none;"></span>
 					</div>
 				</div>
 				<div class="row words">
@@ -167,22 +168,37 @@
 				$('.road-content-total').show();
 			}
 			if(roadObj.road_target){
+				if(roadObj.road_target_rename){
+					$('.road-target-total room').html(roadObj.road_target_rename);
+				}
 				$('.road-target').html(getNewStr(roadObj.road_target));
 				$('.road-target-total').show();
 			}	
 			if(roadObj.road_guide){
+				if(roadObj.road_guide_rename){
+					$('.road-guide-total room').html(roadObj.road_guide_rename);
+				}
 				$('.road-guide').html(getNewStr(roadObj.road_guide));
 				$('.road-guide-total').show();
 			}
 			if(roadObj.road_achieve){
+				if(roadObj.road_achieve_rename){
+					$('.road-achieve-total room').html(roadObj.road_achieve_rename);
+				}
 				$('.road-achieve').html(getNewStr(roadObj.road_achieve));
 				$('.road-achieve-total').show();
 			}
 			if(roadObj.road_course){
+				if(roadObj.road_course_rename){
+					$('.road-course-total room').html(roadObj.road_course_rename);
+				}
 				$('.road-course').html(getNewStr(roadObj.road_course));
 				$('.road-course-total').show();
 			}
 			if(roadObj.road_signup_intro){
+				if(roadObj.road_signup_intro_rename){
+					$('.road-signup-intro-total room').html(roadObj.road_signup_intro_rename);
+				}
 				$('.road-signup-intro').html(getNewStr(roadObj.road_signup_intro));
 				$('.road-signup-intro-total').show();
 			}
@@ -200,8 +216,8 @@
 $(function(){
 	var fileName = '';
 	function doUpload() {
-        $('.msg').html('');
-    	$('.msg').html('正在上传...');
+		$('.msg').hide();
+		$('.upload-msg').show();
         var formData = new FormData();
         // formData.append("token", token);
         formData.append("file", $('#file1')[0].files[0]);
@@ -214,8 +230,11 @@ $(function(){
              cache: false,
              processData: false,
              contentType: false,
-             async: false
+             // async: false
         }).done(function(res) {
+        	sleep(1000);
+        	$('.upload-msg').hide();
+        	$('.msg').show();
         	res = $.parseJSON(res);
             console.log(res);
             if(res.resCode === 200){
@@ -234,6 +253,9 @@ $(function(){
     $('.doUpload').change(function(event) {
         doUpload();
     });
+    // var showMsg = function(){
+    	// $('.msg').html('正在上传');
+    // }
 	//upload
 	// $('#file_upload').uploadify({
 	// 	'swf'      : 'public/img/uploadify.swf',

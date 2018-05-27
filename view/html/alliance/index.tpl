@@ -33,7 +33,7 @@
         <div class="about-alliance ">
         	<div class='left-t'>
         		<div class="img-t">
-        			<img src="{WEBSITE_SOURCE_URL}/img/alliance/pic.png" alt="">
+        			<img src="{WEBSITE_SOURCE_URL}/img/alliance/pic.jpg" alt="">
         		</div>
         		<div class="logo-t">
         			<div class="container">
@@ -182,8 +182,8 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h4>入会资格：</h4>
-                        <p>1、测试多级京东卡荆防颗粒看及框架尽快尽快将借口借口。</p>
-                        <p>2、测试多级京东卡荆防颗粒看。</p>
+                        <p>1、从事IVD及精准医疗行业仪器和试剂研发、生产、销售型企业以及第三方医学检验机构；</p>
+                        <p>2、从事医疗产业投资的专业基金，有丰富的医疗投资经验。</p>
                     </div>
                     <div class="col-md-4">
                         <h4>联盟秘书处：</h4>
@@ -351,91 +351,238 @@
             <div class="up-btn"></div>
         </div>
         <div class="btn-img text-center">
-            <a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/enter-alliance.png" alt=""></a>
+            <a href="javascript:;" data-target="#showRegister" data-toggle="modal"><img src="{WEBSITE_SOURCE_URL}/img/alliance/enter-alliance.png" alt=""></a>
         </div>
 	</div>
 </div>
 
+<!-- begin 模态窗口 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="showRegisterModalLabel" id="showRegister" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 text-center"><img src="{WEBSITE_SOURCE_URL}/img/alliance/apply-title.png" alt=""></div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="name"><p>公司名称*</p></label>
+                <input type="text" class="form-control com_name">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>联系人姓名*</p></label>
+                    <input type="text" class="form-control user_name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>职位*</p></label>
+                    <input type="text" class="form-control user_job">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>电话/手机*</p></label>
+                    <input type="text" class="form-control user_mobile">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>邮箱*</p></label>
+                    <input type="text" class="form-control user_email">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="name"><p>公司从事的主要业务*</p></label>
+                    <textarea class="form-control com_business"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row words">
+            <div class="col-md-12">
+                <p><small>1.  请真实填写以上信息，我们会对该信息保密，不会泄露给第三方或用于其他商业目的；</small></p>
+                <p><small>2.  提交申请后，我们将在1-3个工作日内与您联系，请耐心等待；</small></p>
+                <p><small>3.  相关问题请咨询：021-68581087，ivd@chconsultant.com。</small></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="javascript:;" title="" class="my-register">
+                    <img src="{WEBSITE_SOURCE_URL}/img/banking/reg-btn.png" alt="">
+                </a>
+            </div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- end  模态窗口 -->
+
 <script>
-	$(function(){
-		$('header').attr('class','headerBg navbar-fixed-top active');
-	    // console.log($('header').attr('class'));
-	    $(window).scroll(function(event) {
-	    	// console.log($('header').attr('class'));
-	    	$('header').attr('class','headerBg navbar-fixed-top active');
-	    });
+$(function(){
+	$('header').attr('class','headerBg navbar-fixed-top active');
+    // console.log($('header').attr('class'));
+    $(window).scroll(function(event) {
+    	// console.log($('header').attr('class'));
+    	$('header').attr('class','headerBg navbar-fixed-top active');
+    });
 
-        //渲染数据
-        loadingArr = ['#member-news-show'];
-        showLoading();
-        //加载数据
-        //请求数据并渲染页面
-        var params = {
-            currentPage: 1,
-            pageSize: 8,
-            status: 1
-        };
-        var getNewsData = function(){
-            $.ajax({
-                url: '?m=alliance&a=getNewsData',
-                type: 'POST',
-                data: params,
-                success: function(res){
-                    res = $.parseJSON(res);
-                    closeLoading();
-                    if(res.resCode !== 200){
-                        // alert(res.resData);
-                        $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
-                        return false;
-                    }else{
-                        var listStr = '';
-                        var pageStr = '';
-                        if(res.resData.items && res.resData.items.length){
-                            $.each(res.resData.items, function(index, val) {
-                                 listStr += '<li class="wow"><a href="?m=alliance&a=newsDetail&news_id=' + val.news_id + '"><div class="box1CenCon"><div class="row"><div class="col-md-4 col-xs-4 left-show"><div class="img-show text-left"><img src="{imgPath}/news/' + val.news_pic + '" class="img-responsive"></div></div><div class="col-md-8 col-xs-8 right-show text-left"><h4><b>' + val.news_title + '</b></h4><p>' + val.create_date + '</p><p class="show-detail">' + delHtmlTag(val.news_content) + '</p></div></div></div></a></li>';
-                            });
-                        }
-
-                        if(res.resData.page && res.resData.page.total){
-                            //是否显示前一页
-                            if(params.currentPage != 1){
-                                pageStr +=  '<li><a href="javascript:;" class="changePage" aria-label="Previous" data="' + (params.currentPage - 1) + '"><span aria-hidden="true" style="color:#337ab7;">&laquo;</span></a></li>';
-                            }
-                            //显示总页数
-                            var pageTotal =  Math.ceil(parseInt(res.resData.page.total)/params.pageSize);
-                            for (var i = 1; i <= pageTotal; i++) {
-                                var ss = ''
-                                if(params.currentPage === i){
-                                    ss = ' style="background-color:#9DC040;" ';
-                                }
-                                pageStr += '<li><a href="javascript:;" ' + ss + ' class="changePage" data="' + i + '">' + i + '</a></li>'; 
-                                
-                            }
-                            //是否显示下一页
-                            console.log(params.currentPage , pageTotal);
-                            if(params.currentPage !== pageTotal){
-                                pageStr += '<li><a href="javascript:;" class="changePage" aria-label="Next" data="' + (params.currentPage + 1) + '"><span aria-hidden="true" style="color:#337ab7;">&raquo;</span></a></li>';
-                                // console.log(pageStr);
-                            }
-
-                        }
-                        $('#member-news-show').html(listStr);
-                        // $('.page-show').html(pageStr);
-                        //change
-                        $('.page-show .changePage').click(function(event) {
-                            params.currentPage = parseInt($(this).attr('data'));
-                            // console.log(params)
-                            getNewsData();
+    //渲染数据
+    loadingArr = ['#member-news-show'];
+    showLoading();
+    //加载数据
+    //请求数据并渲染页面
+    var params = {
+        currentPage: 1,
+        pageSize: 8,
+        status: 1,
+        newstype: 1
+    };
+    var getNewsData = function(){
+        $.ajax({
+            url: '?m=alliance&a=getNewsData',
+            type: 'POST',
+            data: params,
+            success: function(res){
+                res = $.parseJSON(res);
+                closeLoading();
+                if(res.resCode !== 200){
+                    // alert(res.resData);
+                    $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
+                    return false;
+                }else{
+                    var listStr = '';
+                    var pageStr = '';
+                    if(res.resData.items && res.resData.items.length){
+                        $.each(res.resData.items, function(index, val) {
+                             listStr += '<li class="wow"><a href="?m=alliance&a=newsDetail&news_id=' + val.news_id + '"><div class="box1CenCon"><div class="row"><div class="col-md-4 col-xs-4 left-show"><div class="img-show text-left"><img src="{imgPath}/news/' + val.news_pic + '" class="img-responsive"></div></div><div class="col-md-8 col-xs-8 right-show text-left"><h4><b>' + val.news_title + '</b></h4><p>' + val.create_date + '</p><p class="show-detail"><small>' + delHtmlTag(val.news_content) + '</small></p></div></div></div></a></li>';
                         });
-                        
+                        if(res.resData.items.length % 2 !== 0){
+                            listStr += '<li></li>';
+                        }
                     }
+
+                    if(res.resData.page && res.resData.page.total){
+                        //是否显示前一页
+                        if(params.currentPage != 1){
+                            pageStr +=  '<li><a href="javascript:;" class="changePage" aria-label="Previous" data="' + (params.currentPage - 1) + '"><span aria-hidden="true" style="color:#337ab7;">&laquo;</span></a></li>';
+                        }
+                        //显示总页数
+                        var pageTotal =  Math.ceil(parseInt(res.resData.page.total)/params.pageSize);
+                        for (var i = 1; i <= pageTotal; i++) {
+                            var ss = ''
+                            if(params.currentPage === i){
+                                ss = ' style="background-color:#9DC040;" ';
+                            }
+                            pageStr += '<li><a href="javascript:;" ' + ss + ' class="changePage" data="' + i + '">' + i + '</a></li>'; 
+                            
+                        }
+                        //是否显示下一页
+                        console.log(params.currentPage , pageTotal);
+                        if(params.currentPage !== pageTotal){
+                            pageStr += '<li><a href="javascript:;" class="changePage" aria-label="Next" data="' + (params.currentPage + 1) + '"><span aria-hidden="true" style="color:#337ab7;">&raquo;</span></a></li>';
+                            // console.log(pageStr);
+                        }
+
+                    }
+                    $('#member-news-show').html(listStr);
+                    // $('.page-show').html(pageStr);
+                    //change
+                    $('.page-show .changePage').click(function(event) {
+                        params.currentPage = parseInt($(this).attr('data'));
+                        // console.log(params)
+                        getNewsData();
+                    });
+                    
                 }
-            })
+            }
+        })
+    }
+
+    getNewsData();
+
+    //提交报名信息
+   $('.my-register').click(function(event) {
+        var myParams = {};
+    //id  com_name    user_name   user_job    user_mobile user_email  file_name   remark  create_date update_date
+        //获取公司相关数据
+        myParams.com_name = $('.com_name').val();
+        myParams.user_name = $('.user_name').val();
+        myParams.user_job = $('.user_job').val();
+        myParams.user_mobile = $('.user_mobile').val();
+        myParams.user_email = $('.user_email').val();
+        myParams.com_business = $('.com_business').val();
+        //判断必填项是否填写
+        if(!myParams.com_name){
+            alert('公司名称不能为空。');
+            return;
         }
+        if(!myParams.user_name){
+            alert('负责人姓名不能为空。');
+            return;
+        }
+        if(!myParams.user_job){
+            alert('负责人职位不能为空。');
+            return;
+        }
+        if(!myParams.user_mobile){
+            alert('负责人电话不能为空。');
+            return;
+        }
+        if(!myParams.user_email){
+            alert('负责人邮箱地址不能为空。');
+            return;
+        }
+        
+        if(!myParams.com_business){
+            alert('请填写贵公司从事的主要业务');
+            return;
+        }
+        // console.log('all',myParams,JSON.stringify(myParams));
 
-        getNewsData();
+        $.ajax({
+            url: '?m=alliance&a=addAllianceSignUp',
+            type: 'POST',
+            data: myParams,
+            dataType: 'json',
+            success: function(res){
+                console.log(res);
+                if(res.resCode === 200){
+                    if(res.resData.id){
+                        $('#showRegister').modal('hide');
+                        alert('恭喜你！报名成功！');
+                        $('.com_name').val('');
+                        $('.user_name').val('');
+                        $('.user_job').val('');
+                        $('.user_mobile').val('');
+                        $('.user_email').val('');
+                        $('.com_business').val('');
+                    }else{
+                        alert('信息提交失败');
+                    }
+                    
+                    // $("#success").alert();
+                }else{
+                    alert('信息提交失败,' + res.resData);
+                    // alert();
+                    // $("#error").alert();
+                }
+            }
+        })
+   });
 
-	})
+})
 	    
 </script>
 <!-- INCLUDE ../footer.tpl -->

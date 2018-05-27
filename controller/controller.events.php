@@ -229,6 +229,7 @@ class EventsController extends Controller
         }else if(!move_uploaded_file($tmp_name,$tmp_url)){
             // echo "移动文件失败!";
             // var_dump($tmp_name,$tmp_url);
+            // var_dump($tmp_name,$tmp_url);
             echo to_error("移动文件失败!(请检查文件名是否合法)");
             exit;
         }else{
