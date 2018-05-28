@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title>CHC医疗咨询</title>
+    <title><?php
+echo $_obj['title'];
+?>
+</title>
 	<meta charset=utf-8"UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
@@ -74,6 +77,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/uploadify.css">
+
+    <script src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/js/lib/vendor/jquery.uploadfile.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/uploadfile.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',
@@ -128,11 +140,16 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/events.css">
-	<link rel="stylesheet" href="<?php
+    <link rel="stylesheet" href="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/alliance.css">
+	<link rel="stylesheet" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/banking.css">
     <script>
+
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];
         //检查路由参数是否合法
@@ -146,7 +163,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
              }
         }
 
-        //将换行变成p标签
+        //将 \n换行 替换成 p标签
         var getNewStr = function(str){
             if(!str){
                 return '<p></p>';
@@ -168,7 +185,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         //展示loading
         var showLoading = function(){
             $.each(loadingArr, function(index, val) {
-                 $(val).html('<img class="img-responsive center-block" src="<?php
+                 $(val).html('<img class="img-responsive center-block" style="padding-top:80px;padding-bottom:350px;" src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/loading.gif" alt="">');
@@ -182,6 +199,21 @@ echo $_obj['WEBSITE_SOURCE_URL'];
             });
         }
 
+        //过滤html标签
+        function delHtmlTag(str){
+            return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+        }
+
+        //sleep
+        var sleep = function (numberMillis) {    
+            var now = new Date();    
+            var exitTime = now.getTime() + numberMillis;   
+            while (true) { 
+            now = new Date();       
+            if (now.getTime() > exitTime) 
+                return;    
+            } 
+        }
     </script>
 </head>
 <body style="">
@@ -331,18 +363,18 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         <ul class="box1Cen list-unstyled list-inline text-center" id="big-show">
             <li class="wow fadeInUp">
                 <div class="single" class="text-left">
-                    <div class="add-shadow"><img src="<?php
+                    <div class="add-shadow"><a href="http://www.chconsultant.com/zh/summit/ivd2018" target="_blank"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/pic1.png" class="img-responsive"></div>
+/img/events/pic_0510.png" class="img-responsive"></a></div>
                     <div class="two-show left-show" class="text-left">
-                        <p class="text-left"><small>第三届中国微创外科及手术机器人产业投资与并购CEO论坛</small></p>
-                        <p class="text-left">时间：2018年3月21日 &nbsp;&nbsp;  地点：<small>杭州和达希尔顿逸林酒店</small></p>
+                        <p class="text-left">第五届中国IVD产业投资与并购CEO论坛</p>
+                        <p class="text-left">时间：2018年6月28-29日 &nbsp;&nbsp;  地点：上海</p>
                     </div>
-                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/MIS2018/apply-register" target="_blank"><img src="<?php
+                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ivd2018/apply-register" target="_blank"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/record-1.png" alt=""></a></div>
+/img/events/record-2.png" alt=""></a></div>
                     <div class="clearfix"></div>
                 </div>
             </li>
@@ -351,15 +383,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
                     <div class="add-shadow"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/pic2.png" class="img-responsive"></div>
+/img/events/pic3.png" class="img-responsive"></div>
                     <div class="two-show left-show" class="text-left">
-                        <p class="text-left"><small>第七届中国医疗健康产业投资与并购CEO论坛</small></p>
-                        <p class="text-left">时间：2018年4月18-20日 &nbsp;&nbsp;  地点：上海东郊宾馆</p>
+                        <p class="text-left">第五届中国心血管健康产业投资与并购CEO论坛</p>
+                        <p class="text-left">时间：2018年9月 &nbsp;  地点：天津生态城世茂希尔顿酒店</p>
                     </div>
                     <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ceo2018/apply-register" target="_blank"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/record-1.png" alt=""></a></div>
+/img/events/record-2.png" alt=""></a></div>
                     <div class="clearfix"></div>
                 </div>
             </li>
@@ -381,7 +413,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
                 </a>
             </li>
         	<li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/ivd2017/history">
+                <a target="_blank" href="http://www.chconsultant.com/zh/summit/ivd2018">
                 	<div class="box1CenCon"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
@@ -452,23 +484,29 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 /img/events/friends-title.png" class="img-responsive">
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
-            <li class="wow">
-                <div class="box1CenCon logo-show"><img src="<?php
+            <!-- <li class="wow">
+                <a href="http://www.qimingvc.com/index.html" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/z-1.png" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="<?php
+                <a href="http://www.legendcapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/z-2.jpg" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="<?php
+                <a href="http://www.cowincapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/z-3.jpg" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
                 <div class="box1CenCon logo-show"><img src="<?php
@@ -507,10 +545,12 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 /img/events/z-9.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="<?php
+                <a href="http://www.highlightcapital.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/z-10.jpg" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
                 <div class="box1CenCon logo-show"><img src="<?php
@@ -523,6 +563,78 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/z-12.jpg" class="img-responsive"></div>
+            </li> -->
+            <li class="wow">
+                <a href="http://www.qimingvc.com/index.html" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-1.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.legendcapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-2.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.cowincapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-3.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.highlightcapital.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-4.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.lyfecapital.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-5.jpg" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.medtronic.com/cn-zh/index.html" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-6.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.szgig.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-7.jpg" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.sunlandfund.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-8.jpg" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.wsgr.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/logo/may-9.jpg" class="img-responsive"></div>
+                </a>
             </li>
         </ul>
         <!--媒体-->
@@ -720,17 +832,51 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 
 <script>
     //立刻报名hover事件
-    $('.right-show').hover(function() {
-        $(this).children('a').children('img').attr('src', '<?php
+    // $('.right-show').hover(function() {
+    //     $(this).children('a').children('img').attr('src', '<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/record-2.png');
-    }, function() {
-        $(this).children('a').children('img').attr('src', '<?php
+    // }, function() {
+    //     $(this).children('a').children('img').attr('src', '<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/record-1.png');
-    });
+    // });
+
+
+    //加载ing
+    // loadingArr = ['#big-show'];
+    // showLoading();
+
+    $(function(){
+        var getLastEvents = function(){
+            $.ajax({
+                url: '?m=events&a=getLastEvents',
+                success: function(ret){
+                    var res = $.parseJSON(ret);
+                    console.log(res);
+                    var allStr = '';
+                    if(res.resCode === 200){
+                        if(res.resData && res.resData.length){
+                            $.each(res.resData, function(index, val) {
+                                 allStr += '<li class="wow fadeInUp"><div class="single" class="text-left"><div class="add-shadow"><a href="?m=events&a=detail&events_id=' + val.events_id + '" target="_blank"><img src="<?php
+echo $_obj['imgPath'];
+?>
+/events/' + val.past_pic + '" class="img-responsive"></a></div><div class="two-show left-show" class="text-left"><p class="text-left">' + val.events_name + '</p><p class="text-left">时间：' + val.events_begin_date + ' &nbsp;&nbsp;  地点：上海</p></div><div class="two-show right-show"><a href="?m=events&a=mSignUp&events_id='+ val.events_id +'" target="_blank"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/record-2.png" alt=""></a></div><div class="clearfix"></div></div></li>';
+                            });
+                        }
+                    }
+                    $('#big-show').html(allStr);
+                }
+            })
+            
+        }
+        // getLastEvents();
+    })
 </script>
 <footer class="footerBg">
     <div class="footTop">
@@ -822,6 +968,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         </div>
     </div>
 </footer>
+
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

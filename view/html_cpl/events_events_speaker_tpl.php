@@ -74,6 +74,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/uploadify.css">
+
+    <script src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/js/lib/vendor/jquery.uploadfile.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/uploadfile.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',
@@ -128,10 +137,14 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/events.css">
-	<link rel="stylesheet" href="<?php
+    <link rel="stylesheet" href="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/alliance.css">
+	<link rel="stylesheet" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/banking.css">
     <script>
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];
@@ -146,7 +159,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
              }
         }
 
-        //将换行变成p标签
+        //将 \n换行 替换成 p标签
         var getNewStr = function(str){
             if(!str){
                 return '<p></p>';
@@ -168,7 +181,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         //展示loading
         var showLoading = function(){
             $.each(loadingArr, function(index, val) {
-                 $(val).html('<img class="img-responsive center-block" src="<?php
+                 $(val).html('<img class="img-responsive center-block" style="padding-top:80px;padding-bottom:350px;" src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/loading.gif" alt="">');
@@ -182,6 +195,21 @@ echo $_obj['WEBSITE_SOURCE_URL'];
             });
         }
 
+        //过滤html标签
+        function delHtmlTag(str){
+            return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+        }
+
+        //sleep
+        var sleep = function (numberMillis) {    
+            var now = new Date();    
+            var exitTime = now.getTime() + numberMillis;   
+            while (true) { 
+            now = new Date();       
+            if (now.getTime() > exitTime) 
+                return;    
+            } 
+        }
     </script>
 </head>
 <body style="">
@@ -217,17 +245,26 @@ echo $_obj['events'];
                     		<h3>品牌会议</h3><i></i><!-- <span>HOME</span> -->
                     	</a>
                     </li>
-                    <li id="nav2" data-toggle="modal" data-target="#myModal">
+                    <li id="nav2" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['alliance'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>产业联盟</h3><i></i><!-- <span>ABOUT</span> -->
                     	</a>
                     </li>
-                    <li id="nav3" data-toggle="modal" data-target="#myModal">
+                    <li id="nav3" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['banking'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>精准投行</h3><i></i><!-- <span>TEAM</span> -->
                     	</a>
                     </li>
-                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal">
+                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['services'];
+?>
+">
                     	<a href="javascript:;" target="_self" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     		<h3 style="display:inline;">咨询服务</h3><!-- <i></i> --><!-- <span>NEWS</span> -->
                     	</a>
@@ -237,12 +274,18 @@ echo $_obj['events'];
                             <li><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
                         </ul>
                     </li>
-                    <li id="nav5" data-toggle="modal" data-target="#myModal">
+                    <li id="nav5" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['media'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>医疗传媒</h3><i></i><!-- <span>JOIN US</span> -->
                     	</a>
                 	</li>
-                    <li id="nav6" data-toggle="modal" data-target="#myModal">
+                    <li id="nav6" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['about'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>关于我们</h3><i></i><!-- <span>CONTACT</span> -->
                     	</a>
@@ -341,6 +384,9 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </div>
 
 <script>
+	$('.logo').hide();
+	$(window).scrollTop(0);
+
 	$(window).scroll(function(){//开始监听滚动条
         //获取当前滚动条高度
 		var topp = $(document).scrollTop();
@@ -352,12 +398,13 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         }
 		// console.log($('header'));
 		// console.log(topp);
-		if(topp > 374){
+		// if(topp > 374){
+		if(topp > 467){
 			$('.detail-menu').css('position','fixed');
 			$('.detail-menu').css('top','0px');
 		}else{
 			$('.detail-menu').css('position', 'relative');
-			$('.detail-menu').css('top','93%');
+			$('.detail-menu').css('top','94%');
 		}
 		// var sMenu = $('.detail-menu').scrollTop();
 		// console.log(sMenu)
@@ -382,7 +429,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 					$('#topimg').attr('style', 'background:url(<?php
 echo $_obj['imgPath'];
 ?>
-/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: 100% 100%;height: 400px;');
+/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: cover;height: 500px;');
 					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
 						//存储图片
 						localStorage.setItem(events_id,$('#topimg').attr('style'));
@@ -435,9 +482,9 @@ echo $_obj['imgPath'];
 
 <!-- 内容 -->
 <div class="total">
-
+	<div class="my-loading"></div>
 	<!--演讲-->
-	<div id="speaker-list">
+	<div id="speaker-list" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="<?php
@@ -445,61 +492,61 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/children/speaker-title.png" class="img-responsive">
 	    	</div>
-			
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
-				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;大会主席</h4></li>
-				</ul>
-				<div class="speaker-main">
-					<!-- <div class="full-line">
-						<div class="full-left-show text-center">
-							<img src="<?php
+			<div class="speaker-total">			
+				<!-- <div class="box1Cen list-unstyled list-inline text-left table-list table-left">
+					<ul class="list-group">
+					    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;大会主席</h4></li>
+					</ul>
+					<div class="speaker-main"> -->
+						<!-- <div class="full-line">
+							<div class="full-left-show text-center">
+								<img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/children/a.png" class="img-responsive">
-						</div>
-						<div class="full-right-show">
-							<h4><b>刘道志 博士</b> <span>山蓝资本创始及执行合伙人</span></h4>
-							<p>刘道志博士是山蓝资本的创始及执行合伙人，在创办山蓝资本之前，曾经担任上海微创医疗器械集团（香港上市公司 股票代码00853）新兴业务资深副总裁，负责微创医疗集团的收购、兼并和投资业务，刘道志博士也是微创医疗早期核心创业团队成员，也曾任研发中心资深副总裁和微创医疗全资子公司上海微创骨科医疗科技有限公司总经理。在加入微创医疗之前，刘道志博士作为生物材料专家在包括日本国立材料研究所、澳大利亚Wollongong大学和天津大学等多所大学及研究机构工作10余年，刘道志博士获得天津南开大学理学学士和博士学位，是英国牛津大学博士后。刘道志博士也是上海市首批领军人才，中国生物医学工程学会理事、中国生物材料学会理事、上海欧美同学会暨上海归国留学人员联合会理事、上海交通大学兼职教授、上海交通大学教育部数字医学工程技术中心专家委员会委员、上海理工大学兼职教授。</p>
-						</div>
-					</div> -->
-				</div>
-				
-			</div>
-
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left">
-				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;特邀嘉宾</h4></li>
-				</ul>
-				<div class="speaker-invite">
-					<!-- <div class="full-line">
-						<div class="full-left-show text-center">
-							<img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/detail/children/a.png" class="img-responsive">
-						</div>
-						<div class="full-right-show">
-							<h4><b>刘道志 博士</b> <span>山蓝资本创始及合伙人</span></h4>
-							<p>上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才。上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才</p>
-						</div>
-					</div>
-					<div class="full-line">
-						<div class="full-left-show text-center">
-							<img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/detail/children/a.png" class="img-responsive">
-						</div>
-						<div class="full-right-show">
-							<h4><b>刘道志 博士</b> <span>山蓝资本创始及合伙人</span></h4>
-							<p>上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才。上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才</p>
-						</div>
-					</div> -->
-				</div>
+							</div>
+							<div class="full-right-show">
+								<h4><b>刘道志 博士</b> <span>山蓝资本创始及执行合伙人</span></h4>
+								<p>刘道志博士是山蓝资本的创始及执行合伙人，在创办山蓝资本之前，曾经担任上海微创医疗器械集团（香港上市公司 股票代码00853）新兴业务资深副总裁，负责微创医疗集团的收购、兼并和投资业务，刘道志博士也是微创医疗早期核心创业团队成员，也曾任研发中心资深副总裁和微创医疗全资子公司上海微创骨科医疗科技有限公司总经理。在加入微创医疗之前，刘道志博士作为生物材料专家在包括日本国立材料研究所、澳大利亚Wollongong大学和天津大学等多所大学及研究机构工作10余年，刘道志博士获得天津南开大学理学学士和博士学位，是英国牛津大学博士后。刘道志博士也是上海市首批领军人才，中国生物医学工程学会理事、中国生物材料学会理事、上海欧美同学会暨上海归国留学人员联合会理事、上海交通大学兼职教授、上海交通大学教育部数字医学工程技术中心专家委员会委员、上海理工大学兼职教授。</p>
+							</div>
+						</div> -->
+					<!-- </div>
 					
-			</div>
+				</div> -->
 
+				<!-- <div class="box1Cen list-unstyled list-inline text-left table-list table-left">
+					<ul class="list-group">
+					    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;特邀嘉宾</h4></li>
+					</ul>
+					<div class="speaker-invite"> -->
+						<!-- <div class="full-line">
+							<div class="full-left-show text-center">
+								<img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/detail/children/a.png" class="img-responsive">
+							</div>
+							<div class="full-right-show">
+								<h4><b>刘道志 博士</b> <span>山蓝资本创始及合伙人</span></h4>
+								<p>上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才。上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才</p>
+							</div>
+						</div>
+						<div class="full-line">
+							<div class="full-left-show text-center">
+								<img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/detail/children/a.png" class="img-responsive">
+							</div>
+							<div class="full-right-show">
+								<h4><b>刘道志 博士</b> <span>山蓝资本创始及合伙人</span></h4>
+								<p>上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才。上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才，上海首批领军人才</p>
+							</div>
+						</div> -->
+					<!-- </div>
+						
+				</div> -->
+			</div>
 		</div>
 	</div>
 	<br><br>
@@ -593,6 +640,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         </div>
     </div>
 </footer>
+
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -658,34 +706,58 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </html>
 <script>
 	//加载ing
-	loadingArr = ['.speaker-main','.speaker-invite'];
+	loadingArr = ['.my-loading'];
 	showLoading();
+	//计算full 高度
+	var getHeight = function(str){
+		var line = Math.ceil(str.length/51);
+		if(line > 5){
+			return line*27 + 'px';
+		}else{
+			return '';
+		}
+	}
 	var showData = function(res){
 		//演讲嘉宾
 		if(res.speakerData){
-			var speaker_mainStr = '';
-			//主讲嘉宾
-			if(res.speakerData.events_speaker_main){
-				$.each(res.speakerData.events_speaker_main, function(index, val) {
-					speaker_mainStr += '<div class="full-line"><div class="full-left-show text-center"><img src="<?php
+			// var speaker_mainStr = '';
+			// //主讲嘉宾
+			// if(res.speakerData.events_speaker_main){
+			// 	$.each(res.speakerData.events_speaker_main, function(index, val) {
+			// 		speaker_mainStr += '<div class="full-line"><div class="full-left-show text-center"><img src="<?php
+echo $_obj['imgPath'];
+?>
+/speaker/'+ val.speaker_pic +'" class="img-responsive img-circle"></div><div class="full-right-show"><h4><b>' + val.speaker_name + ' ' + val.speaker_honor + '</b> <span>' + val.speaker_identity + '</span></h4><p>'+ val.speaker_detail_intro +'</p></div></div>';
+			// 	});
+			// }
+			// // console.log(speaker_mainStr);
+			// $('.speaker-main').html(speaker_mainStr);
+			// //邀请嘉宾
+			// var speaker_inviteStr = '';
+			// if(res.speakerData.events_speaker_invite){
+			// 	$.each(res.speakerData.events_speaker_invite, function(index, val) {
+			// 		speaker_inviteStr += '<div class="full-line"><div class="full-left-show text-center"><img src="<?php
+echo $_obj['imgPath'];
+?>
+/speaker/'+ val.speaker_pic +'" class="img-responsive img-circle"></div><div class="full-right-show"><h4><b>' + val.speaker_name + ' ' + val.speaker_honor + '</b> <span>' + val.speaker_identity + '</span></h4><p>'+ val.speaker_detail_intro +'</p></div></div>';
+			// 	});
+			// }
+			// $('.speaker-invite').html(speaker_inviteStr);\
+			var speaker_Str = '';
+			$.each(res.speakerData.events_speaker, function(key, item) {
+				speaker_Str += '<div class="box1Cen list-unstyled list-inline text-left table-list table-left"><ul class="list-group"><li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;' + item.speaker_type + '</h4></li></ul><div class="speaker-main">';
+				console.log(item);
+				$.each(item.speaker_data, function(index, val) {
+					// console.log(val);
+					 speaker_Str += '<div class="full-line" style="height:' + getHeight(val.speaker_detail_intro) + '"><div class="full-left-show text-center"><img src="<?php
 echo $_obj['imgPath'];
 ?>
 /speaker/'+ val.speaker_pic +'" class="img-responsive img-circle"></div><div class="full-right-show"><h4><b>' + val.speaker_name + ' ' + val.speaker_honor + '</b> <span>' + val.speaker_identity + '</span></h4><p>'+ val.speaker_detail_intro +'</p></div></div>';
 				});
-			}
-			// console.log(speaker_mainStr);
-			$('.speaker-main').html(speaker_mainStr);
-			//邀请嘉宾
-			var speaker_inviteStr = '';
-			if(res.speakerData.events_speaker_invite){
-				$.each(res.speakerData.events_speaker_invite, function(index, val) {
-					speaker_inviteStr += '<div class="full-line"><div class="full-left-show text-center"><img src="<?php
-echo $_obj['imgPath'];
-?>
-/speaker/'+ val.speaker_pic +'" class="img-responsive img-circle"></div><div class="full-right-show"><h4><b>' + val.speaker_name + ' ' + val.speaker_honor + '</b> <span>' + val.speaker_identity + '</span></h4><p>'+ val.speaker_detail_intro +'</p></div></div>';
-				});
-			}
-			$('.speaker-invite').html(speaker_inviteStr);
+				speaker_Str += '</div></div>';
+			});
+			$('.speaker-total').html(speaker_Str);
+			$('#speaker-list').show();
 			
 		}
 	}

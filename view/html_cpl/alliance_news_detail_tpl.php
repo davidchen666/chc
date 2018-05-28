@@ -316,197 +316,76 @@ $(function () { $('#myModal').on('hidden.bs.modal', function () {
 });
 </script>
 
-<!-- 菜单 -->
-<div class="detail-top">
-	<div class="top-img" id="topimg">
-		<div class="detail-menu">
-			<div class="container">
-				<ul class="box1Cen list-unstyled list-inline text-center" id="menu-show">
-		            <li class="wow">
-		            	<a class="child-menu" href="#" link="?m=events&a=detail"><div class="box1CenCon <?php
-echo $_obj['detail'];
-?>
-"><p>首页</p></div></a>
-		            </li>
-		            <li class="wow">
-		                <a class="child-menu" href="#" link="?m=events&a=about"><div class="box1CenCon <?php
-echo $_obj['about'];
-?>
-"><p>关于会议</p></div></a>
-		            </li>
-		            <li class="wow">
-		                <a class="child-menu" href="#" link="?m=events&a=schedule"><div class="box1CenCon <?php
-echo $_obj['schedule'];
-?>
-"><p>会议日程</p></div></a>
-		            </li>
-		            <li class="wow">
-		                <a class="child-menu" href="#" link="?m=events&a=speaker"><div class="box1CenCon <?php
-echo $_obj['speaker'];
-?>
-"><p>演讲嘉宾</p></div></a>
-		            </li>
-		            <li class="wow">
-		                <a class="child-menu" href="#" link="?m=events&a=hotel"><div class="box1CenCon <?php
-echo $_obj['hotel'];
-?>
-"><p>会议酒店</p></div></a>
-		            </li>
-		            <li class="wow">
-		                <a class="child-menu" href="#" link="?m=events&a=review"><div class="box1CenCon <?php
-echo $_obj['review'];
-?>
-"><p>历届回顾</p></div></a>
-		            </li>
-		            <li class="wow bigger-menu-bg">
-		                <a class="child-menu" href="#" link="?m=events&a=mSignUp"><div class="box1CenCon <?php
-echo $_obj['mSignUp'];
-?>
-"><p><img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/detail/events-record-icon.png"> 参会报名</p></div></a>
-		            </li>
-		            <li class="wow bigger-menu-bg">
-		                <a class="child-menu" href="#" link="?m=events&a=rSignUp"><div class="box1CenCon <?php
-echo $_obj['rSignUp'];
-?>
-"><p><img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/detail/road-record-icon.png"> 路演报名</p></div></a>
-		            </li>
-		        </ul>
-	        </div>
-	        <div class="line-yellow"></div>
-		</div>
+<div class="headSpace"></div>
+
+<div class="box1Bg box1Cen" id="alliance-bg">
+	<div class="container showContent" style="padding: 10px;padding-top: 80px;">
+        <div style="background: #fff; padding:15px;">
+            <h2 style="color:black; padding-bottom: 10px;background: #fff;" class="titleShow"></h2>
+            <span style="color:silver;background: #fff;" class="dateShow"></span>
+            <div class="news-content" style="padding-top: 30px;"></div>
+        </div>
+
 	</div>
 </div>
 
 <script>
-	$('.logo').hide();
-	$(window).scrollTop(0);
+	$(function(){
+		$('header').attr('class','headerBg navbar-fixed-top active');
+	    // console.log($('header').attr('class'));
+	    $(window).scroll(function(event) {
+	    	// console.log($('header').attr('class'));
+	    	$('header').attr('class','headerBg navbar-fixed-top active');
+	    });
 
-	$(window).scroll(function(){//开始监听滚动条
-        //获取当前滚动条高度
-		var topp = $(document).scrollTop();
-        //用于调试 弹出当前滚动条高度
-        if(topp > 0){
-        	$('header').hide();
+        var news_id = getQueryString('news_id');
+        if(!news_id){
+            $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: 您访问的地址不正确。请检查链接参数。</h1>');
+            return;
         }else{
-        	$('header').show();
-        }
-		// console.log($('header'));
-		// console.log(topp);
-		// if(topp > 374){
-		if(topp > 467){
-			$('.detail-menu').css('position','fixed');
-			$('.detail-menu').css('top','0px');
-		}else{
-			$('.detail-menu').css('position', 'relative');
-			$('.detail-menu').css('top','94%');
-		}
-		// var sMenu = $('.detail-menu').scrollTop();
-		// console.log(sMenu)
-	})
-
-	//请求数据并渲染页面
-	var getData = function(params){
-		$.ajax({
-			url: '?m=events&a=getEventsInfo',
-			type: 'POST',
-			data: params,
-			success: function(res){
-				res = $.parseJSON(res);
-				console.log(res);
-				closeLoading();
-				if(res.resCode !== 200){
-					// alert(res.resData);
-					$('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
-					return false;
-				}else{
-					showData(res.resData);
-					$('#topimg').attr('style', 'background:url(<?php
+            //渲染数据
+            loadingArr = ['.showContent .news-content'];
+            showLoading();
+            //加载数据
+            //请求数据并渲染页面
+            var params = {newsid: news_id};
+            $.ajax({
+                url: '?m=alliance&a=getNewsData',
+                type: 'POST',
+                data: params,
+                success: function(res){
+                    res = $.parseJSON(res);
+                    closeLoading();
+                    if(res.resCode !== 200){
+                        // alert(res.resData);
+                        $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
+                        return false;
+                    }else{
+                        // showData(res.resData);
+                        // $('.imgFull').attr('style','background-image: url("<?php
 echo $_obj['imgPath'];
 ?>
-/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: cover;height: 500px;');
-					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
-						//存储图片
-						localStorage.setItem(events_id,$('#topimg').attr('style'));
-					}
-				}
-			}
-		})
-	}
-	
-	var allowAction = ['detail','about','hotel','review','speaker','schedule','mSignUp','rSignUp'];
-	var currentAction = getQueryString('a');
-	var events_id = getQueryString('events_id');
-	var params = {};
-	if( !events_id || getQueryString('m') !== 'events' || allowAction.indexOf(currentAction) < 0 ){
-		$('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: 您访问的地址不正确。请检查链接参数。</h1>');
-		// alert('访问地址不正确！');
-		// return;
-	}else{
-		params = {"events_id":events_id};
-		switch (currentAction){
-			case 'detail':
-				params = {"events_id":events_id,"speaker":true,"organizer":true};
-				break;
-			case 'hotel':
-				params = {"events_id":events_id,"hotel":true};
-				break;
-			case 'speaker':
-				params = {"events_id":events_id,"speaker":true};
-				break;
-			case 'rSignUp':
-				params = {"events_id":events_id,"roadShow":true};
-				break;
-			case 'review':
-				params = {"events_id":events_id,"review":true};
-				break;
-		}
-	}
-	// console.log(events_id);
-	//获取动态数据
-	$(function(){
-		//渲染缓存图片
-		$('#topimg').attr('style',localStorage.getItem(events_id));
-		getData(params)
+/about/' + res.resData[0].pic + '"); 100% 100% center')
+                        // $('.imgFull img').attr('src', '<?php
+echo $_obj['imgPath'];
+?>
+/about/' + res.resData[0].pic);
+                        // console.log($('.imgFull img').attr('src'));
+                        $('.showContent .titleShow').html(res.resData.items[0].news_title);
+                        $('.news-content').html(res.resData.items[0].news_content);
+                        $('.dateShow').html('发表时间： ' + res.resData.items[0].create_date);
+                        // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
+                        //     //存储图片
+                        //     localStorage.setItem(events_id,$('#topimg').attr('style'));
+                        // }
+                    }
+                }
+            })
+        }
+            
 	})
-	//menu change
-	$('.child-menu').click(function(event) {
-		window.location.href = $(this).attr('link') + '&events_id=' + events_id;
-	});
+	    
 </script>
-
-<!-- 内容 -->
-<div class="total">
-	<div class="my-loading"></div>
-	<!--review-->
-	<div id="review-list" class="my-list" style="display: none;">
-		<div class="container">
-			<div class="box1Top wow h-title" data-wow-delay="0.5s">
-	        	<img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/detail/children/review-title.png" class="img-responsive">
-	    	</div>
-			<ul class="box1Cen list-unstyled list-inline text-center review-list">
-	        	<!-- <li class="wow">
-	            	<div class="box1CenCon" style="height: 300px;">
-	            		<img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/detail/children/b1.png" class="img-responsive">
-	            		<p>2018年就快捷键家就快捷键尽快尽快将</p>
-	            	</div>
-	            </li> -->
-	            
-	        </ul>
-			
-		</div>
-	</div>
 <footer class="footerBg">
     <div class="footTop">
     	<div class="container">
@@ -661,29 +540,3 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </script>
 </body>
 </html>
-<script>
-	//reviewData
-	loadingArr = ['.my-loading'];
-	showLoading();
-	var showData = function(res){
-		var reviewStr = '';
-		if(res.reviewData){
-			$.each(res.reviewData, function(index, val) {
-				 reviewStr += '<li class="wow"><a href="?m=events&a=detail&events_id=' + val.events_id + '" title=""><div class="box1CenCon" style="height:180px;"><img style="height:100px" src="<?php
-echo $_obj['imgPath'];
-?>
-/events/'+ val.past_pic +'" class="img-responsive"><p>' + val.past_title + '</p></div></a></li>'
-			});
-			//补充
-			if(res.reviewData.length % 4 != 0){
-				var num = 4 - (res.reviewData.length % 4);
-				for (var i = 1; i <= num; i++) {
-					reviewStr += '<li></li>';
-				}
-			}
-			$('.my-list').show();
-			$('.review-list').html(reviewStr);
-		}
-		
-	}
-</script>

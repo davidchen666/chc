@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title>CHC医疗咨询</title>
+    <title><?php
+echo $_obj['title'];
+?>
+</title>
 	<meta charset=utf-8"UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
@@ -74,6 +77,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/uploadify.css">
+
+    <script src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/js/lib/vendor/jquery.uploadfile.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/uploadfile.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',
@@ -128,11 +140,16 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/events.css">
-	<link rel="stylesheet" href="<?php
+    <link rel="stylesheet" href="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/alliance.css">
+	<link rel="stylesheet" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/banking.css">
     <script>
+
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];
         //检查路由参数是否合法
@@ -146,7 +163,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
              }
         }
 
-        //将换行变成p标签
+        //将 \n换行 替换成 p标签
         var getNewStr = function(str){
             if(!str){
                 return '<p></p>';
@@ -168,7 +185,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         //展示loading
         var showLoading = function(){
             $.each(loadingArr, function(index, val) {
-                 $(val).html('<img class="img-responsive center-block" src="<?php
+                 $(val).html('<img class="img-responsive center-block" style="padding-top:80px;padding-bottom:350px;" src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/loading.gif" alt="">');
@@ -182,6 +199,21 @@ echo $_obj['WEBSITE_SOURCE_URL'];
             });
         }
 
+        //过滤html标签
+        function delHtmlTag(str){
+            return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+        }
+
+        //sleep
+        var sleep = function (numberMillis) {    
+            var now = new Date();    
+            var exitTime = now.getTime() + numberMillis;   
+            while (true) { 
+            now = new Date();       
+            if (now.getTime() > exitTime) 
+                return;    
+            } 
+        }
     </script>
 </head>
 <body style="">
@@ -217,17 +249,26 @@ echo $_obj['events'];
                     		<h3>品牌会议</h3><i></i><!-- <span>HOME</span> -->
                     	</a>
                     </li>
-                    <li id="nav2" data-toggle="modal" data-target="#myModal">
+                    <li id="nav2" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['alliance'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>产业联盟</h3><i></i><!-- <span>ABOUT</span> -->
                     	</a>
                     </li>
-                    <li id="nav3" data-toggle="modal" data-target="#myModal">
+                    <li id="nav3" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['banking'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>精准投行</h3><i></i><!-- <span>TEAM</span> -->
                     	</a>
                     </li>
-                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal">
+                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['services'];
+?>
+">
                     	<a href="javascript:;" target="_self" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     		<h3 style="display:inline;">咨询服务</h3><!-- <i></i> --><!-- <span>NEWS</span> -->
                     	</a>
@@ -237,12 +278,18 @@ echo $_obj['events'];
                             <li><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
                         </ul>
                     </li>
-                    <li id="nav5" data-toggle="modal" data-target="#myModal">
+                    <li id="nav5" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['media'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>医疗传媒</h3><i></i><!-- <span>JOIN US</span> -->
                     	</a>
                 	</li>
-                    <li id="nav6" data-toggle="modal" data-target="#myModal">
+                    <li id="nav6" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['about'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>关于我们</h3><i></i><!-- <span>CONTACT</span> -->
                     	</a>
@@ -319,7 +366,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         			<img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/alliance/pic.png" alt="">
+/img/alliance/pic.jpg" alt="">
         		</div>
         		<div class="logo-t">
         			<div class="container">
@@ -349,68 +396,98 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/1.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/2.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/3.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/4.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/5.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/6.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/7.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/8.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/9.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon"><img src="<?php
+                <div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/ali.png" class="img-responsive"></div>
+/img/alliance/logo/10.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/alliance/logo/11.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/alliance/logo/12.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/alliance/logo/13.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/alliance/logo/14.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/alliance/logo/15.jpg" class="img-responsive"></div>
             </li>
         </ul>
         <div class="btn-img text-center">
-            <a href="javascript:;"><img src="<?php
+            <a href="javascript:;" data-target="#showMember" data-toggle="modal"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/alliance/learn-more.png" alt=""></a>
@@ -457,7 +534,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 /img/alliance/member-news-title.png" class="img-responsive">
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="member-news-show">
-            <li class="wow">
+            <!--<li class="wow">
                 <div class="box1CenCon">
                     <div class="row">
                         <div class="col-md-4 left-show">
@@ -475,11 +552,12 @@ echo $_obj['WEBSITE_SOURCE_URL'];
                         </div>
                     </div>
                 </div>
-            </li>
-            <li class="wow">
+            </li>-->
+            <!-- <li class="wow">
+                <a href="?m=media&a=newsDetail&news_id=1">
                 <div class="box1CenCon">
                     <div class="row">
-                        <div class="col-md-4 left-show">
+                        <div class="col-md-4 col-xs-4 left-show">
                             <div class="img-show text-left">
                                 <img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
@@ -487,14 +565,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 /img/alliance/new.png" class="img-responsive">
                             </div>
                         </div>
-                        <div class="col-md-8 right-show text-left">
-                            <h4><b>医疗新领域</b></h4>
+                        <div class="col-md-8 col-xs-8 right-show text-left">
+                            <h4><b>医疗新领域医疗新领域医疗新领域医疗新领域医疗新领域</b></h4>
                             <p>2017-12-12 18:36:03</p>
-                            <p>凭借专业精神和极致的服务，凭借专业精神和极致的服务，凭借专业精神和极致的服务，凭借专业精神和极致的服务</p>
+                            <p class="show-detail">凭借专业精神和极致的服务，凭借专业精神和极致的服务，凭借专业精神和极致的服务，凭借专业精神和极致的服务致的服务，凭借专业精神和极致的服务</p>
                         </div>
                     </div>
                 </div>
-            </li>
+                </a>
+            </li> -->
         </ul>
         <div class="clearfix"></div>
         <!--end 会员新闻-->
@@ -511,8 +590,8 @@ echo $_obj['WEBSITE_SOURCE_URL'];
                 <div class="row">
                     <div class="col-md-8">
                         <h4>入会资格：</h4>
-                        <p>1、测试多级京东卡荆防颗粒看及框架尽快尽快将借口借口。</p>
-                        <p>2、测试多级京东卡荆防颗粒看。</p>
+                        <p>1、从事IVD及精准医疗行业仪器和试剂研发、生产、销售型企业以及第三方医学检验机构；</p>
+                        <p>2、从事医疗产业投资的专业基金，有丰富的医疗投资经验。</p>
                     </div>
                     <div class="col-md-4">
                         <h4>联盟秘书处：</h4>
@@ -743,7 +822,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
             <div class="up-btn"></div>
         </div>
         <div class="btn-img text-center">
-            <a href="javascript:;"><img src="<?php
+            <a href="javascript:;" data-target="#showRegister" data-toggle="modal"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/alliance/enter-alliance.png" alt=""></a>
@@ -751,15 +830,298 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 	</div>
 </div>
 
+<!-- begin 模态窗口 查看全部会员 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="showRegisterModalLabel" id="showMember" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="width:60%;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+            </button>
+            <h4 class="modal-title black" id="myModalLabel">
+                全部会员
+            </h4>
+        </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 text-center my-img"><img src="" alt="" width="100%"></div>
+        </div>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- end  模态窗口 查看全部会员 -->
+
+<!-- begin 模态窗口 入会申请 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="showRegisterModalLabel" id="showRegister" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 text-center"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/alliance/apply-title.png" alt=""></div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="name"><p>公司名称*</p></label>
+                <input type="text" class="form-control com_name">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>联系人姓名*</p></label>
+                    <input type="text" class="form-control user_name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>职位*</p></label>
+                    <input type="text" class="form-control user_job">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>电话/手机*</p></label>
+                    <input type="text" class="form-control user_mobile">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><p>邮箱*</p></label>
+                    <input type="text" class="form-control user_email">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="name"><p>公司从事的主要业务*</p></label>
+                    <textarea class="form-control com_business"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row words">
+            <div class="col-md-12">
+                <p><small>1.  请真实填写以上信息，我们会对该信息保密，不会泄露给第三方或用于其他商业目的；</small></p>
+                <p><small>2.  提交申请后，我们将在1-3个工作日内与您联系，请耐心等待；</small></p>
+                <p><small>3.  相关问题请咨询：021-68581087，ivd@chconsultant.com。</small></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="javascript:;" title="" class="my-register">
+                    <img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/banking/reg-btn.png" alt="">
+                </a>
+            </div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- end  模态窗口 入会申请 -->
+
 <script>
-	$(function(){
-		$('header').attr('class','headerBg navbar-fixed-top active');
-	    // console.log($('header').attr('class'));
-	    $(window).scroll(function(event) {
-	    	// console.log($('header').attr('class'));
-	    	$('header').attr('class','headerBg navbar-fixed-top active');
-	    });
-	})
+$(function(){
+	$('header').attr('class','headerBg navbar-fixed-top active');
+    // console.log($('header').attr('class'));
+    $(window).scroll(function(event) {
+    	// console.log($('header').attr('class'));
+    	$('header').attr('class','headerBg navbar-fixed-top active');
+    });
+
+    //渲染数据
+    loadingArr = ['#member-news-show'];
+    showLoading();
+    //加载数据
+    //请求数据并渲染页面
+    var params = {
+        currentPage: 1,
+        pageSize: 8,
+        status: 1,
+        newstype: 1
+    };
+    var getNewsData = function(){
+        $.ajax({
+            url: '?m=alliance&a=getNewsData',
+            type: 'POST',
+            data: params,
+            success: function(res){
+                res = $.parseJSON(res);
+                closeLoading();
+                if(res.resCode !== 200){
+                    // alert(res.resData);
+                    $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
+                    return false;
+                }else{
+                    var listStr = '';
+                    var pageStr = '';
+                    if(res.resData.items && res.resData.items.length){
+                        $.each(res.resData.items, function(index, val) {
+                             listStr += '<li class="wow"><a href="?m=alliance&a=newsDetail&news_id=' + val.news_id + '"><div class="box1CenCon"><div class="row"><div class="col-md-4 col-xs-4 left-show"><div class="img-show text-left"><img src="<?php
+echo $_obj['imgPath'];
+?>
+/news/' + val.news_pic + '" class="img-responsive"></div></div><div class="col-md-8 col-xs-8 right-show text-left"><h4><b>' + val.news_title + '</b></h4><p>' + val.create_date + '</p><p class="show-detail"><small>' + delHtmlTag(val.news_content) + '</small></p></div></div></div></a></li>';
+                        });
+                        if(res.resData.items.length % 2 !== 0){
+                            listStr += '<li></li>';
+                        }
+                    }
+
+                    if(res.resData.page && res.resData.page.total){
+                        //是否显示前一页
+                        if(params.currentPage != 1){
+                            pageStr +=  '<li><a href="javascript:;" class="changePage" aria-label="Previous" data="' + (params.currentPage - 1) + '"><span aria-hidden="true" style="color:#337ab7;">&laquo;</span></a></li>';
+                        }
+                        //显示总页数
+                        var pageTotal =  Math.ceil(parseInt(res.resData.page.total)/params.pageSize);
+                        for (var i = 1; i <= pageTotal; i++) {
+                            var ss = ''
+                            if(params.currentPage === i){
+                                ss = ' style="background-color:#9DC040;" ';
+                            }
+                            pageStr += '<li><a href="javascript:;" ' + ss + ' class="changePage" data="' + i + '">' + i + '</a></li>'; 
+                            
+                        }
+                        //是否显示下一页
+                        console.log(params.currentPage , pageTotal);
+                        if(params.currentPage !== pageTotal){
+                            pageStr += '<li><a href="javascript:;" class="changePage" aria-label="Next" data="' + (params.currentPage + 1) + '"><span aria-hidden="true" style="color:#337ab7;">&raquo;</span></a></li>';
+                            // console.log(pageStr);
+                        }
+
+                    }
+                    $('#member-news-show').html(listStr);
+                    // $('.page-show').html(pageStr);
+                    //change
+                    $('.page-show .changePage').click(function(event) {
+                        params.currentPage = parseInt($(this).attr('data'));
+                        // console.log(params)
+                        getNewsData();
+                    });
+                    
+                }
+            }
+        })
+    }
+
+    getNewsData();
+
+    //提交报名信息
+   $('.my-register').click(function(event) {
+        var myParams = {};
+    //id  com_name    user_name   user_job    user_mobile user_email  file_name   remark  create_date update_date
+        //获取公司相关数据
+        myParams.com_name = $('.com_name').val();
+        myParams.user_name = $('.user_name').val();
+        myParams.user_job = $('.user_job').val();
+        myParams.user_mobile = $('.user_mobile').val();
+        myParams.user_email = $('.user_email').val();
+        myParams.com_business = $('.com_business').val();
+        //判断必填项是否填写
+        if(!myParams.com_name){
+            alert('公司名称不能为空。');
+            return;
+        }
+        if(!myParams.user_name){
+            alert('负责人姓名不能为空。');
+            return;
+        }
+        if(!myParams.user_job){
+            alert('负责人职位不能为空。');
+            return;
+        }
+        if(!myParams.user_mobile){
+            alert('负责人电话不能为空。');
+            return;
+        }
+        if(!myParams.user_email){
+            alert('负责人邮箱地址不能为空。');
+            return;
+        }
+        
+        if(!myParams.com_business){
+            alert('请填写贵公司从事的主要业务');
+            return;
+        }
+        // console.log('all',myParams,JSON.stringify(myParams));
+
+        $.ajax({
+            url: '?m=alliance&a=addAllianceSignUp',
+            type: 'POST',
+            data: myParams,
+            dataType: 'json',
+            success: function(res){
+                console.log(res);
+                if(res.resCode === 200){
+                    if(res.resData.id){
+                        $('#showRegister').modal('hide');
+                        alert('恭喜你！报名成功！');
+                        $('.com_name').val('');
+                        $('.user_name').val('');
+                        $('.user_job').val('');
+                        $('.user_mobile').val('');
+                        $('.user_email').val('');
+                        $('.com_business').val('');
+                    }else{
+                        alert('信息提交失败');
+                    }
+                    
+                    // $("#success").alert();
+                }else{
+                    alert('信息提交失败,' + res.resData);
+                    // alert();
+                    // $("#error").alert();
+                }
+            }
+        })
+   });
+
+    //加载数据--全部成员
+    //请求数据并渲染页面
+    var params_member = {id: 5};
+    $.ajax({
+        url: '?m=about&a=getPage',
+        type: 'POST',
+        data: params_member,
+        success: function(res){
+            res = $.parseJSON(res);
+            closeLoading();
+            if(res.resCode !== 200){
+                // alert(res.resData);
+                $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
+                return false;
+            }else{
+                // showData(res.resData);
+                // $('.imgFull').attr('style','background-image: url("<?php
+echo $_obj['imgPath'];
+?>
+/about/' + res.resData[0].pic + '"); 100% 100% center')
+                $('.my-img img').attr('src', '<?php
+echo $_obj['imgPath'];
+?>
+/alliance/' + res.resData[0].pic);
+                // console.log($('.imgFull img').attr('src'));
+                // $('.showContent').html(res.resData[0].content);
+                // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
+                //     //存储图片
+                //     localStorage.setItem(events_id,$('#topimg').attr('style'));
+                // }
+            }
+        }
+    })
+
+})
 	    
 </script>
 <footer class="footerBg">
@@ -852,6 +1214,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         </div>
     </div>
 </footer>
+
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

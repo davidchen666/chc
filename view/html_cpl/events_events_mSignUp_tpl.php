@@ -74,6 +74,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/uploadify.css">
+
+    <script src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/js/lib/vendor/jquery.uploadfile.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/uploadfile.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',
@@ -128,10 +137,14 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/events.css">
-	<link rel="stylesheet" href="<?php
+    <link rel="stylesheet" href="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/alliance.css">
+	<link rel="stylesheet" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/banking.css">
     <script>
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];
@@ -146,7 +159,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
              }
         }
 
-        //将换行变成p标签
+        //将 \n换行 替换成 p标签
         var getNewStr = function(str){
             if(!str){
                 return '<p></p>';
@@ -168,7 +181,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         //展示loading
         var showLoading = function(){
             $.each(loadingArr, function(index, val) {
-                 $(val).html('<img class="img-responsive center-block" src="<?php
+                 $(val).html('<img class="img-responsive center-block" style="padding-top:80px;padding-bottom:350px;" src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/loading.gif" alt="">');
@@ -182,6 +195,21 @@ echo $_obj['WEBSITE_SOURCE_URL'];
             });
         }
 
+        //过滤html标签
+        function delHtmlTag(str){
+            return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+        }
+
+        //sleep
+        var sleep = function (numberMillis) {    
+            var now = new Date();    
+            var exitTime = now.getTime() + numberMillis;   
+            while (true) { 
+            now = new Date();       
+            if (now.getTime() > exitTime) 
+                return;    
+            } 
+        }
     </script>
 </head>
 <body style="">
@@ -217,17 +245,26 @@ echo $_obj['events'];
                     		<h3>品牌会议</h3><i></i><!-- <span>HOME</span> -->
                     	</a>
                     </li>
-                    <li id="nav2" data-toggle="modal" data-target="#myModal">
+                    <li id="nav2" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['alliance'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>产业联盟</h3><i></i><!-- <span>ABOUT</span> -->
                     	</a>
                     </li>
-                    <li id="nav3" data-toggle="modal" data-target="#myModal">
+                    <li id="nav3" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['banking'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>精准投行</h3><i></i><!-- <span>TEAM</span> -->
                     	</a>
                     </li>
-                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal">
+                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['services'];
+?>
+">
                     	<a href="javascript:;" target="_self" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     		<h3 style="display:inline;">咨询服务</h3><!-- <i></i> --><!-- <span>NEWS</span> -->
                     	</a>
@@ -237,12 +274,18 @@ echo $_obj['events'];
                             <li><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
                         </ul>
                     </li>
-                    <li id="nav5" data-toggle="modal" data-target="#myModal">
+                    <li id="nav5" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['media'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>医疗传媒</h3><i></i><!-- <span>JOIN US</span> -->
                     	</a>
                 	</li>
-                    <li id="nav6" data-toggle="modal" data-target="#myModal">
+                    <li id="nav6" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['about'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>关于我们</h3><i></i><!-- <span>CONTACT</span> -->
                     	</a>
@@ -341,6 +384,9 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </div>
 
 <script>
+	$('.logo').hide();
+	$(window).scrollTop(0);
+
 	$(window).scroll(function(){//开始监听滚动条
         //获取当前滚动条高度
 		var topp = $(document).scrollTop();
@@ -352,12 +398,13 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         }
 		// console.log($('header'));
 		// console.log(topp);
-		if(topp > 374){
+		// if(topp > 374){
+		if(topp > 467){
 			$('.detail-menu').css('position','fixed');
 			$('.detail-menu').css('top','0px');
 		}else{
 			$('.detail-menu').css('position', 'relative');
-			$('.detail-menu').css('top','93%');
+			$('.detail-menu').css('top','94%');
 		}
 		// var sMenu = $('.detail-menu').scrollTop();
 		// console.log(sMenu)
@@ -382,7 +429,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 					$('#topimg').attr('style', 'background:url(<?php
 echo $_obj['imgPath'];
 ?>
-/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: 100% 100%;height: 400px;');
+/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: cover;height: 500px;');
 					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
 						//存储图片
 						localStorage.setItem(events_id,$('#topimg').attr('style'));
@@ -561,15 +608,19 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 					<div class="col-md-6">
 						<div class="form-group com_field">
 						    <label for="name"><p>所属领域*</p></label>
-						    <p class="higher"><input type="radio" name="field" value="1"> 医疗企业——产品领域</p>
-						    <p class="higher"><input type="radio" name="field" value="2"> 投资企业</p>
-						    <p class="higher"><input type="radio" name="field" value="3"> 产品上游</p>
+						    <p class="higher"><input type="radio" name="field" value="1"> 医疗企业/产品领域</p>
+						    <p class="higher"><input type="radio" name="field" value="2"> 产业上游/中间服务供应商</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 投资银行/咨询机构/律师事务所/会计事务所</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 医学专家和科研机构</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 医学园区</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 媒体记者</p>
+						    <p class="higher"><input type="radio" name="field" value="3"> 其他</p>
 					  	</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group from_data">
 						    <label for="name"><p>您是通过什么平台获知本次会议的</p></label>
-						   	<p class="higher"><input type="radio" name="from_data" value="1"> EDM</p>
+						   	<p class="higher"><input type="radio" name="from_data" value="1"> EDM（电子邮件）</p>
 						    <p class="higher"><input type="radio" name="from_data" value="2"> 微信</p>
 						    <p class="higher"><input type="radio" name="from_data" value="3"> 媒体网站</p>
 						    <p class="higher"><input type="radio" name="from_data" value="4"> 网上搜索</p>
@@ -581,13 +632,13 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 				<div class="row">
 					<div class="col-md-12">
 						<p><small>注意：</small></p>
-						<p><small>1、“*” 为必填项，谢谢配合；</small></p>
-						<p><small>2、请正确填写个人基本信息，我们将以您提交的参会者姓名为准，制作参会确认函和胸牌；</small></p>
+						<p><small>1.“*” 为必填项，谢谢配合；</small></p>
+						<p><small>2.请正确填写个人基本信息，我们将以您提交的参会者姓名为准，制作参会确认函与胸牌；</small></p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<p class="text-center">请输入验证码：<input type="text" style="width:15%;" class="verify_code"> 8901 为了防止恶意添加资料，请输入验证码</p>
+						<p class="text-center">请输入验证码：<input type="text" style="width:15%;" class="verify_code"> <span class="codeVal black" style="background: pink;">8901</span> 为了防止恶意添加资料，请输入验证码</p>
 					</div>
 				</div>
 				<div class="btn-img text-center">
@@ -642,7 +693,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 		if(res.infoData){
 			$('.attention').html(getNewStr(res.infoData.events_register_attention));
 			$('.cost-intro').html(getNewStr(res.infoData.events_register_cost_intro));
-			$('.events-date').html(res.baseData.events_begin_date + ' ~ '+ res.baseData.events_begin_date);
+			$('.events-date').html(res.baseData.events_begin_date + ' ~ '+ res.baseData.events_end_date);
 			if(res.infoData.events_register_cost){
 				var priceArr = res.infoData.events_register_cost.split("\n");
 				var priceStr= '';
@@ -655,8 +706,26 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 		}
 	}
 
+	var getVerifyCode = function(){
+		$.ajax({
+			url: '?m=events&a=getVerifyCode',
+			type: 'GET',
+			success: function(res){
+				
+				res = $.parseJSON(res);
+				console.log(res);
+            	if(res.resCode === 200){
+					$('.codeVal').html(res.resData.code);
+				}else{
+					alert('出现异常');
+				}
+			}
+		})
+	}
+
 	//报名相关操作
 	$(function(){
+		getVerifyCode();
 		//获取页面相关信息
 		$('.countNum').change(function(event) {
 			// console.log($('.countNum').val());
@@ -786,6 +855,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 					}else{
 						alert('信息提交失败,' + res.resData);
 					}
+					getVerifyCode();
 				}
 			})
 			

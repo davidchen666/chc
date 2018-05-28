@@ -74,6 +74,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/uploadify.css">
+
+    <script src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/js/lib/vendor/jquery.uploadfile.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/uploadfile.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',
@@ -128,10 +137,14 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/events.css">
-	<link rel="stylesheet" href="<?php
+    <link rel="stylesheet" href="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/alliance.css">
+	<link rel="stylesheet" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/banking.css">
     <script>
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];
@@ -146,7 +159,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
              }
         }
 
-        //将换行变成p标签
+        //将 \n换行 替换成 p标签
         var getNewStr = function(str){
             if(!str){
                 return '<p></p>';
@@ -168,7 +181,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         //展示loading
         var showLoading = function(){
             $.each(loadingArr, function(index, val) {
-                 $(val).html('<img class="img-responsive center-block" src="<?php
+                 $(val).html('<img class="img-responsive center-block" style="padding-top:80px;padding-bottom:350px;" src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/loading.gif" alt="">');
@@ -182,6 +195,21 @@ echo $_obj['WEBSITE_SOURCE_URL'];
             });
         }
 
+        //过滤html标签
+        function delHtmlTag(str){
+            return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+        }
+
+        //sleep
+        var sleep = function (numberMillis) {    
+            var now = new Date();    
+            var exitTime = now.getTime() + numberMillis;   
+            while (true) { 
+            now = new Date();       
+            if (now.getTime() > exitTime) 
+                return;    
+            } 
+        }
     </script>
 </head>
 <body style="">
@@ -217,17 +245,26 @@ echo $_obj['events'];
                     		<h3>品牌会议</h3><i></i><!-- <span>HOME</span> -->
                     	</a>
                     </li>
-                    <li id="nav2" data-toggle="modal" data-target="#myModal">
+                    <li id="nav2" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['alliance'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>产业联盟</h3><i></i><!-- <span>ABOUT</span> -->
                     	</a>
                     </li>
-                    <li id="nav3" data-toggle="modal" data-target="#myModal">
+                    <li id="nav3" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['banking'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>精准投行</h3><i></i><!-- <span>TEAM</span> -->
                     	</a>
                     </li>
-                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal">
+                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['services'];
+?>
+">
                     	<a href="javascript:;" target="_self" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     		<h3 style="display:inline;">咨询服务</h3><!-- <i></i> --><!-- <span>NEWS</span> -->
                     	</a>
@@ -237,12 +274,18 @@ echo $_obj['events'];
                             <li><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
                         </ul>
                     </li>
-                    <li id="nav5" data-toggle="modal" data-target="#myModal">
+                    <li id="nav5" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['media'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>医疗传媒</h3><i></i><!-- <span>JOIN US</span> -->
                     	</a>
                 	</li>
-                    <li id="nav6" data-toggle="modal" data-target="#myModal">
+                    <li id="nav6" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['about'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>关于我们</h3><i></i><!-- <span>CONTACT</span> -->
                     	</a>
@@ -341,6 +384,9 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </div>
 
 <script>
+	$('.logo').hide();
+	$(window).scrollTop(0);
+
 	$(window).scroll(function(){//开始监听滚动条
         //获取当前滚动条高度
 		var topp = $(document).scrollTop();
@@ -352,12 +398,13 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         }
 		// console.log($('header'));
 		// console.log(topp);
-		if(topp > 374){
+		// if(topp > 374){
+		if(topp > 467){
 			$('.detail-menu').css('position','fixed');
 			$('.detail-menu').css('top','0px');
 		}else{
 			$('.detail-menu').css('position', 'relative');
-			$('.detail-menu').css('top','93%');
+			$('.detail-menu').css('top','94%');
 		}
 		// var sMenu = $('.detail-menu').scrollTop();
 		// console.log(sMenu)
@@ -382,7 +429,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 					$('#topimg').attr('style', 'background:url(<?php
 echo $_obj['imgPath'];
 ?>
-/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: 100% 100%;height: 400px;');
+/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: cover;height: 500px;');
 					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
 						//存储图片
 						localStorage.setItem(events_id,$('#topimg').attr('style'));
@@ -435,9 +482,9 @@ echo $_obj['imgPath'];
 
 <!-- 内容 -->
 <div class="total">
-
+	<div class="my-loading"></div>
 	<!--演讲-->
-	<div id="hotel-list">
+	<div id="hotel-list" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow h-title" data-wow-delay="0.5s">
 	        	<img src="<?php
@@ -445,7 +492,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/children/hotel-title.png" class="img-responsive">
 	    	</div>
-			<div class="box1Cen list-unstyled list-inline text-left hotel-intro hotel-info">
+			<div class="box1Cen list-unstyled list-inline text-left hotel-intro hotel-info" style="display: none;">
 				<!-- <strong><h4><b>杭州和达希尔顿逸林酒店</b></h4></strong>
 				<p>杭州和达希尔顿逸林酒店坐落在杭州经济技术开发区（下沙）CBD区块，是杭州首家希尔顿逸林品牌酒店，同时也是该区首家国际品牌全方位服务酒店。直接接驳杭州地铁1号线，可轻松抵达众多大型跨国企业、下沙大学城、购物中心、西湖景区及市中心。步行3分钟便可到金沙湖地铁站，距离杭州萧山机场仅20分钟车程；距离杭州市中心武林广场和西湖景区也仅45分钟车程。便捷的交通，核心区块的地理位置，使其成为下沙的新地标。</p>
 				<p>地址：杭州经济技术开发区金沙大道600号</p>
@@ -457,9 +504,9 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 				<p>大床/双房 ：700元/晚含一份/两份早餐</p>
 				<p>房晚团队价格仅适用于会议期间参会嘉宾入住。</p> -->
 			</div>
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left room-show">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left room-show" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;客房、会议室</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4 style="display: inline;"> | &nbsp;&nbsp;</h4><h4 class="rename1" style="display: inline;"></h4></li>
 				</ul>
 				<div class="row hotel-pic">
 					<!-- <div class="col-md-3"><img src="<?php
@@ -481,9 +528,9 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 				</div>
 			</div>
 			
-			<div class="box1Cen list-unstyled list-inline text-left table-list table-left arrive-intro">
+			<div class="box1Cen list-unstyled list-inline text-left table-list table-left arrive-intro" style="display: none;">
 				<ul class="list-group">
-				    <li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;到达指引</h4></li>
+				    <li class="list-group-item text-left top-bg"><h4 style="display: inline;"> | &nbsp;&nbsp;</h4><h4 class="rename2" style="display: inline;"></h4></li>
 				</ul>
 				<p><br></p>
 				<div class="arrive-info">
@@ -607,6 +654,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         </div>
     </div>
 </footer>
+
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -672,22 +720,35 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </html>
 <script>
 	//加载ing
-	loadingArr = ['.hotel-info','.arrive-info','.hotel-pic'];
+	loadingArr = ['.my-loading'];
 	showLoading();
 	var showData = function(res){
 		if(res.hotelData){
-			$('.hotel-info').html(res.hotelData.hotel_info);
-			$('.arrive-info').html(res.hotelData.arrive_info);
-			if(res.hotelData.hotel_pic){
+			if(res.hotelData.hotel_info){
+				$('.hotel-info').html(res.hotelData.hotel_info);
+				$('#hotel-list').show();
+				$('.hotel-info').show();
+			}
+			if(res.hotelData.arrive_info){
+				$('.arrive-info').html(res.hotelData.arrive_info);
+				$('.rename2').html(res.hotelData.hotel_arrive_rename ? res.hotelData.hotel_arrive_rename : '到达指引');
+				$('#hotel-list').show();
+				$('.arrive-intro').show();
+			}
+			
+			if(res.hotelData.hotel_pic && res.hotelData.hotel_pic != '[]'){
 				var picArr = $.parseJSON(res.hotelData.hotel_pic);
 				var picStr= '';
 				$.each(picArr, function(index, val) {
-					 picStr += '<div class="col-md-3"><img src="<?php
+					 picStr += '<div class="col-md-3" style="height:120px;margin:10px 0px;padding-left:0px;padding-right:0px;"><img src="<?php
 echo $_obj['imgPath'];
 ?>
-/hotel/' + val + '" class="img-responsive"></div>';
+/hotel/' + val + '" height="100%" width="100%"></div>';
 				});
 				$('.hotel-pic').html(picStr);
+				$('.rename1').html(res.hotelData.hotel_pic_rename ? res.hotelData.hotel_pic_rename : '客房、会议室');
+				$('#hotel-list').show();
+				$('.room-show').show();
 			}
 		}
 	}

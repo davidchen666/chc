@@ -74,6 +74,15 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/uploadify.css">
+
+    <script src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/js/lib/vendor/jquery.uploadfile.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/uploadfile.css">
     <script>
         var wow = new WOW({
             boxClass: 'wow',
@@ -128,10 +137,14 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/events.css">
-	<link rel="stylesheet" href="<?php
+    <link rel="stylesheet" href="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /css/alliance.css">
+	<link rel="stylesheet" href="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/css/banking.css">
     <script>
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];
@@ -146,7 +159,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
              }
         }
 
-        //将换行变成p标签
+        //将 \n换行 替换成 p标签
         var getNewStr = function(str){
             if(!str){
                 return '<p></p>';
@@ -168,7 +181,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         //展示loading
         var showLoading = function(){
             $.each(loadingArr, function(index, val) {
-                 $(val).html('<img class="img-responsive center-block" src="<?php
+                 $(val).html('<img class="img-responsive center-block" style="padding-top:80px;padding-bottom:350px;" src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/loading.gif" alt="">');
@@ -182,6 +195,21 @@ echo $_obj['WEBSITE_SOURCE_URL'];
             });
         }
 
+        //过滤html标签
+        function delHtmlTag(str){
+            return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+        }
+
+        //sleep
+        var sleep = function (numberMillis) {    
+            var now = new Date();    
+            var exitTime = now.getTime() + numberMillis;   
+            while (true) { 
+            now = new Date();       
+            if (now.getTime() > exitTime) 
+                return;    
+            } 
+        }
     </script>
 </head>
 <body style="">
@@ -217,17 +245,26 @@ echo $_obj['events'];
                     		<h3>品牌会议</h3><i></i><!-- <span>HOME</span> -->
                     	</a>
                     </li>
-                    <li id="nav2" data-toggle="modal" data-target="#myModal">
+                    <li id="nav2" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['alliance'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>产业联盟</h3><i></i><!-- <span>ABOUT</span> -->
                     	</a>
                     </li>
-                    <li id="nav3" data-toggle="modal" data-target="#myModal">
+                    <li id="nav3" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['banking'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>精准投行</h3><i></i><!-- <span>TEAM</span> -->
                     	</a>
                     </li>
-                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal">
+                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['services'];
+?>
+">
                     	<a href="javascript:;" target="_self" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     		<h3 style="display:inline;">咨询服务</h3><!-- <i></i> --><!-- <span>NEWS</span> -->
                     	</a>
@@ -237,12 +274,18 @@ echo $_obj['events'];
                             <li><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
                         </ul>
                     </li>
-                    <li id="nav5" data-toggle="modal" data-target="#myModal">
+                    <li id="nav5" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['media'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>医疗传媒</h3><i></i><!-- <span>JOIN US</span> -->
                     	</a>
                 	</li>
-                    <li id="nav6" data-toggle="modal" data-target="#myModal">
+                    <li id="nav6" data-toggle="modal" data-target="#myModal" class="<?php
+echo $_obj['about'];
+?>
+">
                     	<a href="javascript:;" target="_self">
                     		<h3>关于我们</h3><i></i><!-- <span>CONTACT</span> -->
                     	</a>
@@ -341,6 +384,9 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </div>
 
 <script>
+	$('.logo').hide();
+	$(window).scrollTop(0);
+
 	$(window).scroll(function(){//开始监听滚动条
         //获取当前滚动条高度
 		var topp = $(document).scrollTop();
@@ -352,12 +398,13 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         }
 		// console.log($('header'));
 		// console.log(topp);
-		if(topp > 374){
+		// if(topp > 374){
+		if(topp > 467){
 			$('.detail-menu').css('position','fixed');
 			$('.detail-menu').css('top','0px');
 		}else{
 			$('.detail-menu').css('position', 'relative');
-			$('.detail-menu').css('top','93%');
+			$('.detail-menu').css('top','94%');
 		}
 		// var sMenu = $('.detail-menu').scrollTop();
 		// console.log(sMenu)
@@ -382,7 +429,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 					$('#topimg').attr('style', 'background:url(<?php
 echo $_obj['imgPath'];
 ?>
-/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: 100% 100%;height: 400px;');
+/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: cover;height: 500px;');
 					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
 						//存储图片
 						localStorage.setItem(events_id,$('#topimg').attr('style'));
@@ -435,8 +482,9 @@ echo $_obj['imgPath'];
 
 <!-- 内容 -->
 <div class="total">
+	<div class="my-loading"></div>
 	<!--关于会议-->
-	<div id="intro-list">
+	<div id="intro-list" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow" data-wow-delay="0.5s">
 	        	<img src="<?php
@@ -452,7 +500,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 	</div>
 
 	<!--演讲嘉宾-->
-	<div id="speaker-list">
+	<div id="speaker-list" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow" data-wow-delay="0.5s">
 	        	<img src="<?php
@@ -473,7 +521,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 	            </li>-->
 	        </ul>
 	        <div class="btn-img text-center">
-	            <a href="http://www.chconsultant.com/zh/summit/MIS2018/guest" target="_blank"><img src="<?php
+	            <a href="javascript:;" target="_blank" class="getMoreSpeaker"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/detail/more-speaker.png" alt=""></a>
@@ -482,7 +530,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 	</div>
 
 	<!--会议日程-->
-	<div id="events-daily">
+	<div id="events-daily" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow">
 	        	<img src="<?php
@@ -492,7 +540,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 	    	</div>
 			<div class="box1Cen list-unstyled list-inline text-left table-list">
 				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4 class="title">3月21日 &nbsp;杭州和达希尔顿逸林酒店</h4></li>
+				    <li class="list-group-item text-center top-bg"><h4 class="title"></h4></li>
 				    <span class="list">
 				    <!-- <li class="list-group-item"><p>9:00-9:10 <img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
@@ -501,10 +549,10 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 				    </span>
 				</ul>
 				<div class="btn-img text-center">
-		            <a href="http://www.chconsultant.com/zh/summit/MIS2018/agenda" target="_blank"><img src="<?php
+		            <a href="javascript:;" target="_blank" class="getMoreSchedule"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
-/img/events/detail/more-speaker.png" alt=""></a>
+/img/events/detail/more-shedule.png" alt=""></a>
 		        </div>
 			</div>
 		</div>
@@ -542,7 +590,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 	</div>
 
 	<!--组织架构-->
-	<div id="organize">
+	<div id="organize" style="display: none;">
 		<div class="container">
 			<div class="box1Top wow">
 	        	<img src="<?php
@@ -552,76 +600,85 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 	    	</div>
 			
 			<!--主办方-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>主办方/organizer</h4></li>
-				</ul>
+			<div class="organizer-total" style="display: none;">
+				<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>主办方/organizer</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show organizer">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/ali.png" class="img-responsive"></div>
+		            </li>
+		            <li class="wow">
+		                <div class="box1CenCon"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/ali.png" class="img-responsive"></div>
+		            </li> -->
+		        </ul>
 			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show organizer">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/ali.png" class="img-responsive"></div>
-	            </li> -->
-	        </ul>
 			
 			<!--协办方-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>协办方/co-organizer</h4></li>
-				</ul>
+			<div class="co-organizer-total" style="display: none;">
+				<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>协办方/co-organizer</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show co-organizer">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/ali.png" class="img-responsive"></div>
+		            </li>
+		            <li class="wow">
+		                <div class="box1CenCon"><img src="<?php
+echo $_obj['WEBSITE_SOURCE_URL'];
+?>
+/img/events/ali.png" class="img-responsive"></div>
+		            </li> -->
+		        </ul>
 			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show co-organizer">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/ali.png" class="img-responsive"></div>
-	            </li>
-	            <li class="wow">
-	                <div class="box1CenCon"><img src="<?php
-echo $_obj['WEBSITE_SOURCE_URL'];
-?>
-/img/events/ali.png" class="img-responsive"></div>
-	            </li> -->
-	        </ul>
-
+				
 	        <!--战略合作伙伴-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>战略合作伙伴/starategic partner</h4></li>
-				</ul>
-			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show starategic-partner">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="<?php
+	        <div class="starategic-partner-total" style="display: none;">
+	        	<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>战略合作伙伴/starategic partner</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show starategic-partner">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/ali.png" class="img-responsive"></div>
-	            </li>-->
-	        </ul>
-
+		            </li>-->
+		        </ul>
+	        </div>
+				
 	        <!--媒体支持-->
-			<div class="box1Cen list-unstyled list-inline text-left header-title">
-				<ul class="list-group">
-				    <li class="list-group-item text-center top-bg"><h4>媒体支持/media support</h4></li>
-				</ul>
-			</div>
-			<ul class="box1Cen list-unstyled list-inline text-center organize-show media-support">
-	            <!-- <li class="wow">
-	                <div class="box1CenCon"><img src="<?php
+	        <div class="media-support-total" style="display: none;">
+	        	<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>媒体支持/media support</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show media-support">
+		            <!-- <li class="wow">
+		                <div class="box1CenCon"><img src="<?php
 echo $_obj['WEBSITE_SOURCE_URL'];
 ?>
 /img/events/ali.png" class="img-responsive"></div>
-	            </li>-->
-	        </ul>
+		            </li>-->
+		        </ul>
+	        </div>
+				
 			<!--底部-->
 			<div class="box1Cen list-unstyled list-inline text-left">
 				<div class="row">
@@ -765,6 +822,7 @@ echo $_obj['WEBSITE_SOURCE_URL'];
         </div>
     </div>
 </footer>
+
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -829,41 +887,64 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 </body>
 </html>
 <script type="text/javascript">
-	loadingArr = ['#intro-list .about-content','#speaker-list ul','#events-daily .list','#events-daily .list','.organizer','.co-organizer','.starategic-partner','.media-support']
+	loadingArr = ['#intro-list .about-content','#speaker-list ul','#events-daily .list','#events-daily .list','.organizer','.co-organizer','.starategic-partner','.media-support','.my-loading']
 	showLoading();
 	// 渲染动态数据
 	var showData = function(res){
 		//关于会议
-		$('#intro-list .about-content').html(getNewStr(res.infoData.events_about));
+		if(res.infoData.events_about_simple){
+			$('#intro-list').show();
+			$('#intro-list .about-content').html(getNewStr(res.infoData.events_about_simple));
+		}else{
+			// $('#intro-list .about-content').html(getNewStr(res.infoData.events_about));
+			// $()
+		}
 
 		//演讲嘉宾
-		if(res.speakerData){
+		if(res.speakerData.events_speaker_simple && JSON.stringify(res.speakerData.events_speaker_simple) !== '[]'){
 			var totalStr = '';
+			$.each(res.speakerData.events_speaker_simple, function(index, val) {
+				totalStr += '<li class="wow"><div class="box1CenCon"><img src="<?php
+echo $_obj['imgPath'];
+?>
+/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
+			});
+			
 			//主讲嘉宾
-			if(res.speakerData.events_speaker_main){
-				$.each(res.speakerData.events_speaker_main, function(index, val) {
-					totalStr += '<li class="wow"><div class="box1CenCon"><img src="<?php
+			// if(res.speakerData.events_speaker_main){
+			// 	$.each(res.speakerData.events_speaker_main, function(index, val) {
+			// 		totalStr += '<li class="wow"><div class="box1CenCon"><img src="<?php
 echo $_obj['imgPath'];
 ?>
 /speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
-				});
-			}
-			//邀请嘉宾
-			if(res.speakerData.events_speaker_invite){
-				$.each(res.speakerData.events_speaker_invite, function(index, val) {
-					totalStr += '<li class="wow"><div class="box1CenCon"><img src="<?php
+			// 	});
+			// }
+			// //邀请嘉宾
+			// if(res.speakerData.events_speaker_invite){
+			// 	$.each(res.speakerData.events_speaker_invite, function(index, val) {
+			// 		totalStr += '<li class="wow"><div class="box1CenCon"><img src="<?php
 echo $_obj['imgPath'];
 ?>
 /speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
-				});
+			// 	});
+			// }
+			//补充
+			if(res.speakerData.events_speaker_simple.length % 5 != 0){
+				var num = 5 - (res.speakerData.events_speaker_simple.length % 5);
+				for (var i = 1; i <= num; i++) {
+					totalStr += '<li></li>';
+				}
 			}
+			$('#speaker-list').show();
 			$('#speaker-list ul').html(totalStr);
 		}
 
 		//会议日程
 		$('#events-daily .title').html(res.infoData.events_schedule_title);
-		if(res.infoData.events_schedule_content){
-			var scheduleArr = res.infoData.events_schedule_content.split("\n");
+		if(res.infoData.events_schedule_content_simple){
+			$('#events-daily').show();
+			var sContent = res.infoData.events_schedule_content_simple ;
+			var scheduleArr = sContent.split("\n");
 			var scheduleStr = '';
 			$.each(scheduleArr, function(index, val) {
 				var littleArr = [];
@@ -880,49 +961,80 @@ echo $_obj['WEBSITE_SOURCE_URL'];
 
 		//组织架构
 		if(res.organizerData){
-			if(res.organizerData.events_organizer_organizer){
+			if(res.organizerData.events_organizer_organizer && JSON.stringify(res.organizerData.events_organizer_organizer) !== '[]'){
 				var organizerStr = '';
 				$.each(res.organizerData.events_organizer_organizer, function(index, val) {
-					 organizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="<?php
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					 organizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['imgPath'];
 ?>
-/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.organizer').html(organizerStr);
+				
+				$('#organize').show();
+				$('.organizer-total').show();
 			}
-			if(res.organizerData.events_organizer_co_organizer){
+			if(res.organizerData.events_organizer_co_organizer && JSON.stringify(res.organizerData.events_organizer_co_organizer) !== '[]'){
 				var coOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_co_organizer, function(index, val) {
-					 coOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="<?php
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					 coOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['imgPath'];
 ?>
-/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.co-organizer').html(coOrganizerStr);
+				$('#organize').show();
+				$('.co-organizer-total').show();
 			}
-			if(res.organizerData.events_organizer_starategic_partner){
+			if(res.organizerData.events_organizer_starategic_partner && JSON.stringify(res.organizerData.events_organizer_starategic_partner) !== '[]'){
 				var starategicOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_starategic_partner, function(index, val) {
-					 starategicOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="<?php
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					 starategicOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['imgPath'];
 ?>
-/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.starategic-partner').html(starategicOrganizerStr);
+				$('#organize').show();
+				$('.starategic-partner-total').show();
 			}
-			if(res.organizerData.events_organizer_media_support){
+			if(res.organizerData.events_organizer_media_support && JSON.stringify(res.organizerData.events_organizer_media_support) !== '[]'){
 				var mediaOrganizerStr = '';
 				$.each(res.organizerData.events_organizer_media_support, function(index, val) {
-					 mediaOrganizerStr += '<li class="wow"><div class="box1CenCon logo-show"><img src="<?php
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = 'http://'+ val.media_url ;
+					}
+					mediaOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="<?php
 echo $_obj['imgPath'];
 ?>
-/media/' + val.media_pic + '" class="img-responsive"></div></li>';
+/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
 				$('.media-support').html(mediaOrganizerStr);
+				$('#organize').show();
+				$('.media-support-total').show();
 			}
 
 		}
-		
-
 	}
+
+	$('.getMoreSpeaker').click(function(event) {
+		window.location.href = '?m=events&a=speaker&events_id='+events_id;
+	});
+	
+	$('.getMoreSchedule').click(function(event) {
+		window.location.href = '?m=events&a=schedule&events_id='+events_id;
+	});
 </script>

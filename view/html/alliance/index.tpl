@@ -369,7 +369,7 @@
         </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-12 text-center"><img src="{WEBSITE_SOURCE_URL}/img/events/bg-xie.png" alt="" width="100%"></div>
+          <div class="col-md-12 text-center my-img"><img src="" alt="" width="100%"></div>
         </div>
       </div>
 
@@ -603,6 +603,34 @@ $(function(){
             }
         })
    });
+
+    //加载数据--全部成员
+    //请求数据并渲染页面
+    var params_member = {id: 5};
+    $.ajax({
+        url: '?m=about&a=getPage',
+        type: 'POST',
+        data: params_member,
+        success: function(res){
+            res = $.parseJSON(res);
+            closeLoading();
+            if(res.resCode !== 200){
+                // alert(res.resData);
+                $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
+                return false;
+            }else{
+                // showData(res.resData);
+                // $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
+                $('.my-img img').attr('src', '{imgPath}/alliance/' + res.resData[0].pic);
+                // console.log($('.imgFull img').attr('src'));
+                // $('.showContent').html(res.resData[0].content);
+                // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
+                //     //存储图片
+                //     localStorage.setItem(events_id,$('#topimg').attr('style'));
+                // }
+            }
+        }
+    })
 
 })
 	    
