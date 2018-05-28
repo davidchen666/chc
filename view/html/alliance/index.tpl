@@ -106,7 +106,7 @@
             </li>
         </ul>
         <div class="btn-img text-center">
-            <a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/learn-more.png" alt=""></a>
+            <a href="javascript:;" data-target="#showMember" data-toggle="modal"><img src="{WEBSITE_SOURCE_URL}/img/alliance/learn-more.png" alt=""></a>
         </div>
         <!--end 联盟成员-->
 
@@ -356,7 +356,29 @@
 	</div>
 </div>
 
-<!-- begin 模态窗口 -->
+<!-- begin 模态窗口 查看全部会员 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="showRegisterModalLabel" id="showMember" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="width:60%;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+            </button>
+            <h4 class="modal-title black" id="myModalLabel">
+                全部会员
+            </h4>
+        </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 text-center"><img src="{WEBSITE_SOURCE_URL}/img/events/bg-xie.png" alt="" width="100%"></div>
+        </div>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- end  模态窗口 查看全部会员 -->
+
+<!-- begin 模态窗口 入会申请 -->
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="showRegisterModalLabel" id="showRegister" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -427,7 +449,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<!-- end  模态窗口 -->
+<!-- end  模态窗口 入会申请 -->
 
 <script>
 $(function(){

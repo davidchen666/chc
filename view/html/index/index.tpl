@@ -39,7 +39,7 @@
             	<p>医疗健康</p>
             </li>
         	<li class="wow fadeInUp">
-            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/IVD2017" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-2-a.png" class="img-responsive"></a></div>
+            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/ivd2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-2-a.png" class="img-responsive"></a></div>
             	<p>IVD/精准医疗</p>
             </li>
         	<li class="wow fadeInUp">

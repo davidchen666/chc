@@ -32,6 +32,9 @@ nav.navbar.bootsnav ul.nav > li > a:hover, nav.navbar.bootsnav ul.nav > li.on > 
 #events-daily p,#events-daily div,#events-daily span{
     color: black;
 } 
+#events-daily tr{
+    border:1px solid #ddd;
+}
 /*.selected{
     color:#9DC040;
 }*/
