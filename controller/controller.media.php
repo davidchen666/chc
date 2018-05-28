@@ -11,7 +11,7 @@ class MediaController extends Controller
     private $_api;
     private $title;
     private $data=array(
-            'title'=>'医疗传媒',
+            'title'=>'CHC医疗咨询-医疗传媒',
             'media'=>'active',
             'imgPath'=>IMG_PATH
         );

@@ -17,9 +17,9 @@
 				    <!-- <li class="list-group-item"><p>9:00-9:10 <img src="{WEBSITE_SOURCE_URL}/img/events/detail/green-spot.png" alt="">开幕致辞</p></li> -->
 				    
 				</ul>
-				<div class="btn-img text-center">
+				<!-- <div class="btn-img text-center">
 		            <a href="javascript:;"></a>
-		        </div>
+		        </div> -->
 			</div>
 		</div>
 	</div>
@@ -42,16 +42,16 @@
 		
 		if(res.infoData.events_schedule_content && res.infoData.events_schedule_title){
 			$('#events-daily .title').html(res.infoData.events_schedule_title);
-			var scheduleArr = res.infoData.events_schedule_content.split("\n");
-			var scheduleStr = '';
-			$.each(scheduleArr, function(index, val) {
-				var littleArr = [];
-				littleArr = val.split("->");
-				 if(val && littleArr.length === 2){
-				 	scheduleStr += '<li class="list-group-item"><p>' + littleArr[0] + ' <img src="{WEBSITE_SOURCE_URL}/img/events/detail/green-spot.png" alt="">' + littleArr[1] + '</p></li>';
-				 }
-			});
-			$('#events-daily .list').html(scheduleStr);
+			// var scheduleArr = res.infoData.events_schedule_content.split("\n");
+			// var scheduleStr = '';
+			// $.each(scheduleArr, function(index, val) {
+			// 	var littleArr = [];
+			// 	littleArr = val.split("->");
+			// 	 if(val && littleArr.length === 2){
+			// 	 	scheduleStr += '<li class="list-group-item"><p>' + littleArr[0] + ' <img src="{WEBSITE_SOURCE_URL}/img/events/detail/green-spot.png" alt="">' + littleArr[1] + '</p></li>';
+			// 	 }
+			// });
+			$('#events-daily .list').html(res.infoData.events_schedule_content);
 			$('#events-daily').show();
 		}
 	}

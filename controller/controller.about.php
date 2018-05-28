@@ -11,7 +11,7 @@ class AboutController extends Controller
     private $_api;
     private $title;
     private $data=array(
-            'title'=>'关于我们',
+            'title'=>'CHC医疗咨询-关于我们',
             'about'=>'active',
             'imgPath'=>IMG_PATH
         );

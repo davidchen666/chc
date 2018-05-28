@@ -66,7 +66,7 @@
 			<p>CHC医疗健康系列峰会已成为行业标杆论坛，是中国的JP Morgan医健大会。</p>
    		</div>
    		<div class="box1Bot text-center wow fadeInUp">
-            <a href="http://www.chconsultant.com/zh/events" target="_blank">
+            <a href="?m=events&a=index">
                 <button type="button" class="btn btn-default">了解更多</button>
             </a>
    			<!-- <img src="{WEBSITE_SOURCE_URL}/img/home/get-more.png" class="img-responsive"> -->

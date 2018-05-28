@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title>CHC医疗咨询</title>
+    <title>{title}</title>
 	<meta charset=utf-8"UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/css/alliance.css">
 	<link rel="stylesheet" href="{WEBSITE_SOURCE_URL}/css/banking.css">
     <script>
+
         //====================================== 公共 函数 ===========================================
         var loadingArr = [];
         //检查路由参数是否合法

@@ -11,7 +11,7 @@ class BankingController extends Controller
     private $_api;
     private $title;
     private $data=array(
-            'title'=>'品牌会议',
+            'title'=>'CHC医疗咨询-精准投行',
             'banking'=>'active'
         );
     const M = "Banking";

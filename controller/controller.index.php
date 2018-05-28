@@ -9,13 +9,15 @@ class IndexController extends Controller
 {
     private $model;
     private $_api;
-    private $title;
+    // private $title;
     const M = "Index";
+    private $data=array(
+        'title' => 'CHC医疗咨询'
+    );
 
     function __construct()
     {
         $this->model = Model::instance(self::M);
-        $this->title='首页';
     }
 
     /**
@@ -23,17 +25,8 @@ class IndexController extends Controller
      */
     function index()
     {
-        // $name = "张三";
-        // $data = array(
-        //     'name'=>$name,
-        //     'age'=>22,
-        //     'addr'=>"上海"
-        //     );
-        $data['title'] = $this->title;
-        // $getData = $this->model->index(5);
-        // var_dump($getData);
+        $data = $this->data;
         View::instance('index/index.tpl')->show($data);
-        // echo to_success($getData);
     }
 
     function test2()

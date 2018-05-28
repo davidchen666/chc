@@ -11,7 +11,7 @@ class EventsController extends Controller
     private $_api;
     private $title;
     private $data=array(
-            'title'=>'品牌会议',
+            'title'=>'CHC医疗咨询-品牌会议',
             'events'=>'active',
             'imgPath'=>IMG_PATH
         );
@@ -113,6 +113,11 @@ class EventsController extends Controller
     /*#######################################################
       ######################  api 接口 ######################
     */#######################################################
+
+    //获取最新的两个上线会议
+    function getLastEvents(){
+        echo $list = $this->model->getLastEvents();
+    }
 
     //会议报名
     function addMSignUp(){

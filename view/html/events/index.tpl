@@ -118,14 +118,20 @@
             <img src="{WEBSITE_SOURCE_URL}/img/events/friends-title.png" class="img-responsive">
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
-            <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-1.png" class="img-responsive"></div>
+            <!-- <li class="wow">
+                <a href="http://www.qimingvc.com/index.html" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-1.png" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-2.jpg" class="img-responsive"></div>
+                <a href="http://www.legendcapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-2.jpg" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-3.jpg" class="img-responsive"></div>
+                <a href="http://www.cowincapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-3.jpg" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
                 <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-4.jpg" class="img-responsive"></div>
@@ -146,13 +152,60 @@
                 <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-9.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-10.jpg" class="img-responsive"></div>
+                <a href="http://www.highlightcapital.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-10.jpg" class="img-responsive"></div>
+                </a>
             </li>
             <li class="wow">
                 <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-11.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
                 <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/z-12.jpg" class="img-responsive"></div>
+            </li> -->
+            <li class="wow">
+                <a href="http://www.qimingvc.com/index.html" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-1.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.legendcapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-2.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.cowincapital.com.cn" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-3.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.highlightcapital.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-4.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.lyfecapital.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-5.jpg" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.medtronic.com/cn-zh/index.html" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-6.png" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.szgig.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-7.jpg" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.sunlandfund.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-8.jpg" class="img-responsive"></div>
+                </a>
+            </li>
+            <li class="wow">
+                <a href="http://www.wsgr.com" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-9.jpg" class="img-responsive"></div>
+                </a>
             </li>
         </ul>
         <!--媒体-->
@@ -280,5 +333,33 @@
     // }, function() {
     //     $(this).children('a').children('img').attr('src', '{WEBSITE_SOURCE_URL}/img/events/record-1.png');
     // });
+
+    
+    //加载ing
+    // loadingArr = ['#big-show'];
+    // showLoading();
+
+    $(function(){
+        var getLastEvents = function(){
+            $.ajax({
+                url: '?m=events&a=getLastEvents',
+                success: function(ret){
+                    var res = $.parseJSON(ret);
+                    console.log(res);
+                    var allStr = '';
+                    if(res.resCode === 200){
+                        if(res.resData && res.resData.length){
+                            $.each(res.resData, function(index, val) {
+                                 allStr += '<li class="wow fadeInUp"><div class="single" class="text-left"><div class="add-shadow"><a href="?m=events&a=detail&events_id=' + val.events_id + '" target="_blank"><img src="{imgPath}/events/' + val.past_pic + '" class="img-responsive"></a></div><div class="two-show left-show" class="text-left"><p class="text-left">' + val.events_name + '</p><p class="text-left">时间：' + val.events_begin_date + ' &nbsp;&nbsp;  地点：上海</p></div><div class="two-show right-show"><a href="?m=events&a=mSignUp&events_id='+ val.events_id +'" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div><div class="clearfix"></div></div></li>';
+                            });
+                        }
+                    }
+                    $('#big-show').html(allStr);
+                }
+            })
+            
+        }
+        // getLastEvents();
+    })
 </script>
 <!-- INCLUDE ../footer.tpl -->

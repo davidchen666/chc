@@ -11,7 +11,7 @@ class AllianceController extends Controller
     private $_api;
     private $title;
     private $data=array(
-            'title'=>'产品联盟',
+            'title'=>'CHC医疗咨询-产品联盟',
             'alliance'=>'active',
             'imgPath'=>IMG_PATH
         );

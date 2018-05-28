@@ -29,7 +29,9 @@ nav.navbar.bootsnav ul.nav > li > a:hover, nav.navbar.bootsnav ul.nav > li.on > 
 .road-content p,.road-content div,.road-content span{
     color: black;
 } 
-
+#events-daily p,#events-daily div,#events-daily span{
+    color: black;
+} 
 /*.selected{
     color:#9DC040;
 }*/

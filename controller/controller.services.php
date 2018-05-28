@@ -11,7 +11,7 @@ class ServicesController extends Controller
     private $_api;
     private $title;
     private $data=array(
-            'title'=>'咨询服务',
+            'title'=>'CHC医疗咨询-咨询服务',
             'services'=>'active',
             'imgPath'=>IMG_PATH
         );
@@ -34,6 +34,7 @@ class ServicesController extends Controller
     function person()
     {
         $data = $this->data;
+        $data['title'] = 'CHC医疗咨询-精准人才';
         View::instance('services/person.tpl')->show($data);
     }
 
@@ -41,6 +42,7 @@ class ServicesController extends Controller
     function register()
     {
         $data = $this->data;
+        $data['title'] = 'CHC医疗咨询-产品注册';
         View::instance('services/register.tpl')->show($data);
     }
 
@@ -48,7 +50,7 @@ class ServicesController extends Controller
     function plan()
     {
         $data = $this->data;
-        $data['img_url'] = WEBSITE_SOURCE_URL . '/img/about/banner-001.png';
+        $data['title'] = 'CHC医疗咨询-园区规划';
         View::instance('services/plan.tpl')->show($data);
     }
     
