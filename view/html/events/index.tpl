@@ -44,12 +44,12 @@
             </li>
             <li class="wow fadeInUp">
                 <div class="single" class="text-left">
-                    <div class="add-shadow"><img src="{WEBSITE_SOURCE_URL}/img/events/pic3.png" class="img-responsive"></div>
+                    <div class="add-shadow"><a href="http://www.chconsultant.com/zh/summit/CDI2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/pic3.png" class="img-responsive"></a></div>
                     <div class="two-show left-show" class="text-left">
                         <p class="text-left">第五届中国心血管健康产业投资与并购CEO论坛</p>
                         <p class="text-left">时间：2018年9月 &nbsp;  地点：天津生态城世茂希尔顿酒店</p>
                     </div>
-                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ceo2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div>
+                    <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/CDI2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div>
                     <div class="clearfix"></div>
                 </div>
             </li>
