@@ -260,6 +260,7 @@
 	max-width: 70%;
 	padding-bottom: 20px;
 	padding-top: 20px;
+	height: 152px;
 }
 #speaker-list ul li h4{
 	line-height: 28px;
@@ -298,12 +299,42 @@
 	padding-right: 7%;
 }
 .table-list .btn-img{
-	background-color: #ffffff;
+	/*background-color: #ffffff;*/
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
 .table-list .btn-img img {
     width: 36%;
+}
+.table-list table {
+    border-collapse: collapse;
+    width: 100%!important;
+}
+#events-daily .table-list tr>td:first-child:after {
+    content: "";
+    display: block;
+    position: relative;
+    right: -163px;
+    top: -19px;
+    /*top: -30%;*/
+    width: 10px;
+    height: 10px;
+    background-color: #36c;
+    border-radius: 16px;
+    z-index: 999999;
+}
+#events-daily .table-list .un-show:first-child:after{
+	display: none;
+	/*content: "";
+    display: block;
+    position: relative;
+    right: -163px;
+    top: 11px;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 16px;
+    z-index: -100;*/
 }
 #past-moment .row{
 	margin-top: 20px;

@@ -31,7 +31,7 @@
 		var reviewStr = '';
 		if(res.reviewData){
 			$.each(res.reviewData, function(index, val) {
-				 reviewStr += '<li class="wow"><a href="?m=events&a=detail&events_id=' + val.events_id + '" title=""><div class="box1CenCon" style="height:180px;"><img style="height:100px" src="{imgPath}/events/'+ val.past_pic +'" class="img-responsive"><p>' + val.past_title + '</p></div></a></li>'
+				 reviewStr += '<li class="wow"><a href="?m=events&a=detail&events_id=' + val.events_id + '" title=""><div class="box1CenCon" style="height:180px;"><img style="height: 125px;width: 100%;" src="{imgPath}/events/'+ val.past_pic +'" class="img-responsive"><p>' + val.past_title + '</p></div></a></li>'
 			});
 			//补充
 			if(res.reviewData.length % 4 != 0){
