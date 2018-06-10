@@ -52,7 +52,7 @@
 }
 .right-t p{
 	text-indent: 2em;
-	line-height: 24px;
+	line-height: 30px;
 	padding-top: 3%;
 }
 .border-right-line{
@@ -199,7 +199,7 @@ ol.steps{
     /*display: flex;*/
     /*overflow-x: auto;*/
     height: 80px;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
 }
 ol.steps.step-text,ol.steps div{
 	color:black;
@@ -214,7 +214,7 @@ ol.steps li{
     flex: 1;
     position: relative;
     /*width: 14.285%;*/
-    width: 14%;
+    width: 115px;
     /*min-width: 120px;*/
 }
 ol.steps li .step-line{
@@ -258,7 +258,7 @@ ol.steps li.step-end .step-line{
 .steps .step-content .title-show{
 	padding-top: 40;
 	line-height:20px;
-	width:75%;
+	width:85%;
 }
 ol.steps #second{
 	left:-77px;

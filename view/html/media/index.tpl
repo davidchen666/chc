@@ -82,7 +82,7 @@
             currentPage: 1,
             pageSize: 8,
             status: 1,
-            newstype: 2
+            // newstype: 2
         };
         var getNewsData = function(){
             $.ajax({

@@ -48,7 +48,7 @@
         	</div>
         	<div class='right-t'>
                 <p>
-                    IVD及精准医疗产业与投资联盟（简称“IVD联盟”）是国内首个由行业巨头和投资大鳄联合创立产业联盟。与2016年6月29日正式成立，目前已有100多家会员单位。创始单位包括：华大基因、复星医药、雅培、罗氏诊断、启明创投、红杉中国基金、山蓝资本、万孚生物、美康生物、药明康德、Illu-mina、凯杰、生物梅里埃、阳普医疗、理邦仪器、誉衡药业、君联资本、达晨创投、软银中国、同创伟业、高特佳投资集分享投资、晨兴集团、弘晖资本、通合资本、中卫创投等近40家单位，首任理事长由华大基因执行总裁尹烨先生当选。
+                    IVD及精准医疗产业与投资联盟（简称“IVD联盟”）是国内首个由行业巨头和投资大鳄联合创立产业联盟。与2016年6月29日正式成立，目前已有100多家会员单位。创始单位包括：华大基因、复星医药、雅培、罗氏诊断、启明创投、红杉中国基金、山蓝资本、万孚生物、美康生物、药明康德、Illumina、凯杰、生物梅里埃、阳普医疗、理邦仪器、誉衡药业、君联资本、达晨创投、软银中国、同创伟业、高特佳投资集分享投资、晨兴集团、弘晖资本、通合资本、中卫创投等近40家单位，首任理事长由华大基因执行总裁尹烨先生当选。
                 </p>   
             </div>
         	<div class="clearfix"></div>
@@ -194,58 +194,72 @@
                 <div class="clearfix"></div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>入会流程top：</h4>
+                        <h4>入会流程：</h4>
                         <ol class="steps box1Cen list-unstyled list-inline text-center">
                             <li class="step-active">
                                 <div class="step-line"></div>
-                                <div class="step-content" id="first">
-                                    <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/1-small.png" class="img-responsive"></a></span>
-                                    <div class="step-text title-show">联系联盟秘书处</div>
+                                <div class="step-content" id="first" style="">
+                                    <a href="javascript:;">
+                                        <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/1-small.png" class="img-responsive"></span>
+                                        <div class="step-text title-show"><small>联系联盟秘书处</small></div>
+                                    </a>
                                 </div>
                             </li>
                             <li class="step-active">
                                 <div class="step-line"></div>
                                 <div class="step-content" id="second">
-                                    <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/2-small.png" class="img-responsive"></a></span>
-                                    <div class="step-text title-show">填写入会申请表提交秘书处</div>
+                                    <a href="javascript:;">
+                                        <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/2-small.png" class="img-responsive"></span>
+                                        <div class="step-text title-show">填写入会申请表提交秘书处</div>
+                                    </a>
                                     <!-- <div class="step-text title-show">联系联盟秘书处</div> -->
                                 </div>
                             </li>
                             <li class="step-active">
                                 <div class="step-line"></div>
                                 <div class="step-content" id="third">
-                                    <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/3-small.png" class="img-responsive"></a></span>
-                                    <div class="step-text title-show">联盟理事会表决</div>
+                                    <a href="javascript:;">
+                                        <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/3-small.png" class="img-responsive"></span>
+                                        <div class="step-text title-show">联盟理事会表决</div>
+                                    </a>
                                     <!-- <div class="step-text title-show">联系联盟秘书处</div> -->
                                 </div>
                             </li>
                             <li class="step-active">
                                 <div class="step-line"></div>
                                 <div class="step-content" id="fourth">
-                                    <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/4-small.png" class="img-responsive"></a></span>
-                                    <div class="step-text title-show">表发盖章回寄</div>
+                                    <a href="javascript:;">
+                                        <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/4-small.png" class="img-responsive"></span>
+                                        <div class="step-text title-show">表发盖章回寄</div>
+                                    </a>
                                 </div>
                             </li>
                             <li class="step-active">
                                 <div class="step-line"></div>
                                 <div class="step-content" id="fiveth">
-                                    <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/5-small.png" class="img-responsive"></a></span>
-                                    <div class="step-text title-show">缴纳会费</div>
+                                    <a href="javascript:;">
+                                        <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/5-small.png" class="img-responsive"></span>
+                                        <div class="step-text title-show">　缴纳会费</div>
+                                    </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="step-line"></div>
                                 <div class="step-content" id="sixth">
-                                    <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/6-small.png" class="img-responsive"></a></span>
-                                    <div class="step-text title-show">推荐高管加入联盟微信群</div>
+                                    <a href="javascript:;">
+                                        <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/6-small.png" class="img-responsive"></span>
+                                        <div class="step-text title-show">推荐高管加入联盟微信群</div>
+                                    </a>
                                     <!-- <div class="step-text title-show">联系联盟秘书处</div> -->
                                 </div>
                             </li>
                             <li>
                                 <div class="step-end"></div>
                                 <div class="step-content" id="seventh">
-                                    <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/7-small.png" class="img-responsive"></a></span>
-                                    <div class="step-text title-show">入会流程完毕</div>
+                                    <a href="javascript:;">
+                                        <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/7-small.png" class="img-responsive"></span>
+                                        <div class="step-text title-show">入会流程完毕</div>
+                                    </a>
                                 </div>
                             </li>
                         </ol>
@@ -253,94 +267,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <ul class="box1Cen list-unstyled list-inline text-center" id="middle-show">
-                <li class="wow">
-                    <div class="hr-line"></div>
-                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/1-small.png" class="img-responsive"></a></div>
-                    <p>111</p>
-                </li>
-                <li class="wow">
-                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/2-small.png" class="img-responsive"></a></div>
-                    <p>222</p>
-                </li>
-                <li class="wow">
-                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/3-small.png" class="img-responsive"></a></div>
-                    <p>333</p>
-                </li>
-                <li class="wow">
-                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/4-small.png" class="img-responsive"></a></div>
-                    <p>444</p>
-                </li>
-                <li class="wow">
-                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/5-small.png" class="img-responsive"></a></div>
-                    <p>555</p>
-                </li>
-                <li class="wow">
-                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/6-small.png" class="img-responsive"></a></div>
-                    <p>666</p>
-                </li>
-                <li class="wow">
-                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/7-small.png" class="img-responsive"></a></div>
-                    <p>777</p>
-                </li>
-            </ul> -->
-            <!-- <div id="middle-show" class="box1Cen">
-                <div class="row">
-                
-                <h4>入会流程bottom：</h4>
-                <ol class="steps box1Cen list-unstyled list-inline text-center">
-                    <li class="step-active">
-                        <div class="step-line"></div>
-                        <div class="step-content">
-                            <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/1-small.png" class="img-responsive"></a></span>
-                            <div class="step-text title-show">填写资料</div>
-                        </div>
-                    </li>
-                    <li class="step-active">
-                        <div class="step-line"></div>
-                        <div class="step-content">
-                            <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/2-small.png" class="img-responsive"></a></span>
-                            <div class="step-text title-show">审核填写信息</div>
-                        </div>
-                    </li>
-                    <li class="step-active">
-                        <div class="step-line"></div>
-                        <div class="step-content">
-                            <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/3-small.png" class="img-responsive"></a></span>
-                            <div class="step-text title-show">完成注册</div>
-                        </div>
-                    </li>
-                    <li class="step-active">
-                        <div class="step-line"></div>
-                        <div class="step-content">
-                            <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/4-small.png" class="img-responsive"></a></span>
-                            <div class="step-text title-show">完成注册</div>
-                        </div>
-                    </li>
-                    <li class="step-active">
-                        <div class="step-line"></div>
-                        <div class="step-content">
-                            <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/5-small.png" class="img-responsive"></a></span>
-                            <div class="step-text title-show">完成注册</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="step-line"></div>
-                        <div class="step-content">
-                            <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/6-small.png" class="img-responsive"></a></span>
-                            <div class="step-text title-show">完成注册</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="step-end"></div>
-                        <div class="step-content">
-                            <span class="step-num"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/7-small.png" class="img-responsive"></a></span>
-                            <div class="step-text title-show">完成注册</div>
-                        </div>
-                    </li>
-                </ol>
-                </div>
-            </div> -->
         </div>
 
         <!--end 入会资格流程-->
@@ -458,6 +384,19 @@ $(function(){
     $(window).scroll(function(event) {
     	// console.log($('header').attr('class'));
     	$('header').attr('class','headerBg navbar-fixed-top active');
+    });
+
+    //入会流程效果切换
+    $('.step-content').hover(function() {
+        var currentImg = $(this).children('a').children('span').children('img').attr('src');
+        var needImg = currentImg.replace('small','big');
+        $(this).children('a').children('span').children('img').attr('src', needImg);
+        $(this).css('top', '-17px');
+    }, function() {
+        var currentImg = $(this).children('a').children('span').children('img').attr('src');
+        var needImg = currentImg.replace('big','small');
+        $(this).children('a').children('span').children('img').attr('src', needImg);
+        $(this).css('top', '0px');
     });
 
     //渲染数据
