@@ -31,11 +31,30 @@
 <div class="box1Bg box1Cen" id="alliance-bg">
     <div class="container ">
         <div class="box1Top wow fadeInUp" data-wow-delay="0.5s">
-            <!-- <img src="{WEBSITE_SOURCE_URL}/img/about/about-title.png" class="img-responsive"> -->
+            <img src="{WEBSITE_SOURCE_URL}/img/services/title.png" class="img-responsive">
         </div>
         
-        <div class="showContent">
-            
+        <div class="showContent container person">
+            <div class="row">
+                <div class="line-box text-center">
+                    <p>核心团队成员拥有10年以上医疗行业人力资源管理经验</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 my-step my-step-1 text-center">
+                    <p>医疗专业人才服务</p>
+                    <p><small>为企业匹配最合适人才,Passion for person to find persons with passion;实现行业内人才良性发展;完善企业续任者</small></p>
+                </div>
+                <div class="col-md-3 my-step my-step-2 text-center">
+                    
+                </div>
+                <div class="col-md-3 my-step my-step-3 text-center">
+                    
+                </div>
+                <div class="col-md-3 my-step my-step-4 text-center">
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -50,35 +69,35 @@ $(function(){
     });
 
     
-    loadingArr = ['.showContent'];
-    showLoading();
-    //加载数据
-    //请求数据并渲染页面
-    var params = {id: 2};
-    $.ajax({
-        url: '?m=about&a=getPage',
-        type: 'POST',
-        data: params,
-        success: function(res){
-            res = $.parseJSON(res);
-            closeLoading();
-            if(res.resCode !== 200){
-                // alert(res.resData);
-                $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
-                return false;
-            }else{
-                // showData(res.resData);
-                $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
-                // $('.imgFull img').attr('src', '{imgPath}/about/' + res.resData[0].pic);
-                // console.log($('.imgFull img').attr('src'));
-                $('.showContent').html(res.resData[0].content);
-                // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
-                //     //存储图片
-                //     localStorage.setItem(events_id,$('#topimg').attr('style'));
-                // }
-            }
-        }
-    })
+    // loadingArr = ['.showContent'];
+    // showLoading();
+    // //加载数据
+    // //请求数据并渲染页面
+    // var params = {id: 2};
+    // $.ajax({
+    //     url: '?m=about&a=getPage',
+    //     type: 'POST',
+    //     data: params,
+    //     success: function(res){
+    //         res = $.parseJSON(res);
+    //         closeLoading();
+    //         if(res.resCode !== 200){
+    //             // alert(res.resData);
+    //             $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
+    //             return false;
+    //         }else{
+    //             // showData(res.resData);
+    //             $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
+    //             // $('.imgFull img').attr('src', '{imgPath}/about/' + res.resData[0].pic);
+    //             // console.log($('.imgFull img').attr('src'));
+    //             $('.showContent').html(res.resData[0].content);
+    //             // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
+    //             //     //存储图片
+    //             //     localStorage.setItem(events_id,$('#topimg').attr('style'));
+    //             // }
+    //         }
+    //     }
+    // })
 
 })
 </script>
