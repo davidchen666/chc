@@ -159,7 +159,7 @@ nav.navbar.bootsnav {
     width: 33.3333333%;
     padding: 3%;
 }*/
-.box2Bg .list-inline>li {
+.box2Bg .list-inline>li,.my-box2Bg .list-inline>li {
     display: inline-block;
     padding-right: 5px;
     padding-left: 5px;
@@ -271,14 +271,14 @@ nav.navbar.bootsnav {
 .person .row .my-step{
     /*width:100%;*/
     height:400px;
-    border:1px solid red;
+    /*border:1px solid red;*/
 }
 .person .my-step{
-    padding: 150px 60px;
+    padding: 140px 45px;
     /*background: url("../img/services/a.png") no-repeat center center;*/
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 70%;
+    background-size: 80%;
 }
 .person .my-step-1{
     background-image: url("../img/services/a.png");
@@ -295,4 +295,32 @@ nav.navbar.bootsnav {
 .person .my-step p{
     padding:0px;
     margin: 0px;
+    font-size: 12px;
+}
+.person .my-step .my-title{
+    font-size: 16px;
+    padding-bottom: 20px;
+    /*line-height: 40px;*/
+}
+.my-middle-bg{
+    height: 508px;
+    /*border:1px solid yellow;*/
+    background-image: url("../img/services/circle.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+#my-high-people p{
+    color: black;
+    padding-top: 16px;
+}
+#my-high-people h4{
+    color: #295BA4;
+    font-weight: 900;
+}
+#my-high-people .border-bottom{
+    border: none;
+}
+#my-high-people .box1Bot {
+    padding: 46px 0 0px;
 }
