@@ -261,16 +261,18 @@ nav.navbar.bootsnav {
 .line-box{
     width: 100%;
     height: 35px;
-    
+    margin-top: 18px; 
     background: #295BA4;
 }
 .line-box p{
     padding-top: 8px;
     font-weight: 900;
+    font-size: 15px;
 }
 .person .row .my-step{
     /*width:100%;*/
     height:400px;
+    margin-top: 40px;
     /*border:1px solid red;*/
 }
 .person .my-step{
