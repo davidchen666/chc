@@ -260,6 +260,20 @@
 			// 	 }
 			// });
 			// $('#events-daily .list').html(scheduleStr);
+			var obj = $('#events-daily .table-list tr');
+			var myTrWidth = 0;
+			var myTrHeight = 0;
+			$.each(obj, function(index, val) {
+				 if(val.childElementCount <= 1){
+				 	$('#events-daily .table-list tr :eq(' + index + ') td').addClass('un-show');
+				 }else{
+				 	myTrWidth = $('#events-daily .table-list tr :eq(' + index + ') td').width();
+				 	myTrHeight = $('#events-daily .table-list tr :eq(' + index + ') td').height();
+				 	$('#events-daily .table-list tr:eq(' + index + ') td:eq(0)').css('borderRight', '3px solid #9DC040');
+				 }
+			});
+			$('<style>#events-daily .table-list tr>td:first-child:after{right:-' + (myTrWidth-4) + 'px;}</style>').appendTo('head');
+			$('<style>#events-daily .table-list tr>td:first-child:after{top:-' + (myTrHeight/2 - 31) + 'px;}</style>').appendTo('head');
 		}
 
 		//组织架构

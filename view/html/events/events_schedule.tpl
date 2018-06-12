@@ -58,37 +58,15 @@
 			var myTrHeight = 0;
 			$.each(obj, function(index, val) {
 				 if(val.childElementCount <= 1){
-				 	// console.log(val);
-				 	// $('#events-daily .table-list tr :eq(' + index + ') td').append('<style>#events-daily .table-list tr :eq(' + index + ') td:after{background-color: yellow;}</style>');
 				 	$('#events-daily .table-list tr :eq(' + index + ') td').addClass('un-show');
-				 	// .css('backgroundColor', 'yellow');
-				 	// $('#events-daily .table-list tr :eq(' + index + ') td').children('p:last-child').after('Some');
-				 	// console.log($('#events-daily .table-list tr :eq(' + index + ') td').children("after"));
-				 	// :nth-child(2)
-				 	// $('#events-daily .table-list tr td:nth-child(1):after').css('z-index', '-100');
-
 				 }else{
 				 	myTrWidth = $('#events-daily .table-list tr :eq(' + index + ') td').width();
 				 	myTrHeight = $('#events-daily .table-list tr :eq(' + index + ') td').height();
-				 	$('#events-daily .table-list tr :eq(' + index + ') td').css('borderRight', '1px solid yellow;');
-
-				 	// console.log($('#events-daily').styleSheet);
-				 	// document.styleSheet[0].addRule('#events-daily .table-list tr :eq(' + index + ') td:after','background-color:green');
-				 	 // $('#events-daily .table-list tr :eq(' + index + ') td').append('<style>#events-daily .table-list tr :eq(' + index + ') td:after{background-color: yellow;}</style>');
-				 	console.log(myTrWidth);
-				 	console.log(myTrHeight);
+				 	$('#events-daily .table-list tr:eq(' + index + ') td:eq(0)').css('borderRight', '3px solid #9DC040');
 				 }
 			});
-			// $('<style>#events-daily .table-list tr :eq(' + index + ') td:after{background-color:yellow}</style>').appendTo('head');
-			$('<style>#events-daily .table-list tr>td:first-child:after{right:-' + (myTrWidth+3) + 'px;}</style>').appendTo('head');
-			$('<style>#events-daily .table-list tr>td:first-child:after{top:-' + (myTrHeight/2 - 5) + 'px;}</style>').appendTo('head');
-
-			// var style = document.creatElement('style');
-			// document.head.appendChild(style);
-			// sheet = style.sheet;
-			// sheet.addRule('.red:before','background-color:green');
-			// sheet.insertRule('.red:before{background-color:green}',0);
-			// console.log(obj);
+			$('<style>#events-daily .table-list tr>td:first-child:after{right:-' + (myTrWidth-4) + 'px;}</style>').appendTo('head');
+			$('<style>#events-daily .table-list tr>td:first-child:after{top:-' + (myTrHeight/2 - 31) + 'px;}</style>').appendTo('head');
 		}
 	}
 		
