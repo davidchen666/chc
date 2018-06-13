@@ -124,35 +124,37 @@ $(function(){
     });
 
     
-    // loadingArr = ['.showContent'];
+    loadingArr = ['.showContent'];
     // showLoading();
     // //加载数据
     // //请求数据并渲染页面
-    // var params = {id: 2};
-    // $.ajax({
-    //     url: '?m=about&a=getPage',
-    //     type: 'POST',
-    //     data: params,
-    //     success: function(res){
-    //         res = $.parseJSON(res);
-    //         closeLoading();
-    //         if(res.resCode !== 200){
-    //             // alert(res.resData);
-    //             $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
-    //             return false;
-    //         }else{
-    //             // showData(res.resData);
-    //             $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
-    //             // $('.imgFull img').attr('src', '{imgPath}/about/' + res.resData[0].pic);
-    //             // console.log($('.imgFull img').attr('src'));
-    //             $('.showContent').html(res.resData[0].content);
-    //             // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
-    //             //     //存储图片
-    //             //     localStorage.setItem(events_id,$('#topimg').attr('style'));
-    //             // }
-    //         }
-    //     }
-    // })
+    var params = {id: 2};
+    $.ajax({
+        url: '?m=about&a=getPage',
+        type: 'POST',
+        data: params,
+        success: function(res){
+            res = $.parseJSON(res);
+            closeLoading();
+            if(res.resCode !== 200){
+                // alert(res.resData);
+                $('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
+                return false;
+            }else{
+                $('.banner').show();
+                $('#alliance-bg').show();
+                // showData(res.resData);
+                $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
+                // $('.imgFull img').attr('src', '{imgPath}/about/' + res.resData[0].pic);
+                // console.log($('.imgFull img').attr('src'));
+                // $('.showContent').html(res.resData[0].content);
+                // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
+                //     //存储图片
+                //     localStorage.setItem(events_id,$('#topimg').attr('style'));
+                // }
+            }
+        }
+    })
 
 })
 </script>
