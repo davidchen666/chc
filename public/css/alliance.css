@@ -29,6 +29,7 @@
 	float:left;
 }
 .left-t .img-t{
+	height: 340px;
 	/*width:65.6666%;*/
 }
 .left-t .logo-t{
@@ -37,6 +38,7 @@
 }
 .left-t .img-t img{
 	width:100%;
+	height:100%;
 }
 .left-t p{
 	padding:0px;
