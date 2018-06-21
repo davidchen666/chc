@@ -315,6 +315,7 @@ nav.navbar.bootsnav {
 #my-high-people p{
     color: black;
     padding-top: 16px;
+    line-height: 30px;
 }
 #my-high-people h4{
     color: #295BA4;

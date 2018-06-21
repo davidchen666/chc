@@ -147,33 +147,44 @@
                     		<h3>品牌会议</h3><i></i><!-- <span>HOME</span> -->
                     	</a>
                     </li>
-                    <li id="nav2" data-toggle="modal" data-target="#myModal" class="{alliance}">
-                    	<a href="javascript:;" target="_self">
+                    <!-- <li id="nav2" data-toggle="modal" data-target="#myModal" class="{alliance}"> -->
+                    <li id="nav2" class="{alliance}">
+                    	<a href="?m=alliance&a=index" target="_self">
                     		<h3>产业联盟</h3><i></i><!-- <span>ABOUT</span> -->
                     	</a>
                     </li>
-                    <li id="nav3" data-toggle="modal" data-target="#myModal" class="{banking}">
-                    	<a href="javascript:;" target="_self">
+                    <li id="nav3" class="{banking}">
+                    	<a href="?m=banking&a=index" target="_self">
                     		<h3>精准投行</h3><i></i><!-- <span>TEAM</span> -->
                     	</a>
                     </li>
-                    <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal" class="{services}">
+                    <!-- <li id="nav4" class="dropdown" data-toggle="modal" data-target="#myModal" class="{services}">
                     	<a href="javascript:;" target="_self" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    		<h3 style="display:inline;">咨询服务</h3><!-- <i></i> --><!-- <span>NEWS</span> -->
+                    		<h3 style="display:inline;">咨询服务</h3>
                     	</a>
                         <ul class="dropdown-menu" style="min-width: 109px;margin-right: 11px;background:rgba(12, 29, 57, 0.5);color:#ffffff;border:0px solid #e0e0e0;border-top: solid 0px;opacity: 0.5;display:none;padding-left: 10px;" id="nav-new">
                             <li><a href="javascript:;" id="nav-new-single1"><h3 class="text-left">精准人才</h3></a></li>
                             <li><a href="javascript:;" id="nav-new-single2"><h3 class="text-left">产品注册</h3></a></li>
                             <li><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
                         </ul>
+                    </li> -->
+                    <li id="nav4" class="dropdown"  class="{services}">
+                        <a href="javascript:;" target="_self" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <h3 style="display:inline;">咨询服务</h3><!-- <i></i> --><!-- <span>NEWS</span> -->
+                        </a>
+                        <ul class="dropdown-menu" style="min-width: 109px;margin-right: 11px;background:rgba(12, 29, 57, 0.5);color:#ffffff;border:0px solid #e0e0e0;border-top: solid 0px;opacity: 0.5;display:none;padding-left: 10px;" id="nav-new">
+                            <li><a href="?m=services&a=person" id="nav-new-single1"><h3 class="text-left">精准人才</h3></a></li>
+                            <li data-toggle="modal" data-target="#myModal"><a href="javascript:;" id="nav-new-single2"><h3 class="text-left">产品注册</h3></a></li>
+                            <li data-toggle="modal" data-target="#myModal"><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
+                        </ul>
                     </li>
-                    <li id="nav5" data-toggle="modal" data-target="#myModal" class="{media}">
+                    <li id="nav5" class="{media}">
                     	<a href="javascript:;" target="_self">
                     		<h3>医疗传媒</h3><i></i><!-- <span>JOIN US</span> -->
                     	</a>
                 	</li>
-                    <li id="nav6" data-toggle="modal" data-target="#myModal" class="{about}">
-                    	<a href="javascript:;" target="_self">
+                    <li id="nav6" class="{about}">
+                    	<a href="?m=about&a=index" target="_self">
                     		<h3>关于我们</h3><i></i><!-- <span>CONTACT</span> -->
                     	</a>
                     </li>

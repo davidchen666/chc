@@ -124,7 +124,7 @@ $(function(){
     });
 
     
-    loadingArr = ['.showContent'];
+    // loadingArr = ['.showContent'];
     // showLoading();
     // //加载数据
     // //请求数据并渲染页面
