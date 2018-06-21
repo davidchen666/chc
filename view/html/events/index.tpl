@@ -204,7 +204,7 @@
             </li>
             <li class="wow">
                 <a href="http://www.wsgr.com" target="_blank">
-                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-9.jpg" class="img-responsive"></div>
+                    <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-9-new.jpg" class="img-responsive"></div>
                 </a>
             </li>
         </ul>
@@ -214,46 +214,55 @@
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="friends-show">
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-1.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/1.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-2.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/2.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-3.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/3.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-4.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/4.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-5.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/5.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-6.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/6.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-7.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/7.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-8.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/8.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-9.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/9.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-10.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/10.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-11.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/11.png" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-12.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/12.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-13.jpg" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/13.jpg" class="img-responsive"></div>
             </li>
             <li class="wow">
-                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/media-14.png" class="img-responsive"></div>
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/14.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/15.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/16.png" class="img-responsive"></div>
+            </li>
+            <li class="wow">
+                <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/media/17.jpg" class="img-responsive"></div>
             </li>
         </ul>
 

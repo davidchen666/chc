@@ -33,13 +33,13 @@
         <div class="about-alliance ">
         	<div class='left-t'>
         		<div class="img-t">
-        			<img src="{WEBSITE_SOURCE_URL}/img/alliance/pic.jpg" alt="">
+        			<img src="{WEBSITE_SOURCE_URL}/img/alliance/pic-new.jpg" alt="" class="img-responsive">
         		</div>
         		<div class="logo-t">
         			<div class="container">
 			            <div class="row text-center">
-			            	<p class="col-md-3 border-right-line">logo pic</p>
-			            	<p class="col-md-4">2016年6月29日 &nbsp;&nbsp; IVD联盟成立仪式</p>
+			            	<p class="col-md-3 border-right-line"><img src="{WEBSITE_SOURCE_URL}/img/alliance/logo.png" height="50px;" width="200px;"></p>
+			            	<p class="col-md-4"><br>2016年6月29日 &nbsp;&nbsp; IVD联盟成立仪式</p>
 			            </div>
 			            <div class="clear"></div>
 			        </div>

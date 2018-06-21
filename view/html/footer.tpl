@@ -44,6 +44,7 @@
                                 <strong> 电话：</strong>021-50726900 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <strong> 邮箱：</strong><a href="mailto:info@chconsultant.com">info@chconsultant.com</a>
                             </h6>
+                            <h6><strong>地址：</strong>上海市浦东新区长柳路58号证大立方大厦1809室</h6>
                             <h6>版权所有  &copy;CHC Corporation 2013-2018.All right reserved.&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备14003167号</h6>
                         </div>
                     </div>
