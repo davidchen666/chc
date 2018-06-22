@@ -13,6 +13,14 @@ nav.navbar.bootsnav ul.nav > li > a:hover, nav.navbar.bootsnav ul.nav > li.on > 
 }
 #navbar-menu a:hover h3{
     color:#9DC040;
+    background: none;
+}
+/* #navbar-menu .dropdown-menu a:link{ */
+    /* background: rgba(12, 29, 57, 0.5);
+    width: 20%; */
+/* } */
+.dropdown-menu a:hover{
+    background: green;
 }
 /*
     特殊颜色的控制
@@ -321,7 +329,7 @@ nav.navbar.bootsnav {
     color: #295BA4;
     font-weight: 900;
 }
-#my-high-people .borderr-bottom{
+#my-high-people .border-bottom{
     border: none;
 }
 #my-high-people .box1Bot {
