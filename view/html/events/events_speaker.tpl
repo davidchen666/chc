@@ -68,7 +68,7 @@
 	var getHeight = function(str){
 		var line = Math.ceil(str.length/51);
 		if(line > 5){
-			return line*27 + 'px';
+			return line*33 + 'px';
 		}else{
 			return '';
 		}

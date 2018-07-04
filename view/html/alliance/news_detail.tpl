@@ -50,7 +50,7 @@
                         // console.log($('.imgFull img').attr('src'));
                         $('.showContent .titleShow').html(res.resData.items[0].news_title);
                         $('.news-content').html(res.resData.items[0].news_content);
-                        $('.dateShow').html('发表时间： ' + res.resData.items[0].create_date);
+                        $('.dateShow').html('发表时间： ' + res.resData.items[0].update_date);
                         // if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
                         //     //存储图片
                         //     localStorage.setItem(events_id,$('#topimg').attr('style'));

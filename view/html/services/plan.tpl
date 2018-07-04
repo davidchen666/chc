@@ -1,31 +1,7 @@
 <!-- INCLUDE ../header.tpl -->
-<div class="headSpace"></div>
-<div class="banner">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                <div class="banBg imgFull">
-                    <!-- <img src="{WEBSITE_SOURCE_URL}/img/about/banner-00.png" class="img-responsive"> -->
-                    <!-- <img src="{img_url}" class="img-responsive"> -->
-                </div>
-                <div class="slide-caption ">
-                    <div class="caption-content">
-                        <div class="banImg ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="detail-top">
+    <div class="top-img" id="topimg" style="background:url() center center no-repeat;background-size: cover;height: 500px;">
     </div>
-    <div class="banDot">
-        <div class="container">
-            <!-- <span class="swiper-pagination"></span> -->
-        </div>
-    </div>
-    <div class="banBtn"></div>
-    <!-- <div class="banBtn-new">
-        <img src="{WEBSITE_SOURCE_URL}/img/home/down-btn.png" alt="">
-    </div> -->
 </div>
 
 <div class="box1Bg box1Cen" id="alliance-bg">
@@ -68,7 +44,8 @@ $(function(){
                 return false;
             }else{
                 // showData(res.resData);
-                $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
+                // $('.imgFull').attr('style','background-image: url("{imgPath}/about/' + res.resData[0].pic + '"); 100% 100% center')
+                $('#topimg').attr('style','background:url("{imgPath}/about/' + res.resData[0].pic + '") center center no-repeat;background-size: cover;height: 500px;');
                 // $('.imgFull img').attr('src', '{imgPath}/about/' + res.resData[0].pic);
                 // console.log($('.imgFull img').attr('src'));
                 $('.showContent').html(res.resData[0].content);

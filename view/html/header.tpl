@@ -178,8 +178,8 @@
                             <li data-toggle="modal" data-target="#myModal"><a href="javascript:;" id="nav-new-single3"><h3 class="text-left">园区规划</h3></a></li>
                         </ul>
                     </li>
-                    <li id="nav5" class="{media}" data-toggle="modal" data-target="#myModal">
-                    	<a href="javascript:;" target="_self">
+                    <li id="nav5" class="{media}">
+                    	<a href="?m=media&a=index" target="_self">
                     		<h3>医疗传媒</h3><i></i><!-- <span>JOIN US</span> -->
                     	</a>
                 	</li>

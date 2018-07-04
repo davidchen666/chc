@@ -374,11 +374,15 @@
 }
 .single-intro .right-show{
 	color:#545454;
+	width:80%;
 	padding-left: 5px;
 	padding-top: 5px;
 }
 .single-intro .right-show p{
 	line-height:15px; 
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
 }
 
 /*
@@ -427,7 +431,7 @@
 	color:#545454;
 }
 .full-line p{
-	line-height: 24px;
+	line-height: 30px;
 	margin-top: 5px;
 	/*text-indent: 2em;*/
 }

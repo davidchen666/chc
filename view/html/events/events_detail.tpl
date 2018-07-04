@@ -158,7 +158,7 @@
 			<!--底部-->
 			<div class="box1Cen list-unstyled list-inline text-left">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="single-intro">
 							<div class="left-show">
 								<img src="{WEBSITE_SOURCE_URL}/img/events/detail/1icon.png" class="img-responsive"></div>
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="single-intro">
 							<div class="left-show">
 								<img src="{WEBSITE_SOURCE_URL}/img/events/detail/2icon.png" class="img-responsive"></div>
@@ -180,7 +180,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="single-intro">
 							<div class="left-show">
 								<img src="{WEBSITE_SOURCE_URL}/img/events/detail/3icon.png" class="img-responsive"></div>
@@ -218,7 +218,7 @@
 		if(res.speakerData.events_speaker_simple && JSON.stringify(res.speakerData.events_speaker_simple) !== '[]'){
 			var totalStr = '';
 			$.each(res.speakerData.events_speaker_simple, function(index, val) {
-				totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_identity + '</small></p></div></li>';
+				totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_simple_intro + '</small></p></div></li>';
 			});
 			
 			//主讲嘉宾
@@ -283,7 +283,7 @@
 				$.each(res.organizerData.events_organizer_organizer, function(index, val) {
 					var linkUrl = 'javascript:;';
 					if(val.media_url){
-						linkUrl = 'http://'+ val.media_url ;
+						linkUrl = val.media_url ;
 					}
 					 organizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
@@ -297,7 +297,7 @@
 				$.each(res.organizerData.events_organizer_co_organizer, function(index, val) {
 					var linkUrl = 'javascript:;';
 					if(val.media_url){
-						linkUrl = 'http://'+ val.media_url ;
+						linkUrl = val.media_url ;
 					}
 					 coOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
@@ -310,7 +310,7 @@
 				$.each(res.organizerData.events_organizer_starategic_partner, function(index, val) {
 					var linkUrl = 'javascript:;';
 					if(val.media_url){
-						linkUrl = 'http://'+ val.media_url ;
+						linkUrl = val.media_url ;
 					}
 					 starategicOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});
@@ -323,7 +323,7 @@
 				$.each(res.organizerData.events_organizer_media_support, function(index, val) {
 					var linkUrl = 'javascript:;';
 					if(val.media_url){
-						linkUrl = 'http://'+ val.media_url ;
+						linkUrl = val.media_url ;
 					}
 					mediaOrganizerStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
 				});

@@ -1,5 +1,5 @@
 <!-- INCLUDE ../header.tpl -->
-<div class="headSpace"></div>
+<!-- <div class="headSpace"></div>
 <div class="banner">
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -16,13 +16,14 @@
     </div>
     <div class="banDot">
         <div class="container">
-            <!-- <span class="swiper-pagination"></span> -->
         </div>
     </div>
     <div class="banBtn"></div>
-    <!-- <div class="banBtn-new">
-        <img src="{WEBSITE_SOURCE_URL}/img/home/down-btn.png" alt="">
-    </div> -->
+</div> -->
+
+<div class="detail-top">
+    <div class="top-img" id="topimg" style="background:url({WEBSITE_SOURCE_URL}/img/alliance/banner-00.png) center center no-repeat;background-size: cover;height: 500px;">
+    </div>
 </div>
 
 <div class="box1Bg box1Cen" id="alliance-bg">
@@ -201,7 +202,7 @@
                                 <div class="step-content" id="first" style="">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/1-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show"><small>联系联盟秘书处</small></div>
+                                        <div class="step-text title-show"><small style="display: block;width: 82px;padding-right: 4px;padding-left: 0px;text-align: center;">联系联盟秘书处</small></div>
                                     </a>
                                 </div>
                             </li>
@@ -210,7 +211,7 @@
                                 <div class="step-content" id="second">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/2-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show">填写入会申请表提交秘书处</div>
+                                        <div class="step-text title-show"><small style="display: block;width: 140px;padding-right: 47px;padding-left: 10px;margin-left: 27px;">填写入会申请表提交秘书处</small></div>
                                     </a>
                                     <!-- <div class="step-text title-show">联系联盟秘书处</div> -->
                                 </div>
@@ -220,7 +221,7 @@
                                 <div class="step-content" id="third">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/3-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show">联盟理事会表决</div>
+                                        <div class="step-text title-show"><small style="display: block;width: 93px;padding-right: 12px;padding-left: 8px;text-align: center;">联盟理事会表决</small></div>
                                     </a>
                                     <!-- <div class="step-text title-show">联系联盟秘书处</div> -->
                                 </div>
@@ -230,7 +231,7 @@
                                 <div class="step-content" id="fourth">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/4-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show">表发盖章回寄</div>
+                                        <div class="step-text title-show"><small style="display: block;width: 87px;padding-right: 7px;padding-left: 2px;text-align: center;">表发盖章回寄</small></div>
                                     </a>
                                 </div>
                             </li>
@@ -239,7 +240,7 @@
                                 <div class="step-content" id="fiveth">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/5-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show">　缴纳会费</div>
+                                        <div class="step-text title-show"><small style="display: block;width: 76px;padding-right: 8px;padding-left: 6px;text-align: center;">缴纳会费</small></div>
                                     </a>
                                 </div>
                             </li>
@@ -248,7 +249,7 @@
                                 <div class="step-content" id="sixth">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/6-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show">推荐高管加入联盟微信群</div>
+                                        <div class="step-text title-show"><small style="display: block;width: 129px;padding-right: 20px;padding-left: 26px;text-align: center;">推荐高管加入联盟微信群</small></div>
                                     </a>
                                     <!-- <div class="step-text title-show">联系联盟秘书处</div> -->
                                 </div>
@@ -258,7 +259,7 @@
                                 <div class="step-content" id="seventh">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/7-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show">入会流程完毕</div>
+                                        <div class="step-text title-show"><small style="display: block;width: 82px;padding-right: 0px;padding-left: 0px;text-align: center;">入会流程完毕</small></div>
                                     </a>
                                 </div>
                             </li>

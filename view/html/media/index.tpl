@@ -1,29 +1,8 @@
 <!-- INCLUDE ../header.tpl -->
-<div class="headSpace"></div>
 
-<div class="banner">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                <div class="banBg imgFull"><img src="{WEBSITE_SOURCE_URL}/img/media/banner-00.png" class="img-responsive"></div>
-                <div class="slide-caption ">
-                    <div class="caption-content">
-                        <div class="banImg ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="detail-top">
+    <div class="top-img" id="topimg" style="background:url({WEBSITE_SOURCE_URL}/img/media/banner-00.png) center center no-repeat;background-size: cover;height: 500px;">
     </div>
-    <div class="banDot">
-        <div class="container">
-            <!-- <span class="swiper-pagination"></span> -->
-        </div>
-    </div>
-    <div class="banBtn"></div>
-    <!-- <div class="banBtn-new">
-        <img src="{WEBSITE_SOURCE_URL}/img/home/down-btn.png" alt="">
-    </div> -->
 </div>
 
 <div class="box1Bg box1Cen" id="alliance-bg">
