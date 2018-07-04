@@ -141,8 +141,11 @@
 #member-news-show .show-detail{
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
 	-webkit-line-clamp: 3;
 	overflow: hidden;
+	height: 63px;
+	padding-top: 5px;
 }
 #member-news-show h4{
 	line-height: 30px;

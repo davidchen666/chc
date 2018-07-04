@@ -101,7 +101,7 @@
                         var pageStr = '';
                         if(res.resData.items && res.resData.items.length){
                             $.each(res.resData.items, function(index, val) {
-                                 listStr += '<li class="wow"><a href="?m=media&a=newsDetail&news_id=' + val.news_id + '"><div class="box1CenCon"><div class="row"><div class="col-md-4 col-xs-4 left-show"><div class="img-show text-left"><img src="{imgPath}/news/' + val.news_pic + '" class="img-responsive"></div></div><div class="col-md-8 col-xs-8 right-show text-left"><h4><b>' + val.news_title + '</b></h4><p>' + val.create_date + '</p><p class="show-detail"><small>' + delHtmlTag(val.news_content) + '</small></p></div></div></div></a></li>';
+                                 listStr += '<li class="wow"><a href="?m=media&a=newsDetail&news_id=' + val.news_id + '"><div class="box1CenCon"><div class="row"><div class="col-md-4 col-xs-4 left-show"><div class="img-show text-left"><img src="{imgPath}/news/' + val.news_pic + '" class="img-responsive"></div></div><div class="col-md-8 col-xs-8 right-show text-left"><h4><b>' + val.news_title + '</b></h4><p>' + val.update_date + '</p><p class="show-detail"><small>' + delHtmlTag(val.news_content) + '</small></p></div></div></div></a></li>';
                             });
                             if(res.resData.items.length % 2 !== 0){
                                 listStr += '<li></li>';

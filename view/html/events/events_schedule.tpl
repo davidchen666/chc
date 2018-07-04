@@ -66,7 +66,7 @@
 				 }
 			});
 			$('<style>#events-daily .table-list tr>td:first-child:after{right:-' + (myTrWidth-4) + 'px;}</style>').appendTo('head');
-			$('<style>#events-daily .table-list tr>td:first-child:after{top:-' + (myTrHeight/2 - 31) + 'px;}</style>').appendTo('head');
+			$('<style>#events-daily .table-list tr>td:first-child:after{top:-' + (myTrHeight/2 - 18) + 'px;}</style>').appendTo('head');
 		}
 	}
 		
