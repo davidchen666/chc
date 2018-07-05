@@ -77,11 +77,16 @@
 					$('body').html('<h1 class="text-center" style="color:black;padding-top:100px;">HELLO ERROR: '+res.resData +'</h1>');
 					return false;
 				}else{
+					$('title').html(res.resData.baseData.events_name+'-CHC医疗咨询');
 					showData(res.resData);
 					$('#topimg').attr('style', 'background:url({imgPath}/events/' + res.resData.baseData.events_pic + ') center center no-repeat;background-size: cover;height: 500px;');
 					if(localStorage.getItem(events_id) !== $('#topimg').attr('style')){
 						//存储图片
 						localStorage.setItem(events_id,$('#topimg').attr('style'));
+					}
+					if(localStorage.getItem('title'+events_id) !== $('title').html()){
+						//存储title
+						localStorage.setItem('title'+events_id,$('title').html());
 					}
 				}
 			}
@@ -121,6 +126,7 @@
 	$(function(){
 		//渲染缓存图片
 		$('#topimg').attr('style',localStorage.getItem(events_id));
+		$('.title').html(localStorage.getItem('title'+events_id));
 		getData(params)
 	})
 	//menu change

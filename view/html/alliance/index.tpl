@@ -158,9 +158,16 @@
                 $('#active-show').html(str);
 
                 $('.change-right').click(function(event) {
-                    console.log(selectedData);
+                    // console.log(selectedData);
                     var lastData = selectedData[2]>=4 ? 0 : selectedData[2]+1;
                     selectedData = [selectedData[1],selectedData[2],lastData];
+                    // console.log(selectedData);
+                    showSelectedData();
+                });
+                $('.change-left').click(function(event) {
+                    console.log(selectedData);
+                    var firstData = selectedData[0]<=0 ? 4 : selectedData[0]-1;
+                    selectedData = [firstData,selectedData[0],selectedData[1]];
                     console.log(selectedData);
                     showSelectedData();
                 });
