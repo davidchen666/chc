@@ -24,7 +24,7 @@
 </div> -->
 
 <div class="detail-top">
-    <div class="top-img" id="topimg" style="background:url({WEBSITE_SOURCE_URL}/img/alliance/banner-00.png) center center no-repeat;background-size: cover;height: 500px;">
+    <div class="top-img" id="topimg" style="background:url({WEBSITE_SOURCE_URL}/img/banking/banner-00.png) center center no-repeat;background-size: cover;height: 500px;">
     </div>
 </div>
 

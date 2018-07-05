@@ -65,14 +65,15 @@
 }
 
 #active-show li{
-	width: 33.333%;
-	padding:1%;
-	background-color: #ffffff;
+	width: 26.666666666666668%;
+	/*padding:1%;*/
+	/*background-color: #ffffff;*/
 }
 #active-show li p{
 	color:black;
 	padding-top: 5%;
 	padding-bottom: 3%;
+	background-color: #ffffff;
 }
 
 #member-news-show li{

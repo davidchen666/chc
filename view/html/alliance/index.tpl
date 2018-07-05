@@ -116,19 +116,58 @@
             <img src="{WEBSITE_SOURCE_URL}/img/alliance/alliance-active.png" class="img-responsive">
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="active-show">
-            <li class="wow">
-                <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/1.png" class="img-responsive"></a></div>
-                <p>2017年10月14日 &nbsp;&nbsp;&nbsp;启明参访</p>
+            <!-- <li class="wow" style="width: 10%; padding-top: 10%;">
+                <a href="javascript:;" class="change-left">
+                    <img src="{WEBSITE_SOURCE_URL}/img/alliance/left.png" alt="">
+                </a>
             </li>
-            <li class="wow">
-                <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/2.png" class="img-responsive"></a></div>
-                <p>2017年10月14日 &nbsp;&nbsp;&nbsp;启明参访</p>
-            </li>
-            <li class="wow">
-                <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/3.png" class="img-responsive"></a></div>
-                <p>2017年10月14日 &nbsp;&nbsp;&nbsp;项目路演</p>
-            </li>
+                <li class="wow">
+                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/1.png" class="img-responsive"></a></div>
+                    <p>2017年10月14日 &nbsp;&nbsp;&nbsp;启明参访</p>
+                </li>
+                <li class="wow">
+                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/2.png" class="img-responsive"></a></div>
+                    <p>2017年10月14日 &nbsp;&nbsp;&nbsp;启明参访</p>
+                </li>
+                <li class="wow">
+                    <div class="box1CenCon"><a href="javascript:;"><img src="{WEBSITE_SOURCE_URL}/img/alliance/3.png" class="img-responsive"></a></div>
+                    <p>2017年10月14日 &nbsp;&nbsp;&nbsp;项目路演</p>
+                </li>
+            <li class="wow" style="width: 10%; padding-top: 10%;">
+                <a href="javascript:;" class="change-right">
+                    <img src="{WEBSITE_SOURCE_URL}/img/alliance/right.png" alt="">
+                </a>
+            </li> -->
         </ul>
+        <script>
+            var dataList = [
+                {pic:'1.png',data:'启明参访'},
+                {pic:'3.png',data:'项目路演'},
+                {pic:'4.png',data:'美康生物参访'},
+                {pic:'5.png',data:'奥普生物参访'},
+                {pic:'6.png',data:'华大基因参访'}
+            ];
+            var selectedData = [0,1,2];
+            var showSelectedData = function(){
+                // console.log(selectedData,dataList);
+                var str = '<li class="wow" style="width: 10%; padding-top: 10%;"><a href="javascript:;" class="change-left"><img src="{WEBSITE_SOURCE_URL}/img/alliance/left.png" alt=""></a></li>';
+                $.each(selectedData, function(index, val) {
+                    str += '<li class="wow"><div class="box1CenCon"><a href="javascript:;"><img width="220px" height="174px" src="{WEBSITE_SOURCE_URL}/img/alliance/' + dataList[val].pic + '"></a></div><p>' + dataList[val].data + '</p></li>'
+                });
+                str += '<li class="wow" style="width: 10%; padding-top: 10%;"><a href="javascript:;" class="change-right"><img src="{WEBSITE_SOURCE_URL}/img/alliance/right.png" alt=""></a></li>';
+                $('#active-show').html(str);
+
+                $('.change-right').click(function(event) {
+                    console.log(selectedData);
+                    var lastData = selectedData[2]>=4 ? 0 : selectedData[2]+1;
+                    selectedData = [selectedData[1],selectedData[2],lastData];
+                    console.log(selectedData);
+                    showSelectedData();
+                });
+            }
+            showSelectedData();
+
+        </script>
         <!--end 联盟活动-->
 
         <!--begin 会员新闻-->
