@@ -215,7 +215,7 @@
 		}
 
 		//演讲嘉宾
-		if(res.speakerData.events_speaker_simple && JSON.stringify(res.speakerData.events_speaker_simple) !== '[]'){
+		if(res.speakerData && res.speakerData.events_speaker_simple && JSON.stringify(res.speakerData.events_speaker_simple) !== '[]'){
 			var totalStr = '';
 			$.each(res.speakerData.events_speaker_simple, function(index, val) {
 				totalStr += '<li class="wow"><div class="box1CenCon"><img src="{imgPath}/speaker/' + val.speaker_pic +'" class="img-responsive img-circle"><h4>' + val.speaker_name + '</h4><p><small>' + val.speaker_simple_intro + '</small></p></div></li>';
