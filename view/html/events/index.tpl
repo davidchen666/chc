@@ -31,7 +31,7 @@
         	<img src="{WEBSITE_SOURCE_URL}/img/events/coming-title.png" class="img-responsive">
     	</div>
         <ul class="box1Cen list-unstyled list-inline text-center" id="big-show">
-            <li class="wow fadeInUp">
+            <!-- <li class="wow fadeInUp">
                 <div class="single" class="text-left">
                     <div class="add-shadow"><a href="http://www.chconsultant.com/zh/summit/ivd2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/pic_0510.png" class="img-responsive"></a></div>
                     <div class="two-show left-show" class="text-left">
@@ -41,8 +41,8 @@
                     <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/ivd2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div>
                     <div class="clearfix"></div>
                 </div>
-            </li>
-            <li class="wow fadeInUp">
+            </li> -->
+            <!-- <li class="wow fadeInUp">
                 <div class="single" class="text-left">
                     <div class="add-shadow"><a href="http://www.chconsultant.com/zh/summit/CDI2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/pic3.png" class="img-responsive"></a></div>
                     <div class="two-show left-show" class="text-left">
@@ -52,14 +52,14 @@
                     <div class="two-show right-show"><a href="http://www.chconsultant.com/zh/summit/CDI2018/apply-register" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div>
                     <div class="clearfix"></div>
                 </div>
-            </li>
+            </li> -->
         </ul>
         <div class="box1Top wow fadeInUp" data-wow-delay="0.5s">
             <img src="{WEBSITE_SOURCE_URL}/img/events/events-back.png" class="img-responsive">
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center">
         	<li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/ceo2018/history">
+                <a target="_blank" href="http://www.chconsultant.com/zh/summit/ceo2018">
                 	<div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-1-a.png" class="img-responsive"></div>
                 	<p>医疗健康产业</p>
                 </a>
@@ -71,7 +71,7 @@
                 </a>
             </li>
         	<li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/cdi2017/history">
+                <a target="_blank" href="?m=events&a=detail&events_id=33">
                 	<div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-3-a.png" class="img-responsive"></div>
                 	<p>心脑血管</p>
                 </a>
@@ -345,8 +345,8 @@
 
 
     //加载ing
-    // loadingArr = ['#big-show'];
-    // showLoading();
+    loadingArr = ['#big-show'];
+    showLoading();
 
     $(function(){
         var getLastEvents = function(){
@@ -368,7 +368,7 @@
             })
             
         }
-        // getLastEvents();
+        getLastEvents();
     })
 </script>
 <!-- INCLUDE ../footer.tpl -->

@@ -43,7 +43,7 @@
             	<p>IVD/精准医疗</p>
             </li>
         	<li class="wow fadeInUp">
-            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/CDI2017" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-3-a.png" class="img-responsive"></a></div>
+            	<div class="box1CenCon"><a href="?m=events&a=detail&events_id=33" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-3-a.png" class="img-responsive"></a></div>
             	<p>心脑血管</p>
             </li>
         	<li class="wow fadeInUp">

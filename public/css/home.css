@@ -26,19 +26,24 @@ nav.navbar.bootsnav ul.nav > li > a:hover, nav.navbar.bootsnav ul.nav > li.on > 
     特殊颜色的控制
 */
 .news-content p,.news-content div,.news-content span{
-    color: black;
+    /*color: black;*/
+    color: unset;
 }
 .hotel-info p,.hotel-info div,.hotel-info span{
-    color: black;
+    /*color: black;*/
+    color: unset;
 }
 .arrive-info p,.arrive-info div,.arrive-info span{
-    color: black;
+    /*color: black;*/
+    color: unset;
 }
 .road-content p,.road-content div,.road-content span{
-    color: black;
+    /*color: black;*/
+    color: unset;
 } 
 #events-daily p,#events-daily div,#events-daily span{
     color: black;
+    /*color: unset;*/
 } 
 #events-daily tr{
     border:1px solid #ddd;
