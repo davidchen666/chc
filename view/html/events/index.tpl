@@ -359,7 +359,7 @@
                     if(res.resCode === 200){
                         if(res.resData && res.resData.length){
                             $.each(res.resData, function(index, val) {
-                                 allStr += '<li class="wow fadeInUp"><div class="single" class="text-left"><div class="add-shadow"><a href="?m=events&a=detail&events_id=' + val.events_id + '" target="_blank"><img src="{imgPath}/events/' + val.past_pic + '" class="img-responsive"></a></div><div class="two-show left-show" class="text-left"><p class="text-left">' + val.events_name + '</p><p class="text-left">时间：' + val.events_begin_date + ' &nbsp;&nbsp;  地点：上海</p></div><div class="two-show right-show"><a href="?m=events&a=mSignUp&events_id='+ val.events_id +'" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div><div class="clearfix"></div></div></li>';
+                                 allStr += '<li class="wow fadeInUp"><div class="single" class="text-left"><div class="add-shadow"><a href="?m=events&a=detail&events_id=' + val.events_id + '" target="_blank"><img src="{imgPath}/events/' + val.past_pic + '" class="img-responsive"></a></div><div class="two-show left-show" class="text-left"><p class="text-left">' + val.events_name + '</p><p class="text-left">时间：' + val.events_begin_date + ' &nbsp;&nbsp;  地点：' + val.events_city + '</p></div><div class="two-show right-show"><a href="?m=events&a=mSignUp&events_id='+ val.events_id +'" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/events/record-2.png" alt=""></a></div><div class="clearfix"></div></div></li>';
                             });
                         }
                     }
