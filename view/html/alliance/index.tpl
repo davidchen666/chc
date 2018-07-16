@@ -277,7 +277,7 @@
                                 <div class="step-content" id="fourth">
                                     <a href="javascript:;">
                                         <span class="step-num"><img src="{WEBSITE_SOURCE_URL}/img/alliance/4-small.png" class="img-responsive"></span>
-                                        <div class="step-text title-show"><small style="display: block;width: 87px;padding-right: 7px;padding-left: 2px;text-align: center;">表发盖章回寄</small></div>
+                                        <div class="step-text title-show"><small style="display: block;width: 87px;padding-right: 7px;padding-left: 2px;text-align: center;">表格盖章回寄</small></div>
                                     </a>
                                 </div>
                             </li>

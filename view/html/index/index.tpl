@@ -35,11 +35,11 @@
     	</div>
         <ul class="box1Cen list-unstyled list-inline text-center">
         	<li class="wow fadeInUp">
-            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/ceo2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-1-a.png" class="img-responsive"></a></div>
+            	<div class="box1CenCon"><a href="http://old.chconsultant.com/zh/summit/ceo2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-1-a.png" class="img-responsive"></a></div>
             	<p>医疗健康</p>
             </li>
         	<li class="wow fadeInUp">
-            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/ivd2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-2-a.png" class="img-responsive"></a></div>
+            	<div class="box1CenCon"><a href="http://old.chconsultant.com/zh/summit/ivd2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-2-a.png" class="img-responsive"></a></div>
             	<p>IVD/精准医疗</p>
             </li>
         	<li class="wow fadeInUp">
@@ -47,15 +47,15 @@
             	<p>心脑血管</p>
             </li>
         	<li class="wow fadeInUp">
-            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/czevent-2017" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-4-a.png" class="img-responsive"></a></div>
+            	<div class="box1CenCon"><a href="http://old.chconsultant.com/zh/summit/czevent-2017" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-4-a.png" class="img-responsive"></a></div>
             	<p>骨科/生物材料</p>
             </li>
             <li class="wow fadeInUp">
-            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/mis2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-5-a.png" class="img-responsive"></a></div>
+            	<div class="box1CenCon"><a href="http://old.chconsultant.com/zh/summit/mis2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-5-a.png" class="img-responsive"></a></div>
             	<p>微创外科</p>
             </li>
             <li class="wow fadeInUp">
-            	<div class="box1CenCon"><a href="http://www.chconsultant.com/zh/summit/mis2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-6-a.png" class="img-responsive"></a></div>
+            	<div class="box1CenCon"><a href="http://old.chconsultant.com/zh/summit/mis2018" target="_blank"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-6-a.png" class="img-responsive"></a></div>
             	<p>医疗机器人</p>
             </li>
         </ul>

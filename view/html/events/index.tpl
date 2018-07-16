@@ -59,13 +59,13 @@
         </div>
         <ul class="box1Cen list-unstyled list-inline text-center">
         	<li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/ceo2018">
+                <a target="_blank" href="http://old.chconsultant.com/zh/summit/ceo2018">
                 	<div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-1-a.png" class="img-responsive"></div>
                 	<p>医疗健康产业</p>
                 </a>
             </li>
         	<li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/ivd2018">
+                <a target="_blank" href="http://old.chconsultant.com/zh/summit/ivd2018">
                 	<div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-2-a.png" class="img-responsive"></div>
                 	<p>IVD及精准医疗</p>
                 </a>
@@ -77,19 +77,19 @@
                 </a>
             </li>
         	<li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/czevent-2017/history">
+                <a target="_blank" href="http://old.chconsultant.com/zh/summit/czevent-2017/history">
                 	<div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-4-a.png" class="img-responsive"></div>
                 	<p>骨科/生物材料</p>
                 </a>
             </li>
             <li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/mis2018/history">
+                <a target="_blank" href="http://old.chconsultant.com/zh/summit/mis2018/history">
                 	<div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-5-a.png" class="img-responsive"></div>
                 	<p>微创外科</p>
                 </a>
             </li>
             <li class="wow fadeInUp">
-                <a target="_blank" href="http://www.chconsultant.com/zh/summit/mis2018/history">
+                <a target="_blank" href="http://old.chconsultant.com/zh/summit/mis2018/history">
                 	<div class="box1CenCon"><img src="{WEBSITE_SOURCE_URL}/img/home/icon-6-a.png" class="img-responsive"></div>
                 	<p>医疗机器人</p>
                 </a>
