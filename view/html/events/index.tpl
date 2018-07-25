@@ -207,6 +207,12 @@
                     <div class="box1CenCon logo-show"><img src="{WEBSITE_SOURCE_URL}/img/events/logo/may-9-new.jpg" class="img-responsive"></div>
                 </a>
             </li>
+            <li class="wow">
+                <a href="http://www.ftzfund.com.cn/" target="_blank">
+                    <div class="box1CenCon logo-show"><img src="http://www.chconsultant.com/chc-api/uploads/media/20180706140810-8594120180706140810-85941.jpg" class="img-responsive"></div>
+                </a>
+            </li>
+            
         </ul>
         <!--媒体-->
         <div class="box1Top wow" data-wow-delay="0.5s">
