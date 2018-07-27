@@ -15,7 +15,7 @@ define('PUBLIC', 'public');
 define('WIDGET', 'widget');
 define('API', 'api');
 define('LIB_PATH', ROOT_PATH . LIB . DS);
-define('API_PATH', 'localhost/chc-api/index.php?');
+define('API_PATH', 'http://localhost/chc-api/index.php?');
 // define('API_PATH', 'http://www1.chconsultant.com/chc-api/index.php?');
 define('MODEL_PATH', ROOT_PATH . MODEL . DS);
 define('CONTROLLER_PATH', ROOT_PATH . CONTROLLER . DS);
