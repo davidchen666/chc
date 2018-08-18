@@ -65,8 +65,9 @@
 	loadingArr = ['.my-loading'];
 	showLoading();
 	//计算full 高度
-	var getHeight = function(str){
-		var line = Math.ceil(str.length/51);
+	var getHeight = function(str,charType){
+		var lineCharNum = charType==='zh' ? 51 : 100;
+		var line = Math.ceil(str.length/lineCharNum);
 		if(line > 5){
 			return line*33 + 'px';
 		}else{
@@ -96,10 +97,15 @@
 			var speaker_Str = '';
 			$.each(res.speakerData.events_speaker, function(key, item) {
 				speaker_Str += '<div class="box1Cen list-unstyled list-inline text-left table-list table-left"><ul class="list-group"><li class="list-group-item text-left top-bg"><h4> | &nbsp;&nbsp;' + item.speaker_type + '</h4></li></ul><div class="speaker-main">';
-				console.log(item);
+				// console.log(item);
 				$.each(item.speaker_data, function(index, val) {
 					// console.log(val);
-					 speaker_Str += '<div class="full-line" style="height:' + getHeight(val.speaker_detail_intro) + '"><div class="full-left-show text-center"><img src="{imgPath}/speaker/'+ val.speaker_pic +'" class="img-responsive img-circle"></div><div class="full-right-show"><h4><b>' + val.speaker_name + ' ' + val.speaker_honor + '</b> <span>' + val.speaker_identity + '</span></h4><p>'+ val.speaker_detail_intro +'</p></div></div>';
+					var charType = 'zh';
+					if(val.speaker_detail_intro.substring(0,4) === '[en]'){
+						charType = 'en';
+						val.speaker_detail_intro = val.speaker_detail_intro.substring(4,val.speaker_detail_intro.length+1);
+					}
+					 speaker_Str += '<div class="full-line" style="height:' + getHeight(val.speaker_detail_intro,charType) + '"><div class="full-left-show text-center"><img src="{imgPath}/speaker/'+ val.speaker_pic +'" class="img-responsive img-circle"></div><div class="full-right-show"><h4><b>' + val.speaker_name + ' ' + val.speaker_honor + '</b> <span>' + val.speaker_identity + '</span></h4><p>'+ val.speaker_detail_intro +'</p></div></div>';
 				});
 				speaker_Str += '</div></div>';
 			});

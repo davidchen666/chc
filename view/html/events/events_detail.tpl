@@ -97,7 +97,7 @@
 			<div class="organizer-total" style="display: none;">
 				<div class="box1Cen list-unstyled list-inline text-left header-title">
 					<ul class="list-group">
-					    <li class="list-group-item text-center top-bg"><h4>主办方/organizer</h4></li>
+					    <li class="list-group-item text-center top-bg"><h4>主办方/Organizer</h4></li>
 					</ul>
 				</div>
 				<ul class="box1Cen list-unstyled list-inline text-center organize-show organizer">
@@ -114,7 +114,7 @@
 			<div class="co-organizer-total" style="display: none;">
 				<div class="box1Cen list-unstyled list-inline text-left header-title">
 					<ul class="list-group">
-					    <li class="list-group-item text-center top-bg"><h4>协办方/co-organizer</h4></li>
+					    <li class="list-group-item text-center top-bg"><h4>协办方/Co-organizer</h4></li>
 					</ul>
 				</div>
 				<ul class="box1Cen list-unstyled list-inline text-center organize-show co-organizer">
@@ -131,7 +131,7 @@
 	        <div class="starategic-partner-total" style="display: none;">
 	        	<div class="box1Cen list-unstyled list-inline text-left header-title">
 					<ul class="list-group">
-					    <li class="list-group-item text-center top-bg"><h4>战略合作伙伴/starategic partner</h4></li>
+					    <li class="list-group-item text-center top-bg"><h4>战略合作伙伴/Starategic Partner</h4></li>
 					</ul>
 				</div>
 				<ul class="box1Cen list-unstyled list-inline text-center organize-show starategic-partner">
@@ -145,7 +145,7 @@
 	        <div class="media-support-total" style="display: none;">
 	        	<div class="box1Cen list-unstyled list-inline text-left header-title">
 					<ul class="list-group">
-					    <li class="list-group-item text-center top-bg"><h4>媒体支持/media support</h4></li>
+					    <li class="list-group-item text-center top-bg"><h4>媒体支持/Media Support</h4></li>
 					</ul>
 				</div>
 				<ul class="box1Cen list-unstyled list-inline text-center organize-show media-support">
