@@ -126,6 +126,18 @@
 		            </li> -->
 		        </ul>
 			</div>
+
+			<!--支持单位-->
+			<div class="supporter-total" style="display: none;">
+				<div class="box1Cen list-unstyled list-inline text-left header-title">
+					<ul class="list-group">
+					    <li class="list-group-item text-center top-bg"><h4>支持单位/Supporter</h4></li>
+					</ul>
+				</div>
+				<ul class="box1Cen list-unstyled list-inline text-center organize-show supporter">
+
+		        </ul>
+			</div>
 				
 	        <!--战略合作伙伴-->
 	        <div class="starategic-partner-total" style="display: none;">
@@ -304,6 +316,19 @@
 				$('.co-organizer').html(coOrganizerStr);
 				$('#organize').show();
 				$('.co-organizer-total').show();
+			}
+			if(res.organizerData.events_organizer_supporter && JSON.stringify(res.organizerData.events_organizer_supporter) !== '[]'){
+				var supporterStr = '';
+				$.each(res.organizerData.events_organizer_supporter, function(index, val) {
+					var linkUrl = 'javascript:;';
+					if(val.media_url){
+						linkUrl = val.media_url ;
+					}
+					 supporterStr += '<li class="wow"><a href="'+ linkUrl +'" target="_blank"><div class="box1CenCon logo-show"><img src="{imgPath}/media/' + val.media_pic + '" class="img-responsive"></div></a></li>';
+				});
+				$('.supporter').html(supporterStr);
+				$('#organize').show();
+				$('.supporter-total').show();
 			}
 			if(res.organizerData.events_organizer_starategic_partner && JSON.stringify(res.organizerData.events_organizer_starategic_partner) !== '[]'){
 				var starategicOrganizerStr = '';
